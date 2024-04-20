@@ -1,1 +1,33 @@
+<footer class="bg-turquoise font-acumin-medium font-medium w-full py-20">
+  {{ partial:layout/inner class="flex justify-between" }}
+    <div>
+
+      {{ if contact_information:address }}
+        <address class="block not-italic">
+          {{ contact_information:address | nl2br }}
+        </address>
+      {{ /if }}
+
+      {{ if contact_information:email }}
+        <a 
+          href="mailto:{{ contact_information:email }}" 
+          title="{{ "E-Mail Adresse" | trans }}"
+          class="block">
+          {{ contact_information:email }}
+        </a>
+      {{ /if }}
+
+      {{ if contact_information:phone }}
+        <a 
+          href="tel:{{ contact_information:phone }}" 
+          title="{{ "Telefonnummer" | trans }}"
+          class="block">
+          T {{ contact_information:phone }}
+        </a>
+      {{ /if }}
+
+    </div>
+    {{ partial:menu/footer/wrapper }}
+  {{ /partial:layout/inner }}
+</footer>
 {{ vite src="resources/js/app.js" }}

@@ -1,5 +1,6 @@
 <header class="bg-white sticky top-0 z-20 w-full">
   <div class="">
+    {{ partial:partials/misc/social-media-channels }}
     <div class="">
       {{# <a 
         href="{{ site:url }}" 
@@ -15,7 +16,7 @@
         x-on:click="menu = ! menu" 
         title="{{ "Menü anzeigen" | trans }}"
         :class="{ 'is-active': menu === true }"
-        class="group flex justify-end lg:hidden">
+        class="group flex justify-end md:hidden">
         <span x-show="menu === false">
           {{ partial:icons/burger class="w-24 h-auto" }}
         </span>

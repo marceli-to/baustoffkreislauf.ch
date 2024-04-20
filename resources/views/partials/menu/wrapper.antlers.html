@@ -7,12 +7,7 @@
   x-transition:leave="transition ease-in duration-150"
   x-transition:leave-start="translate-x-0"
   x-transition:leave-end="translate-x-full"
-  class="bg-white fixed right-0 top-0">
-  <nav class="text-black uppercase tracking-wider">
-    <ul class="flex flex-col">
-      {{ nav:main }}
-        {{ partial:menu/item }}
-      {{ /nav:main }}
-    </ul>
-  </nav>
+  class="bg-white fixed right-0 top-0 md:bg-transparent md:relative md:!block md:!translate-x-0">
+  {{ partial:menu/main/wrapper }}
+  {{ partial:menu/meta/wrapper }}
 </div>

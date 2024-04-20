@@ -1,7 +1,8 @@
 title: Pages
 sites:
   - de
-  - en
+  - fr
+  - it
 propagate: false
 template: default
 layout: layout/default

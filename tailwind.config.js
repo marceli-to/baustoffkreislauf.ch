@@ -17,10 +17,6 @@ export default {
       screens: {
         'xs': '414px',
       },
-
-      maxWidth: {
-        site: '1600px',
-      },
       
       fontFamily: {
         'acumin-bold': ['acumin-pro', ...defaultTheme.fontFamily.sans],
