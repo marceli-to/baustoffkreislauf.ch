@@ -1,0 +1,29 @@
+<header class="bg-white sticky top-0 z-20 w-full">
+  <div class="">
+    <div class="">
+      {{# <a 
+        href="{{ site:url }}" 
+        title="Home"
+        :class="{ 'is-active': menu === true }"
+        class="group relative">
+        {{ partial:icons/logo class="" }}
+      </a> #}}
+    </div>
+    <div class="">
+      <a 
+        href="javascript:;" 
+        x-on:click="menu = ! menu" 
+        title="{{ "Menü anzeigen" | trans }}"
+        :class="{ 'is-active': menu === true }"
+        class="group flex justify-end lg:hidden">
+        <span x-show="menu === false">
+          {{ partial:icons/burger class="w-24 h-auto" }}
+        </span>
+        <span x-cloak x-show="menu === true">
+          {{ partial:icons/cross class="w-20 h-auto text-black" }}
+        </span>
+      </a>
+      {{ partial:menu/wrapper }}
+    </div>
+  </div>
+</header>

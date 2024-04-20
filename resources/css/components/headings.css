@@ -1,0 +1,11 @@
+h1 {
+  @apply font-acumin-bold font-bold
+}
+
+h2 {
+  @apply font-acumin-medium font-medium
+}
+
+h3 {
+  @apply font-acumin-medium font-medium
+}

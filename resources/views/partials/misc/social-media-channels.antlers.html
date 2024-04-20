@@ -1,0 +1,34 @@
+<div class="flex w-128 space-x-16 {{ class }}">
+  {{ if social_media_accounts:linkedin }}
+  <a 
+    href="{{ social_media_accounts:linkedin }}" 
+    target="_blank" 
+    title="Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband auf LinkedIn">
+    {{ partial:icons/linkedin class="w-20 h-auto" }}
+  </a>
+{{ /if }}
+  {{ if social_media_accounts:facebook }}
+    <a 
+      href="{{ social_media_accounts:facebook }}" 
+      target="_blank" 
+      title="Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband auf Facebook">
+      {{ partial:icons/facebook class="w-20 h-auto" }}
+    </a>
+  {{ /if }}
+  {{ if social_media_accounts:instagram }}
+    <a 
+      href="{{ social_media_accounts:instagram }}" 
+      target="_blank" 
+      title="Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband auf Instagram">
+      {{ partial:icons/instagram class="w-20 h-auto" }}
+    </a>
+  {{ /if }}
+  {{ if social_media_accounts:youtube }}
+    <a 
+      href="{{ social_media_accounts:youtube }}" 
+      target="_blank" 
+      title="Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband auf Youtube">
+      {{ partial:icons/youtube class="w-20 h-auto" }}
+    </a>
+  {{ /if }}
+</div> 

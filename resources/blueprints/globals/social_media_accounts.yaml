@@ -1,0 +1,62 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: instagram
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Instagram
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              localizable: true
+          -
+            handle: facebook
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Facebook
+              icon: text
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: linkedin
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: LinkedIn
+              icon: text
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: youtube
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Youtube
+              icon: text
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
