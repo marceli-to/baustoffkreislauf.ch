@@ -23,6 +23,10 @@ main p {
   @apply mb-20
 }
 
+main p.lead {
+  @apply font-acumin-bold font-bold text-lg md:text-xl leading-[1.2] mb-40 md:mb-60
+}
+
 main a {
   @apply underline underline-offset-2 decoration-1 hover:no-underline
 }

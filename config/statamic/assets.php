@@ -115,7 +115,14 @@ return [
           'xl' => ['w' => 1440, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           '2xl' => ['w' => 1680, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           '3xl' => ['w' => 2000, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
-          
+
+          // Portrait images
+          'sm-portrait-webp' => ['w' => 480, 'h' => 480, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
+          'md-portrait-webp' => ['w' => 640, 'h' => 640, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
+          'sm-portrait' => ['w' => 480, 'h' => 480, 'q' => 90, 'fit' => 'crop_focal'],
+          'md-portrait' => ['w' => 640, 'h' => 640, 'q' => 90, 'fit' => 'crop_focal'],
+
+
           'max_upload_size' => ['w' => 4000, 'h' => 4000, 'fit' => 'max'],
 
         ],

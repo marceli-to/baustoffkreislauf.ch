@@ -1,0 +1,18 @@
+<figure class="relative">
+  <picture class="relative">
+    <source media="(min-width: 768px)" srcset="{{ glide:image preset='lg-webp' }}" type="image/webp">
+    <source srcset="{{ glide:image preset='md-webp' }}" type="image/webp">
+    <source media="(min-width: 768px)" srcset="{{ glide:image preset='lg' }}" type="image/jpeg">
+    <img 
+      src="{{ glide:image preset='md' }}" 
+      alt="{{ image:alt }}" 
+      title="{{ image:alt }}" 
+      height="{{ image:height }}" 
+      width="{{ image:width }}"
+      class="block w-full h-full object-cover {{ if image_ratio == 'portrait' }} aspect-[3/4] {{ elseif image_ratio == 'landscape' }} aspect-[16/10] {{ else }} aspect-square {{ /if }} {{ class ?? '' }}"
+      loading="lazy">
+  </picture>
+  {{ if has_overlay }} 
+    <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-0 transition-all"></div>
+  {{ /if }}
+</figure>

@@ -12,6 +12,7 @@ fields:
         - unorderedlist
         - removeformat
         - anchor
+        - lead
       smart_typography: false
       save_html: false
       inline: false

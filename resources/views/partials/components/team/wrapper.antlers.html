@@ -1,0 +1,17 @@
+<section>
+  {{ if text }}
+    {{ text }}
+  {{ /if }}
+
+  {{ if team_members }}
+    <div class="grid grid-cols-12 gap-16">
+      {{ team_members }}
+        <div class="col-span-6 md:col-span-4">
+          {{ partial:components/media/image/portrait }}
+          <h3>{{ firstname }} {{ name }}</h3>
+          {{ position ?? '' }}
+        </div>
+      {{ /team_members}}
+    </div>
+  {{ /if }}
+</section>

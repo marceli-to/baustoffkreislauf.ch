@@ -8,7 +8,7 @@ fields:
       type: text
       display: Title
       icon: text
-      instructions: 'Can be used as a replacement for the page title'
+      instructions: 'Kann als Ersatz für den automatisch generierten Seitentitel verwendet werden.'
       localizable: true
       listable: hidden
       instructions_position: below
@@ -22,7 +22,7 @@ fields:
       type: textarea
       display: Description
       icon: textarea
-      instructions: 'One or two descriptive sentences about the content of the page.'
+      instructions: 'Ein bis zwei beschreibende Sätze über den Inhalt der Seite.'
       localizable: true
       listable: hidden
       instructions_position: below
@@ -42,7 +42,7 @@ fields:
       type: assets
       display: Image
       icon: assets
-      instructions: 'Open Graph Image used for sharing on social media.'
+      instructions: 'Beim "sharing" verwendetes Bild (Open Graph Image).'
       localizable: false
       listable: hidden
       instructions_position: below

@@ -1,0 +1,30 @@
+title: Teasers
+fields:
+  -
+    handle: teaser
+    field:
+      collapse: false
+      previews: true
+      fullscreen: true
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          instructions: null
+          icon: null
+          sets:
+            teaser:
+              display: Teaser
+              instructions: 'Teaser hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  import: teaser
+      type: replicator
+      display: Teaser
+      icon: replicator
+      localizable: false
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

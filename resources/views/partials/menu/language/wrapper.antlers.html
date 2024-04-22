@@ -1,0 +1,14 @@
+<nav class="{{ class }}">
+  <ul class="flex space-x-6">
+    {{ locales current_first="false" }}
+      <li>
+        <a 
+          href="{{ permalink }}" 
+          title="{{ locale:locale }}"
+          class="font-acumin-black font-extrabold">
+          {{ locale:locale | substr:0:1 }}
+        </a>
+      </li>
+    {{ /locales }}
+  </ul>
+</nav>

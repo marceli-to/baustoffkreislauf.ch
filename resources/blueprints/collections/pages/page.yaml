@@ -30,15 +30,38 @@ tabs:
               fullscreen: true
               sets:
                 content_elements:
-                  display: 'Content elements'
+                  display: Inhaltselemente
                   instructions: null
                   icon: null
                   sets:
-                    neues_set:
-                      display: 'Neues Set'
-                      instructions: null
-                      icon: null
-                      fields: {  }
+                    editor:
+                      display: Texteditor
+                      instructions: 'Texteditor hinzufügen'
+                      icon: text-formatting-markdown
+                      fields:
+                        -
+                          import: editor
+                    team:
+                      display: Team
+                      instructions: 'Team hinzufügen.'
+                      icon: media-image-picture-gallery
+                      fields:
+                        -
+                          import: team
+                    teasers:
+                      display: Teasers
+                      instructions: 'Teaser(s) hinzufügen.'
+                      icon: text-formatting-image-top
+                      fields:
+                        -
+                          import: teasers
+                    splash:
+                      display: Störer
+                      instructions: 'Störer Element hinzufügen.'
+                      icon: align-object-center
+                      fields:
+                        -
+                          import: splash
               type: replicator
               display: Inhalte
               icon: replicator

@@ -1,0 +1,139 @@
+title: Teaser
+fields:
+  -
+    handle: image
+    field:
+      max_files: 1
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: Bild
+      icon: assets
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: image_ratio
+    field:
+      options:
+        portrait: Hochformat
+        landscape: Querformat
+        square: Quadrat
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      type: select
+      display: Bildformat
+      icon: select
+      localizable: false
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: has_overlay
+    field:
+      default: false
+      type: toggle
+      display: 'Filter?'
+      icon: toggle
+      instructions: 'Filter über dem Bild, verschwindet bei mouse over.'
+      localizable: false
+      width: 50
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Titel
+      icon: text
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      validate:
+        - required
+  -
+    handle: text
+    field:
+      buttons:
+        - bold
+        - anchor
+      smart_typography: false
+      save_html: false
+      inline: false
+      toolbar_mode: floating
+      reading_time: false
+      word_count: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      remove_empty_nodes: true
+      antlers: false
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      always_show_set_button: false
+      collapse: false
+      previews: true
+      type: bard
+      display: Text
+      icon: bard
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: link
+    field:
+      collections:
+        - pages
+      container: assets
+      type: link
+      display: Link
+      icon: link
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      width: 50
+  -
+    handle: link_text
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Linktext
+      icon: text
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      width: 50

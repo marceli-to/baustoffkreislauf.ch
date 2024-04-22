@@ -17,6 +17,7 @@ return [
     'de' => [
       'name' => 'Deutsch',
       'locale' => 'de',
+      'abbreviation' => 'd',
       'url' => env('APP_URL')
     ],
     'fr' => [

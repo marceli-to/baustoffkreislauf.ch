@@ -1,33 +1,35 @@
 <footer class="bg-turquoise font-acumin-medium font-medium w-full py-20">
-  {{ partial:layout/inner class="flex justify-between" }}
-    <div>
+  {{ partial:layout/inner }}
+    <div class="grid grid-cols-12 gap-16">
+      <div class="col-span-full md:col-span-8 md:col-start-2">
 
-      {{ if contact_information:address }}
-        <address class="block not-italic">
-          {{ contact_information:address | nl2br }}
-        </address>
-      {{ /if }}
+        {{ if contact_information:address }}
+          <address class="block not-italic mb-20">
+            {{ contact_information:address | nl2br }}
+          </address>
+        {{ /if }}
 
-      {{ if contact_information:email }}
-        <a 
-          href="mailto:{{ contact_information:email }}" 
-          title="{{ "E-Mail Adresse" | trans }}"
-          class="block">
-          {{ contact_information:email }}
-        </a>
-      {{ /if }}
+        {{ if contact_information:email }}
+          <a 
+            href="mailto:{{ contact_information:email }}" 
+            title="{{ "E-Mail Adresse" | trans }}"
+            class="block">
+            {{ contact_information:email }}
+          </a>
+        {{ /if }}
 
-      {{ if contact_information:phone }}
-        <a 
-          href="tel:{{ contact_information:phone }}" 
-          title="{{ "Telefonnummer" | trans }}"
-          class="block">
-          T {{ contact_information:phone }}
-        </a>
-      {{ /if }}
+        {{ if contact_information:phone }}
+          <a 
+            href="tel:{{ contact_information:phone }}" 
+            title="{{ "Telefonnummer" | trans }}"
+            class="block">
+            T {{ contact_information:phone }}
+          </a>
+        {{ /if }}
 
+      </div>
+      {{ partial:menu/footer/wrapper class="col-span-full md:col-span-3 md:flex md:justify-end" }}
     </div>
-    {{ partial:menu/footer/wrapper }}
   {{ /partial:layout/inner }}
 </footer>
 {{ vite src="resources/js/app.js" }}

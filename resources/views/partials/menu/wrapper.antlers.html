@@ -7,7 +7,11 @@
   x-transition:leave="transition ease-in duration-150"
   x-transition:leave-start="translate-x-0"
   x-transition:leave-end="translate-x-full"
-  class="bg-white fixed right-0 top-0 md:bg-transparent md:relative md:!block md:!translate-x-0">
-  {{ partial:menu/main/wrapper }}
-  {{ partial:menu/meta/wrapper }}
+  class="bg-white fixed right-0 top-0 z-40 w-1/2 h-full md:w-auto md:h-auto md:bg-transparent md:relative md:!block md:!translate-x-0">
+  <div class="flex flex-col">
+    {{ partial:menu/main/wrapper class="order-1" }}
+    {{ partial:menu/language/wrapper class="order-3" }}
+    {{ partial:menu/meta/wrapper class="order-2" }}
+    {{ partial:partials/misc/social-media-channels class="order-4" }}
+  </div>
 </div>

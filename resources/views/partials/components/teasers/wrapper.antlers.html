@@ -1,0 +1,22 @@
+{{ if teaser }}
+  <div class="grid grid-cols-12 gap-16">
+    {{ teaser }}
+      <div class="col-span-6">
+        {{ if link }}
+          <a href="{{ link }}" class="group no-underline">
+            {{ partial:components/media/image/teaser }}
+            <h2 class="font-acumin-medium font-medium text-md mb-20 mt-10">{{ title }}</h2>
+            {{ text ?? '' }}
+            {{ if link_text }}
+              <span class="underline group-hover:no-underline">{{ link_text }}</span>
+            {{ /if }}
+          </a>
+        {{ else }}
+          {{ partial:components/media/image/teaser }}
+          <h2 class="font-acumin-medium font-medium text-md mb-20 mt-10">{{ title }}</h2>
+          {{ text ?? '' }}
+        {{ /if }}
+      </div>
+    {{ /teaser }}
+  </div>
+{{ /if }}

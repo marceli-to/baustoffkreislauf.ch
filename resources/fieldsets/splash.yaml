@@ -1,0 +1,87 @@
+title: Störer
+fields:
+  -
+    handle: hint_federation
+    field:
+      default: false
+      type: toggle
+      display: 'Hinweis Verbände'
+      icon: toggle
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      instructions: 'Falls aktiviert, wird der globale Hinweistext übernommen. Dieser ist bearbeitbar in «Globals».'
+  -
+    handle: text
+    field:
+      buttons:
+        - bold
+        - removeformat
+        - anchor
+      smart_typography: false
+      save_html: false
+      inline: false
+      toolbar_mode: floating
+      reading_time: false
+      word_count: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      remove_empty_nodes: true
+      antlers: false
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      always_show_set_button: false
+      collapse: false
+      previews: true
+      type: bard
+      display: Text
+      icon: bard
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        hint_federation: 'equals false'
+  -
+    handle: link
+    field:
+      collections:
+        - pages
+      container: assets
+      type: link
+      display: Link
+      icon: link
+      localizable: false
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        hint_federation: 'equals false'
+  -
+    handle: link_text
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Linktext
+      icon: text
+      localizable: false
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        hint_federation: 'equals false'

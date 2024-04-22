@@ -2,18 +2,18 @@
 <html lang="{{ site:short_locale }}" class="scroll-smooth overflow-y-scroll">
 <head>
 <meta charset="utf-8">
-{{ if is_homepage }}<title>Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband</title>{{ else }}<title>{{ open_graph_title ?? title ?? site:name }} | Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband</title>{{ endif }}
+{{ if is_homepage }}<title>{{ "Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband" | trans }}</title>{{ else }}<title>{{ open_graph_title ?? title ?? site:name }} | {{ "Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband" | trans }}</title>{{ endif }}
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ if  open_graph_description }}<meta name="description" content="{{ open_graph_description }}">{{ else }}<meta name="description" content="{{ config.client.meta_description }}">{{ /if}}
-{{ if is_homepage }}<meta property="og:title" content="Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband">{{ else }}<meta property="og:title" content="{{ open_graph_title ?? title ?? site:name }} | Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband">{{ endif }}
+{{ if is_homepage }}<meta property="og:title" content="{{ "Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband" | trans }}">{{ else }}<meta property="og:title" content="{{ open_graph_title ?? title ?? site:name }} | {{ "Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband" | trans }}">{{ endif }}
 {{ if  open_graph_description }}<meta name="og:description" content="{{ open_graph_description }}">{{ else }}<meta property="og:description" content="{{ config.client.meta_description }}">{{ /if }}
 {{ if open_graph_image }}<meta property="og:image" content="{{ config.client.base_url }}{{ open_graph_image:url }}"> {{ else }}<meta property="og:image" content="{{ config.client.base_url }}/opengraph.png">{{ /if }}
 <meta property="og:url" content="{{ current_url }}">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 {{ if  open_graph_description }}<meta name="twitter:description" content="{{ open_graph_description }}">{{ else }}<meta name="twitter:description" content="{{ config.client.meta_description }}">{{ /if }}
-{{ if is_homepage }}<meta name="twitter:title" content="Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband">{{ else }}<meta name="twitter:title" content="{{ open_graph_title ?? title ?? site:name }} | Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband">{{ endif }}
+{{ if is_homepage }}<meta name="twitter:title" content="{{ "Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband" | trans }}">{{ else }}<meta name="twitter:title" content="{{ open_graph_title ?? title ?? site:name }} | {{ "Baustoff Kreislauf Schweiz – der Kies- Beton und Recyclingverband" | trans }}">{{ endif }}
 {{ if open_graph_image }}<meta property="twitter:image" content="{{ config.client.base_url }}{{ open_graph_image }}">{{ else }}<meta property="twitter:image" content="{{ config.client.base_url }}/opengraph.png">{{ /if }}
 <meta name="csrf-token" content="{{ csrf_token }}">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

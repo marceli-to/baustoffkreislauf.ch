@@ -1,13 +1,6 @@
 ---
-id: home
-blueprint: pages
-title: Home
-author: 3f4934a7-72ef-446c-bf12-5336d13e6898
-updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713772465
-template: default
-layout: layout/default
-debug: true
+id: 72202f05-a36c-469d-8b32-4ed00dd38fe3
+origin: home
 page_elements:
   -
     id: lv9c16y7
@@ -59,14 +52,12 @@ page_elements:
               -
                 type: text
                 text: 'Abonnieren Sie den Newsletter von Baustoff Kreislauf Schweiz!'
+        link: 'entry::ad9fe7ab-5693-4833-bcd7-c57e8ea04f5a'
         link_text: 'Jetzt abonnieren.'
         type: teaser
         enabled: true
     type: teasers
     enabled: true
-  -
-    id: lv9g97w2
-    hint_federation: true
-    type: splash
-    enabled: true
+updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
+updated_at: 1713693373
 ---

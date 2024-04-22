@@ -1,0 +1,65 @@
+title: Team
+fields:
+  -
+    handle: text
+    field:
+      buttons:
+        - bold
+        - unorderedlist
+        - removeformat
+        - anchor
+      smart_typography: false
+      save_html: false
+      inline: false
+      toolbar_mode: floating
+      reading_time: false
+      word_count: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      remove_empty_nodes: true
+      antlers: false
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      always_show_set_button: false
+      collapse: false
+      previews: true
+      type: bard
+      display: Text
+      icon: bard
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: team_members
+    field:
+      collapse: false
+      previews: true
+      fullscreen: true
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          instructions: null
+          icon: null
+          sets:
+            team_member:
+              display: Teammitglied
+              instructions: 'Teammitglied hinzufügen'
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: team_member
+      type: replicator
+      display: Teammitglieder
+      icon: replicator
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
