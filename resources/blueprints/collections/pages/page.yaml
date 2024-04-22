@@ -62,6 +62,13 @@ tabs:
                       fields:
                         -
                           import: splash
+                    image:
+                      display: Bild
+                      instructions: 'Einzelnes Bild hinzufügen'
+                      icon: media-image-picture-orientation
+                      fields:
+                        -
+                          import: image
               type: replicator
               display: Inhalte
               icon: replicator

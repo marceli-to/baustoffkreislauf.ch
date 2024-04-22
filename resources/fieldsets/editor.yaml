@@ -41,3 +41,16 @@ fields:
       hide_display: false
       container: assets
       localizable: true
+      sets:
+        press_release:
+          display: Medienmitteilung
+          instructions: null
+          icon: download-arrow-down
+          sets:
+            press_release:
+              display: Medienmitteilung
+              instructions: null
+              icon: download-arrow-down
+              fields:
+                -
+                  import: press_release

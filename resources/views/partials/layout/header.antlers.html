@@ -1,18 +1,18 @@
-<header class="bg-white sticky top-0 z-20 w-full">
-  {{ partial:layout/inner class="relative" }}
+<header class="bg-white sticky top-0 z-20 w-full h-100 md:h-auto md:pt-20">
+  {{ partial:layout/inner class="relative h-100 flex justify-between items-center md:hidden" }}
     <a 
       href="{{ site:url }}" 
       title="Home"
       :class="{ 'is-active': menu === true }"
-      class="group">
-      {{ partial:icons/logo class="block w-auto" }}
+      class="group block w-[calc(100%_-_40px)]">
+      {{ partial:icons/logo class="block w-auto h-50" }}
     </a>
     <a 
       href="javascript:;" 
       x-on:click="menu = ! menu" 
       title="{{ "Menü anzeigen" | trans }}"
       :class="{ 'is-active': menu === true }"
-      class="group fixed right-16 top-16 z-50 flex justify-end md:hidden">
+      class="group fixed right-15 top-33 z-50 w-24 h-26 flex items-center justify-center">
       <span x-show="menu === false">
         {{ partial:icons/burger class="w-24 h-auto" }}
       </span>
@@ -21,5 +21,23 @@
       </span>
     </a>
     {{ partial:menu/wrapper }}
+  {{ /partial:layout/inner }}
+
+  {{ partial:layout/inner class="relative hidden md:grid md:grid-cols-12 md:gap-16" }}
+    <div class="col-span-10">
+      <a 
+        href="{{ site:url }}" 
+        title="Home"
+        :class="{ 'is-active': menu === true }"
+        class="group block md:mt-20 xl:mt-30 2xl:-translate-x-109">
+        {{ partial:icons/logo class="block w-auto h-60 xl:h-80" }}
+      </a>
+      {{ partial:menu/main/wrapper class="mt-30 xl:mt-50" }}
+    </div>
+    <div class="col-span-2 flex flex-col gap-y-20 justify-between items-end">
+      {{ partial:partials/misc/social-media-channels }}
+      {{ partial:menu/meta/wrapper }}
+      {{ partial:menu/language/wrapper }}
+    </div>
   {{ /partial:layout/inner }}
 </header>

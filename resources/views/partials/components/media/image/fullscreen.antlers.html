@@ -13,7 +13,7 @@
       title="{{ image:alt }}" 
       height="{{ image:height }}" 
       width="{{ image:width }}"
-      class="block w-full h-full object-cover aspect-[16/8] md:aspect-[16/7] lg:aspect-[16/6] xl:aspect-[16/5] {{ class ?? '' }}"
+      class="block w-full h-auto {{ class ?? '' }}"
       loading="lazy">
   </picture>
 </figure>

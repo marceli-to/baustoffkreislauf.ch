@@ -2,7 +2,7 @@
   {{ partial:components/media/image/fullscreen }}
 {{ /if }}
 
-<section class="col-span-full md:col-span-10 md:col-start-2">
+<section class="col-span-full xl:col-span-10">
 
   {{ if type == 'team' }}
     {{ partial:components/team/wrapper }}
@@ -12,8 +12,22 @@
     {{ partial:components/teasers/wrapper }}
   {{ /if }}
 
+  {{ if type == 'image' }}
+    {{ partial:components/media/image/fullscreen }}
+  {{ /if }}
+
   {{ if type == 'editor' }}
     {{ content  }}
+
+    {{ if type == 'text'}}
+      {{ text }}
+    {{ /if }}
+
+    {{ if type == 'press_release'}}
+      [press_release]
+    {{ /if }}
+
+    {{ /content  }}
   {{ /if }}
   
 </section>
