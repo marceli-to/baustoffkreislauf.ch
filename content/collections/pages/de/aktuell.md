@@ -4,10 +4,10 @@ blueprint: pages
 title: Aktuell
 author: 3f4934a7-72ef-446c-bf12-5336d13e6898
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713808685
+updated_at: 1713809371
 template: default
 layout: layout/default
-debug: true
+debug: false
 page_elements:
   -
     id: lv9c16y7

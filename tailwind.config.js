@@ -16,6 +16,7 @@ export default {
 
       screens: {
         'xs': '414px',
+        'huge': '1180px',
       },
       
       fontFamily: {
