@@ -45,6 +45,10 @@ export default {
       listStyleType: {
         square: 'square',
       },
+
+      textUnderlineOffset: {
+        12: '12px',
+      }
     },
 
     spacing: {
