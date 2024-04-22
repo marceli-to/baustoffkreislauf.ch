@@ -4,9 +4,9 @@
   {{ /if }}
 
   {{ if team_members }}
-    <div class="grid grid-cols-12 gap-16">
+    <div class="grid grid-cols-12 lg:grid-cols-10 gap-x-15 lg:gap-x-20">
       {{ team_members }}
-        <div class="col-span-6 md:col-span-4">
+        <div class="col-span-6 sm:col-span-4 lg:col-span-3">
           {{ partial:components/media/image/portrait }}
           <h3>{{ firstname }} {{ name }}</h3>
           {{ position ?? '' }}

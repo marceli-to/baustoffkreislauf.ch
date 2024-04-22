@@ -1,10 +1,10 @@
-<div class="inline-flex w-auto items-end space-x-10 {{ class }}">
+<div class="inline-flex w-auto items-end space-x-10 xl:space-x-15 {{ class }}">
   {{ if social_media_channels:facebook }}
     <a 
       href="{{ social_media_channels:facebook }}" 
       target="_blank" 
       title="Baustoff Kreislauf Schweiz auf Facebook">
-      {{ partial:icons/facebook class="block w-auto h-20" }}
+      {{ partial:icons/facebook class="block w-auto h-20 hover:text-lime transition-colors" }}
     </a>
   {{ /if }}
   {{ if social_media_channels:instagram }}
@@ -12,7 +12,7 @@
       href="{{ social_media_channels:instagram }}" 
       target="_blank" 
       title="Baustoff Kreislauf Schweiz auf Instagram">
-      {{ partial:icons/instagram class="block w-auto h-18" }}
+      {{ partial:icons/instagram class="block w-auto h-18 hover:text-lime transition-colors" }}
     </a>
   {{ /if }}
   {{ if social_media_channels:linkedin }}
@@ -20,7 +20,7 @@
       href="{{ social_media_channels:linkedin }}" 
       target="_blank" 
       title="Baustoff Kreislauf Schweiz auf LinkedIn">
-      {{ partial:icons/linkedin class="block w-auto h-18" }}
+      {{ partial:icons/linkedin class="block w-auto h-18 hover:text-lime transition-colors" }}
     </a>
   {{ /if }}
   {{ if social_media_channels:youtube }}
@@ -28,7 +28,7 @@
       href="{{ social_media_channels:youtube }}" 
       target="_blank" 
       title="Baustoff Kreislauf Schweiz auf Youtube">
-      {{ partial:icons/youtube class="block w-auto h-16" }}
+      {{ partial:icons/youtube class="block w-auto h-16 hover:text-lime transition-colors" }}
     </a>
   {{ /if }}
 </div> 

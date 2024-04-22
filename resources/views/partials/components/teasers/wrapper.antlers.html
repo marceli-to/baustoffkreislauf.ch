@@ -1,19 +1,23 @@
 {{ if teaser }}
-  <div class="grid grid-cols-12 gap-16">
+  <div class="grid grid-cols-12 gap-x-15 lg:gap-x-20">
     {{ teaser }}
-      <div class="col-span-6">
+      <div class="mb-30 md:mb-0 last-of-type:mb-0 col-span-full sm:col-span-6">
         {{ if link }}
           <a href="{{ link }}" class="group no-underline">
             {{ partial:components/media/image/teaser }}
-            <h2 class="font-acumin-medium font-medium text-md mb-20 mt-10">{{ title }}</h2>
+            <h2 class="mb-20 xl:mb-30 mt-10">
+              {{ title }}
+            </h2>
             {{ text ?? '' }}
             {{ if link_text }}
-              <span class="underline group-hover:no-underline">{{ link_text }}</span>
+              <span class="underline underline-offset-4 decoration-1 group-hover:no-underline">{{ link_text }}</span>
             {{ /if }}
           </a>
         {{ else }}
           {{ partial:components/media/image/teaser }}
-          <h2 class="font-acumin-medium font-medium text-md mb-20 mt-10">{{ title }}</h2>
+          <h2 class="mb-20 xl:mb-30 mt-10">
+            {{ title }}
+          </h2>
           {{ text ?? '' }}
         {{ /if }}
       </div>

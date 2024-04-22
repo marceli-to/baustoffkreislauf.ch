@@ -16,15 +16,16 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+main section:not(:last-of-type) {
+  @apply mb-30 xl:mb-50
 }
 
-main p {
-  @apply mb-20
+main p:not(:last-child) {
+  @apply mb-20 xl:mb-30
 }
 
 main p.lead {
-  @apply font-acumin-bold font-bold text-lg md:text-xl leading-[1.2] mb-40 md:mb-60
+  @apply font-acumin-bold font-bold text-lg md:text-xl xl:text-xl leading-[1.2]
 }
 
 main a {
@@ -32,11 +33,11 @@ main a {
 }
 
 main ul {
-  @apply p-0 m-0 mb-20 ml-16 list-square
+  @apply p-0 m-0 mb-15 xl:mb-20 ml-16 list-square
 }
 
 main ul li::marker {
-  @apply text-xxs bg-yellow-50 w-20 h-20 block
+  @apply text-xxs w-20 h-20 block
 }
 
 strong {

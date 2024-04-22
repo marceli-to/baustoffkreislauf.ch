@@ -1,9 +1,9 @@
 h1 {
-  @apply font-acumin-medium font-medium text-xl
+  @apply font-acumin-medium font-medium text-lg md:text-xl xl:text-2xl leading-[1.2] xl:leading-[1.1] mb-20 xl:mb-30
 }
 
 h2 {
-  @apply font-acumin-medium font-medium
+  @apply font-acumin-medium font-medium text-md md:text-lg xl:text-xl leading-[1.2] xl:leading-[1.1] mb-10 xl:mb-20
 }
 
 h3 {
