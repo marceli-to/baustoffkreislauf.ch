@@ -1,11 +1,11 @@
 title: Settings
 fields:
   -
-    handle: debug
+    handle: has_pattern
     field:
       default: false
       type: toggle
-      display: Debug
+      display: 'Background Pattern'
       icon: toggle
       localizable: false
       listable: hidden
@@ -35,6 +35,19 @@ fields:
       type: template
       display: Layout
       icon: template
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: debug
+    field:
+      default: false
+      type: toggle
+      display: Debug
+      icon: toggle
       localizable: false
       listable: hidden
       instructions_position: above

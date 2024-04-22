@@ -4,5 +4,6 @@ blueprint: page
 title: Impressum
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713633263
+updated_at: 1713812366
+has_pattern: true
 ---
