@@ -1,7 +1,7 @@
 ---
 id: e5929a57-c53a-4f5d-9aa2-147e773fbf9f
 blueprint: page
-title: Publikationen
+title: 'Publikationen und Produkte'
 page_elements:
   -
     id: lvarz8nh
@@ -92,5 +92,6 @@ page_elements:
     enabled: true
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713800274
+updated_at: 1713859111
+has_pattern: false
 ---

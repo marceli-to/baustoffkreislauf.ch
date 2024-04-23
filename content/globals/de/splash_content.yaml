@@ -1,0 +1,38 @@
+text:
+  -
+    type: heading
+    attrs:
+      level: 2
+    content:
+      -
+        type: text
+        text: 'Zurzeit finden Sie die entsprechenden Informationen noch auf den Websites der ehemaligen Verbände FSKB und arv.'
+  -
+    type: paragraph
+    attrs:
+      class: null
+    content:
+      -
+        type: text
+        marks:
+          -
+            type: link
+            attrs:
+              href: 'https://www.fskb.ch/'
+              rel: null
+              target: _blank
+              title: null
+        text: 'Weiter zum FSKB'
+      -
+        type: hardBreak
+      -
+        type: text
+        marks:
+          -
+            type: link
+            attrs:
+              href: 'https://www.arv.ch/de/'
+              rel: null
+              target: _blank
+              title: null
+        text: 'Weiter zum arv'
