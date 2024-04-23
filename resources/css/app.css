@@ -45,5 +45,5 @@ strong {
 }
 
 .bg-pattern {
-  @apply bg-[url('../img/pattern.svg')] bg-no-repeat bg-[length:70%_auto] sm:bg-[length:60%_auto] md:bg-[length:50%_auto] bg-[position:top_0_right_0] bg-opacity-10 pt-30 xl:pt-60;
+  @apply bg-[url('../img/pattern.svg')] bg-no-repeat bg-[length:70%_auto] sm:bg-[length:60%_auto] md:bg-[length:50%_auto] bg-[position:top_0_right_0] bg-opacity-10;
 }

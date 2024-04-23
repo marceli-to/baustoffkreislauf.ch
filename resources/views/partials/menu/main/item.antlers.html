@@ -1,9 +1,51 @@
-<li class="border-b-black border-b md:border-0">
+{{ if children }}
+<li class="border-b-black border-b md:border-0 relative group" x-data="{ submenu: false }">
+  <span class="flex w-full pl-20 pr-15  md:p-0 justify-between items-center">
+    <a 
+      href="{{ url }}" 
+      class="w-full py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black hover:no-underline group-hover:!no-underline md:underline-offset-12 {{ is_current || is_parent ? 'text-lime md:text-black md:underline' : '' }}"
+      target="{{ is_external ? '_blank' : '_self' }}"
+      title="{{ title }}">
+      {{ title }}
+    </a>
+    {{ if children }}
+      <a href="javascript:;" x-on:click="submenu = ! submenu">
+        {{ partial:icons/chevron-down class="w-20 h-auto md:hidden" }}
+      </a>
+    {{ /if }}
+  </span>
+  {{ if children }}
+    <div 
+      class="md:absolute md:left-0 md:hidden group-hover:md:!block md:pt-10 xl:pt-15 md:pb-5 xl:pb-10 md:bg-white md:z-50"
+      x-show="submenu">
+      <ul class="{{ is_current || is_parent ? '' : '' }}">
+        {{ children }}
+          {{ partial:menu/main/item-child }}
+        {{ /children }}
+      </ul>
+    </div>
+  {{ /if }}
+</li>
+{{ else }}
+<li class="border-b-black border-b md:border-0 relative group">
   <a 
     href="{{ url }}" 
-    class="block w-full px-20 py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold md:hover:underline md:underline-offset-12 {{ is_current || is_parent ? 'text-lime md:text-black md:underline' : '' }}"
+    class="block w-full pl-20 pr-15 py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black md:hover:underline md:underline-offset-12 {{ is_current || is_parent ? 'text-lime md:text-black md:underline' : '' }}"
     target="{{ is_external ? '_blank' : '_self' }}"
     title="{{ title }}">
     {{ title }}
+    {{ if children }}
+      {{ partial:icons/chevron-down class="w-20 h-auto" }}
+    {{ /if }}
   </a>
+  {{ if children }}
+    <div class="absolute left-0 hidden group-hover:md:block md:pt-10 xl:pt-15 md:pb-5 xl:pb-10 bg-white z-50">
+      <ul class="{{ is_current || is_parent ? '' : '' }}">
+        {{ children }}
+          {{ partial:menu/main/item-child }}
+        {{ /children }}
+      </ul>
+    </div>
+  {{ /if }}
 </li>
+{{ /if }}

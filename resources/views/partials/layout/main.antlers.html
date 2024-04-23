@@ -1,5 +1,5 @@
-<main role="main" class="w-full flex-grow py-30 xl:py-45">
-  {{ partial:layout/inner class="{{ has_pattern ? 'bg-pattern min-h-[320px]' : ''}}" }}
+<main role="main" class="w-full flex-grow py-30 xl:py-60 {{ has_pattern ? '!pt-10' : ''}}">
+  {{ partial:layout/inner class="{{ has_pattern ? 'bg-pattern min-h-[320px] pt-20 xl:pt-50' : ''}}" }}
     <div class="grid grid-cols-12 gap-x-15 lg:gap-x-20">
       {{ template_content }}
     </div>

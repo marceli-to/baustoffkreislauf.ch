@@ -7,5 +7,5 @@ h2 {
 }
 
 h3 {
-  @apply font-acumin-medium font-medium
+  @apply font-acumin-medium font-medium text-base md:text-md xl:text-lg
 }

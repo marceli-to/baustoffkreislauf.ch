@@ -32,9 +32,9 @@ export default {
         'sm': '1rem',       // 16px
         'base': '1.25rem',  // 18px
         'md': '1.375rem',   // 22px
-       'lg': '1.625rem',    // 26px
-       'xl': '2.375rem',    // 38px
-       '2xl': '3.125rem',   // 50px
+        'lg': '1.625rem',    // 26px
+        'xl': '2.375rem',    // 38px
+        '2xl': '3.125rem',   // 50px
       },
 
       colors: {
