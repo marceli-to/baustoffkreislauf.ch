@@ -1,9 +1,9 @@
 {{ if teaser }}
-  <div class="grid grid-cols-12 gap-x-15 lg:gap-x-20">
+  <div class="grid grid-cols-12 gap-x-15 lg:gap-x-20 gap-y-30 lg:gap-y-60">
     {{ teaser }}
       <div class="mb-30 md:mb-0 last-of-type:mb-0 col-span-full sm:col-span-6">
         {{ if link }}
-          <a href="{{ link }}" class="group no-underline">
+          <a href="{{ link }}" target="{{ link | is_external_url ? '_blank' : '_self' }}" class="group no-underline">
             {{ partial:components/media/image/teaser }}
             <h2 class="mb-20 xl:mb-30 mt-10">
               {{ title }}

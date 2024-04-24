@@ -16,7 +16,7 @@ fields:
       replicator_preview: true
       hide_display: false
   -
-    handle: open_graph_description
+    handle: meta_description
     field:
       antlers: false
       type: textarea
@@ -26,6 +26,19 @@ fields:
       localizable: true
       listable: hidden
       instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: meta_keywords
+    field:
+      antlers: false
+      type: textarea
+      display: Keywords
+      icon: textarea
+      localizable: true
+      listable: hidden
+      instructions_position: above
       visibility: visible
       replicator_preview: true
       hide_display: false

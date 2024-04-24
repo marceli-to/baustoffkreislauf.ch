@@ -1,4 +1,4 @@
-<footer class="bg-turquoise font-acumin-medium font-medium leading-[1.4] w-full py-20">
+<footer class="bg-turquoise font-acumin-medium font-medium text-md md:text-xs xl:text-sm leading-[1.4] w-full py-20">
   {{ partial:layout/inner }}
     <div class="grid grid-cols-12 gap-x-15 lg:gap-x-20">
       <div class="col-span-full md:col-span-8">
@@ -13,7 +13,7 @@
           <a 
             href="mailto:{{ contact_information:email }}" 
             title="{{ "E-Mail Adresse" | trans }}"
-            class="block">
+            class="block hover:underline underline-offset-2 decoration-1">
             {{ contact_information:email }}
           </a>
         {{ /if }}
@@ -22,7 +22,7 @@
           <a 
             href="tel:{{ contact_information:phone }}" 
             title="{{ "Telefonnummer" | trans }}"
-            class="block">
+            class="block hover:underline underline-offset-2 decoration-1">
             T {{ contact_information:phone }}
           </a>
         {{ /if }}

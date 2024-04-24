@@ -1,7 +1,7 @@
 ---
 id: 72202f05-a36c-469d-8b32-4ed00dd38fe3
 origin: home
-title: Actuel
+title: Home
 page_elements:
   -
     id: lv9c16y7
@@ -59,6 +59,7 @@ page_elements:
         enabled: true
     type: teasers
     enabled: true
+meta_description: null
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713799404
+updated_at: 1713982951
 ---

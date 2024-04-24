@@ -17,7 +17,7 @@ html {
 }
 
 main section:not(:last-of-type) {
-  @apply mb-30 xl:mb-50
+  @apply mb-30 xl:mb-60
 }
 
 main p:not(:last-child) {
