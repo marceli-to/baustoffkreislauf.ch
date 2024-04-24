@@ -20,12 +20,20 @@
     {{ partial:components/splash }}
   {{ /if }}
 
+  {{ if type == 'newsletter_form' }}
+    {{ partial:forms/newsletter }}
+  {{ /if }}
+
   {{ if type == 'editor' }}
 
     {{ content  }}
 
       {{ if type == 'text'}}
         {{ text }}
+      {{ /if }}
+
+      {{ if type == 'newsletter_form' }}
+        {{ partial:forms/newsletter }}
       {{ /if }}
 
       {{ if type == 'press_release'}}

@@ -1,0 +1,102 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: language
+            field:
+              options:
+                german: Deutsch
+                french: Französisch
+                italian: Italienisch
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              default: german
+              type: select
+              display: Sprache
+              icon: select
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              max_items: 1
+          -
+            handle: salutation
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Anrede
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: email
+            field:
+              input_type: email
+              antlers: false
+              type: text
+              display: E-Mail
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: firstname
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Vorname
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: name
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Name
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: company
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Firma
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

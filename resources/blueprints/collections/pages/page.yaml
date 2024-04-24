@@ -69,6 +69,13 @@ tabs:
                       fields:
                         -
                           import: image
+                    newsletter_form:
+                      display: 'Newsletter Formular'
+                      instructions: 'Newsletter Formular hinzufügen'
+                      icon: form-text-field
+                      fields:
+                        -
+                          import: newsletter_form
               type: replicator
               display: Inhalte
               icon: replicator

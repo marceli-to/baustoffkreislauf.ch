@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 @import "typo/webfonts.css";
 @import "components/headings.css";
+@import "components/form.css";
 @import "utils.css";
 
 * {

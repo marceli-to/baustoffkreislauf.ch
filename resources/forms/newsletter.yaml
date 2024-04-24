@@ -1,0 +1,10 @@
+title: Newsletter
+honeypot: webs1te
+email:
+  -
+    id: lve7m5f2
+    to: '{email}'
+    from: no-reply@baustoffkreislauf.ch
+    reply_to: no-reply@baustoffkreislauf.ch
+    subject: 'Newsletter Anmeldung'
+    mailer: smtp

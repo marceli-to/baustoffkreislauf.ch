@@ -42,10 +42,10 @@ fields:
       container: assets
       localizable: true
       sets:
-        press_release:
-          display: Medienmitteilung
+        page_elements:
+          display: Inhaltselemente
           instructions: null
-          icon: download-arrow-down
+          icon: dashboard-layout
           sets:
             press_release:
               display: Medienmitteilung
@@ -54,3 +54,10 @@ fields:
               fields:
                 -
                   import: press_release
+            newsletter_form:
+              display: 'Newsletter Formular'
+              instructions: 'Newsletter Formular hinzufügen'
+              icon: form-text-field
+              fields:
+                -
+                  import: newsletter_form

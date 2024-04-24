@@ -1,0 +1,32 @@
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea,
+select {
+  @apply w-full py-10 px-10 text-base bg-transparent border-black border rounded-md !ring-0 focus:outline-none focus:!ring-0 focus:border-turquoise  focus:text-black placeholder:text-black
+}
+
+.has-error input[type=text],
+.has-error input[type=email],
+.has-error input[type=tel],
+.has-error textarea,
+.has-error select {
+  @apply bg-red-600 text-white
+}
+
+label:has(+ input[type=text]:focus),
+label:has(+ input[type=email]:focus) {
+
+}
+
+.has-error label {
+  @apply text-red-600 font-acumin-black font-extrabold
+}
+
+select {
+  @apply bg-right-center bg-transparent appearance-none bg-dropdown bg-no-repeat accent-transparent mt-5 lg:mt-10
+}
+
+textarea {
+  @apply min-h-[120px] lg:min-h-[240px];
+} 
