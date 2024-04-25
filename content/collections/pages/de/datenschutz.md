@@ -4,7 +4,7 @@ blueprint: page
 title: Datenschutz
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713985546
+updated_at: 1714032218
 page_elements:
   -
     id: lve6m0ps
@@ -1461,4 +1461,5 @@ page_elements:
     type: editor
     enabled: true
 has_pattern: false
+page_class: privacy
 ---

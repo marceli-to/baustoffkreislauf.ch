@@ -4,7 +4,7 @@ blueprint: page
 title: Impressum
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713985627
+updated_at: 1714032208
 has_pattern: true
 page_elements:
   -
@@ -155,4 +155,5 @@ page_elements:
             text: 'Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich Baustoff Kreislauf Schweiz oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.'
     type: editor
     enabled: true
+page_class: privacy
 ---

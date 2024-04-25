@@ -24,7 +24,7 @@ label:has(+ input[type=email]:focus) {
 }
 
 select {
-  @apply bg-right-center bg-transparent appearance-none bg-dropdown bg-no-repeat accent-transparent mt-5 lg:mt-10
+  @apply bg-right-center bg-transparent appearance-none bg-dropdown bg-[length:22px_auto] bg-no-repeat accent-transparent mt-5 lg:mt-10
 }
 
 textarea {
