@@ -21,7 +21,29 @@ page_elements:
         content:
           -
             type: text
-            text: 'As aut omnis aut quae nam quistibus magname recabor ernatur, cum aut elenihit et que nam reperes citios as re net hario maior se velescit facessume omnim volo demos que voluptios nis modisimus ut ut possi arci nimusam dunt harchiciis doluptatem vent etum- qui beritat.'
+            text: 'Baustoff Kreislauf Schweiz stellt interessierten Kreisen verschiedene Publikationen und Produkte zur Verfügung. Diese werden fortlaufend angekündigt und hier zur Verfügung gestellt.'
+      -
+        type: heading
+        attrs:
+          level: 3
+        content:
+          -
+            type: text
+            text: Info-Flyer
+      -
+        type: paragraph
+        attrs:
+          class: null
+        content:
+          -
+            type: text
+            text: 'Mineralische Recycling-Baustoffe: Verwendungsempfehlungen für Bauherren, Planer, Architekten und Ingenieure (Stand: April 2024)'
+    type: editor
+    enabled: true
+  -
+    id: lvf1lrxy
+    hint_federation: false
+    text:
       -
         type: heading
         attrs:
@@ -29,7 +51,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Politik Subline'
+            text: 'Alle weiteren Publikationen, Vorlagen, Produkte und Stellungnahmen sowie alte Unterlagen finden Sie bis auf Weiteres auf den bisherigen Websites der beiden ehemaligen Verbänden:'
       -
         type: paragraph
         attrs:
@@ -37,61 +59,32 @@ page_elements:
         content:
           -
             type: text
-            text: 'Ra dunte prat diti officiundis mo volores serepudae porum et quam aut magnatur aditatq uassit eum, cuptionsequi dipsunt, quiatib usciis as soluptus demperit volor sum verferi- bus venimus in nimi, nossitatiunt doluptio blaccuptae. Nequatem. Et ut a ipsandios volo quatia eiciisc ipsuntiis ilianime voloreperes eos enimusaes dolorpore, sapit es inullabor autet ilias endendebis eum vel experati susdani eniscium rectum et re plab imporeria inum quae vene ius es et viderup taquis eos doluptaquam etur a pos dendebis eicip-'
-      -
-        type: paragraph
-        attrs:
-          class: null
-        content:
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.fskb.ch/alt'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: 'Fachverband der Kies- und Betonindustrie FSKB'
+          -
+            type: hardBreak
           -
             type: text
-            text: 'sa quis ea cuptatet quiaeri alicia nem qui omnit hilibusda nihitate corese lignime verrum dolenducium apero ditisciam iusdae ipictatus, voluptur, sed molesenet elicit exerionet ad ma culparchit, il eosseque odis nonse pliam et ut la dem voloratis nis erum cusdae volo- rib uscipidus doloressint, natur sit et dit fugia conetur minturent proratius.'
-      -
-        type: paragraph
-        attrs:
-          class: null
-        content:
-          -
-            type: text
-            text: 'Nes aute doluptatur simil earchil landandipis eos sunto berae ipsuntur?'
-    type: editor
-    enabled: true
-  -
-    id: lvas1afw
-    image: dummy-content-image.jpg
-    type: image
-    enabled: true
-  -
-    id: lvasc5p1
-    content:
-      -
-        type: heading
-        attrs:
-          level: 1
-        content:
-          -
-            type: text
-            text: Medienmitteilungen
-      -
-        type: set
-        attrs:
-          id: lvascdbh
-          values:
-            type: press_release
-            date: '2024-04-22'
-            title: 'Medienmitteilung 1 Ime con recea quibus exerunt volenist ommo dolupta'
-      -
-        type: set
-        attrs:
-          id: lvasd0wc
-          values:
-            type: press_release
-            date: '2024-04-08'
-            title: 'Medienmitteilung 1 Ime con recea quibus exerunt volenist ommo dolupta'
-    type: editor
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.arv.ch/alt'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: 'arv Baustoffrecycling Schweiz'
+    type: splash
     enabled: true
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713859111
+updated_at: 1714037560
 has_pattern: false
 ---

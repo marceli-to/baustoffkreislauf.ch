@@ -4,7 +4,7 @@ blueprint: page
 title: Fachthemen
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713859309
+updated_at: 1714037127
 page_elements:
   -
     id: lvc3jal7
@@ -24,7 +24,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Baustoff Kreislauf Schweiz ist der Fachverband für die folgenden Themen:'
+            text: 'Baustoff Kreislauf Schweiz ist der Fachverband für die folgenden Themen:'
       -
         type: bulletList
         content:
@@ -38,7 +38,7 @@ page_elements:
                 content:
                   -
                     type: text
-                    text: 'Schliessen der Baustoff-Kreisläufe'
+                    text: 'Schliessen der Baustoff-Kreisläufe'
           -
             type: listItem
             content:
@@ -60,7 +60,7 @@ page_elements:
                 content:
                   -
                     type: text
-                    text: 'Produktion und Verwendung von Beton als Bauprodukt (Primärbeton & Recyclingbeton)'
+                    text: 'Produktion und Verwendung von Beton als Bauprodukt (Primärbeton & Recyclingbeton)'
           -
             type: listItem
             content:
@@ -71,7 +71,7 @@ page_elements:
                 content:
                   -
                     type: text
-                    text: 'Recycling von Aushub, Rückbaumaterial, Bausperrgut, Gewerbeabfall oder Altholz'
+                    text: 'Recycling von Aushub, Rückbaumaterial, Bausperrgut, Gewerbeabfall oder Altholz'
           -
             type: listItem
             content:
@@ -82,7 +82,7 @@ page_elements:
                 content:
                   -
                     type: text
-                    text: 'Schweizer Rohstoffversorgung und -entsorgung inkl. Altlasten'
+                    text: 'Schweizer Rohstoffversorgung und -entsorgung inkl. Sanieren von Altlasten'
           -
             type: listItem
             content:
@@ -104,7 +104,7 @@ page_elements:
                 content:
                   -
                     type: text
-                    text: 'Förderung der Biodiversität und Schaffen vielseitiger Lebensräume'
+                    text: 'Förderung der Biodiversität und Schaffen vielseitiger Lebensräume'
           -
             type: listItem
             content:
@@ -115,7 +115,7 @@ page_elements:
                 content:
                   -
                     type: text
-                    text: 'Rekultivierung durch Endgestaltung wertvoller Naturflächen'
+                    text: 'Rekultivierung durch Endgestaltung wertvoller Naturflächen'
           -
             type: listItem
             content:
@@ -127,17 +127,14 @@ page_elements:
                   -
                     type: text
                     text: 'Raumplanerische Themen'
+      -
+        type: paragraph
+        attrs:
+          class: null
+        content:
           -
-            type: listItem
-            content:
-              -
-                type: paragraph
-                attrs:
-                  class: null
-                content:
-                  -
-                    type: text
-                    text: 'In Zukunft werden interessierten Kreisen Fachinformationen zu diesen Themen zur Verfügung gestellt.'
+            type: text
+            text: 'In Zukunft werden interessierten Kreisen Fachinformationen zu diesen Themen zur Verfügung gestellt.'
     type: editor
     enabled: true
   -

@@ -4,7 +4,7 @@ blueprint: page
 title: Politik
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713858583
+updated_at: 1714036119
 page_elements:
   -
     id: lvc2atfm
@@ -24,7 +24,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Der Verband Baustoff Kreislauf Schweiz vertritt die Interessen der Kies-, Beton-, und Recyling-Branche und steht hierfür im stetigen Austausch mit allen politischen Akteuren. In Zukunft finden Sie hier Ausführungen zu den wichtigsten Anliegen des Verbands sowie Stellungnahmen zu aktuellen politischen Geschäften.'
+            text: 'Der Verband Baustoff Kreislauf Schweiz vertritt die Interessen der Kies-, Beton-, und Recylingbranche und steht hierfür im stetigen Austausch mit allen politischen Akteuren. In Zukunft finden Sie hier Ausführungen zu den wichtigsten Anliegen des Verbands sowie Stellungnahmen zu aktuellen politischen Geschäften.'
     type: editor
     enabled: true
   -

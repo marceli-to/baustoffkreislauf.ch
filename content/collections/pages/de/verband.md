@@ -21,16 +21,15 @@ page_elements:
         content:
           -
             type: text
-            text: 'Baustoff Kreislauf Schweiz ist die Vereinigung von 4xx Mitgliedern aus der Schweizer Kies- Beton und Recyclingbranche. Vision, Strategie und Ziele sind Bestandteil der aktuellen Diskussionen innerhalb des Verbands. Im Fokus stehen dabei das Schaffen von guten politischen und rechtli-chen Rahmenbedingungen für die Mitglieder, die Themenführerschaft bei der primären und se-kundären Materialgewinnung, '
+            text: 'Baustoff Kreislauf Schweiz ist die Vereinigung von 4xx Mitgliedern aus der Schweizer Kies- Beton und Recyclingbranche. Vision, Strategie und Ziele sind Bestandteil der aktuellen Diskussionen innerhalb des Verbands.'
+      -
+        type: paragraph
+        attrs:
+          class: null
+        content:
           -
             type: text
-            marks:
-              -
-                type: bold
-            text: werterhaltenden
-          -
-            type: text
-            text: ' Kreislaufwirtschaft und Inverkehrbringen von mineralischen Baustoffe, die Vertretung der Interessen der Mitglieder gegenüber der Polik und den Behörden, das Fördern von Innovationen sowie das Aufzeigen der Stärken der Branche mit ihren aufgeschlossenen, verantwortungsvollen und innovativen Mitgliedern. '
+            text: 'Im Fokus der Verbandsaktivitäten werden das Schaffen von guten politischen und rechtlichen Rahmenbedingungen für die Mitglieder, die Themenführerschaft bei der primären und sekundären Materialgewinnung, werterhaltenden Kreislaufwirtschaft und Inverkehrbringen von mineralischen Baustoffe, die Vertretung der Interessen der Mitglieder gegenüber der Politik und den Behörden, das Fördern von Innovationen sowie das Aufzeigen der Stärken der Branche mit ihren aufgeschlossenen, verantwortungsvollen und innovativen Mitgliedern stehen. Zudem wird der Verband seinen Mitgliedern diverse Dienstleistungen anbieten, darunter auch umfassende Schulungs- und Weiterbildungsangebote. Weiterhin fester Bestandteil der Verbandsaktivitäten sind auch das Inspektorat sowie Dienstleistungen im Bereich Natur und Boden.'
     type: editor
     enabled: true
   -
@@ -49,10 +48,10 @@ page_elements:
             marks:
               -
                 type: bold
-            text: Vorstand
+            text: 'Vorstand '
           -
             type: text
-            text: ' ist für hierfür das leitende Gremium und setzt sich folgendermassen zusammen: '
+            text: 'ist das leitende Gremium und setzt sich folgendermassen zusammen:'
     team_members:
       -
         id: lv8j8373
@@ -80,9 +79,31 @@ page_elements:
         enabled: true
     type: team
     enabled: true
-meta_description: 'Baustoff Kreislauf Schweiz ist die Vereinigung von 4xx Mitgliedern aus der Schweizer Kies- Beton und Recyclingbranche. Vision, Strategie und Ziele sind Bestandteil der aktuellen Diskussionen innerhalb des Verbands. Im Fokus stehen dabei das Schaffen von guten politischen und rechtli-chen Rahmenbedingungen für die Mitglieder, die Themenführerschaft bei der primären und se-kundären Materialgewinnung, werterhaltenden Kreislaufwirtschaft und Inverkehrbringen von mineralischen Baustoffe, die Vertretung der Interessen der Mitglieder gegenüber der Polik und den Behörden, das Fördern von Innovationen sowie das Aufzeigen der Stärken der Branche mit ihren aufgeschlossenen, verantwortungsvollen und innovativen Mitgliedern.'
+  -
+    id: lvf1i9tj
+    text:
+      -
+        type: paragraph
+        attrs:
+          class: null
+        content:
+          -
+            type: text
+            text: 'Die '
+          -
+            type: text
+            marks:
+              -
+                type: bold
+            text: 'Mitarbeitenden der Geschäftsstelle '
+          -
+            type: text
+            text: 'setzen sich tatkräftig für die Ziele des Verbands ein:'
+    type: team
+    enabled: true
+open_graph_description: 'Baustoff Kreislauf Schweiz ist die Vereinigung von 4xx Mitgliedern aus der Schweizer Kies- Beton und Recyclingbranche. Vision, Strategie und Ziele sind Bestandteil der aktuellen Diskussionen innerhalb des Verbands. Im Fokus stehen dabei das Schaffen von guten politischen und rechtli-chen Rahmenbedingungen für die Mitglieder, die Themenführerschaft bei der primären und se-kundären Materialgewinnung, werterhaltenden Kreislaufwirtschaft und Inverkehrbringen von mineralischen Baustoffe, die Vertretung der Interessen der Mitglieder gegenüber der Polik und den Behörden, das Fördern von Innovationen sowie das Aufzeigen der Stärken der Branche mit ihren aufgeschlossenen, verantwortungsvollen und innovativen Mitgliedern.'
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713864121
+updated_at: 1714037229
 has_pattern: false
 ---
