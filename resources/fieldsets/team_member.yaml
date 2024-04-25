@@ -56,6 +56,24 @@ fields:
         - required
       width: 50
   -
+    handle: email
+    field:
+      input_type: text
+      default: '{{firstname}}.{{name}}@baustoffkreislauf.ch'
+      antlers: false
+      type: text
+      display: E-Mail
+      icon: text
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      validate:
+        - required
+      autocomplete: name
+  -
     handle: position
     field:
       input_type: text

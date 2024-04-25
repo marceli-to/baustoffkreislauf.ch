@@ -63,6 +63,7 @@ page_elements:
         position: Präsident
         type: team_member
         enabled: true
+        email: 'Lionel.Lathion@baustoffkreislauf.ch'
       -
         id: lvf64fw0
         firstname: Christoph
@@ -71,6 +72,7 @@ page_elements:
         type: team_member
         enabled: true
         image: portraits/christoph_duijts.jpg
+        email: 'Christoph.Duijts@baustoffkreislauf.ch'
       -
         id: lvf64s10
         image: portraits/martin_eberhard.jpg
@@ -78,6 +80,7 @@ page_elements:
         name: Eberhard
         type: team_member
         enabled: true
+        email: 'Martin.Eberhard@baustoffkreislauf.ch'
       -
         id: lvf65s4i
         image: portraits/pascal_mueller.jpg
@@ -85,6 +88,7 @@ page_elements:
         name: Müller
         type: team_member
         enabled: true
+        email: 'Pascal.Mueller@baustoffkreislauf.ch'
       -
         id: lvf66bl8
         image: portraits/stephane_pilloud.jpg
@@ -92,6 +96,7 @@ page_elements:
         name: Pilloud
         type: team_member
         enabled: true
+        email: 'Stephane.Pilloud@baustoffkreislauf.ch'
       -
         id: lvf66sjp
         image: portraits/marcel_santeler.jpg
@@ -99,6 +104,7 @@ page_elements:
         name: Santeler
         type: team_member
         enabled: true
+        email: 'Marcel.Santeler@baustoffkreislauf.ch'
       -
         id: lvf675rr
         image: portraits/daniel_steck.jpg
@@ -106,6 +112,7 @@ page_elements:
         name: Steck
         type: team_member
         enabled: true
+        email: 'Daniel.Steck@baustoffkreislauf.ch'
       -
         id: lvf67jig
         image: portraits/matthias_steinegger.jpg
@@ -113,6 +120,7 @@ page_elements:
         name: Steinegger
         type: team_member
         enabled: true
+        email: 'Matthias.Steinegger@baustoffkreislauf.ch'
   -
     id: lvf1i9tj
     text:
@@ -143,6 +151,7 @@ page_elements:
         name: Haller
         type: team_member
         enabled: true
+        email: 'Beat.Haller@baustoffkreislauf.ch'
       -
         id: lvfa664e
         image: portraits/cecilia_gonzalez.jpg
@@ -150,6 +159,7 @@ page_elements:
         name: Gonzalez
         type: team_member
         enabled: true
+        email: 'Cecilia.Gonzalez@baustoffkreislauf.ch'
       -
         id: lvfa6oy5
         image: portraits/doris_hoesli.jpg
@@ -157,6 +167,7 @@ page_elements:
         name: Hösli
         type: team_member
         enabled: true
+        email: 'Doris.Hösli@baustoffkreislauf.ch'
       -
         id: lvfa79ej
         image: portraits/iris_lauper.jpg
@@ -164,6 +175,7 @@ page_elements:
         name: Lauper
         type: team_member
         enabled: true
+        email: 'Iris.Lauper@baustoffkreislauf.ch'
       -
         id: lvfa7m9m
         image: portraits/marion_zbinden.jpg
@@ -171,6 +183,7 @@ page_elements:
         name: Zbinden
         type: team_member
         enabled: true
+        email: 'Marion.Zbinden@baustoffkreislauf.ch'
       -
         id: lvfa917z
         image: portraits/markus_schenker.jpg
@@ -178,6 +191,7 @@ page_elements:
         name: Schenker
         type: team_member
         enabled: true
+        email: 'Markus.Schenker@baustoffkreislauf.ch'
       -
         id: lvfa9jpz
         image: portraits/martin_weder.jpg
@@ -185,6 +199,7 @@ page_elements:
         name: Weder
         type: team_member
         enabled: true
+        email: 'Martin.Weder@baustoffkreislauf.ch'
       -
         id: lvfa9xfr
         image: portraits/peter_kuhnhenn.jpg
@@ -192,6 +207,7 @@ page_elements:
         name: Kuhnhenn
         type: team_member
         enabled: true
+        email: 'Peter.Kuhnhenn@baustoffkreislauf.ch'
       -
         id: lvfaaez0
         image: portraits/remo_renfer.jpg
@@ -199,6 +215,7 @@ page_elements:
         name: Renfer
         type: team_member
         enabled: true
+        email: 'Remo.Renfer@baustoffkreislauf.ch'
       -
         id: lvfaavu3
         image: portraits/silvia_zbinden.jpg
@@ -206,6 +223,7 @@ page_elements:
         name: Zbinden
         type: team_member
         enabled: true
+        email: 'Silvia.Zbinden@baustoffkreislauf.ch'
       -
         id: lvfabevj
         image: portraits/tania_messer.jpg
@@ -213,6 +231,7 @@ page_elements:
         name: Messer
         type: team_member
         enabled: true
+        email: 'Tania.Messer@baustoffkreislauf.ch'
       -
         id: lvfac01y
         image: portraits/volker_wetzig.jpg
@@ -220,9 +239,10 @@ page_elements:
         name: Wetzig
         type: team_member
         enabled: true
+        email: 'Volker.Wetzig@baustoffkreislauf.ch'
 open_graph_description: 'Baustoff Kreislauf Schweiz ist die Vereinigung von 4xx Mitgliedern aus der Schweizer Kies- Beton und Recyclingbranche. Vision, Strategie und Ziele sind Bestandteil der aktuellen Diskussionen innerhalb des Verbands. Im Fokus stehen dabei das Schaffen von guten politischen und rechtli-chen Rahmenbedingungen für die Mitglieder, die Themenführerschaft bei der primären und se-kundären Materialgewinnung, werterhaltenden Kreislaufwirtschaft und Inverkehrbringen von mineralischen Baustoffe, die Vertretung der Interessen der Mitglieder gegenüber der Polik und den Behörden, das Fördern von Innovationen sowie das Aufzeigen der Stärken der Branche mit ihren aufgeschlossenen, verantwortungsvollen und innovativen Mitgliedern.'
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714052105
+updated_at: 1714052731
 has_pattern: false
 ---
