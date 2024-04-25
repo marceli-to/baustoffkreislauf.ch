@@ -8,9 +8,9 @@ tabs:
             handle: language
             field:
               options:
-                german: Deutsch
-                french: Französisch
-                italian: Italienisch
+                de: Deutsch
+                fr: Französisch
+                it: Italienisch
               taggable: false
               push_tags: false
               multiple: false

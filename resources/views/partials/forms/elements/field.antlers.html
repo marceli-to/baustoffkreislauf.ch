@@ -2,7 +2,7 @@
   <div class="{{ if error }} has-error {{ /if }}">
     <select name="{{ handle }}" id="{{ handle }}">
       {{ foreach:options }}
-        <option value="{{ key }}" {{ selected }}>
+        <option value="{{ key }}" {{ site:short_locale == key ? 'selected' : '' }}>
           {{ value | trans }}
         </option>
       {{ /foreach:options }}
