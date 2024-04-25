@@ -1,15 +1,19 @@
 <figure>
-  <picture>
-    <source media="(min-width: 768px)" srcset="{{ glide:image preset='md-portrait-webp' }}" type="image/webp">
-    <source srcset="{{ glide:image preset='sm-portrait-webp' }}" type="image/webp">
-    <source media="(min-width: 768px)" srcset="{{ glide:image preset='md-portrait' }}" type="image/jpeg">
-    <img 
-      src="{{ glide:image preset='sm-portrait' }}" 
-      alt="{{ image:alt }}" 
-      title="{{ image:alt }}" 
-      height="{{ image:height }}" 
-      width="{{ image:width }}"
-      class="block w-full h-auto aspect-square object-cover rounded-full {{ class ?? '' }}"
-      loading="lazy">
-  </picture>
+  {{ if image }}
+    <picture>
+      <source media="(min-width: 768px)" srcset="{{ glide:image preset='md-portrait-webp' }}" type="image/webp">
+      <source srcset="{{ glide:image preset='sm-portrait-webp' }}" type="image/webp">
+      <source media="(min-width: 768px)" srcset="{{ glide:image preset='md-portrait' }}" type="image/jpeg">
+      <img 
+        src="{{ glide:image preset='sm-portrait' }}" 
+        alt="{{ image:alt }}" 
+        title="{{ image:alt }}" 
+        height="{{ image:height }}" 
+        width="{{ image:width }}"
+        class="block w-full h-auto aspect-square object-cover rounded-full {{ class ?? '' }}"
+        loading="lazy">
+    </picture>
+  {{ else }}
+    <span class="block aspect-square bg-gray-200 rounded-full {{ class ?? '' }}"></span>
+  {{ /if }}
 </figure>

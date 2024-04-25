@@ -52,33 +52,67 @@ page_elements:
           -
             type: text
             text: 'ist das leitende Gremium und setzt sich folgendermassen zusammen:'
+    type: team
+    enabled: true
     team_members:
       -
-        id: lv8j8373
-        image: portraits/dummy-team-member-female.jpg
-        firstname: Petra
-        name: Lustig
-        type: team_member
-        enabled: true
-        position: CFO
-      -
-        id: lv8i7cv8
-        image: portraits/dummy-team-member.jpg
+        id: lvf63wtb
+        image: portraits/lionel_lathion.jpg
         firstname: Lionel
         name: Lathion
         position: Präsident
         type: team_member
         enabled: true
       -
-        id: lvc6fkw3
-        image: portraits/dummy-team-member-female.jpg
-        firstname: Regular
-        name: Musterfrau
-        position: Co-Präsidentin
+        id: lvf64fw0
+        firstname: Christoph
+        name: Duijts
+        position: Vizepräsident
         type: team_member
         enabled: true
-    type: team
-    enabled: true
+        image: portraits/christoph_duijts.jpg
+      -
+        id: lvf64s10
+        image: portraits/martin_eberhard.jpg
+        firstname: Martin
+        name: Eberhard
+        type: team_member
+        enabled: true
+      -
+        id: lvf65s4i
+        image: portraits/pascal_mueller.jpg
+        firstname: Pascal
+        name: Müller
+        type: team_member
+        enabled: true
+      -
+        id: lvf66bl8
+        image: portraits/stephane_pilloud.jpg
+        firstname: Stephane
+        name: Pilloud
+        type: team_member
+        enabled: true
+      -
+        id: lvf66sjp
+        image: portraits/marcel_santeler.jpg
+        firstname: Marcel
+        name: Santeler
+        type: team_member
+        enabled: true
+      -
+        id: lvf675rr
+        image: portraits/daniel_steck.jpg
+        firstname: Daniel
+        name: Steck
+        type: team_member
+        enabled: true
+      -
+        id: lvf67jig
+        image: portraits/matthias_steinegger.jpg
+        firstname: Matthias
+        name: Steinegger
+        type: team_member
+        enabled: true
   -
     id: lvf1i9tj
     text:
@@ -101,9 +135,94 @@ page_elements:
             text: 'setzen sich tatkräftig für die Ziele des Verbands ein:'
     type: team
     enabled: true
+    team_members:
+      -
+        id: lvfa4s0k
+        image: portraits/beat_haller.jpg
+        firstname: Beat
+        name: Haller
+        type: team_member
+        enabled: true
+      -
+        id: lvfa664e
+        image: portraits/cecilia_gonzalez.jpg
+        firstname: Cecilia
+        name: Gonzalez
+        type: team_member
+        enabled: true
+      -
+        id: lvfa6oy5
+        image: portraits/doris_hoesli.jpg
+        firstname: Doris
+        name: Hösli
+        type: team_member
+        enabled: true
+      -
+        id: lvfa79ej
+        image: portraits/iris_lauper.jpg
+        firstname: Iris
+        name: Lauper
+        type: team_member
+        enabled: true
+      -
+        id: lvfa7m9m
+        image: portraits/marion_zbinden.jpg
+        firstname: Marion
+        name: Zbinden
+        type: team_member
+        enabled: true
+      -
+        id: lvfa917z
+        image: portraits/markus_schenker.jpg
+        firstname: Markus
+        name: Schenker
+        type: team_member
+        enabled: true
+      -
+        id: lvfa9jpz
+        image: portraits/martin_weder.jpg
+        firstname: Martin
+        name: Weder
+        type: team_member
+        enabled: true
+      -
+        id: lvfa9xfr
+        image: portraits/peter_kuhnhenn.jpg
+        firstname: Peter
+        name: Kuhnhenn
+        type: team_member
+        enabled: true
+      -
+        id: lvfaaez0
+        image: portraits/remo_renfer.jpg
+        firstname: Remo
+        name: Renfer
+        type: team_member
+        enabled: true
+      -
+        id: lvfaavu3
+        image: portraits/silvia_zbinden.jpg
+        firstname: Silvia
+        name: Zbinden
+        type: team_member
+        enabled: true
+      -
+        id: lvfabevj
+        image: portraits/tania_messer.jpg
+        firstname: Tania
+        name: Messer
+        type: team_member
+        enabled: true
+      -
+        id: lvfac01y
+        image: portraits/volker_wetzig.jpg
+        firstname: Volker
+        name: Wetzig
+        type: team_member
+        enabled: true
 open_graph_description: 'Baustoff Kreislauf Schweiz ist die Vereinigung von 4xx Mitgliedern aus der Schweizer Kies- Beton und Recyclingbranche. Vision, Strategie und Ziele sind Bestandteil der aktuellen Diskussionen innerhalb des Verbands. Im Fokus stehen dabei das Schaffen von guten politischen und rechtli-chen Rahmenbedingungen für die Mitglieder, die Themenführerschaft bei der primären und se-kundären Materialgewinnung, werterhaltenden Kreislaufwirtschaft und Inverkehrbringen von mineralischen Baustoffe, die Vertretung der Interessen der Mitglieder gegenüber der Polik und den Behörden, das Fördern von Innovationen sowie das Aufzeigen der Stärken der Branche mit ihren aufgeschlossenen, verantwortungsvollen und innovativen Mitgliedern.'
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714037229
+updated_at: 1714052105
 has_pattern: false
 ---
