@@ -59,7 +59,7 @@ fields:
     handle: email
     field:
       input_type: text
-      default: '{{firstname}}.{{name}}@baustoffkreislauf.ch'
+      default: '@baustoffkreislauf.ch'
       antlers: false
       type: text
       display: E-Mail

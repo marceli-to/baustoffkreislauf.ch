@@ -1,0 +1,137 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: date
+            field:
+              mode: single
+              inline: false
+              full_width: false
+              columns: 1
+              rows: 1
+              time_enabled: false
+              time_seconds_enabled: false
+              type: date
+              display: Datum
+              icon: date
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: category
+            field:
+              options:
+                news: News
+                topics: Fachthemen
+                politics: Politik
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              default: news
+              type: select
+              display: Kategorie
+              icon: select
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: true
+              validate:
+                - required
+          -
+            handle: lead
+            field:
+              antlers: false
+              type: textarea
+              display: Lead
+              icon: textarea
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: text
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - unorderedlist
+                - removeformat
+                - anchor
+              smart_typography: false
+              save_html: false
+              inline: false
+              toolbar_mode: floating
+              reading_time: false
+              word_count: false
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: true
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: false
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: Text
+              icon: bard
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: image
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: Bild
+              icon: assets
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: Beiträge

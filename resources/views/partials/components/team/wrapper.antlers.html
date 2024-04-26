@@ -4,7 +4,7 @@
   {{ /if }}
 
   {{ if team_members }}
-    <div class="grid grid-cols-12 lg:grid-cols-10 gap-x-15 lg:gap-x-20 gap-y-30 lg:gap-y-60">
+    <div class="grid grid-cols-12 lg:grid-cols-10 gap-x-20 lg:gap-x-45 gap-y-30 lg:gap-y-60">
       {{ team_members }}
         <div class="col-span-6 sm:col-span-4 lg:col-span-3">
           {{ if email }}
@@ -12,8 +12,10 @@
               class="!no-underline group" 
               title="E-Mail {{ firstname }} {{ name }}">
               {{ partial:components/media/image/portrait }}
-              <h3 class="mt-5 md:mt-10 xl:mt-15 group-hover:text-turquoise transition-colors">{{ firstname }} {{ name }}</h3>
-              <span class="text-xs xl:text-sm">{{ position ?? '' }}</span>
+              <h3 class="text-sm lg:text-base mt-10 xl:mt-15 group-hover:text-turquoise transition-colors text-center">
+                {{ firstname }} {{ name }}
+              </h3>
+              <span class="text-xs xl:text-sm text-center w-full block group-hover:text-turquoise transition-colors">{{ position ?? '' }}</span>
             </a>
           {{ /if }}
         </div>
