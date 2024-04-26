@@ -100,21 +100,28 @@ return [
         'presets' => [
 
           // Standard images
-          'xs-webp' => ['w' => 320, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
           'sm-webp' => ['w' => 480, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
           'md-webp' => ['w' => 768, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
           'lg-webp' => ['w' => 1280, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
           'xl-webp' => ['w' => 1440, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
           '2xl-webp' => ['w' => 1680, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
-          '3xl-webp' => ['w' => 2000, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
 
-          'xs' => ['w' => 320, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           'sm' => ['w' => 480, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           'md' => ['w' => 768, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           'lg' => ['w' => 1280, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           'xl' => ['w' => 1440, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           '2xl' => ['w' => 1680, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
-          '3xl' => ['w' => 2000, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
+
+          // Full width images
+          'sm-fs-webp' => ['w' => 480, 'h' => 270, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
+          'md-fs-webp' => ['w' => 768, 'h' => 432, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
+          'lg-fs-webp' => ['w' => 1280, 'h' => 720, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
+          'xl-fs-webp' => ['w' => 1440, 'h' => 810, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
+
+          'sm-fs' => ['w' => 480, 'h' => 270, 'q' => 90, 'fit' => 'crop_focal'],
+          'md-fs' => ['w' => 768, 'h' => 432, 'q' => 90, 'fit' => 'crop_focal'],
+          'lg-fs' => ['w' => 1280, 'h' => 720, 'q' => 90, 'fit' => 'crop_focal'],
+          'xl-fs' => ['w' => 1440, 'h' => 810, 'q' => 90, 'fit' => 'crop_focal'],
 
           // Portrait images
           'sm-portrait-webp' => ['w' => 480, 'h' => 480, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
