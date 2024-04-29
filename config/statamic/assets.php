@@ -117,7 +117,6 @@ return [
           'md-fs-webp' => ['w' => 768, 'h' => 432, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
           'lg-fs-webp' => ['w' => 1280, 'h' => 720, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
           'xl-fs-webp' => ['w' => 1440, 'h' => 810, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-
           'sm-fs' => ['w' => 480, 'h' => 270, 'q' => 90, 'fit' => 'crop_focal'],
           'md-fs' => ['w' => 768, 'h' => 432, 'q' => 90, 'fit' => 'crop_focal'],
           'lg-fs' => ['w' => 1280, 'h' => 720, 'q' => 90, 'fit' => 'crop_focal'],

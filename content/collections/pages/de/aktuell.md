@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714406944
+updated_at: 1714414763
 template: default
 layout: layout/default
 page_elements:
@@ -47,10 +47,26 @@ page_elements:
     type: editor
     enabled: true
   -
-    id: lvgndjgj
-    image: medienmitteilung.jpg
-    type: image
+    id: lvla9t3r
+    image:
+      -
+        id: lvla9uam
+        image: mood/bks-mood-fachthemen-2.jpg
+        fullscreen: false
+        type: image
+        enabled: true
+      -
+        id: lvla9yxh
+        image: mood/bks-mood-fachthemen-3.jpg
+        fullscreen: false
+        type: image
+        enabled: true
+      -
+        id: lvlaa3cg
+        image: mood/bks-mood-fachthemen-5.jpg
+        fullscreen: true
+        type: image
+        enabled: true
+    type: image_gallery
     enabled: true
-    download: true
-    hires_image: downloads/bks_website_bilder_1200x745px_2.png
 ---

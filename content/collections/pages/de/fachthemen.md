@@ -4,7 +4,7 @@ blueprint: page
 title: Fachthemen
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714377739
+updated_at: 1714414262
 page_elements:
   -
     id: lvc3jal7
@@ -143,14 +143,39 @@ page_elements:
     type: splash
     enabled: true
   -
-    id: lvknv9y5
-    images:
-      - mood/bks-mood-fachthemen-2.jpg
-      - mood/bks-mood-fachthemen-3.jpg
-      - mood/bks-mood-fachthemen-4.jpg
-      - mood/bks-mood-fachthemen-5.jpg
+    id: lvl9wozk
+    image:
+      -
+        id: lvl9wq8t
+        image: mood/bks-mood-fachthemen-1.jpg
+        fullscreen: true
+        type: image
+        enabled: true
+      -
+        id: lvl9z0jp
+        image: mood/bks-mood-fachthemen-2.jpg
+        fullscreen: false
+        type: image
+        enabled: true
+      -
+        id: lvl9z5ny
+        image: mood/bks-mood-fachthemen-3.jpg
+        fullscreen: false
+        type: image
+        enabled: true
+      -
+        id: lvl9za0i
+        image: mood/bks-mood-fachthemen-4.jpg
+        fullscreen: false
+        type: image
+        enabled: true
+      -
+        id: lvl9zef0
+        image: mood/bks-mood-fachthemen-5.jpg
+        fullscreen: false
+        type: image
+        enabled: true
     type: image_gallery
     enabled: true
-    main_image: mood/bks-mood-fachthemen-1.jpg
 has_pattern: false
 ---
