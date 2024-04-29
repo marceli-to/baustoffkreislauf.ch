@@ -1,0 +1,12 @@
+<div class="grid grid-cols-12 lg:grid-cols-10 gap-20 lg:gap-30">
+  {{ if main_image }}
+    <div class="col-span-full">
+      {{ partial:components/media/image/fullscreen image="{{ main_image }}" }}
+    </div>
+  {{ /if }}
+  {{ images }}
+    <div class="col-span-full sm:col-span-6 lg:col-span-5">
+      {{ partial:components/media/image/fullscreen image="{{ url }}" }}
+    </div>
+  {{ /images }}
+</div>

@@ -4,7 +4,7 @@ blueprint: page
 title: Fachthemen
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714037127
+updated_at: 1714377739
 page_elements:
   -
     id: lvc3jal7
@@ -142,5 +142,15 @@ page_elements:
     hint_federation: true
     type: splash
     enabled: true
+  -
+    id: lvknv9y5
+    images:
+      - mood/bks-mood-fachthemen-2.jpg
+      - mood/bks-mood-fachthemen-3.jpg
+      - mood/bks-mood-fachthemen-4.jpg
+      - mood/bks-mood-fachthemen-5.jpg
+    type: image_gallery
+    enabled: true
+    main_image: mood/bks-mood-fachthemen-1.jpg
 has_pattern: false
 ---
