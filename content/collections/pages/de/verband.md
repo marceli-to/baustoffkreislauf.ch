@@ -337,6 +337,6 @@ page_elements:
 open_graph_description: 'Baustoff Kreislauf Schweiz ist die Vereinigung von 4xx Mitgliedern aus der Schweizer Kies- Beton und Recyclingbranche. Vision, Strategie und Ziele sind Bestandteil der aktuellen Diskussionen innerhalb des Verbands. Im Fokus stehen dabei das Schaffen von guten politischen und rechtli-chen Rahmenbedingungen für die Mitglieder, die Themenführerschaft bei der primären und se-kundären Materialgewinnung, werterhaltenden Kreislaufwirtschaft und Inverkehrbringen von mineralischen Baustoffe, die Vertretung der Interessen der Mitglieder gegenüber der Polik und den Behörden, das Fördern von Innovationen sowie das Aufzeigen der Stärken der Branche mit ihren aufgeschlossenen, verantwortungsvollen und innovativen Mitgliedern.'
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714380420
+updated_at: 1714380473
 has_pattern: false
 ---
