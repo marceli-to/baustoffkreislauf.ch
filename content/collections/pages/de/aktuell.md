@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714134986
+updated_at: 1714406944
 template: default
 layout: layout/default
 page_elements:
@@ -51,4 +51,6 @@ page_elements:
     image: medienmitteilung.jpg
     type: image
     enabled: true
+    download: true
+    hires_image: downloads/bks_website_bilder_1200x745px_2.png
 ---

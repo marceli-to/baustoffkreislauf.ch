@@ -19,3 +19,38 @@ fields:
       visibility: visible
       replicator_preview: true
       hide_display: false
+  -
+    handle: download
+    field:
+      default: false
+      type: toggle
+      display: 'Download?'
+      icon: toggle
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: hires_image
+    field:
+      max_files: 1
+      mode: list
+      container: assets
+      folder: downloads
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'Hochauflösendes Bild'
+      icon: assets
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        download: 'equals true'

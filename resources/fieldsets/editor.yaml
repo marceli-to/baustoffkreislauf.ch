@@ -42,18 +42,37 @@ fields:
       container: assets
       localizable: true
       sets:
+        downloads:
+          display: Downloads
+          instructions: null
+          icon: download-arrow-down
+          sets:
+            press_release:
+              display: Medienmitteilung
+              instructions: 'Medienmitteilung als Download'
+              icon: media-news-paper
+              fields:
+                -
+                  import: press_release
+            logo:
+              display: Logo
+              instructions: 'Logos für Download'
+              icon: text-formatting-input-signature
+              fields:
+                -
+                  import: logo
+            image_downloads:
+              display: Bilder
+              instructions: 'Hochauflösende Bilder für Download'
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  import: image_downloads
         page_elements:
           display: Inhaltselemente
           instructions: null
           icon: dashboard-layout
           sets:
-            press_release:
-              display: Medienmitteilung
-              instructions: null
-              icon: download-arrow-down
-              fields:
-                -
-                  import: press_release
             newsletter_form:
               display: 'Newsletter Formular'
               instructions: 'Newsletter Formular hinzufügen'

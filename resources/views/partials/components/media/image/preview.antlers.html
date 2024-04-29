@@ -1,0 +1,11 @@
+<picture>
+  <source srcset="{{ glide:preview_image preset='md-webp' }}" type="image/webp">
+  <img 
+    src="{{ glide:image preset='md' }}" 
+    alt="{{ preview_image:alt }}" 
+    title="{{ preview_image:alt }}" 
+    height="{{ preview_image:height }}" 
+    width="{{ preview_image:width }}"
+    class="block w-auto h-50 {{ class ?? '' }}"
+    loading="lazy">
+</picture>

@@ -22,7 +22,7 @@
 
 
   {{ if type == 'splash' }}
-    {{ partial:components/splash }}
+    {{ partial:components/misc/splash }}
   {{ /if }}
 
   {{ if type == 'newsletter_form' }}
@@ -42,7 +42,15 @@
       {{ /if }}
 
       {{ if type == 'press_release'}}
-        [press_release]
+        {{ partial:components/downloads/press_release }}
+      {{ /if }}
+
+      {{ if type == 'logo'}}
+        {{ partial:components/downloads/logo }}
+      {{ /if }}
+
+      {{ if type == 'image_downloads' }}
+        {{ partial:components/downloads/images }}
       {{ /if }}
 
     {{ /content  }}
