@@ -14,23 +14,26 @@ return [
   */
 
   'sites' => [
+    
     'de' => [
       'name' => 'Deutsch',
       'locale' => 'de',
       'abbreviation' => 'd',
       'url' => env('APP_URL')
     ],
+
     'fr' => [
       'name' => 'Francais',
       'locale' => 'fr',
       'lang' => 'fr',
-      'url' => env('APP_URL').'/fr/'
+      'url' => env('APP_URL_FR')
     ],
+
     'it' => [
       'name' => 'Italiano',
       'locale' => 'it',
       'lang' => 'it',
-      'url' => env('APP_URL').'/it/'
+      'url' => env('APP_URL_IT')
     ],
   ],
 ];
