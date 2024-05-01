@@ -63,11 +63,11 @@ page_elements:
               -
                 type: link
                 attrs:
-                  href: 'https://www.fskb.ch/alt'
+                  href: 'https://www.arv.ch/alt'
                   rel: null
                   target: _blank
                   title: null
-            text: 'Fachverband der Kies- und Betonindustrie FSKB'
+            text: 'arv Baustoffrecycling Schweiz'
           -
             type: hardBreak
           -
@@ -76,15 +76,15 @@ page_elements:
               -
                 type: link
                 attrs:
-                  href: 'https://www.arv.ch/alt'
+                  href: 'https://alt.fskb.ch'
                   rel: null
                   target: _blank
                   title: null
-            text: 'arv Baustoffrecycling Schweiz'
+            text: 'Fachverband der Kies- und Betonindustrie FSKB'
     type: splash
     enabled: true
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714037560
+updated_at: 1714543759
 has_pattern: false
 ---

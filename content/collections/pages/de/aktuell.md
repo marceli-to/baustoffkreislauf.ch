@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714414763
+updated_at: 1714543268
 template: default
 layout: layout/default
 page_elements:
@@ -51,19 +51,19 @@ page_elements:
     image:
       -
         id: lvla9uam
-        image: mood/bks-mood-fachthemen-2.jpg
         fullscreen: false
         type: image
         enabled: true
+        image: placeholder-praesidium.png
       -
         id: lvla9yxh
-        image: mood/bks-mood-fachthemen-3.jpg
+        image: placeholder-vorstand.png
         fullscreen: false
         type: image
         enabled: true
       -
         id: lvlaa3cg
-        image: mood/bks-mood-fachthemen-5.jpg
+        image: placeholder-mood.png
         fullscreen: true
         type: image
         enabled: true

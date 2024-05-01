@@ -4,7 +4,7 @@ blueprint: pages
 title: Home
 author: 3f4934a7-72ef-446c-bf12-5336d13e6898
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714380249
+updated_at: 1714543467
 template: default
 layout: layout/default
 debug: false
@@ -97,8 +97,8 @@ page_elements:
               -
                 type: text
                 text: 'Sämtliche Publikationen, Vorlagen, Produkte und Stellungnahmen des ehemaligen Verbands finden Sie bis auf Weiteres auf der bisherigen FSKB-Website.'
-        link: 'https://www.fskb.ch/alt'
-        link_text: fskb.ch/alt
+        link: 'https://alt.fskb.ch/'
+        link_text: alt.fskb.ch
         type: teaser
         enabled: true
     type: teasers
@@ -113,6 +113,7 @@ page_elements:
     image: mood/bks-mood-home.jpg
     type: image
     enabled: true
+    fullscreen: false
 has_pattern: true
 meta_description: 'Der Verband Baustoff Kreislauf Schweiz gewährleistet das werterhaltende Schliessen der Kreisläufe und setzt sich für den sorgsamen Umgang mit mineralischen Rohstoffen, Natur und Umwelt ein. Er vertritt die Interessen der Kies-, Beton-, und Recylingbranche gegenüber dem Bund, den Kantonen, den Fachpersonen sowie der Öffentlichkeit, fördert die branchenspezifische Bildung und bietet den Mitgliedern massgeschneiderte Dienstleistungen an.'
 meta_keywords: 'Kies, Beton, mineralischer Rohstoff, Rohstoffversorgung, Rohstoffentsorgung, Rohstoffsicherheit, Recycling, Deponien, Baustoffrecycling, Kreislauf, Schliessen Kreisläufe, Kreislaufwirtschaft, Baustoffkreislauf, Rückbau, Baustoff, Natur, Boden, Rekultivierung, Nachhaltigkeit, Lebensraum, Biodiversität, Inspektorat, FSKB, arv, Entsorgung, Altlasten, Aushub, Rückbaumaterial, Bausperrgut, Gewerbeabfall, Altholzindustrie, Raumplanung, Kiesgrube, Betonwerk, Recyclingwerk, Schweiz'

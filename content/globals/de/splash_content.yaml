@@ -6,7 +6,7 @@ text:
     content:
       -
         type: text
-        text: 'Zurzeit finden Sie die entsprechenden Informationen noch auf den Websites der ehemaligen Verbände FSKB und arv.'
+        text: 'Zurzeit finden Sie die entsprechenden Informationen noch auf den Websites der ehemaligen Verbände arv und FSKB.'
   -
     type: paragraph
     attrs:
@@ -18,11 +18,11 @@ text:
           -
             type: link
             attrs:
-              href: 'https://www.fskb.ch/'
+              href: 'https://www.arv.ch/de/'
               rel: null
               target: _blank
               title: null
-        text: 'Weiter zum FSKB'
+        text: 'Weiter zum arv'
       -
         type: hardBreak
       -
@@ -31,8 +31,8 @@ text:
           -
             type: link
             attrs:
-              href: 'https://www.arv.ch/de/'
+              href: 'https://alt.fskb.ch/'
               rel: null
               target: _blank
               title: null
-        text: 'Weiter zum arv'
+        text: 'Weiter zum FSKB'

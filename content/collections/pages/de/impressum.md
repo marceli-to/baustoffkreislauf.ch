@@ -4,7 +4,7 @@ blueprint: page
 title: Impressum
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714032208
+updated_at: 1714544278
 has_pattern: true
 page_elements:
   -
@@ -60,11 +60,22 @@ page_elements:
                   target: null
                   title: null
             text: info@baustoffkreislauf.ch
-          -
-            type: hardBreak
+      -
+        type: heading
+        attrs:
+          level: 2
+        content:
           -
             type: text
-            text: 'Vertretungsberechtigte Personen: Gregor Schguanin & Martin Weder'
+            text: 'Vertretungsberechtigte Personen'
+      -
+        type: paragraph
+        attrs:
+          class: null
+        content:
+          -
+            type: text
+            text: 'Gregor Schguanin & Martin Weder'
       -
         type: heading
         attrs:
@@ -80,7 +91,18 @@ page_elements:
         content:
           -
             type: text
-            text: 'Marceli.to, Marcel Stadelmann'
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://marceli.to'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: marceli.to
+          -
+            type: text
+            text: ', Marcel Stadelmann'
       -
         type: heading
         attrs:
@@ -96,7 +118,18 @@ page_elements:
         content:
           -
             type: text
-            text: 'Baustoff Kreislauf Schweiz & Hansueli Schärer'
+            text: 'Baustoff Kreislauf Schweiz & '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.hansuelischaerer.ch/'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: 'Hansueli Schärer'
       -
         type: heading
         attrs:
