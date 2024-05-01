@@ -26,14 +26,14 @@ return [
       'name' => 'Francais',
       'locale' => 'fr',
       'lang' => 'fr',
-      'url' => env('APP_URL_FR')
+      'url' => env('APP_URL') . '/fr/'
     ],
 
     'it' => [
       'name' => 'Italiano',
       'locale' => 'it',
       'lang' => 'it',
-      'url' => env('APP_URL_IT')
+      'url' => env('APP_URL') . '/it/'
     ],
   ],
 ];
