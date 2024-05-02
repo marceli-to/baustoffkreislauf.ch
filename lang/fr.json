@@ -10,5 +10,10 @@
   "Deutsch": "allemand",
   "Französisch": "français",
   "Italienisch": "italien",
-  "Anmelden": "S'inscrire"
-}
+  "Anmelden": "S'inscrire",
+  "Newsletter Anmeldung": "Inscription à la newsletter",
+  "newsletter/anmeldung-bestaetigen": "newsletter/confirmation-inscription",
+  "Vielen Dank für Ihr Interesse an unserem Newsletter.": "Nous vous remercions de votre intérêt pour notre newsletter.",
+  "Bitte klicken Sie auf den folgenden Link, um Ihre Anmeldung zu bestätigen:": "Veuillez cliquer sur le lien suivant pour confirmer votre inscription :",
+  "E-Mail bestätigen": "Confirmer l'adresse e-mail",
+  "Falls Sie diese E-Mail versehentlich erhalten haben, können Sie diese löschen.": "Si vous avez reçu cet e-mail par erreur, vous pouvez le supprimer."}

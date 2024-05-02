@@ -1,6 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 // Route::statamic('example', 'example-view', [
 //    'title' => 'Example'
 // ]);
+
+Route::get('/newsletter/anmeldung-bestaetigen/{uuid}', [NewsletterController::class, 'confirm']);
+Route::get('/newsletter/confirmation-inscription/{uuid}', [NewsletterController::class, 'confirm']);
+Route::get('/newsletter/conferma-iscrizione/{uuid}', [NewsletterController::class, 'confirm']);
+

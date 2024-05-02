@@ -10,6 +10,9 @@ tree:
     entry: baa7c141-f47a-49e9-b6e6-3d01f38433dc
   -
     entry: c21a2726-e8fa-4aa9-a2a4-dba2e4f4c459
+    children:
+      -
+        entry: 1746363c-9002-4048-bc00-d8d265c515bb
   -
     entry: 897cfddc-c837-4fd6-a744-c4393403c787
   -

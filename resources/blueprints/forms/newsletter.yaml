@@ -100,3 +100,31 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+          -
+            handle: hash
+            field:
+              input_type: hidden
+              antlers: false
+              type: text
+              display: Hash
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: confirmed
+            field:
+              input_type: hidden
+              antlers: false
+              type: text
+              display: Bestätigt
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

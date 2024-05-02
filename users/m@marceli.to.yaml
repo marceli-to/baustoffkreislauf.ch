@@ -38,3 +38,9 @@ preferences:
       columns:
         - title
         - slug
+  forms:
+    newsletter:
+      columns:
+        - datestamp
+        - email
+        - confirmed

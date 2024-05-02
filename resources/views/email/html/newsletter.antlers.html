@@ -1,0 +1,19 @@
+{{ partial:email/styles }}
+<div style="padding: 15px">
+  <p>{{ "Vielen Dank für Ihr Interesse an unserem Newsletter." | trans }}</p>
+  <p>{{ "Bitte klicken Sie auf den folgenden Link, um Ihre Anmeldung zu bestätigen:" | trans }}</p>
+  <p>
+    <a 
+      href="{{ config.client.base_url }}/{{ "newsletter/anmeldung-bestaetigen" | trans }}/{{hash}}"
+      class="btn-primary"
+      style="text-decoration: none; color: #fff">
+      {{ "E-Mail bestätigen" | trans }}
+    </a>
+  </p>
+  <p>{{ "Falls Sie diese E-Mail versehentlich erhalten haben, können Sie diese löschen." | trans }}</p>
+  <footer>
+    {{ if contact_information:address }}
+      {{ contact_information:address | nl2br }}
+    {{ /if }}
+  </footer>
+</div>
