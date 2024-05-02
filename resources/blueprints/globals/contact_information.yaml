@@ -11,7 +11,7 @@ tabs:
               type: textarea
               display: Address
               icon: textarea
-              localizable: false
+              localizable: true
               listable: hidden
               instructions_position: above
               visibility: visible
@@ -27,7 +27,7 @@ tabs:
               type: text
               display: Phone
               icon: text
-              localizable: false
+              localizable: true
               listable: hidden
               instructions_position: above
               visibility: visible
@@ -41,7 +41,7 @@ tabs:
               type: text
               display: Email
               icon: text
-              localizable: false
+              localizable: true
               listable: hidden
               instructions_position: above
               visibility: visible

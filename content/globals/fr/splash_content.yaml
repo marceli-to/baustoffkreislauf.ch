@@ -6,7 +6,7 @@ text:
     content:
       -
         type: text
-        text: 'Actuellement, vous trouverez encore les informations correspondantes sur les sites web des anciennes associations FSKB et arv.'
+        text: 'Actuellement, vous trouvez encore les informations correspondantes sur les sites Internet des anciennes associations asr et ASGB.'
   -
     type: paragraph
     attrs:
@@ -18,11 +18,11 @@ text:
           -
             type: link
             attrs:
-              href: 'https://www.fskb.ch/'
+              href: 'https://www.arv.ch/de/'
               rel: null
               target: _blank
               title: null
-        text: "Continuer vers l'ASFC"
+        text: "Continuer vers l'asr"
       -
         type: hardBreak
       -
@@ -31,8 +31,8 @@ text:
           -
             type: link
             attrs:
-              href: 'https://www.arv.ch/de/'
+              href: 'https://www.fskb.ch/'
               rel: null
               target: _blank
               title: null
-        text: "Continuer vers l'arv"
+        text: "Continuer vers l'ASGB"

@@ -20,7 +20,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Jetzt den Newsletter von Baustoff Kreislauf Schweiz abonnieren:'
+            text: 'Abonnez-vous dès maintenant à la newsletter de Matériaux de construction circulaires Suisse:'
       -
         type: set
         attrs:
@@ -34,9 +34,9 @@ page_elements:
         content:
           -
             type: text
-            text: 'Wir verwenden Ihre E-Mail-Adresse zur Kontaktaufnahme und zum Zusenden unseres E-Newsletters. Sie können diesen jederzeit abbestellen.'
+            text: 'Nous utilisons votre adresse e-mail pour vous contacter et vous envoyer notre e-newsletter. Vous pouvez vous désabonner à tout moment.'
     type: editor
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713989747
+updated_at: 1714661629
 ---

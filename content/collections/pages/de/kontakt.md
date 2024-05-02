@@ -4,7 +4,7 @@ blueprint: page
 title: Kontakt
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714037346
+updated_at: 1714662549
 page_elements:
   -
     id: lvf1klx8
@@ -47,7 +47,7 @@ page_elements:
             type: hardBreak
           -
             type: text
-            text: 'Mail: '
+            text: 'E-Mail: '
           -
             type: text
             marks:
