@@ -4,7 +4,7 @@ blueprint: pages
 title: Home
 author: 3f4934a7-72ef-446c-bf12-5336d13e6898
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714543467
+updated_at: 1714659479
 template: default
 layout: layout/default
 debug: false
@@ -78,8 +78,8 @@ page_elements:
               -
                 type: text
                 text: 'Sämtliche Publikationen, Vorlagen, Produkte und Stellungnahmen des ehemaligen Verbands finden Sie bis auf Weiteres auf der bisherigen Baustoffrecycling Schweiz-Website.'
-        link: 'https://www.arv.ch/de/'
-        link_text: www.arv.ch/alt
+        link: 'https://www.archiv.arv.ch'
+        link_text: www.archiv.arv.ch
         type: teaser
         enabled: true
       -

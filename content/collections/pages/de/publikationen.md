@@ -63,7 +63,7 @@ page_elements:
               -
                 type: link
                 attrs:
-                  href: 'https://www.arv.ch/alt'
+                  href: 'https://www.archiv.arv.ch'
                   rel: null
                   target: _blank
                   title: null
