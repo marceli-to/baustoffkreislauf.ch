@@ -3,7 +3,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Symfony\Component\Yaml\Yaml;
 
-class BackupCreate extends Command
+class CleanupSubscriptions extends Command
 {
   /**
    * The name and signature of the console command.
