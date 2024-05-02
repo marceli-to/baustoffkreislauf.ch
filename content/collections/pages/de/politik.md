@@ -4,7 +4,7 @@ blueprint: page
 title: Politik
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714543985
+updated_at: 1714664278
 page_elements:
   -
     id: lvc2atfm
@@ -29,8 +29,46 @@ page_elements:
     enabled: true
   -
     id: lvc2bf0w
-    hint_federation: true
+    hint_federation: false
     type: splash
     enabled: true
+    text:
+      -
+        type: heading
+        attrs:
+          level: 2
+        content:
+          -
+            type: text
+            text: 'Zurzeit finden Sie die entsprechenden Informationen noch auf den Websites der ehemaligen Verbände arv und FSKB.'
+      -
+        type: paragraph
+        attrs:
+          class: null
+        content:
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://www.archiv.arv.ch/de/812/Neuigkeiten-vom-arv-Baustoffrecycling-Schweiz.htm'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: 'Weiter zum arv'
+          -
+            type: hardBreak
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://alt.fskb.ch/aktuell/politik/'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: 'Weiter zum FSKB'
 has_pattern: false
 ---
