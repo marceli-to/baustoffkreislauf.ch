@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714543268
+updated_at: 1714659245
 template: default
 layout: layout/default
 page_elements:
@@ -63,7 +63,7 @@ page_elements:
         enabled: true
       -
         id: lvlaa3cg
-        image: placeholder-mood.png
+        image: bks-mood-image.jpg
         fullscreen: true
         type: image
         enabled: true

@@ -81,6 +81,7 @@ page_elements:
         position: Vizepräsident
         type: team_member
         enabled: true
+        image: portraits/stefan_eberhard.jpg
       -
         id: lvgmcsks
         firstname: Michael
@@ -96,6 +97,7 @@ page_elements:
         email: Christian.Haldimann@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/christian_haldimann.jpg
       -
         id: lvf64s10
         firstname: Martin
@@ -119,6 +121,7 @@ page_elements:
         email: Fabian.Mombelli@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/fabian_mombelli.jpg
       -
         id: lvf66bl8
         firstname: Stephane
@@ -150,6 +153,7 @@ page_elements:
         email: Laurent.Steidle@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/laurent_steidle.jpg
       -
         id: lvf67jig
         firstname: Matthias
@@ -165,6 +169,7 @@ page_elements:
         email: Raoul.Zengaffinen@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/raoul_zengaffinen.jpg
   -
     id: lvf1i9tj
     text:
@@ -203,6 +208,7 @@ page_elements:
         email: Luca.Giger@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/luca_giger.jpg
       -
         id: lvfa664e
         firstname: Cecilia
@@ -226,6 +232,7 @@ page_elements:
         email: Sophie.Hartmann@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/sophie_hartmann.jpg
       -
         id: lvfa6oy5
         firstname: Doris
@@ -241,6 +248,7 @@ page_elements:
         email: Yann.Huet@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/yann_huet.jpg
       -
         id: lvfa9xfr
         firstname: Peter
@@ -272,6 +280,7 @@ page_elements:
         email: Katarina.Planter@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/katarina_planter.jpg
       -
         id: lvfaaez0
         firstname: Remo
@@ -295,6 +304,7 @@ page_elements:
         email: Gregor.Schguanin@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/gregor_schguanin.jpg
       -
         id: lvgmj902
         firstname: Aurélien
@@ -302,6 +312,7 @@ page_elements:
         email: Aurélien.Stephan@baustoffkreislauf.ch
         type: team_member
         enabled: true
+        image: portraits/aurelien_stephan.jpg
       -
         id: lvfa9jpz
         firstname: Martin
@@ -337,6 +348,6 @@ page_elements:
 open_graph_description: 'Baustoff Kreislauf Schweiz ist die Vereinigung von 4xx Mitgliedern aus der Schweizer Kies- Beton und Recyclingbranche. Vision, Strategie und Ziele sind Bestandteil der aktuellen Diskussionen innerhalb des Verbands. Im Fokus stehen dabei das Schaffen von guten politischen und rechtli-chen Rahmenbedingungen für die Mitglieder, die Themenführerschaft bei der primären und se-kundären Materialgewinnung, werterhaltenden Kreislaufwirtschaft und Inverkehrbringen von mineralischen Baustoffe, die Vertretung der Interessen der Mitglieder gegenüber der Polik und den Behörden, das Fördern von Innovationen sowie das Aufzeigen der Stärken der Branche mit ihren aufgeschlossenen, verantwortungsvollen und innovativen Mitgliedern.'
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714511133
+updated_at: 1714659147
 has_pattern: false
 ---
