@@ -5,6 +5,7 @@
 {{ else }}
   {{ if type == 'select' }}
     <div class="{{ if error }} has-error {{ /if }}">
+      {{ partial:forms/elements/label }}
       <select name="{{ handle }}" id="{{ handle }}">
         {{ foreach:options }}
           <option value="{{ key }}" {{ site:short_locale == key ? 'selected' : '' }}>
