@@ -97,14 +97,14 @@ page_elements:
                 hires_image: downloads/baustoffkreislauf-praesidium.jpg.zip
                 type: image
                 enabled: true
-                caption: 'La présidence de «Matériaux de construction circulaires Suisse»'
+                caption: 'La présidence de «Matériaux de construction circulaires Suisse».'
               -
                 id: lvl5v1ka
                 image_download: downloads/baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
                 hires_image: downloads/baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg.zip
                 type: image
                 enabled: true
-                caption: 'Le comité de «Matériaux de construction circulaires Suisse»'
+                caption: 'Le comité de «Matériaux de construction circulaires Suisse».'
               -
                 id: lvl687w9
                 type: image
@@ -114,5 +114,5 @@ page_elements:
     type: editor
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714755738
+updated_at: 1714756217
 ---
