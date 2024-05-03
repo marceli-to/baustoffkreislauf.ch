@@ -21,7 +21,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Riciclaggio materiali da costruzione Svizzera è l’associazione di circa 400 membri del settore svizzero della ghiaia, del calcestruzzo e del riciclaggio. Visione, strategia e obiettivi sono attualmente oggetto di discussione in seno all’associazione.'
+            text: 'Materiali di costruzione circolari Svizzera è l’associazione di circa 400 membri del settore svizzero della ghiaia, del calcestruzzo e del riciclaggio. Visione, strategia e obiettivi sono attualmente oggetto di discussione in seno all’associazione.'
       -
         type: paragraph
         attrs:

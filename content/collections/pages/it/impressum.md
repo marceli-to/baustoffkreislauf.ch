@@ -29,7 +29,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Riciclaggio materiali da costruzione Svizzera'
+            text: 'Materiali di costruzione circolari Svizzera'
           -
             type: hardBreak
           -
@@ -114,7 +114,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Riciclaggio materiali da costruzione Svizzera e '
+            text: 'Materiali di costruzione circolari Svizzera e '
           -
             type: text
             marks:
@@ -141,7 +141,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Riciclaggio materiali da costruzione Svizzera non si assume alcuna responsabilità per la correttezza, precisione, attualità, affidabilità e completezza delle informazioni.'
+            text: 'Materiali di costruzione circolari Svizzera non si assume alcuna responsabilità per la correttezza, precisione, attualità, affidabilità e completezza delle informazioni.'
       -
         type: paragraph
         attrs:
@@ -149,7 +149,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'È esclusa qualsiasi rivendicazione di responsabilità nei confronti di Riciclaggio materiali da costruzione Svizzera per danni materiali o immateriali derivanti dall’accesso, dall’utilizzo o dal mancato utilizzo delle informazioni pubblicate, dall’uso improprio della connessione o da guasti tecnici.'
+            text: 'È esclusa qualsiasi rivendicazione di responsabilità nei confronti di Materiali di costruzione circolari Svizzera per danni materiali o immateriali derivanti dall’accesso, dall’utilizzo o dal mancato utilizzo delle informazioni pubblicate, dall’uso improprio della connessione o da guasti tecnici.'
       -
         type: paragraph
         attrs:
@@ -157,7 +157,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Tutte le offerte non sono vincolanti. Riciclaggio materiali da costruzione Svizzera si riserva espressamente il diritto di modificare, integrare e cancellare parti del sito o l’intera offerta senza preavviso, nonché di sospenderne temporaneamente o definitivamente la pubblicazione.'
+            text: 'Tutte le offerte non sono vincolanti. Materiali di costruzione circolari Svizzera si riserva espressamente il diritto di modificare, integrare e cancellare parti del sito o l’intera offerta senza preavviso, nonché di sospenderne temporaneamente o definitivamente la pubblicazione.'
       -
         type: paragraph
         attrs:
@@ -181,7 +181,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'I diritti d’autore e tutti gli altri diritti su contenuti, immagini, foto o altri file presenti su questo sito appartengono esclusivamente a Riciclaggio materiali da costruzione Svizzera o ai titolari dei diritti specificamente indicati. La riproduzione di qualsivoglia elemento è consentita solo previa approvazione scritta da parte dei titolari del diritto d’autore.'
+            text: 'I diritti d’autore e tutti gli altri diritti su contenuti, immagini, foto o altri file presenti su questo sito appartengono esclusivamente a Materiali di costruzione circolari Svizzera o ai titolari dei diritti specificamente indicati. La riproduzione di qualsivoglia elemento è consentita solo previa approvazione scritta da parte dei titolari del diritto d’autore.'
     type: editor
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39

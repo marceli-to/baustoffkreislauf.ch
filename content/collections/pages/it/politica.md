@@ -21,7 +21,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'L’associazione svizzera materiali da costruzione Ciclo Riciclaggio materiali da costruzione Svizzera rappresenta gli interessi del settore della ghiaia, del calcestruzzo e del riciclaggio e a tal fine è in costante contatto con tutti gli attori politici. In futuro troverete qui informazioni sui temi più importanti per i nostri soci nonché le nostre prese di posizione su questioni politiche attuali.'
+            text: 'L’associazione svizzera materiali da costruzione Ciclo Materiali di costruzione circolari Svizzera rappresenta gli interessi del settore della ghiaia, del calcestruzzo e del riciclaggio e a tal fine è in costante contatto con tutti gli attori politici. In futuro troverete qui informazioni sui temi più importanti per i nostri soci nonché le nostre prese di posizione su questioni politiche attuali.'
     type: editor
     enabled: true
   -

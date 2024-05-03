@@ -21,7 +21,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Riciclaggio materiali da costruzione Svizzera mette a disposizione delle cerchie interessate diversi prodotti e pubblicazioni, che vengono regolarmente annunciati e resi disponibili su questo sito.'
+            text: 'Materiali di costruzione circolari Svizzera mette a disposizione delle cerchie interessate diversi prodotti e pubblicazioni, che vengono regolarmente annunciati e resi disponibili su questo sito.'
       -
         type: heading
         attrs:

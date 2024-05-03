@@ -20,7 +20,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Abbonatevi subito alla newsletter di Riciclaggio materiali da costruzione Svizzera:'
+            text: 'Abbonatevi subito alla newsletter di Materiali di costruzione circolari Svizzera:'
       -
         type: set
         attrs:

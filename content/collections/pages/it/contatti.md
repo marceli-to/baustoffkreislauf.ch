@@ -21,7 +21,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Riciclaggio materiali da costruzione Svizzera'
+            text: 'Materiali di costruzione circolari Svizzera'
           -
             type: hardBreak
           -
