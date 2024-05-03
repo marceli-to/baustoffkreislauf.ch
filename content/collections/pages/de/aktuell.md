@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714722137
+updated_at: 1714725395
 template: default
 layout: layout/default
 page_elements:
@@ -19,7 +19,7 @@ page_elements:
         content:
           -
             type: text
-            text: '«Baustoff Kreislauf Schweiz» Kies-, Beton- und Recyclingbranche bündelt Kräfte in neuem Fachverband'
+            text: '«Baustoff Kreislauf Schweiz»: Kies-, Beton- und Recyclingbranche bündelt Kräfte in neuem Fachverband'
       -
         type: paragraph
         attrs:
@@ -205,4 +205,5 @@ page_elements:
         enabled: true
     type: image_gallery
     enabled: true
+parent: home
 ---
