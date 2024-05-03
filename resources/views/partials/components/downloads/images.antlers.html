@@ -6,11 +6,18 @@
           target="_blank" 
           download 
           title="{{ title }}"
-          class="group">
+          class="group no-underline">
           {{ partial:components/media/image/download class="w-full h-auto"  }}
-          <span class="flex mt-10 w-full justify-end">
-            {{ partial:icons/download class="w-24 h-auto group-hover:text-lime transition-colors" }}
-          </span>
+          <div class="flex justify-end items-start">
+            {{ if caption }}
+              <div class="text-sm no-underline pt-5 w-auto">
+                {{ caption }}
+              </div>
+            {{ /if }}
+            <span class="w-24 flex mt-10 justify-end">
+              {{ partial:icons/download class="w-24 h-auto group-hover:text-lime transition-colors" }}
+            </span>
+          </div>
         </a>
       {{ else }}
         {{ partial:components/media/image/download }}

@@ -97,12 +97,14 @@ page_elements:
                 hires_image: downloads/BKS_Website_Bilder_1200x745px_1.png.zip
                 type: image
                 enabled: true
+                caption: 'La presidenza di «Materiali di costruzione circolari Svizzera».'
               -
                 id: lvl5v1ka
                 image_download: downloads/bks_website_bilder_1200x745px_2.png
                 hires_image: downloads/BKS_Website_Bilder_1200x745px_2.png.zip
                 type: image
                 enabled: true
+                caption: 'Il comitato direttivo di «Materiali di costruzione circolari Svizzera».'
               -
                 id: lvl687w9
                 type: image
@@ -112,5 +114,5 @@ page_elements:
     type: editor
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714737023
+updated_at: 1714743763
 ---
