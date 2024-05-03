@@ -13,5 +13,10 @@
       width="{{ image:width }}"
       class="block w-full h-full aspect-[3/2] object-cover {{ class ?? '' }}"
       loading="lazy">
+    {{ if caption }}
+      <figcaption class="text-sm no-underline pt-5 w-auto">
+        {{ caption }}
+      </figcaption>
+    {{ /if }}
   </picture>
 </figure>

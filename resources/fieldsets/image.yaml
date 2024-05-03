@@ -12,8 +12,20 @@ fields:
       show_set_alt: true
       type: assets
       display: Bild
-      icon: assets
       localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: caption
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Legende
+      localizable: true
       listable: hidden
       instructions_position: above
       visibility: visible
@@ -25,7 +37,6 @@ fields:
       default: false
       type: toggle
       display: 'Ganze Breite?'
-      icon: toggle
       localizable: false
       listable: hidden
       instructions_position: above

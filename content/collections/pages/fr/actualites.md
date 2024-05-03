@@ -175,12 +175,14 @@ page_elements:
         type: image
         enabled: true
         image: baustoffkreislauf-praesidium.jpg
+        caption: 'La présidence de «Matériaux de construction circulaires Suisse».'
       -
         id: lvla9yxh
         fullscreen: false
         type: image
         enabled: true
         image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
+        caption: 'Le comité et co-directeur de «Matériaux de construction circulaires Suisse».'
       -
         id: lvlaa3cg
         image: baustoffkreislauf-mood-image.jpg
@@ -190,5 +192,5 @@ page_elements:
     type: image_gallery
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714755597
+updated_at: 1714756950
 ---
