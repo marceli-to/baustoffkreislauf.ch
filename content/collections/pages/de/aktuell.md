@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714751381
+updated_at: 1714755394
 template: default
 layout: layout/default
 page_elements:
@@ -176,14 +176,14 @@ page_elements:
         id: lvla9uam
         fullscreen: false
         type: image
-        enabled: false
-        image: placeholder-praesidium.png
+        enabled: true
+        image: baustoffkreislauf-praesidium.jpg
       -
         id: lvla9yxh
-        image: placeholder-vorstand.png
         fullscreen: false
         type: image
-        enabled: false
+        enabled: true
+        image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
       -
         id: lvlaa3cg
         image: baustoffkreislauf-mood-image.jpg

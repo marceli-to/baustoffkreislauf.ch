@@ -4,7 +4,7 @@ blueprint: page
 title: Medien
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714751207
+updated_at: 1714755706
 page_elements:
   -
     id: lvkq5xpn
@@ -96,17 +96,17 @@ page_elements:
             images:
               -
                 id: lvl5uw6o
-                image_download: downloads/bks_website_bilder_1200x745px_1.png
-                hires_image: downloads/BKS_Website_Bilder_1200x745px_1.png.zip
+                image_download: downloads/baustoffkreislauf-praesidium.jpg
+                hires_image: downloads/baustoffkreislauf-praesidium.jpg.zip
                 type: image
-                enabled: false
+                enabled: true
                 caption: 'Das Präsidium von «Baustoff Kreislauf Schweiz».'
               -
                 id: lvl5v1ka
-                image_download: downloads/bks_website_bilder_1200x745px_2.png
-                hires_image: downloads/BKS_Website_Bilder_1200x745px_2.png.zip
+                image_download: downloads/baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
+                hires_image: downloads/baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg.zip
                 type: image
-                enabled: false
+                enabled: true
                 caption: 'Der Vorstand von «Baustoff Kreislauf Schweiz».'
               -
                 id: lvl687w9
