@@ -13,7 +13,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Materiali di costruzione circolari Svizzera – la nuova forte associazione di categoria: vogliamo contribuire a plasmare il futuro dell’industria svizzera delle costruzioni e del riciclaggio.'
+            text: 'Riciclaggio materiali da costruzione Svizzera – la nuova forte associazione di categoria: vogliamo contribuire a plasmare il futuro dell’industria svizzera delle costruzioni e del riciclaggio.'
     type: editor
     enabled: true
   -
@@ -32,7 +32,7 @@ page_elements:
             content:
               -
                 type: text
-                text: 'Il settore della ghiaia, del calcestruzzo e del riciclaggio unisce le forze in una nuova associazione di categoria.'
+                text: 'Il settore della interti, del calcestruzzo e del riciclaggio unisce le forze in una nuova associazione di categoria.'
         link: 'entry::45cf14ca-f705-4b9d-a518-57a8e1673119'
         link_text: 'Altre informazioni'
         type: teaser
@@ -52,7 +52,7 @@ page_elements:
             content:
               -
                 type: text
-                text: 'Abbonatevi alla newsletter di Materiali di costruzione circolari Svizzera!'
+                text: 'Abbonatevi alla newsletter di Riciclaggio materiali da costruzione Svizzera!'
         link_text: 'Iscriviti ora'
         type: teaser
         enabled: true
@@ -62,7 +62,7 @@ page_elements:
         image: baustoffkreislauf-logo-arv-asr.png
         image_ratio: square
         has_overlay: true
-        title: asr-Website
+        title: 'Sito web asr'
         text:
           -
             type: paragraph
@@ -81,7 +81,7 @@ page_elements:
         image: baustoffkreislauf-logo-fskb.png
         image_ratio: square
         has_overlay: true
-        title: ASIC-Website
+        title: 'Sito web ASIC'
         text:
           -
             type: paragraph
@@ -103,5 +103,5 @@ page_elements:
     type: splash
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714719784
+updated_at: 1714727672
 ---

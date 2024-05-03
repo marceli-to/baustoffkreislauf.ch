@@ -22,7 +22,7 @@ text:
               rel: null
               target: _blank
               title: null
-        text: 'Continuare a asr'
+        text: 'Continuare su asr'
       -
         type: hardBreak
       -
@@ -35,4 +35,4 @@ text:
               rel: null
               target: _blank
               title: null
-        text: 'Continuare a ASIC'
+        text: 'Continuare su ASIC'

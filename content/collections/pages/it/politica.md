@@ -21,7 +21,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'L’associazione svizzera materiali da costruzione Ciclo Materiali di costruzione circolari Svizzera rappresenta gli interessi del settore della ghiaia, del calcestruzzo e del riciclaggio e a tal fine è in costante contatto con tutti gli attori politici. In futuro troverete qui informazioni sui temi più importanti per i nostri soci nonché le nostre prese di posizione su questioni politiche attuali.'
+            text: 'Materiali di costruzione circolari Svizzera rappresenta gli interessi del settore degli inerti, del calcestruzzo e del riciclaggio e a tal fine è in costante contatto con tutti gli attori politici. In futuro troverete qui informazioni sui temi più importanti per i nostri soci nonché le nostre prese di posizione su questioni politiche attuali.'
     type: editor
     enabled: true
   -
@@ -68,5 +68,5 @@ page_elements:
                   title: null
             text: 'Associazione Svizzera dell’industria degli Inerti e del Calcestruzzo ASIC'
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714663567
+updated_at: 1714727773
 ---

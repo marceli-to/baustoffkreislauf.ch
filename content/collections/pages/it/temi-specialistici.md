@@ -21,7 +21,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Materiali di costruzione circolari Svizzera è l’associazione professionale che si occupa dei seguenti temi:'
+            text: 'Riciclaggio materiali da costruzione Svizzera è l’associazione professionale che si occupa dei seguenti temi:'
       -
         type: bulletList
         content:
@@ -46,7 +46,7 @@ page_elements:
                 content:
                   -
                     type: text
-                    text: 'estrazione di ghiaia e altre materie prime minerali'
+                    text: 'estrazione di inerti e altre materie prime minerali'
           -
             type: listItem
             content:
@@ -175,5 +175,5 @@ page_elements:
     type: image_gallery
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714663669
+updated_at: 1714727815
 ---
