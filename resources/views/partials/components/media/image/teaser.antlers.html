@@ -9,7 +9,7 @@
       title="{{ image:alt }}" 
       height="{{ image:height }}" 
       width="{{ image:width }}"
-      class="block w-full h-full object-cover {{ if image_ratio == 'portrait' }} aspect-[3/4] {{ elseif image_ratio == 'landscape' }} aspect-[16/10] {{ else }} aspect-square {{ /if }} {{ class ?? '' }}"
+      class="block w-full h-full object-cover {{ if image_ratio == 'portrait' }} aspect-[3/4] {{ elseif image_ratio == 'landscape' }} aspect-[3/2] {{ else }} aspect-square {{ /if }} {{ class ?? '' }}"
       loading="lazy">
   </picture>
   {{ if has_overlay }} 

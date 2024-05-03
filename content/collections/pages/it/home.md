@@ -21,7 +21,7 @@ page_elements:
     teaser:
       -
         id: lv9cooem
-        image_ratio: portrait
+        image_ratio: landscape
         has_overlay: true
         title: 'Comunicato stampa: «Materiali di costruzione circolari Svizzera»'
         text:
@@ -37,11 +37,11 @@ page_elements:
         link_text: 'Altre informazioni'
         type: teaser
         enabled: true
-        image: baustoffkreislauf-teaser-medienmitteilung.jpg
+        image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
       -
         id: lv9cqm0h
-        image: baustoffkreislauf-teaser-newsletter.jpg
-        image_ratio: portrait
+        image: baustoffkreislauf-teaser-newsletter_quer.jpg
+        image_ratio: landscape
         has_overlay: true
         title: Newsletter
         text:
@@ -103,5 +103,5 @@ page_elements:
     type: splash
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714727672
+updated_at: 1714758342
 ---

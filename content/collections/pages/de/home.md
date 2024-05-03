@@ -4,7 +4,7 @@ blueprint: pages
 title: Home
 author: 3f4934a7-72ef-446c-bf12-5336d13e6898
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714719746
+updated_at: 1714758320
 template: default
 layout: layout/default
 debug: false
@@ -27,7 +27,7 @@ page_elements:
     teaser:
       -
         id: lv9cooem
-        image_ratio: portrait
+        image_ratio: landscape
         has_overlay: true
         title: 'Medienmitteilung: Gründung von «Baustoff Kreislauf Schweiz»'
         text:
@@ -43,11 +43,11 @@ page_elements:
         link_text: 'Weitere Informationen'
         type: teaser
         enabled: true
-        image: baustoffkreislauf-teaser-medienmitteilung.jpg
+        image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
       -
         id: lv9cqm0h
-        image: baustoffkreislauf-teaser-newsletter.jpg
-        image_ratio: portrait
+        image: baustoffkreislauf-teaser-newsletter_quer.jpg
+        image_ratio: landscape
         has_overlay: true
         title: Newsletter
         text:
