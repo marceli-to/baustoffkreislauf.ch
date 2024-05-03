@@ -33,7 +33,7 @@ page_elements:
               -
                 type: text
                 text: 'La branche des graviers, du béton et du recyclage unit ses forces dans une nouvelle association professionnelle.'
-        link: 'entry::43975f10-5115-4bbc-8aba-d3d210ab14b6'
+        link: 'entry::8d0c8d47-1efa-42bb-bf8a-088ae78d6fbe'
         link_text: "Plus d'information"
         type: teaser
         enabled: true
@@ -105,5 +105,5 @@ page_elements:
 meta_description: 'L’association Matériaux de construction circulaires Suisse garantit le bouclage des circuits préservant la valeur et s’engage en faveur d’une gestion soigneuse des matières premières minérales, de la nature et de l’environnement. Elle représente les intérêts de la branche des graviers, du béton et du recyclage vis-à-vis de la Confédération, des cantons, des spécialistes et du public. Elle encourage en outre la formation sectorielle et propose à ses membres des prestations sur mesure.'
 meta_keywords: 'Gravier, béton, matière première minérale, approvisionnement en matières premières, élimination des matières premières, sécurité des matières premières, recyclage, décharges, recyclage des matériaux de construction, circuit, fermeture des circuits, économie circulaire, matériaux de construction circulaires, déconstruction, matériau de construction, nature, sol, remise en état, durabilité, habitat, biodiversité, inspectorat, ASGB, asr, élimination, sites contaminés, matériaux d’excavation, matériaux de démolition, déchets de chantiers non triés, déchets artisanaux, industrie du bois usagé, aménagement du territoire, gravière, centrale à béton, usine de recyclage, Suisse'
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714719766
+updated_at: 1714752761
 ---
