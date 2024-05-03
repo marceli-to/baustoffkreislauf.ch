@@ -1,7 +1,7 @@
 ---
 id: 376c586f-2e23-472b-bae4-3ecbeb1fcf5d
 origin: aca86125-bada-4a0a-92aa-4323e0945951
-title: 'Thèmes spécialisés'
+title: Thématiques
 page_elements:
   -
     id: lvc3jal7
@@ -13,7 +13,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Thèmes spécialisés'
+            text: Thématiques
       -
         type: paragraph
         attrs:
@@ -21,7 +21,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Matériaux de construction circulaires Suisse est l’association professionnelle pour les thèmes suivants:'
+            text: "L’association Matériaux de construction circulaires Suisse agit autour des thématiques suivantes\_:"
       -
         type: bulletList
         content:
@@ -175,5 +175,5 @@ page_elements:
     type: image_gallery
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714662403
+updated_at: 1714737785
 ---
