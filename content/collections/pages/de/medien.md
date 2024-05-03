@@ -4,7 +4,7 @@ blueprint: page
 title: Medien
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714755706
+updated_at: 1714756563
 page_elements:
   -
     id: lvkq5xpn
@@ -107,7 +107,7 @@ page_elements:
                 hires_image: downloads/baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg.zip
                 type: image
                 enabled: true
-                caption: 'Der Vorstand von «Baustoff Kreislauf Schweiz».'
+                caption: 'Der Vorstand und Co-Geschäftsführer von «Baustoff Kreislauf Schweiz».'
               -
                 id: lvl687w9
                 type: image

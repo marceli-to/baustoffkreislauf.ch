@@ -104,7 +104,7 @@ page_elements:
                 hires_image: downloads/baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg.zip
                 type: image
                 enabled: true
-                caption: 'Il comitato direttivo di «Materiali di costruzione circolari Svizzera».'
+                caption: 'Il comitato direttivo e co-amministratore delegato di «Materiali di costruzione circolari Svizzera».'
               -
                 id: lvl687w9
                 type: image
@@ -114,5 +114,5 @@ page_elements:
     type: editor
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714755764
+updated_at: 1714756519
 ---

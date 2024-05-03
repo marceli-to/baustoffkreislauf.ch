@@ -104,7 +104,7 @@ page_elements:
                 hires_image: downloads/baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg.zip
                 type: image
                 enabled: true
-                caption: 'Le comité de «Matériaux de construction circulaires Suisse».'
+                caption: ' Le comité et co-directeur de «Matériaux de construction circulaires Suisse».'
               -
                 id: lvl687w9
                 type: image
@@ -114,5 +114,5 @@ page_elements:
     type: editor
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714756318
+updated_at: 1714756532
 ---
