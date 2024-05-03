@@ -173,14 +173,14 @@ page_elements:
         id: lvla9uam
         fullscreen: false
         type: image
-        enabled: true
+        enabled: false
         image: placeholder-praesidium.png
       -
         id: lvla9yxh
         image: placeholder-vorstand.png
         fullscreen: false
         type: image
-        enabled: true
+        enabled: false
       -
         id: lvlaa3cg
         image: baustoffkreislauf-mood-image.jpg
@@ -190,5 +190,5 @@ page_elements:
     type: image_gallery
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714736831
+updated_at: 1714751402
 ---
