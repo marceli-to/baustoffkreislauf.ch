@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714725395
+updated_at: 1714736758
 template: default
 layout: layout/default
 page_elements:
@@ -105,7 +105,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Erster Präsident von «Baustoff Kreislauf Schweiz» ist Lionel Lathion, CEO der Lathion Group SA und dipl. Bau-ing. ETH. Christoph Duijts, CEO der KIBAG, und Stefan Eberhard, Inhaber der stefan eberhard ag, stehen ihm als Vize-Präsidenten zur Seite. Der neue 14-köpfige Verbandsvorstand ist fachlich wie regional breit abgestützt und soll insbesondere auch die Zusammenarbeit mit den Kantonalverbänden intensivieren. Hier geht es darum die wichtigen Themen auch auf lokaler Ebene in Politik und Gesellschaft einzubringen. Mit dem Zusammenschluss der beiden Verbände wird zusätzlich viel Wissen gebündelt. Die neue Geschäftsstelle von «Baustoff Kreislauf Schweiz» kann auf die Expertise und Erfahrung von 19 Mitarbeitenden aus den Bereichen Politik, Technik, Natur & Boden sowie Bildungsangebote zählen.'
+            text: 'Erster Präsident von «Baustoff Kreislauf Schweiz» ist Lionel Lathion, Präsident der Lathion Group SA und dipl. Bau-ing. ETH. Christoph Duijts, CEO der KIBAG, und Stefan Eberhard, Inhaber der stefan eberhard ag, stehen ihm als Vize-Präsidenten zur Seite. Der neue 14-köpfige Verbandsvorstand ist fachlich wie regional breit abgestützt und soll insbesondere auch die Zusammenarbeit mit den Kantonalverbänden intensivieren. Hier geht es darum die wichtigen Themen auch auf lokaler Ebene in Politik und Gesellschaft einzubringen. Mit dem Zusammenschluss der beiden Verbände wird zusätzlich viel Wissen gebündelt. Die neue Geschäftsstelle von «Baustoff Kreislauf Schweiz» kann auf die Expertise und Erfahrung von 19 Mitarbeitenden aus den Bereichen Politik, Technik, Natur & Boden sowie Bildungsangebote zählen.'
           -
             type: hardBreak
           -
@@ -140,19 +140,6 @@ page_elements:
                   target: null
                   title: null
             text: info@baustoffkreislauf.ch
-          -
-            type: hardBreak
-          -
-            type: text
-            marks:
-              -
-                type: link
-                attrs:
-                  href: 'tel:+41 79 774 06 38'
-                  rel: null
-                  target: null
-                  title: null
-            text: '+41 79 774 06 38'
       -
         type: heading
         attrs:

@@ -99,7 +99,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Le premier président de «Matériaux de construction circulaires Suisse» est Lionel Lathion, CEO de Lathion Group SA et ingénieur civil ETHZ. Christoph Duijts, CEO de KIBAG, et Stefan Eberhard, propriétaire de stefan eberhard ag, le secondent en tant que vice-présidents. Composé de 14 membres, le nouveau comité de l’association, bénéficie d’une large assise professionnelle et régionale et doit notamment intensifier la collaboration avec les associations cantonales. Il s’agit d’introduire les thèmes importants dans la politique et la société, également au niveau local. La fusion des deux associations permet en outre de mutualiser de nombreuses connaissances. Le nouvel office central de «Matériaux de construction circulaires Suisse» peut compter sur l’expertise et l’expérience de 19 collaborateurs et collaboratrices issus des domaines de la politique, de la technique, de la nature et du sol ainsi que sur des offres de formation.'
+            text: 'Le premier président de «Matériaux de construction circulaires Suisse» est Lionel Lathion, président de Lathion Group SA et ingénieur civil ETHZ. Christoph Duijts, CEO de KIBAG, et Stefan Eberhard, propriétaire de stefan eberhard ag, le secondent en tant que vice-présidents. Composé de 14 membres, le nouveau comité de l’association, bénéficie d’une large assise professionnelle et régionale et doit notamment intensifier la collaboration avec les associations cantonales. Il s’agit d’introduire les thèmes importants dans la politique et la société, également au niveau local. La fusion des deux associations permet en outre de mutualiser de nombreuses connaissances. Le nouvel office central de «Matériaux de construction circulaires Suisse» peut compter sur l’expertise et l’expérience de 19 collaborateurs et collaboratrices issus des domaines de la politique, de la technique, de la nature et du sol ainsi que sur des offres de formation.'
       -
         type: paragraph
         attrs:
@@ -137,19 +137,6 @@ page_elements:
                   target: null
                   title: null
             text: info@baustoffkreislauf.ch
-          -
-            type: hardBreak
-          -
-            type: text
-            marks:
-              -
-                type: link
-                attrs:
-                  href: 'tel:+41 79 774 06 38'
-                  rel: null
-                  target: null
-                  title: null
-            text: '+41 79 774 06 38'
       -
         type: heading
         attrs:
@@ -203,5 +190,5 @@ page_elements:
     type: image_gallery
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714722160
+updated_at: 1714736821
 ---
