@@ -3,5 +3,5 @@
   x-show="isVisible" 
   x-init="setTimeout(() => { isVisible = false; }, 5000);document.querySelector('form').scrollIntoView({ behavior: 'smooth' });"
   class="font-syntaxblack bg-red-600 hover:bg-red-700 transition-colors !text-white !no-underline leading-[1.2] p-15 sm:px-20 sm:py-15 fixed top-0 left-0 sm:top-20 sm:left-20 w-full sm:inline-block sm:w-auto sm:max-w-lg z-50">
-  Bitte überprüfen Sie Ihre Eingaben
+  {{ "Bitte überprüfen Sie Ihre Eingaben" | trans }}
 </a>

@@ -9,7 +9,7 @@
       {{ title }}
     </a>
     {{ if children }}
-      <a href="javascript:;" x-on:click="submenu = ! submenu">
+      <a href="javascript:;" title="{{ "Menü anzeigen" | trans }}" x-on:click="submenu = ! submenu">
         {{ partial:icons/chevron-down class="w-20 h-auto md:hidden" }}
       </a>
     {{ /if }}
