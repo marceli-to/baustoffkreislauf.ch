@@ -68,18 +68,18 @@ page_elements:
           id: lvl2zmmt
           values:
             type: logo
+            title: 'Logo mit Claim, FR'
             preview_image: downloads/logo_baustoff-kreislauf-schweiz_fr_mit-claim_farbig_rgb.png
             file: downloads/logo_baustoff-kreislauf-schweiz_fr_mit-claim_farbig_cmyk.eps.zip
-            title: 'Logo mit Claim, FR'
       -
         type: set
         attrs:
           id: lvl30asf
           values:
             type: logo
+            title: 'Logo mit Claim, IT'
             preview_image: downloads/logo_baustoff-kreislauf-schweiz_it_mit-claim_farbig_rgb.png
             file: downloads/logo_baustoff-kreislauf-schweiz_it_mit-claim_farbig_cmyk.eps.zip
-            title: 'Logo mit Claim, IT'
     type: editor
     enabled: true
   -
@@ -121,5 +121,5 @@ page_elements:
     type: editor
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714720981
+updated_at: 1714727229
 ---
