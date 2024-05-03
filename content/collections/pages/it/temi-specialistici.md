@@ -21,7 +21,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Riciclaggio materiali da costruzione Svizzera è l’associazione professionale che si occupa dei seguenti temi:'
+            text: 'Materiali di costruzione circolari Svizzera è l’associazione professionale che si occupa dei seguenti temi:'
       -
         type: bulletList
         content:

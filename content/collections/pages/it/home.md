@@ -13,7 +13,7 @@ page_elements:
         content:
           -
             type: text
-            text: 'Riciclaggio materiali da costruzione Svizzera – la nuova forte associazione di categoria: vogliamo contribuire a plasmare il futuro dell’industria svizzera delle costruzioni e del riciclaggio.'
+            text: 'Materiali di costruzione circolari Svizzera – la nuova forte associazione di categoria: vogliamo contribuire a plasmare il futuro dell’industria svizzera delle costruzioni e del riciclaggio.'
     type: editor
     enabled: true
   -
@@ -52,7 +52,7 @@ page_elements:
             content:
               -
                 type: text
-                text: 'Abbonatevi alla newsletter di Riciclaggio materiali da costruzione Svizzera!'
+                text: 'Abbonatevi alla newsletter di Materiali di costruzione circolari Svizzera!'
         link_text: 'Iscriviti ora'
         type: teaser
         enabled: true
