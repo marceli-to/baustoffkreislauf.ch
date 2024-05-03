@@ -4,7 +4,7 @@ blueprint: page
 title: Medien
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714727185
+updated_at: 1714736978
 page_elements:
   -
     id: lvkq5xpn
@@ -28,21 +28,12 @@ page_elements:
       -
         type: set
         attrs:
-          id: lvl22thl
+          id: lvqm3zg8
           values:
             type: press_release
-            date: '2024-04-29'
-            title: 'Fusion ARV / FSKB'
-            file: downloads/dummy-download.pdf
-      -
-        type: set
-        attrs:
-          id: lvl2n936
-          values:
-            type: press_release
-            date: '2024-04-14'
-            title: 'Übernahme ARV Lorem Ipsum'
-            file: downloads/dummy-download.pdf
+            date: '2024-05-03'
+            title: 'Medienmitteilung «Baustoff Kreislauf Schweiz»'
+            file: downloads/medienmitteilung_baustoffkreislaufschweiz_03052024.pdf
     type: editor
     enabled: true
   -

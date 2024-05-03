@@ -4,6 +4,6 @@
     target="_blank" 
     download 
     title="{{ title }}">
-    {{ date iso_format="DoMM.YYYY"  }}&nbsp;&nbsp;&nbsp;{{ title }}
+    {{ date | format('d.m.Y')  }}&nbsp;&nbsp;&nbsp;{{ title }}
   </a>
 </div>

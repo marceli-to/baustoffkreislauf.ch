@@ -25,21 +25,12 @@ page_elements:
       -
         type: set
         attrs:
-          id: lvl22thl
-          values:
-            type: press_release
-            date: '2024-04-29'
-            title: 'Fusion ARV / FSKB'
-            file: downloads/dummy-download.pdf
-      -
-        type: set
-        attrs:
           id: lvl2n936
           values:
             type: press_release
-            date: '2024-04-14'
-            title: 'Übernahme ARV Lorem Ipsum'
-            file: downloads/dummy-download.pdf
+            date: '2024-05-03'
+            title: 'Comunicato stampa «Materiali di costruzione circolari Svizzera»'
+            file: downloads/comunicato-stampa_materialidicostruzionecircolariavizzera_03052024.pdf
     type: editor
     enabled: true
   -
@@ -121,5 +112,5 @@ page_elements:
     type: editor
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714727229
+updated_at: 1714737023
 ---
