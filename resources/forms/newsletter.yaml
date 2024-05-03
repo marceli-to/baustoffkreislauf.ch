@@ -7,6 +7,6 @@ email:
     from: no-reply@baustoffkreislauf.ch
     reply_to: no-reply@baustoffkreislauf.ch
     subject: '{{"Newsletter Anmeldung" | trans}}'
-    mailer: sendmail
+    mailer: smtp
     html: email/html/newsletter
     text: email/text/newsletter
