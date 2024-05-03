@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714720561
+updated_at: 1714722137
 template: default
 layout: layout/default
 page_elements:
@@ -144,6 +144,14 @@ page_elements:
             type: hardBreak
           -
             type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'tel:+41 79 774 06 38'
+                  rel: null
+                  target: null
+                  title: null
             text: '+41 79 774 06 38'
       -
         type: heading

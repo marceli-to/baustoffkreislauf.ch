@@ -128,11 +128,27 @@ page_elements:
             type: hardBreak
           -
             type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'mailto:info@baustoffkreislauf.ch'
+                  rel: null
+                  target: null
+                  title: null
             text: info@baustoffkreislauf.ch
           -
             type: hardBreak
           -
             type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'mailto:+41 79 774 06 38'
+                  rel: null
+                  target: null
+                  title: null
             text: '+41 79 774 06 38'
       -
         type: heading
@@ -187,5 +203,5 @@ page_elements:
     type: image_gallery
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714720456
+updated_at: 1714722189
 ---
