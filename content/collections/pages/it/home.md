@@ -21,10 +21,9 @@ page_elements:
     teaser:
       -
         id: lv9cooem
-        image: teaser-medienmitteilung.png
         image_ratio: portrait
         has_overlay: true
-        title: '(IT) Medienmitteilung zum neuen Verband'
+        title: 'Comunicato stampa: «Materiali di costruzione circolari Svizzera»'
         text:
           -
             type: paragraph
@@ -33,14 +32,15 @@ page_elements:
             content:
               -
                 type: text
-                text: '(IT) Quiatur a quiassim re ommoles ditiusa ndaeper ferovitas re volupid ut.'
+                text: 'Il settore della ghiaia, del calcestruzzo e del riciclaggio unisce le forze in una nuova associazione di categoria.'
         link: 'entry::45cf14ca-f705-4b9d-a518-57a8e1673119'
         link_text: 'Altre informazioni'
         type: teaser
         enabled: true
+        image: baustoffkreislauf-teaser-medienmitteilung.jpg
       -
         id: lv9cqm0h
-        image: teaser-newsletter.jpg
+        image: baustoffkreislauf-teaser-newsletter.jpg
         image_ratio: portrait
         has_overlay: true
         title: Newsletter
@@ -59,7 +59,7 @@ page_elements:
         link: 'entry::ad9fe7ab-5693-4833-bcd7-c57e8ea04f5a'
       -
         id: lve5ri37
-        image: teaser-arv-asr.png
+        image: baustoffkreislauf-logo-arv-asr.png
         image_ratio: square
         has_overlay: true
         title: asr-Website
@@ -78,7 +78,7 @@ page_elements:
         enabled: true
       -
         id: lve5sx6x
-        image: teaser-fskb.png
+        image: baustoffkreislauf-logo-fskb.png
         image_ratio: square
         has_overlay: true
         title: ASIC-Website
@@ -102,12 +102,6 @@ page_elements:
     hint_federation: true
     type: splash
     enabled: true
-  -
-    id: lvkniegh
-    image: mood/bks-mood-home.jpg
-    type: image
-    enabled: true
-    fullscreen: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714662899
+updated_at: 1714719784
 ---

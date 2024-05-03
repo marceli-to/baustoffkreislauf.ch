@@ -37,7 +37,18 @@ page_elements:
         content:
           -
             type: text
-            text: "Materiali da costruzione riciclati di origine minerale: raccomandazioni d’impiego per committenti, progettisti, architetti e ingegneri(versione: aprile\_2024)"
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'statamic://asset::assets::downloads/baustoffkreislauf-verwendungsempfehlungen_2024.pdf'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: 'Materiali da costruzione riciclati di origine minerale: raccomandazioni d’impiego per committenti, progettisti, architetti e ingegneri'
+          -
+            type: text
+            text: " (versione: aprile\_2024)"
     type: editor
     enabled: true
   -
@@ -84,5 +95,5 @@ page_elements:
     type: splash
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714663365
+updated_at: 1714721241
 ---

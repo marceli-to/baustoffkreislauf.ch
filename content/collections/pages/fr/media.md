@@ -13,7 +13,7 @@ page_elements:
         content:
           -
             type: text
-            text: Media
+            text: Médias
       -
         type: heading
         attrs:
@@ -21,7 +21,7 @@ page_elements:
         content:
           -
             type: text
-            text: Medienmitteilungen
+            text: 'Communiqués de presse'
       -
         type: set
         attrs:
@@ -92,7 +92,7 @@ page_elements:
         content:
           -
             type: text
-            text: Bilder
+            text: Photos
       -
         type: set
         attrs:
@@ -114,12 +114,12 @@ page_elements:
                 enabled: true
               -
                 id: lvl687w9
-                image_download: downloads/bks_website_bilder_1200x745px_6-kopie.jpg
-                hires_image: downloads/BKS_Website_Bilder_1200x745px_3.png.zip
                 type: image
                 enabled: true
+                image_download: downloads/baustoffkreislauf-moodbild.jpg
+                hires_image: downloads/baustoffkreislauf-moodbild.jpg.zip
     type: editor
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714660207
+updated_at: 1714720967
 ---

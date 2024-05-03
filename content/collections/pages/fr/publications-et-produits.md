@@ -37,7 +37,18 @@ page_elements:
         content:
           -
             type: text
-            text: "Matériaux de construction minéraux de recyclage: recommandations d’utilisation pour maîtres d’ouvrage, planificateurs, architectes et ingénieurs (version: avril\_2024)"
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'statamic://asset::assets::downloads/baustoffkreislauf-verwendungsempfehlungen_2024.pdf'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: 'Matériaux de construction minéraux de recyclage: recommandations d’utilisation pour maîtres d’ouvrage, planificateurs, architectes et ingénieurs'
+          -
+            type: text
+            text: " (version: avril\_2024)"
     type: editor
     enabled: true
   -
@@ -84,5 +95,5 @@ page_elements:
     type: splash
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714662057
+updated_at: 1714721221
 ---

@@ -4,7 +4,7 @@ blueprint: page
 title: Medien
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714407966
+updated_at: 1714720955
 page_elements:
   -
     id: lvkq5xpn
@@ -117,10 +117,10 @@ page_elements:
                 enabled: true
               -
                 id: lvl687w9
-                image_download: downloads/bks_website_bilder_1200x745px_6-kopie.jpg
-                hires_image: downloads/BKS_Website_Bilder_1200x745px_3.png.zip
                 type: image
                 enabled: true
+                image_download: downloads/baustoffkreislauf-moodbild.jpg
+                hires_image: downloads/baustoffkreislauf-moodbild.jpg.zip
     type: editor
     enabled: true
 has_pattern: false

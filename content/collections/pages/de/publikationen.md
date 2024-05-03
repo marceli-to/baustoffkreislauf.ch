@@ -37,7 +37,18 @@ page_elements:
         content:
           -
             type: text
-            text: 'Mineralische Recycling-Baustoffe: Verwendungsempfehlungen für Bauherren, Planer, Architekten und Ingenieure (Stand: April 2024)'
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'statamic://asset::assets::downloads/baustoffkreislauf-verwendungsempfehlungen_2024.pdf'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: 'Mineralische Recycling-Baustoffe: Verwendungsempfehlungen für Bauherren, Planer, Architekten und Ingenieure'
+          -
+            type: text
+            text: ' (Stand: April 2024)'
     type: editor
     enabled: true
   -
@@ -85,6 +96,6 @@ page_elements:
     enabled: true
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714543759
+updated_at: 1714721205
 has_pattern: false
 ---
