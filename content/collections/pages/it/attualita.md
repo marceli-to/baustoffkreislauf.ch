@@ -27,7 +27,7 @@ page_elements:
             marks:
               -
                 type: bold
-            text: 'L’ASGB Association Suisse de l’industrie des Graviers et du Béton et l’asr Recyclage matériaux construction Suisse ont décidé ce jour de fusionner. L’association «Matériaux de construction circulaires Suisse» née de cette fusion est une nouvelle association professionnelle forte qui souhaite marquer l’avenir du secteur de la construction et du recyclage en Suisse et contribuer à le façonner. La sécurité d’approvisionnement de notre pays en matières premières minérales et le bouclage des cycles préservant la valeur sont au cœur de cette fusion.'
+            text: 'L’Associazione Svizzera dell’industria degli Inerti e del Calcestruzzo ASIC e l’associazione di categoria asr Riciclaggio materiali costruzione Svizzera hanno deciso di fondersi. Questa fusione in «Materiali di costruzione circolari Svizzera» crea una nuova e solida associazione di categoria con l’intento di contribuire a plasmare il futuro dell’industria svizzera delle costruzioni e del riciclaggio. Priorità dell’associazione sono: la sicurezza dell’approvvigionamento di materie prime minerali nel nostro Paese e la chiusura dei cicli che preservi il valore dei nostri materiali da costruzione.'
       -
         type: paragraph
         attrs:
@@ -203,5 +203,5 @@ page_elements:
     type: image_gallery
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714722189
+updated_at: 1714722345
 ---
