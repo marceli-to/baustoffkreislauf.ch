@@ -1,6 +1,7 @@
-{{ form:newsletter class="mb-30" }}
+{{ nocache }} 
 
-  {{ nocache }} 
+  {{ form:newsletter class="mb-30" }}
+
     {{ if errors }}
       {{ partial:forms/elements/errors }}
     {{ /if }}
@@ -10,14 +11,15 @@
         {{ "Vielen Dank für Ihre Anmeldung. Sie erhalten in den nächsten Minuten eine E-Mail, um Ihre E-Mail-Adresse bestätigen zu können." | trans }}
       {{ /partial:forms/elements/success }}
     {{ /if }}
-  {{ /nocache }}
 
-  <input type="text" name="webs1te" class="hidden" />
-  <div class="space-y-15 lg:space-y-20 max-w-lg">
-    {{ fields }}
-      {{ partial:forms/elements/field }}
-    {{ /fields }}
-  </div>
-  {{ partial:forms/elements/button label="Anmelden" }}
+    <input type="text" name="webs1te" class="hidden" />
+    <div class="space-y-15 lg:space-y-20 max-w-lg">
+      {{ fields }}
+        {{ partial:forms/elements/field }}
+      {{ /fields }}
+    </div>
+    {{ partial:forms/elements/button label="Anmelden" }}
 
-{{ /form:newsletter }}
+  {{ /form:newsletter }}
+
+{{ /nocache }}
