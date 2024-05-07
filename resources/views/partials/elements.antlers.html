@@ -25,6 +25,22 @@
     {{ partial:forms/newsletter }}
   {{ /if }}
 
+  {{# {{ if type == 'posts' }}
+    {{ collection from="posts" as="posts" sort="date:desc" limit="25" taxonomy:categories="{{ category:slug }}" }}
+
+      {{ if no_results }}
+        <p>{{ "Im Moment sind leider keine Beiträge vorhanden." | trans }}</p>
+      {{ else }}
+        {{ posts }}
+          <a href="{{ category:slug }}{{ slug }}">
+            {{ title }} 
+          </a>
+        {{ /posts }}
+      {{ /if }}
+
+    {{ /collection }}
+  {{ /if }} #}}
+
   {{ if type == 'editor' }}
 
     {{ content  }}

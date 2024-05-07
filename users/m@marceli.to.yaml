@@ -7,18 +7,9 @@ preferences:
   collections:
     posts:
       columns:
-        - date
         - title
-        - author
-        - post_categories
-        - post_tags
         - status
-      filters:
-        alle:
-          display: English
-          filters:
-            site:
-              site: en
+        - categories
       per_page: 500
     pages:
       columns:

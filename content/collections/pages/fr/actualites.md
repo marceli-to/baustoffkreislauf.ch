@@ -192,5 +192,5 @@ page_elements:
     type: image_gallery
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714756950
+updated_at: 1715063661
 ---

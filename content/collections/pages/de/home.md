@@ -4,7 +4,7 @@ blueprint: pages
 title: Home
 author: 3f4934a7-72ef-446c-bf12-5336d13e6898
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714758320
+updated_at: 1715072270
 template: default
 layout: layout/default
 debug: false
@@ -65,7 +65,7 @@ page_elements:
         link: 'entry::ad9fe7ab-5693-4833-bcd7-c57e8ea04f5a'
       -
         id: lve5ri37
-        image: baustoffkreislauf-logo-arv-asr.png
+        image: baustoffkreislauf-logo-arv-asr-weiss.png
         image_ratio: square
         has_overlay: true
         title: ARV-Website

@@ -4,9 +4,12 @@ sites:
   - fr
   - it
 propagate: false
-template: default
-layout: layout
+template: posts/show
+layout: layout/default
+taxonomies:
+  - category
 revisions: false
+route: '{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -18,3 +21,4 @@ preview_targets:
     refresh: true
 structure:
   root: false
+  max_depth: 1

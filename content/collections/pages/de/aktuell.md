@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714756926
+updated_at: 1715030552
 template: default
 layout: layout/default
 page_elements:

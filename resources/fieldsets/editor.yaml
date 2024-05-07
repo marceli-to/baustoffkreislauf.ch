@@ -33,7 +33,6 @@ fields:
       previews: true
       type: bard
       display: Content
-      icon: bard
       listable: hidden
       instructions_position: above
       visibility: visible
@@ -68,10 +67,10 @@ fields:
               fields:
                 -
                   import: image_downloads
-        page_elements:
-          display: Inhaltselemente
+        special_elements:
+          display: Spezialelemente
           instructions: null
-          icon: dashboard-layout
+          icon: addon-boxes-stack
           sets:
             newsletter_form:
               display: 'Newsletter Formular'

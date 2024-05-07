@@ -21,15 +21,9 @@ tabs:
             handle: slug
             field:
               type: slug
-              localizable: true
-              validate: 'max:200'
-          -
-            handle: category
-            field:
-              type: terms
-              taxonomies:
-                - category
-              display: Kategorie
-              mode: select
+              required: true
+              validate:
+                - required
+                - 'max:200'
               localizable: false
-title: Beiträge
+title: Kategorie

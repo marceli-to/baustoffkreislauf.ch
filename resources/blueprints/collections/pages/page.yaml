@@ -30,9 +30,9 @@ tabs:
               fullscreen: true
               sets:
                 content_elements:
-                  display: Inhaltselemente
+                  display: Hauptelemente
                   instructions: null
-                  icon: null
+                  icon: addon-boxes-stack
                   sets:
                     editor:
                       display: Texteditor
@@ -55,13 +55,6 @@ tabs:
                       fields:
                         -
                           import: teasers
-                    splash:
-                      display: Störer
-                      instructions: 'Störer Element hinzufügen.'
-                      icon: align-object-center
-                      fields:
-                        -
-                          import: splash
                     image:
                       display: Bild
                       instructions: 'Einzelnes Bild hinzufügen'
@@ -76,6 +69,18 @@ tabs:
                       fields:
                         -
                           import: image_gallery
+                special_elements:
+                  display: Spezialelemente
+                  instructions: null
+                  icon: addon-boxes-stack
+                  sets:
+                    splash:
+                      display: Störer
+                      instructions: 'Störer Element hinzufügen.'
+                      icon: align-object-center
+                      fields:
+                        -
+                          import: splash
                     newsletter_form:
                       display: 'Newsletter Formular'
                       instructions: 'Newsletter Formular hinzufügen'
@@ -85,7 +90,6 @@ tabs:
                           import: newsletter_form
               type: replicator
               display: Inhalte
-              icon: replicator
               listable: hidden
               instructions_position: above
               visibility: visible

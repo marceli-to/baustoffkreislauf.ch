@@ -4,7 +4,7 @@ blueprint: page
 title: Newsletter
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1713986730
+updated_at: 1715026436
 page_elements:
   -
     id: lve79c4g
@@ -42,4 +42,5 @@ page_elements:
     type: editor
     enabled: true
 has_pattern: false
+parent: home
 ---

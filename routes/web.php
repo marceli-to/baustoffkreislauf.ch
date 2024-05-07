@@ -21,3 +21,10 @@ Route::get('/newsletter/anmeldung-bestaetigen/{uuid}', [NewsletterController::cl
 Route::get('/newsletter/confirmation-inscription/{uuid}', [NewsletterController::class, 'confirm']);
 Route::get('/newsletter/conferma-iscrizione/{uuid}', [NewsletterController::class, 'confirm']);
 
+// Route::statamic('/{url}/{slug}', 'posts.show', [
+//   'layout' => 'layout.default',
+// ]);
+
+// Route::statamic('/fr/actualites/{slug}', 'posts.show', [
+//   'layout' => 'layout.default',
+// ]);
