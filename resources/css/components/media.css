@@ -1,0 +1,15 @@
+.media-container {
+  @apply relative
+}
+
+.media-container--video {
+  @apply aspect-video
+}
+
+.media-container iframe {
+  @apply w-full h-full object-contain
+}
+
+.media-container video {
+  @apply w-full h-full object-contain
+}

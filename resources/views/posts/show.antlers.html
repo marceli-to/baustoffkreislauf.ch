@@ -1,0 +1,25 @@
+<section class="col-span-full md:col-span-10">
+  <h1>{{ title }}</h1>
+  {{ if lead }}
+    <p>
+      {{ if location && date }}{{ location }}, {{ date iso_format="Do MMMM YYYY" }} – {{ elseif location && !date }} {{ location }} – {{elseif !location && date }}{{ date iso_format="Do MMMM YYYY"}} – {{ /if }}
+      <strong>{{ lead }}</strong>
+    </p>
+  {{ /if }}
+
+  {{ content }}
+
+    {{ if type == 'text'}}
+      {{ text }}
+    {{ /if }}
+
+    {{ if type == 'images' }}
+      {{ partial:components/media/images }}
+    {{ /if }}
+
+    {{ if type == 'video' }}
+      {{ partial:components/media/video}}
+    {{ /if }}
+
+  {{ /content }}
+</section>

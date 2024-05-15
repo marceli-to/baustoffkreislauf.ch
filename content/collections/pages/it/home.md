@@ -38,6 +38,27 @@ page_elements:
         type: teaser
         enabled: true
         image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
+        teaser_type: misc
+      -
+        id: lw7gnk4y
+        teaser_type: misc
+        image: baustoffkreislauf-know-how-forum.jpg
+        image_ratio: landscape
+        has_overlay: true
+        title: 'Knowhow-Forum 2024'
+        text:
+          -
+            type: paragraph
+            attrs:
+              class: null
+            content:
+              -
+                type: text
+                text: "Il Knowhow Forum di quest'anno, che si terrà il 6 giugno a Berna, si concentrerà sulle sfide che si presentano quando si affronta l'inquinamento di fondo su larga scala, in particolare l'inquinamento geogenico e quello da PFAS"
+        link: 'entry::b200aa26-7f21-4e75-8ba3-578fab8be3fa'
+        link_text: 'Altre informazioni'
+        type: teaser
+        enabled: true
       -
         id: lv9cqm0h
         image: baustoffkreislauf-teaser-newsletter_quer.jpg
@@ -57,8 +78,15 @@ page_elements:
         type: teaser
         enabled: true
         link: 'entry::ad9fe7ab-5693-4833-bcd7-c57e8ea04f5a'
+        teaser_type: misc
+    type: teasers
+    enabled: true
+  -
+    id: lw7fy1j6
+    teaser:
       -
-        id: lve5ri37
+        id: lw7fy2g2
+        teaser_type: misc
         image: baustoffkreislauf-logo-arv-asr-weiss.png
         image_ratio: square
         has_overlay: true
@@ -77,7 +105,8 @@ page_elements:
         type: teaser
         enabled: true
       -
-        id: lve5sx6x
+        id: lw7fypl0
+        teaser_type: misc
         image: baustoffkreislauf-logo-fskb.png
         image_ratio: square
         has_overlay: true
@@ -103,5 +132,5 @@ page_elements:
     type: splash
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715072409
+updated_at: 1715755752
 ---

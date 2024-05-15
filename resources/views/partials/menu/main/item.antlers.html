@@ -3,7 +3,7 @@
   <span class="flex w-full pl-20 pr-15  md:p-0 justify-between items-center">
     <a 
       href="{{ url }}" 
-      class="w-full py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black hover:no-underline group-hover:!no-underline md:underline-offset-12 {{ is_current || is_parent ? 'text-lime md:text-black md:underline' : '' }}"
+      class="w-full py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black hover:no-underline group-hover:!no-underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }}"
       target="{{ is_external ? '_blank' : '_self' }}"
       title="{{ title }}">
       {{ title }}
@@ -30,7 +30,7 @@
 <li class="border-b-black border-b md:border-0 relative group">
   <a 
     href="{{ url }}" 
-    class="block w-full pl-20 pr-15 py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black md:hover:underline md:underline-offset-12 {{ is_current || is_parent ? 'text-lime md:text-black md:underline' : '' }}"
+    class="block w-full pl-20 pr-15 py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black md:hover:underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }}"
     target="{{ is_external ? '_blank' : '_self' }}"
     title="{{ title }}">
     {{ title }}

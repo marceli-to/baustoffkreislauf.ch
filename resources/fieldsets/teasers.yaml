@@ -3,7 +3,7 @@ fields:
   -
     handle: teaser
     field:
-      collapse: false
+      collapse: true
       previews: true
       fullscreen: true
       sets:
@@ -21,7 +21,6 @@ fields:
                   import: teaser
       type: replicator
       display: Teaser
-      icon: replicator
       localizable: false
       listable: hidden
       instructions_position: below

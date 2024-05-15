@@ -1,15 +1,15 @@
-title: Aktuell
+title: Fachthemen
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715069841
+updated_at: 1715697780
 blueprint: category
 localizations:
   fr:
-    title: Actualités
-    slug: actualites
+    title: Thématiques
+    slug: thematiques
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715696063
+    updated_at: 1715697812
   it:
-    title: Attualità
-    slug: attualita
+    title: 'Temi specialistici'
+    slug: temi-specialistici
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715696052
+    updated_at: 1715697834

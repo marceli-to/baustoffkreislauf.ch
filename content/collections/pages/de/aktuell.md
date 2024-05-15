@@ -5,7 +5,7 @@ title: Aktuell
 has_pattern: false
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715030552
+updated_at: 1715701096
 template: default
 layout: layout/default
 page_elements:
@@ -170,29 +170,29 @@ page_elements:
     type: editor
     enabled: true
   -
-    id: lvla9t3r
+    id: lw6k3cuq
     image:
       -
-        id: lvla9uam
-        fullscreen: false
-        type: image
-        enabled: true
+        id: lw6k3noh
         image: baustoffkreislauf-praesidium.jpg
         caption: 'Das Präsidium von «Baustoff Kreislauf Schweiz».'
-      -
-        id: lvla9yxh
         fullscreen: false
         type: image
         enabled: true
+      -
+        id: lw6k415t
         image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
         caption: 'Der Vorstand und Co-Geschäftsführer von «Baustoff Kreislauf Schweiz».'
+        fullscreen: false
+        type: image
+        enabled: true
       -
-        id: lvlaa3cg
+        id: lw6k4bn8
         image: baustoffkreislauf-mood-image.jpg
         fullscreen: true
         type: image
         enabled: true
-    type: image_gallery
+    type: images
     enabled: true
 parent: home
 ---

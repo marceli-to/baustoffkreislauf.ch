@@ -1,15 +1,15 @@
-title: Aktuell
+title: Verband
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715069841
+updated_at: 1715697848
 blueprint: category
 localizations:
   fr:
-    title: Actualités
-    slug: actualites
+    title: Association
+    slug: association
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715696063
+    updated_at: 1715697867
   it:
-    title: Attualità
-    slug: attualita
+    title: Associazione
+    slug: associazione
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715696052
+    updated_at: 1715697878

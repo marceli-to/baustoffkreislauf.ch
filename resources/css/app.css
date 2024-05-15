@@ -4,6 +4,7 @@
 @import "typo/webfonts.css";
 @import "components/headings.css";
 @import "components/form.css";
+@import "components/media.css";
 @import "utils.css";
 
 * {

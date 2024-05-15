@@ -1,15 +1,15 @@
-title: Aktuell
+title: Politik
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715069841
+updated_at: 1715697495
 blueprint: category
 localizations:
   fr:
-    title: Actualités
-    slug: actualites
+    title: 'Activités politiques'
+    slug: activites-politiques
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715696063
+    updated_at: 1715697734
   it:
-    title: Attualità
-    slug: attualita
+    title: Politica
+    slug: politica
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715696052
+    updated_at: 1715697721

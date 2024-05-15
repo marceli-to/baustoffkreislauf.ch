@@ -1,0 +1,11 @@
+<div class="my-20 lg:my-30 media-container media-container--video">
+  {{ if embed_code }}
+    {{ embed_code }}
+  {{ /if }}
+
+  {{ if video_file }}
+    <video poster="" preload="none" muted autoplay controls>
+      <source src="{{ video_file }}" type="video/mp4">
+    </video>
+  {{ /if }}
+</div>

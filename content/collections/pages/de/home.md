@@ -4,7 +4,7 @@ blueprint: pages
 title: Home
 author: 3f4934a7-72ef-446c-bf12-5336d13e6898
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715072270
+updated_at: 1715755465
 template: default
 layout: layout/default
 debug: false
@@ -26,7 +26,28 @@ page_elements:
     id: lv9cmn5i
     teaser:
       -
-        id: lv9cooem
+        id: lw7ewage
+        teaser_type: post
+        post: 9c0de116-2bf7-406c-952c-3dc3e1cd5147
+        image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
+        image_ratio: landscape
+        has_overlay: true
+        type: teaser
+        enabled: false
+        title: 'Medienmitteilung: Gründung von «Baustoff Kreislauf Schweiz»'
+        text:
+          -
+            type: paragraph
+            attrs:
+              class: null
+            content:
+              -
+                type: text
+                text: 'Kies-, Beton- und Recyclingbranche bündelt Kräfte in neuem Fachverband'
+      -
+        id: lw7fzycd
+        teaser_type: misc
+        image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
         image_ratio: landscape
         has_overlay: true
         title: 'Medienmitteilung: Gründung von «Baustoff Kreislauf Schweiz»'
@@ -43,7 +64,26 @@ page_elements:
         link_text: 'Weitere Informationen'
         type: teaser
         enabled: true
-        image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
+      -
+        id: lw7gbe4x
+        teaser_type: misc
+        image: baustoffkreislauf-know-how-forum.jpg
+        image_ratio: landscape
+        has_overlay: true
+        title: 'Knowhow-Forum 2024'
+        text:
+          -
+            type: paragraph
+            attrs:
+              class: null
+            content:
+              -
+                type: text
+                text: 'Das diesjährige Knowhow-Forum vom 6. Juni in Bern handelt von den Herausforderungen, die im Umgang mit grossflächigen Hintergrundbelastungen auftreten, insbesondere bei geogenen und PFAS-Belastungen.'
+        link: 'entry::23091f38-019d-4d54-a753-0ba13a51114e'
+        link_text: 'Weitere Informationen'
+        type: teaser
+        enabled: true
       -
         id: lv9cqm0h
         image: baustoffkreislauf-teaser-newsletter_quer.jpg
@@ -63,8 +103,15 @@ page_elements:
         type: teaser
         enabled: true
         link: 'entry::ad9fe7ab-5693-4833-bcd7-c57e8ea04f5a'
+        teaser_type: misc
+    type: teasers
+    enabled: true
+  -
+    id: lw7frnhc
+    teaser:
       -
-        id: lve5ri37
+        id: lw7fsbiv
+        teaser_type: misc
         image: baustoffkreislauf-logo-arv-asr-weiss.png
         image_ratio: square
         has_overlay: true
@@ -83,7 +130,8 @@ page_elements:
         type: teaser
         enabled: true
       -
-        id: lve5sx6x
+        id: lw7ftcy0
+        teaser_type: misc
         image: baustoffkreislauf-logo-fskb.png
         image_ratio: square
         has_overlay: true

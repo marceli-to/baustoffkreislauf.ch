@@ -1,0 +1,20 @@
+<div class="mb-30 md:mb-0 last-of-type:mb-0 col-span-full sm:col-span-6">
+  {{ if link }}
+    <a href="{{ link }}" target="{{ link | is_external_url ? '_blank' : '_self' }}" class="group no-underline">
+      {{ partial:components/media/image/teaser }}
+      <h2 class="mb-20 xl:mb-30 mt-10">
+        {{ title }}
+      </h2>
+      {{ text ?? '' }}
+      {{ if link_text }}
+        <span class="underline underline-offset-4 decoration-1 group-hover:no-underline">{{ link_text }}</span>
+      {{ /if }}
+    </a>
+  {{ else }}
+    {{ partial:components/media/image/teaser }}
+    <h2 class="mb-20 xl:mb-30 mt-10">
+      {{ title }}
+    </h2>
+    {{ text ?? '' }}
+  {{ /if }}
+</div>

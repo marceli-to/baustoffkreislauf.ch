@@ -62,13 +62,13 @@ tabs:
                       fields:
                         -
                           import: image
-                    image_gallery:
-                      display: Bildergalerie
-                      instructions: 'Bildergalerie hinzufügen'
+                    images:
+                      display: Mehrere Bilder
+                      instructions: 'Mehrere grosse Bilder hinzufügen'
                       icon: media-image-picture-gallery
                       fields:
                         -
-                          import: image_gallery
+                          import: images
                 special_elements:
                   display: Spezialelemente
                   instructions: null

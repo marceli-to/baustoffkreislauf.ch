@@ -25,5 +25,13 @@ tabs:
               validate:
                 - required
                 - 'max:200'
-              localizable: false
+              localizable: true
+              generate: true
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              from: title
+              show_regenerate: true
+              hide_display: false
 title: Kategorie

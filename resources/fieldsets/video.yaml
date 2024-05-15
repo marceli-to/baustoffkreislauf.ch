@@ -1,0 +1,58 @@
+title: Video
+fields:
+  -
+    handle: video_source
+    field:
+      options:
+        file: 'Datei (MP4)'
+        code: 'Code (Youtube, Vimeo)'
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      default: code
+      type: select
+      display: Quelle
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: embed_code
+    field:
+      antlers: false
+      type: textarea
+      display: Code
+      instructions: 'Embed code von Youtube / Vimeo'
+      localizable: false
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if_any:
+        video_source: 'equals code'
+  -
+    handle: video_file
+    field:
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: Datei
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        video_source: 'equals file'
+      max_files: 1

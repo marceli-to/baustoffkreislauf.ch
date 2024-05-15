@@ -9,7 +9,7 @@ layout: layout/default
 taxonomies:
   - category
 revisions: false
-route: '{slug}'
+route: '{category}/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

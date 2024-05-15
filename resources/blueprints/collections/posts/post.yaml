@@ -5,6 +5,39 @@ tabs:
       -
         fields:
           -
+            handle: location
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Ort
+              localizable: true
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: date
+            field:
+              mode: single
+              inline: false
+              full_width: false
+              columns: 1
+              rows: 1
+              time_enabled: false
+              time_seconds_enabled: false
+              type: date
+              display: Datum
+              localizable: false
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: title
             field:
               type: text
@@ -12,6 +45,82 @@ tabs:
               localizable: true
               validate:
                 - required
+          -
+            handle: lead
+            field:
+              antlers: false
+              type: textarea
+              display: Lead
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - anchor
+              smart_typography: false
+              save_html: false
+              inline: false
+              toolbar_mode: fixed
+              reading_time: false
+              word_count: false
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: false
+              sets:
+                content_elements:
+                  display: Hauptelemente
+                  instructions: null
+                  icon: addon-boxes-stack
+                  sets:
+                    image:
+                      display: Bild
+                      instructions: 'Einzelnes Bild hinzufügen'
+                      icon: media-image-picture-orientation
+                      fields:
+                        -
+                          import: image
+                    images:
+                      display: 'Mehrere Bilder'
+                      instructions: 'Mehrere grosse Bilder hinzufügen'
+                      icon: media-image-picture-gallery
+                      fields:
+                        -
+                          import: images
+                    video:
+                      display: Video
+                      instructions: 'Video hinzufügen (Youtube/Vimeo oder aus Datei)'
+                      icon: media-webcam-video
+                      fields:
+                        -
+                          import: video
+              always_show_set_button: false
+              collapse: true
+              previews: true
+              type: bard
+              display: Inhalt
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
   sidebar:
     display: Sidebar
     sections:
@@ -23,6 +132,14 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              from: title
+              generate: true
+              show_regenerate: true
+              hide_display: false
           -
             handle: category
             field:
@@ -32,4 +149,11 @@ tabs:
               display: Kategorie
               mode: select
               localizable: false
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              max_items: 1
+              create: true
+              hide_display: false
 title: Beiträge

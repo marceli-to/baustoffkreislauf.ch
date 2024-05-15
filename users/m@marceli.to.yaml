@@ -8,9 +8,10 @@ preferences:
     posts:
       columns:
         - title
+        - category
         - status
-        - categories
       per_page: 500
+      after_save: continue_editing
     pages:
       columns:
         - title
@@ -29,6 +30,8 @@ preferences:
       columns:
         - title
         - slug
+    category:
+      after_save: continue_editing
   forms:
     newsletter:
       columns:

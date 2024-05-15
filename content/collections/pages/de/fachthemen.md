@@ -175,7 +175,7 @@ page_elements:
         fullscreen: false
         type: image
         enabled: true
-    type: image_gallery
+    type: images
     enabled: true
 has_pattern: false
 ---

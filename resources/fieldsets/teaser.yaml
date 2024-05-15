@@ -1,6 +1,45 @@
 title: Teaser
 fields:
   -
+    handle: teaser_type
+    field:
+      options:
+        post: Beitrag
+        misc: 'Manueller Teaser'
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      default: post
+      type: select
+      display: Typ
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: post
+    field:
+      max_items: 1
+      mode: default
+      create: true
+      collections:
+        - posts
+      type: entries
+      display: Beitrag
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        teaser_type: 'equals post'
+  -
     handle: image
     field:
       max_files: 1
@@ -12,7 +51,6 @@ fields:
       show_set_alt: true
       type: assets
       display: Bild
-      icon: assets
       localizable: false
       listable: hidden
       instructions_position: above
@@ -34,7 +72,6 @@ fields:
       cast_booleans: false
       type: select
       display: Bildformat
-      icon: select
       localizable: false
       width: 50
       listable: hidden
@@ -48,7 +85,6 @@ fields:
       default: false
       type: toggle
       display: 'Filter?'
-      icon: toggle
       instructions: 'Filter über dem Bild, verschwindet bei mouse over.'
       localizable: false
       width: 50
@@ -64,7 +100,6 @@ fields:
       antlers: false
       type: text
       display: Titel
-      icon: text
       localizable: false
       listable: hidden
       instructions_position: above
@@ -72,7 +107,7 @@ fields:
       replicator_preview: true
       hide_display: false
       validate:
-        - required
+        - 'required_if:teaser_type,misc'
   -
     handle: text
     field:
@@ -99,7 +134,6 @@ fields:
       previews: true
       type: bard
       display: Text
-      icon: bard
       localizable: false
       listable: hidden
       instructions_position: above
@@ -114,7 +148,6 @@ fields:
       container: assets
       type: link
       display: Link
-      icon: link
       localizable: false
       listable: hidden
       instructions_position: above
@@ -122,6 +155,8 @@ fields:
       replicator_preview: true
       hide_display: false
       width: 50
+      if:
+        teaser_type: 'equals misc'
   -
     handle: link_text
     field:
@@ -129,7 +164,6 @@ fields:
       antlers: false
       type: text
       display: Linktext
-      icon: text
       localizable: false
       listable: hidden
       instructions_position: above
@@ -137,3 +171,5 @@ fields:
       replicator_preview: true
       hide_display: false
       width: 50
+      if:
+        teaser_type: 'equals misc'
