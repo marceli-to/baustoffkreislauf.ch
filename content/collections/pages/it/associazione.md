@@ -71,13 +71,13 @@ page_elements:
         position: Vicepresidente
         type: team_member
         enabled: true
-        email: Christoph.Duijts@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/christoph_duijts.jpg
       -
         id: lvgm9zcf
         firstname: Stefan
         name: Eberhard
-        email: Stefan.Eberhard@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         position: Vicepresidente
         type: team_member
         enabled: true
@@ -86,7 +86,7 @@ page_elements:
         id: lvgmcsks
         firstname: Michael
         name: Baumgartner
-        email: Michael.Baumgartner@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/michael_baumgartner.jpg
@@ -94,7 +94,7 @@ page_elements:
         id: lvgmd8vm
         firstname: Christian
         name: Haldimann
-        email: Christian.Haldimann@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/christian_haldimann.jpg
@@ -104,7 +104,7 @@ page_elements:
         name: Eberhard
         type: team_member
         enabled: true
-        email: Martin.Eberhard@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/martin_eberhard.jpg
       -
         id: lvf65s4i
@@ -112,13 +112,13 @@ page_elements:
         name: Müller
         type: team_member
         enabled: true
-        email: Pascal.Mueller@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/pascall-muller.jpg
       -
         id: lvgmdm2d
         firstname: Fabian
         name: Mombelli
-        email: Fabian.Mombelli@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/fabian_mombelli.jpg
@@ -128,7 +128,7 @@ page_elements:
         name: Pilloud
         type: team_member
         enabled: true
-        email: Stephane.Pilloud@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/stephane_pilloud.jpg
       -
         id: lvf66sjp
@@ -136,7 +136,7 @@ page_elements:
         name: Santeler
         type: team_member
         enabled: true
-        email: Marcel.Santeler@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/marcel_santeler.jpg
       -
         id: lvf675rr
@@ -144,13 +144,13 @@ page_elements:
         name: Steck
         type: team_member
         enabled: true
-        email: Daniel.Steck@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/daniel_steck.jpg
       -
         id: lvgme1u9
         firstname: Laurent
         name: Steidle
-        email: Laurent.Steidle@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/laurent_steidle.jpg
@@ -160,13 +160,13 @@ page_elements:
         name: Steinegger
         type: team_member
         enabled: true
-        email: Matthias.Steinegger@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/matthias_steinegger.jpg
       -
         id: lvgmefl3
         firstname: Raoul
         name: Zengaffinen
-        email: Raoul.Zengaffinen@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/raoul_zengaffinen.jpg
@@ -197,7 +197,7 @@ page_elements:
         id: lvfbbibp
         firstname: Sebastian
         name: Abt
-        email: sebastian.abt@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/sebastian_abt.jpg
@@ -205,7 +205,7 @@ page_elements:
         id: lvgmh4iv
         firstname: Luca
         name: Giger
-        email: Luca.Giger@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/luca_giger.jpg
@@ -215,7 +215,7 @@ page_elements:
         name: Gonzalez
         type: team_member
         enabled: true
-        email: Cecilia.Gonzalez@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/cecilia_gonzalez.jpg
       -
         id: lvfa4s0k
@@ -223,13 +223,13 @@ page_elements:
         name: Haller
         type: team_member
         enabled: true
-        email: Beat.Haller@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/beat_haller.jpg
       -
         id: lvgmhpg8
         firstname: Sophie
         name: Hartmann
-        email: Sophie.Hartmann@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/sophie_hartmann.jpg
@@ -239,13 +239,13 @@ page_elements:
         name: Hösli
         type: team_member
         enabled: true
-        email: Doris.Hoesli@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/doris_hoesli.jpg
       -
         id: lvgmi2v7
         firstname: Yann
         name: Huet
-        email: Yann.Huet@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/yann_huet.jpg
@@ -255,7 +255,7 @@ page_elements:
         name: Kuhnhenn
         type: team_member
         enabled: true
-        email: Peter.Kuhnhenn@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/peter_kuhnhenn.jpg
       -
         id: lvfa79ej
@@ -263,7 +263,7 @@ page_elements:
         name: Lauper
         type: team_member
         enabled: true
-        email: Iris.Lauper@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/iris_lauper.jpg
       -
         id: lvfabevj
@@ -271,13 +271,13 @@ page_elements:
         name: Messer
         type: team_member
         enabled: true
-        email: Tania.Messer@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/tania_messer.jpg
       -
         id: lvgmihoa
         firstname: Katarina
         name: Planter
-        email: Katarina.Planter@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/katarina_planter.jpg
@@ -287,7 +287,7 @@ page_elements:
         name: Renfer
         type: team_member
         enabled: true
-        email: Remo.Renfer@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/remo_renfer.jpg
       -
         id: lvfa917z
@@ -295,13 +295,13 @@ page_elements:
         name: Schenker
         type: team_member
         enabled: true
-        email: Markus.Schenker@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/markus_schenker.jpg
       -
         id: lvgmiw6k
         firstname: Gregor
         name: Schguanin
-        email: Gregor.Schguanin@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/gregor_schguanin.jpg
@@ -309,7 +309,7 @@ page_elements:
         id: lvgmj902
         firstname: Aurélien
         name: Stephan
-        email: Aurélien.Stephan@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         type: team_member
         enabled: true
         image: portraits/aurelien_stephan.jpg
@@ -319,7 +319,7 @@ page_elements:
         name: Weder
         type: team_member
         enabled: true
-        email: Martin.Weder@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/martin_weder.jpg
       -
         id: lvfac01y
@@ -327,7 +327,7 @@ page_elements:
         name: Wetzig
         type: team_member
         enabled: true
-        email: Volker.Wetzig@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/volker_wetzig.jpg
       -
         id: lvfa7m9m
@@ -335,7 +335,7 @@ page_elements:
         name: Zbinden
         type: team_member
         enabled: true
-        email: Marion.Zbinden@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/marion_zbinden.jpg
       -
         id: lvfaavu3
@@ -343,7 +343,7 @@ page_elements:
         name: Zbinden
         type: team_member
         enabled: true
-        email: Silvia.Zbinden@baustoffkreislauf.ch
+        email: info@baustoffkreislauf.ch
         image: portraits/silvia_zbinden.jpg
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
 updated_at: 1714663753
