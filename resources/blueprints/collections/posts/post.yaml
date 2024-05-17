@@ -1,6 +1,6 @@
 tabs:
   main:
-    display: Main
+    display: Inhalt
     sections:
       -
         fields:
@@ -121,25 +121,61 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+  teaser:
+    display: Vorschau
+    sections:
+      -
+        fields:
+          -
+            handle: preview_image
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: Bild
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: preview_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Titel
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: preview_text
+            field:
+              antlers: false
+              type: textarea
+              display: Text
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
   sidebar:
     display: Sidebar
     sections:
       -
         fields:
-          -
-            handle: slug
-            field:
-              type: slug
-              localizable: true
-              validate: 'max:200'
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              from: title
-              generate: true
-              show_regenerate: true
-              hide_display: false
           -
             handle: category
             field:
@@ -155,5 +191,28 @@ tabs:
               replicator_preview: true
               max_items: 1
               create: true
+              hide_display: false
+          -
+            handle: tags
+            field:
+              type: terms
+              taxonomies:
+                - tags
+              display: Tags
+              mode: select
+              localizable: false
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              from: title
+              generate: true
+              show_regenerate: true
               hide_display: false
 title: Beiträge

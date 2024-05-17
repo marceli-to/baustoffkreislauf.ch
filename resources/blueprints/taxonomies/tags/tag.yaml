@@ -1,0 +1,32 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              required: true
+              validate:
+                - required
+                - 'max:200'
+              localizable: true
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              from: title
+              generate: true
+              show_regenerate: true
+              hide_display: false
+title: Tag

@@ -4,10 +4,13 @@ blueprint: post
 title: '«Baustoff Kreislauf Schweiz»: Kies-, Beton- und Recyclingbranche bündelt Kräfte in neuem Fachverband'
 category: aktuell
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715751003
+updated_at: 1715932385
 location: Bern
 date: '2024-05-03'
 lead: 'Der Fachverband arv Baustoffrecycling Schweiz und der FSKB Fachverband der Schweizerischen Kies- und Betonindustrie haben heute ihre Fusion beschlossen. Mit dem Zusammenschluss zu «Baustoff Kreislauf Schweiz» entsteht ein starker neuer Fachverband, der die Zukunft der Bau- und Recyclingwirtschaft in der Schweiz prägen und mitgestalten will. Die Versorgungssicherheit unseres Landes mit mineralischen Rohstoffen sowie das werterhaltende Schliessen der Kreisläufe unserer Baustoffe stehen dabei im Zentrum.'
+preview_image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
+preview_title: 'Medienmitteilung: Gründung von «Baustoff Kreislauf Schweiz»'
+preview_text: 'Kies-, Beton- und Recyclingbranche bündelt Kräfte in neuem Fachverband'
 content:
   -
     type: paragraph
@@ -169,21 +172,4 @@ content:
             fullscreen: true
             type: image
             enabled: true
-  -
-    type: set
-    attrs:
-      id: lw6liz41
-      values:
-        type: video
-        video_source: code
-        embed_code: '<iframe width="560" height="315" src="https://www.youtube.com/embed/qSmSM86jOgg?si=YXAmw_fs8G_u1OMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
-  -
-    type: set
-    attrs:
-      id: lw7du2ni
-      values:
-        type: video
-        video_source: file
-        video_file:
-          - video/dummy.mp4
 ---

@@ -1,45 +1,6 @@
 title: Teaser
 fields:
   -
-    handle: teaser_type
-    field:
-      options:
-        post: Beitrag
-        misc: 'Manueller Teaser'
-      taggable: false
-      push_tags: false
-      multiple: false
-      clearable: false
-      searchable: true
-      cast_booleans: false
-      default: post
-      type: select
-      display: Typ
-      localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
-  -
-    handle: post
-    field:
-      max_items: 1
-      mode: default
-      create: true
-      collections:
-        - posts
-      type: entries
-      display: Beitrag
-      localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
-      if:
-        teaser_type: 'equals post'
-  -
     handle: image
     field:
       max_files: 1
@@ -71,28 +32,15 @@ fields:
       searchable: true
       cast_booleans: false
       type: select
-      display: Bildformat
+      display: 'Format Vorschaubild'
       localizable: false
-      width: 50
       listable: hidden
       instructions_position: above
       visibility: visible
       replicator_preview: true
       hide_display: false
-  -
-    handle: has_overlay
-    field:
-      default: false
-      type: toggle
-      display: 'Filter?'
-      instructions: 'Filter über dem Bild, verschwindet bei mouse over.'
-      localizable: false
-      width: 50
-      listable: hidden
-      instructions_position: below
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      default: portrait
+      instructions: 'Seitenverhältnis für Vorschaubild'
   -
     handle: title
     field:
@@ -107,7 +55,7 @@ fields:
       replicator_preview: true
       hide_display: false
       validate:
-        - 'required_if:teaser_type,misc'
+        - required
   -
     handle: text
     field:
@@ -140,6 +88,8 @@ fields:
       visibility: visible
       replicator_preview: true
       hide_display: false
+      validate:
+        - required
   -
     handle: link
     field:
@@ -155,8 +105,6 @@ fields:
       replicator_preview: true
       hide_display: false
       width: 50
-      if:
-        teaser_type: 'equals misc'
   -
     handle: link_text
     field:
@@ -171,5 +119,3 @@ fields:
       replicator_preview: true
       hide_display: false
       width: 50
-      if:
-        teaser_type: 'equals misc'

@@ -12,7 +12,5 @@
       class="block w-full h-full object-cover {{ if image_ratio == 'portrait' }} aspect-[3/4] {{ elseif image_ratio == 'landscape' }} aspect-[3/2] {{ else }} aspect-square {{ /if }} {{ class ?? '' }}"
       loading="lazy">
   </picture>
-  {{ if has_overlay }} 
-    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-all"></div>
-  {{ /if }}
+  <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-all"></div>
 </figure>

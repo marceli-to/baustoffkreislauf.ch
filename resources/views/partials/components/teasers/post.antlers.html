@@ -1,10 +1,12 @@
-<div class="mb-30 md:mb-0 last-of-type:mb-0 col-span-full sm:col-span-6">
-  <a href="/{{ post:category:slug }}/{{post:slug}}" class="group no-underline">
-    {{ partial:components/media/image/teaser }}
+<div class="mb-30 md:mb-0 last-of-type:mb-0 col-span-full sm:col-span-6 {{ !post ? 'border-t border-black pt-15': ''}}">
+  <a href="{{ post ? post:url : url }}" class="group no-underline">
+    {{ partial:components/media/image/teaser image="{{ post ? post:preview_image : preview_image }}" image_ratio="{{ post ? post:image_ratio : 'landscape' }}" }}
     <h2 class="mb-20 xl:mb-30 mt-10">
-      {{ title }}
+      {{ post ? post:preview_title : preview_title }}
     </h2>
-    {{ text ?? '' }}
+    {{ if post:preview_text || preview_text }}
+      <p>{{ post ? post:preview_text : preview_text }}</p>
+    {{ /if }}
     <span class="underline underline-offset-4 decoration-1 group-hover:no-underline">
       {{ "Weitere Informationen" | trans }}
     </span>

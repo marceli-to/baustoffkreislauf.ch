@@ -13,12 +13,19 @@ fields:
           icon: null
           sets:
             teaser:
-              display: Teaser
-              instructions: 'Teaser hinzufügen'
+              display: 'Manueller Teaser'
+              instructions: 'Manueller Teaser hinzufügen'
               icon: text-formatting-image-top
               fields:
                 -
                   import: teaser
+            teaser_post:
+              display: Beitragsteaser
+              instructions: 'Beitragsteaser hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  import: teaser_post
       type: replicator
       display: Teaser
       localizable: false

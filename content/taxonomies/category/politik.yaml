@@ -5,11 +5,11 @@ blueprint: category
 localizations:
   fr:
     title: 'Activités politiques'
-    slug: activites-politiques
+    slug: politik
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715697734
+    updated_at: 1715930701
   it:
     title: Politica
-    slug: politica
+    slug: politik
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715697721
+    updated_at: 1715930704

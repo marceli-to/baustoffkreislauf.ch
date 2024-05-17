@@ -4,7 +4,7 @@ blueprint: page
 title: Medien
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714756657
+updated_at: 1715876830
 page_elements:
   -
     id: lvkq5xpn

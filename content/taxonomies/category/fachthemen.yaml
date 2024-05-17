@@ -5,11 +5,11 @@ blueprint: category
 localizations:
   fr:
     title: Thématiques
-    slug: thematiques
+    slug: fachthemen
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715697812
+    updated_at: 1715930688
   it:
     title: 'Temi specialistici'
-    slug: temi-specialistici
+    slug: fachthemen
     updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-    updated_at: 1715697834
+    updated_at: 1715930690

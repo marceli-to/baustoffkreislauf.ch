@@ -8,6 +8,7 @@ template: posts/show
 layout: layout/default
 taxonomies:
   - category
+  - tags
 revisions: false
 route: '{category}/{slug}'
 sort_dir: asc

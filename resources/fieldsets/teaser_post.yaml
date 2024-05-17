@@ -1,0 +1,41 @@
+title: 'Teaser Beitrag'
+fields:
+  -
+    handle: post
+    field:
+      max_items: 1
+      mode: default
+      create: true
+      collections:
+        - posts
+      type: entries
+      display: Beitrag
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: image_ratio
+    field:
+      options:
+        portrait: Hochformat
+        landscape: Querformat
+        square: Quadrat
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      default: portrait
+      type: select
+      display: 'Format Vorschaubild'
+      localizable: false
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      instructions: 'Seitenverhältnis für Vorschaubild'

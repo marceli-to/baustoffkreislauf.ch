@@ -20,50 +20,21 @@ page_elements:
     id: lv9cmn5i
     teaser:
       -
-        id: lv9cooem
+        id: lwac48a1
+        post: 20a991c3-3332-453d-bfb2-35a4ae1a6ea4
         image_ratio: landscape
-        has_overlay: true
-        title: 'Comunicato stampa: «Materiali di costruzione circolari Svizzera»'
-        text:
-          -
-            type: paragraph
-            attrs:
-              class: null
-            content:
-              -
-                type: text
-                text: 'Il settore della interti, del calcestruzzo e del riciclaggio unisce le forze in una nuova associazione di categoria.'
-        link: 'entry::45cf14ca-f705-4b9d-a518-57a8e1673119'
-        link_text: 'Altre informazioni'
-        type: teaser
+        type: teaser_post
         enabled: true
-        image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
-        teaser_type: misc
       -
-        id: lw7gnk4y
-        teaser_type: misc
-        image: baustoffkreislauf-know-how-forum.jpg
+        id: lwac4cth
+        post: 9a5fd625-9453-48f7-970b-780b9ea23cb3
         image_ratio: landscape
-        has_overlay: true
-        title: 'Knowhow-Forum 2024'
-        text:
-          -
-            type: paragraph
-            attrs:
-              class: null
-            content:
-              -
-                type: text
-                text: "Il Knowhow Forum di quest'anno, che si terrà il 6 giugno a Berna, si concentrerà sulle sfide che si presentano quando si affronta l'inquinamento di fondo su larga scala, in particolare l'inquinamento geogenico e quello da PFAS"
-        link: 'entry::b200aa26-7f21-4e75-8ba3-578fab8be3fa'
-        link_text: 'Altre informazioni'
-        type: teaser
+        type: teaser_post
         enabled: true
       -
         id: lv9cqm0h
         image: baustoffkreislauf-teaser-newsletter_quer.jpg
         image_ratio: landscape
-        has_overlay: true
         title: Newsletter
         text:
           -
@@ -78,7 +49,6 @@ page_elements:
         type: teaser
         enabled: true
         link: 'entry::ad9fe7ab-5693-4833-bcd7-c57e8ea04f5a'
-        teaser_type: misc
     type: teasers
     enabled: true
   -
@@ -86,10 +56,8 @@ page_elements:
     teaser:
       -
         id: lw7fy2g2
-        teaser_type: misc
         image: baustoffkreislauf-logo-arv-asr-weiss.png
         image_ratio: square
-        has_overlay: true
         title: 'Sito web asr'
         text:
           -
@@ -106,10 +74,8 @@ page_elements:
         enabled: true
       -
         id: lw7fypl0
-        teaser_type: misc
         image: baustoffkreislauf-logo-fskb.png
         image_ratio: square
-        has_overlay: true
         title: 'Sito web ASIC'
         text:
           -
@@ -132,5 +98,5 @@ page_elements:
     type: splash
     enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715755752
+updated_at: 1715929510
 ---

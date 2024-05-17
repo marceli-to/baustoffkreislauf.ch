@@ -12,11 +12,6 @@ tabs:
               localizable: true
               validate:
                 - required
-  sidebar:
-    display: Sidebar
-    sections:
-      -
-        fields:
           -
             handle: slug
             field:

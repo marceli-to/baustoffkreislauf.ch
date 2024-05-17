@@ -4,7 +4,7 @@ blueprint: pages
 title: Home
 author: 3f4934a7-72ef-446c-bf12-5336d13e6898
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715755465
+updated_at: 1715929354
 template: default
 layout: layout/default
 debug: false
@@ -26,30 +26,21 @@ page_elements:
     id: lv9cmn5i
     teaser:
       -
-        id: lw7ewage
-        teaser_type: post
+        id: lwaaeoch
         post: 9c0de116-2bf7-406c-952c-3dc3e1cd5147
-        image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
         image_ratio: landscape
-        has_overlay: true
-        type: teaser
-        enabled: false
-        title: 'Medienmitteilung: Gründung von «Baustoff Kreislauf Schweiz»'
-        text:
-          -
-            type: paragraph
-            attrs:
-              class: null
-            content:
-              -
-                type: text
-                text: 'Kies-, Beton- und Recyclingbranche bündelt Kräfte in neuem Fachverband'
+        type: teaser_post
+        enabled: true
+      -
+        id: lwabuybn
+        post: 037cfbc1-1a44-4067-ab33-27eadcc4f16b
+        image_ratio: landscape
+        type: teaser_post
+        enabled: true
       -
         id: lw7fzycd
-        teaser_type: misc
         image: baustoffkreislauf-vorstand-und-co-geschaeftsfuehrer.jpg
         image_ratio: landscape
-        has_overlay: true
         title: 'Medienmitteilung: Gründung von «Baustoff Kreislauf Schweiz»'
         text:
           -
@@ -63,13 +54,11 @@ page_elements:
         link: 'entry::45cf14ca-f705-4b9d-a518-57a8e1673119'
         link_text: 'Weitere Informationen'
         type: teaser
-        enabled: true
+        enabled: false
       -
         id: lw7gbe4x
-        teaser_type: misc
         image: baustoffkreislauf-know-how-forum.jpg
         image_ratio: landscape
-        has_overlay: true
         title: 'Knowhow-Forum 2024'
         text:
           -
@@ -83,12 +72,11 @@ page_elements:
         link: 'entry::23091f38-019d-4d54-a753-0ba13a51114e'
         link_text: 'Weitere Informationen'
         type: teaser
-        enabled: true
+        enabled: false
       -
         id: lv9cqm0h
         image: baustoffkreislauf-teaser-newsletter_quer.jpg
         image_ratio: landscape
-        has_overlay: true
         title: Newsletter
         text:
           -
@@ -103,7 +91,6 @@ page_elements:
         type: teaser
         enabled: true
         link: 'entry::ad9fe7ab-5693-4833-bcd7-c57e8ea04f5a'
-        teaser_type: misc
     type: teasers
     enabled: true
   -
@@ -111,10 +98,8 @@ page_elements:
     teaser:
       -
         id: lw7fsbiv
-        teaser_type: misc
         image: baustoffkreislauf-logo-arv-asr-weiss.png
         image_ratio: square
-        has_overlay: true
         title: ARV-Website
         text:
           -
@@ -131,10 +116,8 @@ page_elements:
         enabled: true
       -
         id: lw7ftcy0
-        teaser_type: misc
         image: baustoffkreislauf-logo-fskb.png
         image_ratio: square
-        has_overlay: true
         title: FSKB-Website
         text:
           -

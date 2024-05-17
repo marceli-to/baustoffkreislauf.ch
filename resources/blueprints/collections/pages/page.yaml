@@ -25,7 +25,7 @@ tabs:
           -
             handle: page_elements
             field:
-              collapse: false
+              collapse: true
               previews: true
               fullscreen: true
               sets:
@@ -63,12 +63,19 @@ tabs:
                         -
                           import: image
                     images:
-                      display: Mehrere Bilder
+                      display: 'Mehrere Bilder'
                       instructions: 'Mehrere grosse Bilder hinzufügen'
                       icon: media-image-picture-gallery
                       fields:
                         -
                           import: images
+                    list_posts:
+                      display: Beiträge
+                      instructions: 'Beiträge gefiltert nach Kategorien/Tags anzeigen'
+                      icon: dashboard-layout-2
+                      fields:
+                        -
+                          import: list_posts
                 special_elements:
                   display: Spezialelemente
                   instructions: null
