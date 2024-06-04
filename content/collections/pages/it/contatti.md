@@ -58,6 +58,53 @@ page_elements:
             text: info@baustoffkreislauf.ch
     type: editor
     enabled: true
+  -
+    id: lx0koaoc
+    content:
+      -
+        type: paragraph
+        attrs:
+          class: null
+        content:
+          -
+            type: text
+            text: 'Materiali di costruzione circolari Svizzera'
+          -
+            type: hardBreak
+          -
+            type: text
+            text: 'Bahnhofstrasse 6'
+          -
+            type: hardBreak
+          -
+            type: text
+            text: '8952 Schlieren'
+      -
+        type: paragraph
+        attrs:
+          class: null
+        content:
+          -
+            type: text
+            text: 'Telefono: +41 44 813 76 56'
+          -
+            type: hardBreak
+          -
+            type: text
+            text: 'E-mail: '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'mailto:schlieren@baustoffkreislauf.ch'
+                  rel: null
+                  target: null
+                  title: null
+            text: schlieren@baustoffkreislauf.ch
+    type: editor
+    enabled: true
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1714663004
+updated_at: 1717515992
 ---

@@ -22,6 +22,7 @@ public/robots.txt
 public/.htaccess
 INSTALL.txt
 
+# content/*
 # public/assets
 # resources/users
 # users

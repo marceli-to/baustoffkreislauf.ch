@@ -4,7 +4,7 @@ blueprint: page
 title: Politik
 debug: false
 updated_by: c2f8321e-be41-4d83-b9ee-8136dba46b39
-updated_at: 1715877735
+updated_at: 1717516051
 page_elements:
   -
     id: lvc2atfm
@@ -70,11 +70,6 @@ page_elements:
                   target: _blank
                   title: null
             text: 'Weiter zum FSKB'
-  -
-    id: lw9gytcf
-    category: politik
-    type: list_posts
-    enabled: true
 has_pattern: false
 parent: home
 ---
