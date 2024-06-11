@@ -48,6 +48,21 @@ fields:
                     visibility: visible
                     replicator_preview: true
                     hide_display: false
+                    width: 50
+                -
+                  handle: copyright
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Copyright
+                    localizable: false
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
       type: replicator
       display: Bilder
       localizable: false
