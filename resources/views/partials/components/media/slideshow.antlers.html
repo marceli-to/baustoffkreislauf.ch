@@ -19,11 +19,9 @@
         </picture>
         {{ if legend || copyright }}
           <figcaption class="flex justify-between">
-            {{ if legend }}
-              <span class="text-sm block pt-5 w-auto">
-                {{ legend | nl2br }}
-              </span>
-            {{ /if }}
+             <span class="text-sm block pt-5 w-auto">
+              {{ legend | nl2br }}
+            </span>
             {{ if copyright }}
               <span class="text-xxs block pt-2 w-auto">
                 {{ copyright}}
