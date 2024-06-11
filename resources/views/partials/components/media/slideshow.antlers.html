@@ -17,11 +17,11 @@
             class="block {{ class ?? '' }}"
             loading="lazy">
         </picture>
-        {{ if caption || copyright }}
+        {{ if legend || copyright }}
           <figcaption class="flex justify-between">
-            {{ if caption }}
+            {{ if legend }}
               <span class="text-sm block pt-5 w-auto">
-                {{ caption }}
+                {{ legend | nl2br }}
               </span>
             {{ /if }}
             {{ if copyright }}

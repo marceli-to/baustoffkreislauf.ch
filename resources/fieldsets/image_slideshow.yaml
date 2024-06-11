@@ -36,6 +36,18 @@ fields:
                     replicator_preview: true
                     hide_display: false
                 -
+                  handle: legend
+                  field:
+                    antlers: false
+                    type: textarea
+                    display: Legende
+                    localizable: false
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
                   handle: caption
                   field:
                     input_type: text
