@@ -103,6 +103,13 @@ tabs:
                       fields:
                         -
                           import: images
+                    image_slideshow:
+                      display: 'Bildergalerie (Slideshow)'
+                      instructions: 'Mehrere Bilder als Slideshow'
+                      icon: media-image-picture-gallery
+                      fields:
+                        -
+                          import: image_slideshow
                     video:
                       display: Video
                       instructions: 'Video hinzufügen (Youtube/Vimeo oder aus Datei)'

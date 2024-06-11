@@ -1,0 +1,29 @@
+{{ partial:swiper/wrapper }}
+  {{ images }}
+    {{ partial:swiper/slide }}
+      <figure>
+        <picture>
+          <source media="(min-width: 1024px)" srcset="{{ glide:image preset='xl-webp' }}" type="image/webp">
+          <source media="(min-width: 768px)" srcset="{{ glide:image preset='lg-webp' }}" type="image/webp">
+          <source srcset="{{ glide:image preset='md-webp' }}" type="image/webp">
+          <source media="(min-width: 1024px)" srcset="{{ glide:image preset='xl' }}" type="image/jpeg">
+          <source media="(min-width: 768px)" srcset="{{ glide:image preset='lg' }}" type="image/jpeg">
+          <img 
+            src="{{ glide:image preset='md' }}" 
+            alt="{{ image:alt }}" 
+            title="{{ image:alt }}" 
+            height="{{ image:height }}" 
+            width="{{ image:width }}"
+            class="block {{ class ?? '' }}"
+            loading="lazy">
+        </picture>
+        <figcaption class="flex justify-between">
+          <span class="text-sm block pt-5 w-auto">
+            {{ caption }}
+          </span>
+          <span class="text-xxs block pt-2 w-auto">Fotograf Patrick Planter</span>
+        </figcaption>
+      </figure>
+    {{ /partial:swiper/slide }}
+  {{ /images }}
+{{ /partial:swiper/wrapper }}

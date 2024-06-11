@@ -1,0 +1,19 @@
+:root {
+  --swiper-navigation-size: 36px !important;
+}
+
+.swiper-pagination {
+  @apply !top-auto !bottom-30
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  @apply opacity-90 bg-white
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  @apply bg-lime
+}
+
+.swiper-button-next, .swiper-button-prev {
+  @apply !text-lime
+}

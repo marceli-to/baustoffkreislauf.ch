@@ -17,6 +17,10 @@
       {{ partial:components/media/images }}
     {{ /if }}
 
+    {{ if type == 'image_slideshow' }}
+      {{ partial:components/media/slideshow }}
+    {{ /if }}
+
     {{ if type == 'video' }}
       {{ partial:components/media/video}}
     {{ /if }}
