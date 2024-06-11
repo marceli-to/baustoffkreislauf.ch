@@ -18,7 +18,7 @@ const SwiperUi = (function() {
     direction: 'horizontal',
     slidesPerView: "1",
     centeredSlides: true,
-    spaceBetween: "16",
+    spaceBetween: "0",
     // pagination: {
     //   el: ".swiper-pagination",
     //   clickable: true
