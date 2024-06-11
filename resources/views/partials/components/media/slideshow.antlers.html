@@ -17,12 +17,20 @@
             class="block {{ class ?? '' }}"
             loading="lazy">
         </picture>
-        <figcaption class="flex justify-between">
-          <span class="text-sm block pt-5 w-auto">
-            {{ caption }}
-          </span>
-          <span class="text-xxs block pt-2 w-auto">Fotograf Patrick Planter</span>
-        </figcaption>
+        {{ if caption || copyright }}
+          <figcaption class="flex justify-between">
+            {{ if caption }}
+              <span class="text-sm block pt-5 w-auto">
+                {{ caption }}
+              </span>
+            {{ /if }}
+            {{ if copyright }}
+              <span class="text-xxs block pt-2 w-auto">
+                {{ copyright}}
+              </span>
+            {{ /if }}
+          </figcaption>
+        {{ /if }}
       </figure>
     {{ /partial:swiper/slide }}
   {{ /images }}
