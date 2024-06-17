@@ -223,4 +223,12 @@ tabs:
               generate: true
               show_regenerate: true
               hide_display: false
+  seo:
+    display: SEO
+    sections:
+      -
+        display: 'Neuer Abschnitt'
+        fields:
+          -
+            import: seo
 title: Beiträge
