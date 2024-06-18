@@ -2,7 +2,13 @@
 <html lang="{{ site:short_locale }}" class="scroll-smooth overflow-y-scroll">
 <head>
 <meta charset="utf-8">
-{{ if is_homepage }}<title>{{ "Baustoff Kreislauf Schweiz – der Kies-, Beton- und Recyclingverband" | trans }}</title>{{ else }}<title>{{ open_graph_title ?? title ?? site:name }} | {{ "Baustoff Kreislauf Schweiz – der Kies-, Beton- und Recyclingverband" | trans }}</title>{{ endif }}
+{{ if is_homepage }}
+<title>{{ "Baustoff Kreislauf Schweiz – der Kies-, Beton- und Recyclingverband" | trans }}</title>
+{{ elseif open_graph_title }}
+<title>{{ open_graph_title }}</title>
+{{ else }}
+<title>{{ title ?? site:name }} | {{ "Baustoff Kreislauf Schweiz – der Kies-, Beton- und Recyclingverband" | trans }}</title>
+{{ endif }}
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ if  meta_description }}<meta name="description" content="{{ meta_description }}">{{ else }}<meta name="description" content="{{ config.client.meta_description | trans }}">{{ /if }}
