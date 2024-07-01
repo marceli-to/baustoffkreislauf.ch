@@ -43,6 +43,14 @@ main ul li::marker {
   @apply text-xxs w-20 h-20 block
 }
 
+main ol {
+  @apply p-0 m-0 mb-15 xl:mb-20 ml-16 list-decimal
+}
+
+main ol li {
+  @apply mb-10
+}
+
 strong {
   @apply font-acumin-bold font-bold
 }
