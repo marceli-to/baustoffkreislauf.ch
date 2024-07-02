@@ -16,18 +16,3 @@ fields:
       visibility: visible
       replicator_preview: true
       hide_display: false
-  -
-    handle: tags
-    field:
-      mode: default
-      create: true
-      taxonomies:
-        - tags
-      type: terms
-      display: Tags
-      localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false

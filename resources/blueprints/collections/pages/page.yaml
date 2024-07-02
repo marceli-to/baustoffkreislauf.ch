@@ -71,7 +71,7 @@ tabs:
                           import: images
                     list_posts:
                       display: Beiträge
-                      instructions: 'Beiträge gefiltert nach Kategorien/Tags anzeigen'
+                      instructions: 'Beiträge gefiltert nach Kategorie anzeigen'
                       icon: dashboard-layout-2
                       fields:
                         -

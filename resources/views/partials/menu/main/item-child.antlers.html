@@ -1,4 +1,4 @@
-<li class="block group border-t-black md:border-b-black md:border-b border-t">
+<li class="block group border-t-black {{ last ? 'md:border-b-black md:border-b' : '' }} border-t">
   <a 
     href="{{ url }}" 
     class=" {{ is_current || is_parent ? 'text-lime' : '' }} block whitespace-nowrap hover:text-lime transition-colors text-sm md:text-sm py-13 md:py-8 pr-5 pl-35 md:pl-5"

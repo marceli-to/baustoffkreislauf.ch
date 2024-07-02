@@ -29,4 +29,18 @@ tabs:
               from: title
               show_regenerate: true
               hide_display: false
+          -
+            handle: keyword
+            field:
+              from: title
+              generate: true
+              show_regenerate: false
+              type: slug
+              display: Keyword
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
 title: Kategorie
