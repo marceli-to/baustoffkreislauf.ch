@@ -34,6 +34,20 @@ tabs:
                   instructions: null
                   icon: addon-boxes-stack
                   sets:
+                    teasers:
+                      display: 'Beitragsteaser für Startseite'
+                      instructions: 'Teaser(s) hinzufügen.'
+                      icon: text-formatting-image-top
+                      fields:
+                        -
+                          import: teasers
+                    list_posts:
+                      display: 'Beiträge verknüpfen'
+                      instructions: 'Beiträge verknüpfen & nach Kategorie anzeigen'
+                      icon: dashboard-layout-2
+                      fields:
+                        -
+                          import: list_posts
                     editor:
                       display: Texteditor
                       instructions: 'Texteditor hinzufügen'
@@ -41,6 +55,25 @@ tabs:
                       fields:
                         -
                           import: editor
+                    image:
+                      display: Einzelbild
+                      instructions: 'Einzelnes Bild hinzufügen'
+                      icon: media-image-picture-orientation
+                      fields:
+                        -
+                          import: image
+                    images:
+                      display: 'Mehrere Bilder (Raster)'
+                      instructions: 'Mehrere grosse Bilder hinzufügen'
+                      icon: media-image-picture-gallery
+                      fields:
+                        -
+                          import: images
+                special_elements:
+                  display: Spezialelemente
+                  instructions: null
+                  icon: addon-boxes-stack
+                  sets:
                     team:
                       display: Team
                       instructions: 'Team hinzufügen.'
@@ -48,39 +81,6 @@ tabs:
                       fields:
                         -
                           import: team
-                    teasers:
-                      display: Teasers
-                      instructions: 'Teaser(s) hinzufügen.'
-                      icon: text-formatting-image-top
-                      fields:
-                        -
-                          import: teasers
-                    image:
-                      display: Bild
-                      instructions: 'Einzelnes Bild hinzufügen'
-                      icon: media-image-picture-orientation
-                      fields:
-                        -
-                          import: image
-                    images:
-                      display: 'Mehrere Bilder'
-                      instructions: 'Mehrere grosse Bilder hinzufügen'
-                      icon: media-image-picture-gallery
-                      fields:
-                        -
-                          import: images
-                    list_posts:
-                      display: Beiträge
-                      instructions: 'Beiträge gefiltert nach Kategorie anzeigen'
-                      icon: dashboard-layout-2
-                      fields:
-                        -
-                          import: list_posts
-                special_elements:
-                  display: Spezialelemente
-                  instructions: null
-                  icon: addon-boxes-stack
-                  sets:
                     splash:
                       display: Störer
                       instructions: 'Störer Element hinzufügen.'

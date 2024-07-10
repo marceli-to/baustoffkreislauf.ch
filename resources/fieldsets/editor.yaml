@@ -42,7 +42,7 @@ fields:
       localizable: true
       sets:
         downloads:
-          display: Downloads
+          display: Medien/Downloads
           instructions: null
           icon: download-arrow-down
           sets:
@@ -54,14 +54,14 @@ fields:
                 -
                   import: press_release
             logo:
-              display: Logo
+              display: 'Logo Download'
               instructions: 'Logos für Download'
               icon: text-formatting-input-signature
               fields:
                 -
                   import: logo
             image_downloads:
-              display: Bilder
+              display: 'Bilder Download'
               instructions: 'Hochauflösende Bilder für Download'
               icon: media-image-picture-gallery
               fields:
