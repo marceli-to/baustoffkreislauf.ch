@@ -90,14 +90,14 @@ tabs:
                   icon: addon-boxes-stack
                   sets:
                     image:
-                      display: Bild
+                      display: Einzelbild
                       instructions: 'Einzelnes Bild hinzufügen'
                       icon: media-image-picture-orientation
                       fields:
                         -
                           import: image
                     images:
-                      display: 'Mehrere Bilder'
+                      display: 'Mehrere Bilder (Raster)'
                       instructions: 'Mehrere grosse Bilder hinzufügen'
                       icon: media-image-picture-gallery
                       fields:
@@ -105,7 +105,7 @@ tabs:
                           import: images
                     image_slideshow:
                       display: 'Bildergalerie (Slideshow)'
-                      instructions: 'Mehrere Bilder als Slideshow'
+                      instructions: 'Mehrere Bilder in Slideshow'
                       icon: media-image-picture-gallery
                       fields:
                         -
