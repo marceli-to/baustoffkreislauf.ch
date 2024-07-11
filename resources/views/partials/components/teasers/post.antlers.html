@@ -3,7 +3,7 @@
     {{ partial:components/media/image/teaser 
         image="{{ post ? post:preview_image : preview_image }}" 
         image_ratio="{{ post ? image_ratio : 'landscape' }}" }}
-    <h2 class="mb-20 xl:mb-30 mt-10">
+    <h2 class="mb-20 xl:mb-30 mt-10 hyphens-auto">
       {{ post ? post:preview_title : preview_title }}
     </h2>
     {{ if post:preview_text || preview_text }}
