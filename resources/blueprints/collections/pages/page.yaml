@@ -95,6 +95,13 @@ tabs:
                       fields:
                         -
                           import: newsletter_form
+                    events:
+                      display: Anlässe
+                      instructions: 'Liste der Anlässe hinzufügen.'
+                      icon: calendar-date
+                      fields:
+                        -
+                          import: events
               type: replicator
               display: Inhalte
               listable: hidden

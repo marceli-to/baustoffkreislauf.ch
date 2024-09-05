@@ -1,0 +1,15 @@
+<section>
+  <h1>{{ title }}</h1>
+  {{ collection from="events" as="events" sort="event_date:asc" event_date:is_after="now" }}
+    {{ if events }}
+      {{ events}}
+        <p>
+          <a href="{{ url }}">
+            <strong>{{ event_date iso_format="Do MMMM YYYY" }}:</strong>
+            {{ title }}
+          </a>
+        </p>
+      {{ /events}}
+    {{ /if }}
+  {{ /collection }}
+</section>

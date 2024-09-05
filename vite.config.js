@@ -1,13 +1,16 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-// import vue from '@vitejs/plugin-vue';
+import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 
 export default defineConfig({
   resolve: {
     alias: {
       img: resolve('resources/img'),
-      fonts: resolve('resources/css/fonts')
+      fonts: resolve('resources/css/fonts'),
+      forms: resolve('resources/js/forms'),
+      '@': __dirname + '/resources/js/',
+      vue: 'vue/dist/vue.esm-bundler.js'  // Add this line
     }
   },
   plugins: [
@@ -22,6 +25,16 @@ export default defineConfig({
           ],
           refresh: true,
       }),
-      //vue(),
+      vue({
+        template: {
+            transformAssetUrls: {
+                base: null,
+                includeAbsolute: false,
+            },
+        },
+      }),
   ],
+  define: {
+    __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false',
+  },
 });

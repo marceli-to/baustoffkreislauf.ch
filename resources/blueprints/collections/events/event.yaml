@@ -1,0 +1,440 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: event_date
+            field:
+              mode: single
+              inline: false
+              full_width: false
+              columns: 1
+              rows: 1
+              time_enabled: false
+              time_seconds_enabled: false
+              format: d.m.Y
+              type: date
+              display: Datum
+              localizable: true
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: true
+              validate:
+                - required
+              display: Titel
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              input_type: text
+              antlers: false
+              hide_display: false
+  registration:
+    display: Anmeldeformular
+    sections:
+      -
+        display: Formular-Felder
+        fields:
+          -
+            handle: has_company
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Firma"'
+              localizable: false
+              width: 66
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: requires_company
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_company: 'equals true'
+          -
+            handle: has_salutation
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Anrede"'
+              localizable: false
+              width: 66
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: requires_salutation
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_salutation: 'equals true'
+          -
+            handle: has_name
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Name"'
+              localizable: false
+              width: 66
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: requires_name
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_name: 'equals true'
+          -
+            handle: has_firstname
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Vorname"'
+              localizable: false
+              width: 66
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: requires_firstname
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_firstname: 'equals true'
+          -
+            handle: has_email
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "E-Mail"'
+              localizable: false
+              width: 66
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: requires_email
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_email: 'equals true'
+          -
+            handle: has_phone
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Telefon"'
+              localizable: false
+              width: 66
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: requires_phone
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_phone: 'equals true'
+          -
+            handle: has_address
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Adresse"'
+              localizable: false
+              width: 66
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: requires_address
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_address: 'equals true'
+          -
+            handle: has_location
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "PLZ/Ort"'
+              localizable: false
+              width: 66
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: requires_location
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_location: 'equals true'
+          -
+            handle: meal_options
+            field:
+              type: section
+              display: 'Angaben Essen'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: has_meal_options
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Auswahl Essen"'
+              localizable: false
+              width: 66
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: requires_meal_options
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_meal_options: 'equals true'
+          -
+            handle: has_meal_option_meat
+            field:
+              default: true
+              type: toggle
+              display: 'Option "Fleisch"'
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_meal_options: 'equals true'
+          -
+            handle: has_meal_option_fish
+            field:
+              default: true
+              type: toggle
+              display: 'Option "Fisch"'
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_meal_options: 'equals true'
+          -
+            handle: has_meal_option_vegetarian
+            field:
+              default: true
+              type: toggle
+              display: 'Option "Vegetarisch"'
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_meal_options: 'equals true'
+          -
+            handle: has_meal_option_vegan
+            field:
+              default: true
+              type: toggle
+              display: 'Option "Vegan"'
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_meal_options: 'equals true'
+          -
+            handle: additional_individuals
+            field:
+              type: section
+              display: 'Weitere Personen'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: has_button_additional_individuals
+            field:
+              default: true
+              type: toggle
+              display: 'Button "Weitere Person hinzufügen"'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: has_field_additional_individual_name
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Name"'
+              localizable: false
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: has_field_additional_individual_firstname
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Vorname"'
+              localizable: false
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - events
+              max_items: 1
+              listable: false
+              localizable: true
+title: Anlässe

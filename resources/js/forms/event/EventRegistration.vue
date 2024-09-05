@@ -1,0 +1,350 @@
+<template>
+  <template v-if="formSuccess">
+    <success-alert>
+      {{ __('Vielen Dank für Ihre Anfrage!') }}
+    </success-alert>
+  </template>
+  <template v-if="formError">
+    <error-alert>
+      {{ __('Bitte überprüfen Sie die eingegebenen Daten.') }}
+    </error-alert>
+  </template>
+  <form @submit.prevent="submitForm" v-if="isLoaded" class="space-y-15 lg:space-y-20 max-w-lg">
+    <form-group v-if="hasSalutation">
+      <form-label id="salutation" :label="__('Anrede')" :required="requiresSalutation" />
+      <form-select-field 
+        v-model="form.salutation" 
+        :error="errors.salutation"
+        @update:error="errors.salutation = $event"
+        :options="salutations"
+      />
+    </form-group>
+    <form-group v-if="hasCompany">
+      <form-label id="company" :label="__('Firma')" :required="requiresCompany" />
+      <form-text-field 
+        v-model="form.company" 
+        :error="errors.company"
+        @update:error="errors.company = $event"
+      />
+    </form-group>
+    <form-group v-if="hasFirstname">
+      <form-label id="firstname" :label="__('Vorname')" :required="requiresFirstname" />
+      <form-text-field 
+        v-model="form.firstname" 
+        :error="errors.firstname"
+        @update:error="errors.firstname = $event"
+      />
+    </form-group>
+    <form-group v-if="hasName">
+      <form-label id="name" :label="__('Name')" :required="requiresName" />
+      <form-text-field 
+        v-model="form.name" 
+        :error="errors.name"
+        @update:error="errors.name = $event"
+      />
+    </form-group>
+    <form-group v-if="hasEmail">
+      <form-label id="email" :label="__('E-Mail')" :required="requiresEmail" />
+      <form-text-field 
+        type="email"
+        v-model="form.email" 
+        :error="errors.email"
+        @update:error="errors.email = $event"
+      />
+    </form-group>
+    <form-group v-if="hasPhone">
+      <form-label id="phone" :label="__('Telefon')" :required="requiresPhone" />
+      <form-text-field 
+        v-model="form.phone" 
+        :error="errors.phone"
+        @update:error="errors.phone = $event"
+      />
+    </form-group>
+    <form-group v-if="hasAddress">
+      <form-label id="address" :label="__('Strasse, Nr.')" :required="requiresAddress" />
+      <form-text-field 
+        v-model="form.address" 
+        :error="errors.address"
+        @update:error="errors.address = $event"
+      />
+    </form-group>
+    <form-group v-if="hasLocation">
+      <form-label id="location" :label="__('PLZ/Ort')" :required="requiresLocation" />
+      <form-text-field 
+        v-model="form.location" 
+        :error="errors.location"
+        @update:error="errors.location = $event"
+      />
+    </form-group>
+    <form-group v-if="hasMealOptions">
+      <form-label id="meal_options" :label="__('Menüwunsch')" :required="requiresMealOptions" />
+      <form-select-field 
+        v-model="form.meal_options" 
+        :error="errors.meal_options"
+        @update:error="errors.meal_options = $event"
+        :options="mealOptions"
+      />
+    </form-group>
+
+    <template v-if="hasButtonAdditionalIndividuals">
+      <div>
+        <h3 class="mt-15 xl:mt-30 mb:5 xl:mb-10">{{ __('Weitere Person') }}</h3>
+        <form-group v-for="(individual, index) in additionalIndividuals" :key="index">
+          <AdditionalIndividual
+            :hasName="hasFieldAdditionalIndividualName"
+            :requiresName="requiresName"
+            :hasFirstname="hasFieldAdditionalIndividualFirstname"
+            :requiresFirstname="requiresFirstname"
+            :hasMealOptions="hasMealOptions"
+            :requiresMealOptions="requiresMealOptions"
+            :mealOptions="mealOptions"
+            :errors="errors.additional_individuals[index] || {}"
+            @update:individual="updateAdditionalIndividual(index, $event)"
+          />
+          <div class="flex justify-end">
+            <a 
+              href="javascript:;" 
+              @click.prevent="removeAdditionalIndividual(index)" 
+              class="mt-5 mb-10 xl:mt-10 xl:mb-20 inline-block text-xs xl:text-sm">
+              {{ __('Person Entfernen') }}
+            </a>
+          </div>
+        </form-group>
+        <form-group>
+          <a 
+            href="javascript:;"
+            @click.prevent="addAdditionalIndividual" 
+            class="inline-block"
+          >
+            {{ __('Weitere Person hinzufügen') }}
+          </a>
+        </form-group>
+      </div>
+    </template>
+
+    <form-group classes="!mt-30">
+      <form-button 
+        type="submit" 
+        :label="__('Anmelden')"
+        :disabled="isSubmitting"
+      />
+    </form-group>
+  </form>
+</template>
+<script setup>
+import { ref, onMounted, watch } from 'vue';
+import axios from 'axios';
+import { useI18n } from '@/composables/i18n';
+import FormGroup from '@/forms/components/fields/group.vue';
+import FormTextField from '@/forms/components/fields/text.vue';
+import FormLabel from '@/forms/components/fields/label.vue';
+import FormButton from '@/forms/components/fields/button.vue';
+import FormSelectField from '@/forms/components/fields/select.vue';
+import AdditionalIndividual from '@/forms/components/AdditionalIndividual.vue';
+import SuccessAlert from '@/forms/components/alerts/success.vue';
+import ErrorAlert from '@/forms/components/alerts/error.vue';
+
+const props = defineProps({
+  eventId: {
+    type: String,
+    required: true,
+  },
+});
+
+const { __ } = useI18n();
+
+const isLoaded = ref(false);
+const isSubmitting = ref(false);
+const formSuccess = ref(false);
+const formError = ref(false);
+
+const form = ref({
+  event_id: props.eventId,
+  salutation: null,
+  name: null  ,
+  firstname: null,
+  email: null,
+  phone: null,
+  company: null,
+  location: null,
+  address: null,
+  meal_options: null,
+  additional_individuals: [],
+});
+
+const hasSalutation = ref(false);
+const requiresSalutation = ref(false);
+const hasName = ref(false);
+const requiresName = ref(false);
+const hasFirstname = ref(false);
+const requiresFirstname = ref(false);
+const hasEmail = ref(false);
+const requiresEmail = ref(false);
+const hasPhone = ref(false);
+const requiresPhone = ref(false);
+const hasCompany = ref(false);
+const requiresCompany = ref(false);
+const hasLocation = ref(false);
+const requiresLocation = ref(false);
+const hasAddress = ref(false);
+const requiresAddress = ref(false);
+const hasMealOptions = ref(false);
+const requiresMealOptions = ref(false);
+const mealOptions = ref([]);
+const hasButtonAdditionalIndividuals = ref(false);
+const additionalIndividuals = ref([]);
+const hasFieldAdditionalIndividualName = ref(false);
+const hasFieldAdditionalIndividualFirstname = ref(false);
+
+const salutations = ref([
+  { label: __('Frau'), value: 'Frau' },
+  { label: __('Herr'), value: 'Herr' },
+  { label: __('Divers'), value: 'Divers' },
+]);
+
+const errors = ref({
+    salutation: '',
+    name: '',
+    firstname: '',
+    email: '',
+    phone: '',
+    company: '',
+    location: '',
+    address: '',
+    meal_options: '',
+    additional_individuals: [],
+  }
+);
+
+onMounted(async () => {
+  try {
+    const response = await axios.get(`/api/event/${props.eventId}`);
+    isLoaded.value = true;
+    hasSalutation.value = response.data.has_salutation;
+    requiresSalutation.value = response.data.requires_salutation;
+    hasName.value = response.data.has_name;
+    requiresName.value = response.data.requires_name;
+    hasFirstname.value = response.data.has_firstname;
+    requiresFirstname.value = response.data.requires_firstname;
+    hasEmail.value = response.data.has_email;
+    requiresEmail.value = response.data.requires_email;
+    hasPhone.value = response.data.has_phone;
+    requiresPhone.value = response.data.requires_phone;
+    hasCompany.value = response.data.has_company;
+    requiresCompany.value = response.data.requires_company;
+    hasLocation.value = response.data.has_location;
+    requiresLocation.value = response.data.requires_location;
+    hasAddress.value = response.data.has_address;
+    requiresAddress.value = response.data.requires_address;
+    hasMealOptions.value = response.data.has_meal_options;
+    if (hasMealOptions.value) {   
+      requiresMealOptions.value = response.data.requires_meal_options;
+      
+      if (response.data.meal_options) {
+       Object.entries(response.data.meal_options).forEach(([key, value]) => {
+         if (value) {
+           mealOptions.value.push({ label: key, value: key });
+         }
+       });
+       form.value.meal_options = mealOptions.value[0].value;
+      }
+    }
+
+    if (hasSalutation.value) {
+      form.value.salutation = salutations.value[0].value;
+    }
+    hasButtonAdditionalIndividuals.value = response.data.has_button_additional_individuals;
+    hasFieldAdditionalIndividualName.value = response.data.has_field_additional_individual_name;
+    hasFieldAdditionalIndividualFirstname.value = response.data.has_field_additional_individual_firstname;
+
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+async function submitForm() {
+  isSubmitting.value = true;
+  formSuccess.value = false;
+  formError.value = false;
+  try {
+    const response = await axios.post('/api/event/register', {
+      ...form.value,
+    });
+    handleSuccess();
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+function updateAdditionalIndividual(index, updatedIndividual) {
+  additionalIndividuals.value[index] = updatedIndividual;
+  form.value.additional_individuals = additionalIndividuals.value;
+}
+
+// Add this watcher after the updateAdditionalIndividual function
+watch(additionalIndividuals, (newValue) => {
+  form.value.additional_individuals = newValue;
+}, { deep: true });
+
+// Update these functions to also update form.value.additional_individuals
+function addAdditionalIndividual() {
+  additionalIndividuals.value.push({
+    name: null,
+    firstname: null,
+    meal_options: hasMealOptions.value ? mealOptions.value[0].value : null,
+  });
+  form.value.additional_individuals = additionalIndividuals.value;
+}
+
+function removeAdditionalIndividual(index) {
+  additionalIndividuals.value.splice(index, 1);
+  form.value.additional_individuals = additionalIndividuals.value;
+}
+
+function handleSuccess() {
+  form.value = {
+    event_id: props.eventId,
+    name: '',
+    firstname: '',
+    email: '',
+  };
+  errors.value = {
+    name: '',
+    firstname: '',
+    email: '',
+  };
+  isSubmitting.value = false;
+  formSuccess.value = true;
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+function handleError(error) {
+  if (error.response && error.response.data && typeof error.response.data.errors === 'object') {
+
+    Object.keys(error.response.data.errors).forEach(key => {
+      errors.value[key] = error.response.data.errors[key];
+    });
+
+    // handle additional_individuals errors
+    if (error.response.data.errors.additional_individuals) {
+      error.response.data.errors.additional_individuals.forEach(individualError => {
+        Object.keys(individualError).forEach(key => {
+          errors.value.additional_individuals[key] = individualError[key];
+        });
+      });
+
+      console.log(errors.value.additional_individuals);
+    }
+
+    isSubmitting.value = false;
+    formError.value = true;
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+}
+</script>

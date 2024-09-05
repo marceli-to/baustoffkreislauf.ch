@@ -28,6 +28,10 @@
     {{ partial:components/post/list }}
   {{ /if }}
 
+  {{ if type == 'events' }}
+    {{ partial:events/list }}
+  {{ /if }}
+
   {{ if type == 'editor' }}
 
     {{ content  }}
