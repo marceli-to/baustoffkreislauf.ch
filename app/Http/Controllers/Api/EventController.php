@@ -1,16 +1,16 @@
 <?php
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EventRegistrationRequest;
 use Illuminate\Http\Request;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Validator;
 
 class EventController extends Controller
 {
   public function get($eventId)
   {
-    $event = Entry::find($eventId);
+    $event = Entry::find($eventId, 'de');
     return response()->json([
       'title' => $event->title,
       'has_salutation' => $event->has_salutation,
@@ -47,9 +47,59 @@ class EventController extends Controller
   {
     $event = Entry::find($request->input('event_id'));
 
-    $validationRules = $this->getValidationRules($event); 
-    // $request->validate($validationRules['rules'], $validationRules['messages']);
-    $validator = \Illuminate\Support\Facades\Validator::make(
+    $validationResult = $this->validateRequest($request, $event);
+    if ($validationResult !== TRUE) {
+      return $validationResult;
+    }
+
+    $slug = $event->title . ' ' . $request->input('firstname') . ' ' . $request->input('name');
+
+    // build data
+    $data = [
+      'title' => $event->title,
+      'event_id' => $event->id,
+      'salutation' => $request->input('salutation'),
+      'name' => $request->input('name'),
+      'firstname' => $request->input('firstname'),
+      'email' => $request->input('email'),
+      'phone' => $request->input('phone'),
+      'company' => $request->input('company'),
+      'location' => $request->input('location'),
+      'address' => $request->input('address'),
+      'meal_options' => $request->input('meal_options'),
+    ];
+
+    // handle additional individuals, build a string out of:
+    // name, firstname and meal_options (if available)
+    $additional_individuals = [];
+    foreach ($request->input('additional_individuals') as $additional_individual)
+    {
+      $name = $additional_individual['firstname'] . ' ' .$additional_individual['name'];
+      $meal_options = $additional_individual['meal_options'] ?? null; 
+      $additional_individuals[] = $name . ($meal_options ? ' - ' . $meal_options : '');
+    }
+    // add newline instead of comma
+    $data['additional_individuals'] = implode("\n", $additional_individuals);
+
+    $entry = Entry::make()
+    ->collection('event_registrations')
+    ->slug($slug)
+    ->data($data)
+    ->save();
+      
+    // Notification::route('mail', $request->input('email'))->notify(new GeneralUserEmail(
+    //   $request->input('service'),
+    //   $request->validated()
+    // ));
+
+    return response()->json(['message' => 'Store successful']);
+  }
+
+  protected function validateRequest(Request $request, $event)
+  {
+    $validationRules = $this->getValidationRules($event);
+
+    $validator = Validator::make(
       $request->all(),
       $validationRules['rules'],
       $validationRules['messages']
@@ -76,29 +126,7 @@ class EventController extends Controller
       return response()->json(['errors' => $formattedErrors], 422);
     }
 
-    // $slug = $event->title . ' ' . $request->input('firstname') . ' ' . $request->input('name');
-    
-
-    // $slug = $event->title . ' ' . $request->input('firstname') . ' ' . $request->input('name');
-    // $entry = Entry::make()
-    // ->collection('requests_events')
-    // ->slug($slug)
-    // ->data(
-    //   array_merge(
-    //     [
-    //       'title' => $event->title,
-    //     ], 
-    //     $request->validated()
-    //   )
-    // )
-    // ->save();
-      
-    // Notification::route('mail', $request->input('email'))->notify(new GeneralUserEmail(
-    //   $request->input('service'),
-    //   $request->validated()
-    // ));
-
-    return response()->json(['message' => 'Store successful']);
+    return TRUE;
   }
 
   protected function getValidationRules($event)
@@ -199,11 +227,9 @@ class EventController extends Controller
       }
     }
 
-
     return [
       'rules' => $validationRules,
       'messages' => $validationMessages,
     ];
-
   }
 }

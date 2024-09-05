@@ -1,5 +1,5 @@
 <template>
-  <label :for="id" :class="classes" class="block mb-5">
+  <label :for="id" :class="classes" class="block mb-5 xl:mb-10">
     {{ label }} <span v-if="required">*</span>
   </label>
 </template>

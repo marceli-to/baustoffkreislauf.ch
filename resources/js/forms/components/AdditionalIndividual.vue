@@ -58,7 +58,7 @@ const emit = defineEmits(['update:individual']);
 const individual = ref({
   name: null,
   firstname: null,
-  meal_options: props.mealOptions[0].value,
+  meal_options: props.mealOptions[0] ? props.mealOptions[0].value : null,
 });
 
 // Watch for changes in the individual object and emit them to the parent

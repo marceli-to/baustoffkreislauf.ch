@@ -5,6 +5,6 @@
     <h2 class="text-base md:text-md lg:text-lg">
       {{ "Anmeldung" | trans }}
     </h2>
-    <event-registration :event-id="'{{ id }}'"></event-registration>
+    <event-registration :event-id="'{{ origin_id ?? id }}'"></event-registration>
   </div>
 </article>

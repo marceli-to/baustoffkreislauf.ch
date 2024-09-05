@@ -1,7 +1,7 @@
 <template>
   <template v-if="formSuccess">
     <success-alert>
-      {{ __('Vielen Dank für Ihre Anfrage!') }}
+      {{ __('Vielen Dank für Ihre Anmeldung!') }}
     </success-alert>
   </template>
   <template v-if="formError">
@@ -98,7 +98,7 @@
             :hasMealOptions="hasMealOptions"
             :requiresMealOptions="requiresMealOptions"
             :mealOptions="mealOptions"
-            :errors="errors.additional_individuals[index] || {}"
+            :errors="errors.additional_individuals ? errors.additional_individuals[index] : {}"
             @update:individual="updateAdditionalIndividual(index, $event)"
           />
           <div class="flex justify-end">
@@ -158,20 +158,6 @@ const isSubmitting = ref(false);
 const formSuccess = ref(false);
 const formError = ref(false);
 
-const form = ref({
-  event_id: props.eventId,
-  salutation: null,
-  name: null  ,
-  firstname: null,
-  email: null,
-  phone: null,
-  company: null,
-  location: null,
-  address: null,
-  meal_options: null,
-  additional_individuals: [],
-});
-
 const hasSalutation = ref(false);
 const requiresSalutation = ref(false);
 const hasName = ref(false);
@@ -201,6 +187,20 @@ const salutations = ref([
   { label: __('Herr'), value: 'Herr' },
   { label: __('Divers'), value: 'Divers' },
 ]);
+
+const form = ref({
+  event_id: props.eventId,
+  salutation: null,
+  name: null  ,
+  firstname: null,
+  email: null,
+  phone: null,
+  company: null,
+  location: null,
+  address: null,
+  meal_options: null,
+  additional_individuals: [],
+});
 
 const errors = ref({
     salutation: '',
@@ -304,14 +304,36 @@ function removeAdditionalIndividual(index) {
 function handleSuccess() {
   form.value = {
     event_id: props.eventId,
-    name: '',
-    firstname: '',
-    email: '',
+    salutation: null,
+    name: null,
+    firstname: null,
+    email: null,
+    phone: null,
+    company: null,
+    location: null,
+    address: null,
+    meal_options: null,
+    additional_individuals: [],
   };
+
+  if (hasSalutation.value) {
+    form.value.salutation = salutations.value[0].value;
+  }
+
+  // reset additional_individuals
+  additionalIndividuals.value = [];
+  form.value.additional_individuals = additionalIndividuals.value;
+  
   errors.value = {
     name: '',
     firstname: '',
     email: '',
+    phone: '',
+    company: '',
+    location: '',
+    address: '',
+    meal_options: '',
+    additional_individuals: [],
   };
   isSubmitting.value = false;
   formSuccess.value = true;
@@ -335,8 +357,6 @@ function handleError(error) {
           errors.value.additional_individuals[key] = individualError[key];
         });
       });
-
-      console.log(errors.value.additional_individuals);
     }
 
     isSubmitting.value = false;

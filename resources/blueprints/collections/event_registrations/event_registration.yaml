@@ -1,0 +1,161 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: event_id
+            field:
+              type: hidden
+              display: Anlass
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: company
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Firma
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: salutation
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Anrede
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: name
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Name
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: firstname
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Vorname
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: email
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: E-Mail
+              localizable: false
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: phone
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Telefon
+              localizable: false
+          -
+            handle: address
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Strasse, Nr.'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: location
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'PLZ / Ort'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: meal_options
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Menüwunsch
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: additional_individuals
+            field:
+              antlers: false
+              type: textarea
+              display: 'Weitere Teilnehmer'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: 'Anmeldungen Anlässe'
