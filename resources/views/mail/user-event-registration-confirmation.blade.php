@@ -55,6 +55,12 @@
       {{ $data['location'] }}
     </div>
   @endif
+  @if ($data['remarks'])
+    <div class="text-base pb-base">
+      <strong>{{ __('Bemerkungen', [], $data['locale']) }}</strong><br>
+      {{ $data['remarks'] }}
+    </div>
+  @endif
   @if ($data['meal_options'])
     <div class="text-base pb-base">
       <strong>{{ __('Verpflegung', [], $data['locale']) }}</strong><br>

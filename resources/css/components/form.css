@@ -28,7 +28,9 @@ select {
 }
 
 textarea {
-  @apply min-h-[120px] lg:min-h-[240px];
+  @apply min-h-[80px] block;
+  field-sizing: content;
+  resize: vertical;
 } 
 
 

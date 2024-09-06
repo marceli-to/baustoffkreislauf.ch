@@ -86,6 +86,15 @@
       />
     </form-group>
 
+    <form-group v-if="hasRemarks">
+      <form-label id="remarks" :label="__('Bemerkungen')" />
+      <form-textarea-field 
+        v-model="form.remarks" 
+        :error="__(errors.remarks)"
+        @update:error="errors.remarks = $event"
+      />
+    </form-group>
+
     <template v-if="hasButtonAdditionalIndividuals">
       <div>
         <h3 class="mt-15 xl:mt-30 mb:5 xl:mb-10">{{ __('Weitere Person') }}</h3>
@@ -145,6 +154,7 @@ import axios from 'axios';
 import { useI18n } from '@/composables/i18n';
 import FormGroup from '@/forms/components/fields/group.vue';
 import FormTextField from '@/forms/components/fields/text.vue';
+import FormTextareaField from '@/forms/components/fields/textarea.vue';
 import FormLabel from '@/forms/components/fields/label.vue';
 import FormButton from '@/forms/components/fields/button.vue';
 import FormSelectField from '@/forms/components/fields/select.vue';
@@ -184,6 +194,7 @@ const requiresLocation = ref(false);
 const hasAddress = ref(false);
 const requiresAddress = ref(false);
 const hasMealOptions = ref(false);
+const hasRemarks = ref(false);
 const requiresMealOptions = ref(false);
 const mealOptions = ref([]);
 const hasButtonAdditionalIndividuals = ref(false);
@@ -209,6 +220,7 @@ const form = ref({
   company: null,
   location: null,
   address: null,
+  remarks: null,
   meal_options: null,
   additional_individuals: [],
 });
@@ -246,6 +258,7 @@ onMounted(async () => {
     hasLocation.value = response.data.has_location;
     requiresLocation.value = response.data.requires_location;
     hasAddress.value = response.data.has_address;
+    hasRemarks.value = response.data.has_remarks;
     requiresAddress.value = response.data.requires_address;
     hasMealOptions.value = response.data.has_meal_options;
     if (hasMealOptions.value) {   

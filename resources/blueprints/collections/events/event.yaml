@@ -294,6 +294,18 @@ tabs:
               if:
                 has_location: 'equals true'
           -
+            handle: has_remarks
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Bemerkungen"'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: meal_options
             field:
               type: section

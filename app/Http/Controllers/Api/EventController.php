@@ -30,6 +30,7 @@ class EventController extends Controller
       'requires_location' => $event->requires_location,
       'has_address' => $event->has_address,
       'requires_address' => $event->requires_address,
+      'has_remarks' => $event->has_remarks,
       'has_meal_options' => $event->has_meal_options,
       'requires_meal_options' => $event->requires_meal_options,
       'meal_options' => [
@@ -67,6 +68,7 @@ class EventController extends Controller
       'company' => $request->input('company'),
       'location' => $request->input('location'),
       'address' => $request->input('address'),
+      'remarks' => $request->input('remarks'),
       'meal_options' => $request->input('meal_options'),
       'locale' => $request->input('locale'),
     ];

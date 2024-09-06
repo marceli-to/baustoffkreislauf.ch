@@ -123,12 +123,24 @@ tabs:
               replicator_preview: true
               hide_display: false
           -
+            handle: remarks
+            field:
+              antlers: false
+              type: textarea
+              display: Bemerkungen
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: meal_options
             field:
               input_type: text
               antlers: false
               type: text
-              display: Präferenz Menü
+              display: 'Präferenz Menü'
               localizable: false
               listable: hidden
               instructions_position: above
