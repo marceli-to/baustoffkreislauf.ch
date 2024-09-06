@@ -3,6 +3,10 @@
     {!! __('Guten Tag<br><br>Vielen Dank für Ihre Anmeldung.', [], $data['locale']) !!}
   </div>
   <br>
+  <div class="text-base pb-base">
+    <strong>{{ __('Anlass', [], $data['locale']) }}</strong><br>
+    {{ __($data['title'], [], $data['locale']) }}
+  </div>
   @if ($data['salutation'])
     <div class="text-base pb-base">
       <strong>{{ __('Anrede', [], $data['locale']) }}</strong><br>
