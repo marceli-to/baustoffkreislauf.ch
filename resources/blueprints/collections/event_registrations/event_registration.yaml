@@ -128,7 +128,7 @@ tabs:
               input_type: text
               antlers: false
               type: text
-              display: Menüwunsch
+              display: Präferenz Menü
               localizable: false
               listable: hidden
               instructions_position: above

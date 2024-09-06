@@ -1,26 +1,26 @@
 <template>
   <div class="space-y-15 lg:space-y-20">
-    <form-group v-if="hasName">
-      <form-label id="name" :label="__('Name')" :required="requiresName" />
-      <form-text-field 
-        v-model="individual.name" 
-        :error="errors.name"
-        @update:error="errors.name = $event"
-      />
-    </form-group>
     <form-group v-if="hasFirstname">
       <form-label id="firstname" :label="__('Vorname')" :required="requiresFirstname" />
       <form-text-field 
         v-model="individual.firstname" 
-        :error="errors.firstname"
+        :error="__(errors.firstname)"
         @update:error="errors.firstname = $event"
+      />
+    </form-group>
+    <form-group v-if="hasName">
+      <form-label id="name" :label="__('Name')" :required="requiresName" />
+      <form-text-field 
+        v-model="individual.name" 
+        :error="__(errors.name)"
+        @update:error="errors.name = $event"
       />
     </form-group>
     <form-group v-if="hasMealOptions">
       <form-label id="meal_options" :label="__('Menüwunsch')" :required="requiresMealOptions" />
       <form-select-field 
         v-model="individual.meal_options" 
-        :error="errors.meal_options"
+        :error="__(errors.meal_options)"
         @update:error="errors.meal_options = $event"
         :options="mealOptions"
       />
@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps, defineEmits, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { useI18n } from '@/composables/i18n';
 import FormGroup from '@/forms/components/fields/group.vue';
 import FormTextField from '@/forms/components/fields/text.vue';

@@ -40,6 +40,7 @@ export default {
       colors: {
         'lime': '#99D654',
         'turquoise': '#7bb1af',
+        'raspberry': '#DB2955'
       },
 
       listStyleType: {

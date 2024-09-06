@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-lg text-green-500 bg-green-50 mb-10 xl:mb-20 p-15 text-sm font-bold border border-green-500 rounded-md">
+  <div class="max-w-lg bg-lime p-10 lg:p-20 mb-15 lg:mb-30">
     <slot>  
       <!-- Default content goes here -->
     </slot>

@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Notification;
+use App\Notifications\UserEventRegistrationConfirmation;
 use Illuminate\Support\Facades\Validator;
 
 class EventController extends Controller
@@ -82,15 +83,12 @@ class EventController extends Controller
     $data['additional_individuals'] = implode("\n", $additional_individuals);
 
     $entry = Entry::make()
-    ->collection('event_registrations')
-    ->slug($slug)
-    ->data($data)
-    ->save();
-      
-    // Notification::route('mail', $request->input('email'))->notify(new GeneralUserEmail(
-    //   $request->input('service'),
-    //   $request->validated()
-    // ));
+      ->collection('event_registrations')
+      ->slug($slug)
+      ->data($data)
+      ->save();
+    
+    Notification::route('mail', $request->input('email'))->notify(new UserEventRegistrationConfirmation($data));
 
     return response()->json(['message' => 'Store successful']);
   }
@@ -178,54 +176,59 @@ class EventController extends Controller
       }
     }
 
+    $validationRules['toc'] = 'accepted';
+
     // Set validation messages
     $validationMessages = [];
 
     if ($event->has_salutation && $event->requires_salutation) {
-      $validationMessages['salutation.required'] = 'Anrede ist erforderlich';
+      $validationMessages['salutation.required'] = __('Anrede ist erforderlich');
     }
 
     if ($event->has_name && $event->requires_name) {
-      $validationMessages['name.required'] = 'Name ist erforderlich';
+      $validationMessages['name.required'] = __('Name ist erforderlich');
     }
 
     if ($event->has_firstname && $event->requires_firstname) {
-      $validationMessages['firstname.required'] = 'Vorname ist erforderlich';
+      $validationMessages['firstname.required'] = __('Vorname ist erforderlich');
     }
 
     if ($event->has_email && $event->requires_email) {
-      $validationMessages['email.required'] = 'E-Mail-Adresse ist erforderlich';
-      $validationMessages['email.email'] = 'E-Mail-Adresse muss gültig sein';
+      $validationMessages['email.required'] = __('E-Mail-Adresse ist erforderlich');
+      $validationMessages['email.email'] = __('E-Mail-Adresse muss gültig sein');
     }
 
     if ($event->has_phone && $event->requires_phone) {
-      $validationMessages['phone.required'] = 'Telefonnummer ist erforderlich';
+      $validationMessages['phone.required'] = __('Telefonnummer ist erforderlich');
     }
 
     if ($event->has_company && $event->requires_company) {
-      $validationMessages['company.required'] = 'Firma ist erforderlich';
+      $validationMessages['company.required'] = __('Firma ist erforderlich');
     }
     
     if ($event->has_location && $event->requires_location) {
-      $validationMessages['location.required'] = 'Ort ist erforderlich';
+      $validationMessages['location.required'] = __('Ort ist erforderlich');
     }
 
     if ($event->has_address && $event->requires_address) {
-      $validationMessages['address.required'] = 'Adresse ist erforderlich';
+      $validationMessages['address.required'] = __('Adresse ist erforderlich');
     }
 
     if ($event->has_meal_options && $event->requires_meal_options) {
-      $validationMessages['meal_options.required'] = 'Essen ist erforderlich';
+      $validationMessages['meal_options.required'] = __('Essen ist erforderlich');
     }
 
     if ($event->has_button_additional_individuals) {
-      $validationMessages['additional_individuals.*.name.required'] = 'Name ist erforderlich';
-      $validationMessages['additional_individuals.*.firstname.required'] = 'Vorname ist erforderlich';
+      $validationMessages['additional_individuals.*.name.required'] = __('Name ist erforderlich');
+      $validationMessages['additional_individuals.*.firstname.required'] = __('Vorname ist erforderlich');
 
       if ($event->has_meal_options && $event->requires_meal_options) {
-        $validationMessages['additional_individuals.*.meal_options.required'] = 'Essen ist erforderlich';
+        $validationMessages['additional_individuals.*.meal_options.required'] = __('Essen ist erforderlich');
       }
     }
+
+    // add message for toc
+    $validationMessages['toc.accepted'] = __('Sie müssen die Teilnahme- und Annulationsbedingungen sowie die Datenschutzbestimmungen akzeptieren');
 
     return [
       'rules' => $validationRules,

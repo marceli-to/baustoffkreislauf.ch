@@ -5,6 +5,7 @@ export function useI18n() {
   const translations = ref({});
   const hasTranslations = ref(false);
   const fallback_locale = 'de';
+  const current_locale = ref();
   const routes = {
     get: '/api/translations',
   };
@@ -17,7 +18,11 @@ export function useI18n() {
   };
 
   const _getLocale = () => {
-    return document.documentElement.lang || 'de';
+    return current_locale.value;
+  };
+
+  const _setLocale = () => {
+    current_locale.value = document.documentElement.lang || fallback_locale;
   };
 
   const _getTranslations = () => {
@@ -31,6 +36,7 @@ export function useI18n() {
   };
 
   onMounted(() => {
+    _setLocale();
     _getTranslations();
   });
 
@@ -39,5 +45,6 @@ export function useI18n() {
     translations,
     hasTranslations,
     fallback_locale,
+    current_locale,
   };
 }

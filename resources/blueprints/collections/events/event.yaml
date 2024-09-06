@@ -46,6 +46,30 @@ tabs:
         display: Formular-Felder
         fields:
           -
+            handle: has_form
+            field:
+              default: true
+              type: toggle
+              display: Anmeldeformular
+              instructions: 'Anmeldeformular angezeigen'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: contact_information
+            field:
+              type: section
+              display: Kontaktinformationen
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: has_company
             field:
               default: true
@@ -273,7 +297,7 @@ tabs:
             handle: meal_options
             field:
               type: section
-              display: 'Angaben Essen'
+              display: 'Auswahl Menüoptionen'
               localizable: false
               listable: hidden
               instructions_position: above
@@ -285,7 +309,7 @@ tabs:
             field:
               default: true
               type: toggle
-              display: 'Feld "Auswahl Essen"'
+              display: Aktivieren
               localizable: false
               width: 66
               listable: hidden
@@ -372,19 +396,20 @@ tabs:
             handle: additional_individuals
             field:
               type: section
-              display: 'Weitere Personen'
+              display: 'Zusätzliche Teilnehmer'
               localizable: false
               listable: hidden
               instructions_position: above
               visibility: visible
               replicator_preview: true
               hide_display: false
+              instructions: 'Hinzufügen weiterer Personen ermöglichen'
           -
             handle: has_button_additional_individuals
             field:
               default: true
               type: toggle
-              display: 'Button "Weitere Person hinzufügen"'
+              display: Aktivieren
               localizable: false
               listable: hidden
               instructions_position: above
@@ -404,6 +429,8 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+              if:
+                has_button_additional_individuals: 'equals true'
           -
             handle: has_field_additional_individual_firstname
             field:
@@ -417,6 +444,8 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+              if:
+                has_button_additional_individuals: 'equals true'
   sidebar:
     display: Sidebar
     sections:

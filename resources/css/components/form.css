@@ -20,7 +20,7 @@ label:has(+ input[type=email]:focus) {
 }
 
 .has-error label {
-  @apply text-red-600 font-acumin-black font-extrabold
+  @apply text-raspberry
 }
 
 select {
@@ -30,3 +30,27 @@ select {
 textarea {
   @apply min-h-[120px] lg:min-h-[240px];
 } 
+
+
+.checkboxes label {
+  @apply cursor-pointer
+}
+
+.checkboxes label a:hover {
+  @apply underline underline-offset-4 decoration-1
+}
+
+.checkboxes input[type=checkbox] {
+  @apply appearance-none w-28 h-28 rounded-md ring-0 focus:ring-0 !ring-offset-0 !outline-none border border-black text-black bg-white !accent-black
+}
+
+.checkboxes.has-error input[type=checkbox] {
+  @apply border-red-600
+}
+
+.checkboxes input[type=checkbox]:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23000000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='40 12 18 34 8 24'%3E%3C/polyline%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+}

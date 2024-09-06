@@ -14,7 +14,7 @@
       <form-label id="salutation" :label="__('Anrede')" :required="requiresSalutation" />
       <form-select-field 
         v-model="form.salutation" 
-        :error="errors.salutation"
+        :error="__(errors.salutation)"
         @update:error="errors.salutation = $event"
         :options="salutations"
       />
@@ -23,7 +23,7 @@
       <form-label id="company" :label="__('Firma')" :required="requiresCompany" />
       <form-text-field 
         v-model="form.company" 
-        :error="errors.company"
+        :error="__(errors.company)"
         @update:error="errors.company = $event"
       />
     </form-group>
@@ -31,7 +31,7 @@
       <form-label id="firstname" :label="__('Vorname')" :required="requiresFirstname" />
       <form-text-field 
         v-model="form.firstname" 
-        :error="errors.firstname"
+        :error="__(errors.firstname)"
         @update:error="errors.firstname = $event"
       />
     </form-group>
@@ -39,7 +39,7 @@
       <form-label id="name" :label="__('Name')" :required="requiresName" />
       <form-text-field 
         v-model="form.name" 
-        :error="errors.name"
+        :error="__(errors.name)"
         @update:error="errors.name = $event"
       />
     </form-group>
@@ -48,7 +48,7 @@
       <form-text-field 
         type="email"
         v-model="form.email" 
-        :error="errors.email"
+        :error="__(errors.email)"
         @update:error="errors.email = $event"
       />
     </form-group>
@@ -56,7 +56,7 @@
       <form-label id="phone" :label="__('Telefon')" :required="requiresPhone" />
       <form-text-field 
         v-model="form.phone" 
-        :error="errors.phone"
+        :error="__(errors.phone)"
         @update:error="errors.phone = $event"
       />
     </form-group>
@@ -64,7 +64,7 @@
       <form-label id="address" :label="__('Strasse, Nr.')" :required="requiresAddress" />
       <form-text-field 
         v-model="form.address" 
-        :error="errors.address"
+        :error="__(errors.address)"
         @update:error="errors.address = $event"
       />
     </form-group>
@@ -72,7 +72,7 @@
       <form-label id="location" :label="__('PLZ/Ort')" :required="requiresLocation" />
       <form-text-field 
         v-model="form.location" 
-        :error="errors.location"
+        :error="__(errors.location)"
         @update:error="errors.location = $event"
       />
     </form-group>
@@ -80,7 +80,7 @@
       <form-label id="meal_options" :label="__('Menüwunsch')" :required="requiresMealOptions" />
       <form-select-field 
         v-model="form.meal_options" 
-        :error="errors.meal_options"
+        :error="__(errors.meal_options)"
         @update:error="errors.meal_options = $event"
         :options="mealOptions"
       />
@@ -121,7 +121,15 @@
         </form-group>
       </div>
     </template>
-
+    <form-group>
+      <form-toc 
+        id="toc" 
+        label="Datenschutzerklärung" 
+        v-model="form.toc"
+        :error="errors.toc" 
+        @update:error="errors.toc = $event"
+      />
+    </form-group>
     <form-group classes="!mt-30">
       <form-button 
         type="submit" 
@@ -140,6 +148,7 @@ import FormTextField from '@/forms/components/fields/text.vue';
 import FormLabel from '@/forms/components/fields/label.vue';
 import FormButton from '@/forms/components/fields/button.vue';
 import FormSelectField from '@/forms/components/fields/select.vue';
+import FormToc from '@/forms/components/fields/toc.vue';
 import AdditionalIndividual from '@/forms/components/AdditionalIndividual.vue';
 import SuccessAlert from '@/forms/components/alerts/success.vue';
 import ErrorAlert from '@/forms/components/alerts/error.vue';
@@ -243,7 +252,8 @@ onMounted(async () => {
       if (response.data.meal_options) {
        Object.entries(response.data.meal_options).forEach(([key, value]) => {
          if (value) {
-           mealOptions.value.push({ label: key, value: key });
+          // the key used in value needs to be translated
+           mealOptions.value.push({ label: __(key), value: key });
          }
        });
        form.value.meal_options = mealOptions.value[0].value;
@@ -335,6 +345,7 @@ function handleSuccess() {
     meal_options: '',
     additional_individuals: [],
   };
+  
   isSubmitting.value = false;
   formSuccess.value = true;
   window.scrollTo({
@@ -344,8 +355,10 @@ function handleSuccess() {
 }
 
 function handleError(error) {
-  if (error.response && error.response.data && typeof error.response.data.errors === 'object') {
+  isSubmitting.value = false;
+  formError.value = true;
 
+  if (error.response && error.response.data && typeof error.response.data.errors === 'object') {
     Object.keys(error.response.data.errors).forEach(key => {
       errors.value[key] = error.response.data.errors[key];
     });
@@ -359,8 +372,7 @@ function handleError(error) {
       });
     }
 
-    isSubmitting.value = false;
-    formError.value = true;
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
