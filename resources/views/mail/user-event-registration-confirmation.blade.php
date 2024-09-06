@@ -73,6 +73,6 @@
     </div>
   @endif
   <footer>
-    {!! __('<strong>Baustoff Kreislauf Schweiz</strong><br>Schwanengasse 12<br>3011 Bern', [], $data['locale']) !!}
+    {!! __('Baustoff Kreislauf Schweiz<br>Schwanengasse 12<br>3011 Bern', [], $data['locale']) !!}
   </footer>
 </x-mail::message>
