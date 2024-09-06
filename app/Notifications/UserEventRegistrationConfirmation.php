@@ -41,7 +41,7 @@ class UserEventRegistrationConfirmation extends Notification
     return (new MailMessage)
       ->from(env('MAIL_FROM_ADDRESS'))
       ->replyTo(env('MAIL_TO'))
-      ->subject('Baustoffkreislauf Anmeldung: ' . $this->data['title'])
+      ->subject('Anmeldung ' . $this->data['title'])
       ->markdown('mail.user-event-registration-confirmation', ['data' => $this->data]);
   }
 
