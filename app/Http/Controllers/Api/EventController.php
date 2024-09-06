@@ -68,6 +68,7 @@ class EventController extends Controller
       'location' => $request->input('location'),
       'address' => $request->input('address'),
       'meal_options' => $request->input('meal_options'),
+      'locale' => $request->input('locale'),
     ];
 
     // handle additional individuals, build a string out of:

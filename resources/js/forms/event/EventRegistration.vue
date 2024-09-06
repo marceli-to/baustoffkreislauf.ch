@@ -191,6 +191,9 @@ const additionalIndividuals = ref([]);
 const hasFieldAdditionalIndividualName = ref(false);
 const hasFieldAdditionalIndividualFirstname = ref(false);
 
+const locale = ref(document.documentElement.lang);
+
+
 const salutations = ref([
   { label: __('Frau'), value: 'Frau' },
   { label: __('Herr'), value: 'Herr' },
@@ -279,6 +282,7 @@ async function submitForm() {
   try {
     const response = await axios.post('/api/event/register', {
       ...form.value,
+      locale: locale.value,
     });
     handleSuccess();
   } catch (error) {
