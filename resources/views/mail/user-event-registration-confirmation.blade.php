@@ -2,7 +2,6 @@
   <div class="text-base pb-base">
     {!! __('Guten Tag<br><br>Vielen Dank für Ihre Anmeldung.', [], $data['locale']) !!}
   </div>
-  <br>
   <div class="text-base pb-base">
     <strong>{{ __('Anlass', [], $data['locale']) }}</strong><br>
     {{ __($data['title'], [], $data['locale']) }}
