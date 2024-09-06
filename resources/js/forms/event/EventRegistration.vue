@@ -193,11 +193,10 @@ const hasFieldAdditionalIndividualFirstname = ref(false);
 
 const locale = ref(document.documentElement.lang);
 
-
 const salutations = ref([
-  { label: __('Frau'), value: 'Frau' },
-  { label: __('Herr'), value: 'Herr' },
-  { label: __('Divers'), value: 'Divers' },
+  { label: 'Frau', value: 'Frau' },
+  { label: 'Herr', value: 'Herr' },
+  { label: 'Divers', value: 'Divers' },
 ]);
 
 const form = ref({
