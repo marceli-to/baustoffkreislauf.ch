@@ -69,7 +69,7 @@
   @if ($data['additional_individuals'])
     <div class="text-base pb-base">
       <strong>{{ __('Zusätzliche Teilnehmer', [], $data['locale']) }}</strong><br>
-      {{ $data['additional_individuals'] }}
+      {!! nl2br($data['additional_individuals']) !!}
     </div>
   @endif
   <footer>

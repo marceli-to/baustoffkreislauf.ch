@@ -429,11 +429,26 @@ tabs:
               replicator_preview: true
               hide_display: false
           -
-            handle: has_field_additional_individual_name
+            handle: has_field_additional_individual_salutation
             field:
               default: true
               type: toggle
-              display: 'Feld "Name"'
+              display: 'Feld "Anrede"'
+              localizable: false
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_button_additional_individuals: 'equals true'
+          -
+            handle: has_field_additional_individual_email
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "E-Mail"'
               localizable: false
               width: 50
               listable: hidden
@@ -449,6 +464,21 @@ tabs:
               default: true
               type: toggle
               display: 'Feld "Vorname"'
+              localizable: false
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_button_additional_individuals: 'equals true'
+          -
+            handle: has_field_additional_individual_name
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Name"'
               localizable: false
               width: 50
               listable: hidden

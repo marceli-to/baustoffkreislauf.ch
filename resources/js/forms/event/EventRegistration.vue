@@ -100,12 +100,17 @@
         <h3 class="mt-15 xl:mt-30 mb:5 xl:mb-10">{{ __('Weitere Person') }}</h3>
         <form-group v-for="(individual, index) in additionalIndividuals" :key="index">
           <AdditionalIndividual
+            :hasSalutation="hasFieldAdditionalIndividualSalutation"
+            :requiresSalutation="true"
+            :hasEmail="hasFieldAdditionalIndividualEmail"
+            :requiresEmail="false"
             :hasName="hasFieldAdditionalIndividualName"
             :requiresName="requiresName"
             :hasFirstname="hasFieldAdditionalIndividualFirstname"
             :requiresFirstname="requiresFirstname"
             :hasMealOptions="hasMealOptions"
             :requiresMealOptions="requiresMealOptions"
+            :salutations="salutations"
             :mealOptions="mealOptions"
             :errors="errors.additional_individuals ? errors.additional_individuals[index] : {}"
             @update:individual="updateAdditionalIndividual(index, $event)"
@@ -199,6 +204,8 @@ const requiresMealOptions = ref(false);
 const mealOptions = ref([]);
 const hasButtonAdditionalIndividuals = ref(false);
 const additionalIndividuals = ref([]);
+const hasFieldAdditionalIndividualSalutation = ref(false);
+const hasFieldAdditionalIndividualEmail = ref(false);
 const hasFieldAdditionalIndividualName = ref(false);
 const hasFieldAdditionalIndividualFirstname = ref(false);
 
@@ -279,6 +286,8 @@ onMounted(async () => {
       form.value.salutation = salutations.value[0].value;
     }
     hasButtonAdditionalIndividuals.value = response.data.has_button_additional_individuals;
+    hasFieldAdditionalIndividualSalutation.value = response.data.has_field_additional_individual_salutation;
+    hasFieldAdditionalIndividualEmail.value = response.data.has_field_additional_individual_email;
     hasFieldAdditionalIndividualName.value = response.data.has_field_additional_individual_name;
     hasFieldAdditionalIndividualFirstname.value = response.data.has_field_additional_individual_firstname;
 
@@ -307,18 +316,20 @@ function updateAdditionalIndividual(index, updatedIndividual) {
   form.value.additional_individuals = additionalIndividuals.value;
 }
 
-// Add this watcher after the updateAdditionalIndividual function
 watch(additionalIndividuals, (newValue) => {
   form.value.additional_individuals = newValue;
 }, { deep: true });
 
-// Update these functions to also update form.value.additional_individuals
 function addAdditionalIndividual() {
+  console.log(hasSalutation.value);
   additionalIndividuals.value.push({
+    salutation: hasSalutation.value ? salutations.value[0].value : null,
+    email: null,
     name: null,
     firstname: null,
     meal_options: hasMealOptions.value ? mealOptions.value[0].value : null,
   });
+  console.log(additionalIndividuals.value);
   form.value.additional_individuals = additionalIndividuals.value;
 }
 

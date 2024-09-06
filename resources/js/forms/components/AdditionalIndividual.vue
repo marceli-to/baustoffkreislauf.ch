@@ -1,5 +1,14 @@
 <template>
   <div class="space-y-15 lg:space-y-20">
+    <form-group v-if="hasSalutation">
+      <form-label id="salutation" :label="__('Anrede')" :required="requiresSalutation" />
+      <form-select-field 
+        v-model="individual.salutation" 
+        :error="__(errors.salutation)"
+        @update:error="errors.salutation = $event"
+        :options="salutations"
+      />
+    </form-group>
     <form-group v-if="hasFirstname">
       <form-label id="firstname" :label="__('Vorname')" :required="requiresFirstname" />
       <form-text-field 
@@ -14,6 +23,14 @@
         v-model="individual.name" 
         :error="__(errors.name)"
         @update:error="errors.name = $event"
+      />
+    </form-group>
+    <form-group v-if="hasEmail">
+      <form-label id="email" :label="__('E-Mail')" :required="requiresEmail" />
+      <form-text-field 
+        v-model="individual.email" 
+        :error="__(errors.email)"
+        @update:error="errors.email = $event"
       />
     </form-group>
     <form-group v-if="hasMealOptions">
@@ -45,6 +62,11 @@ const props = defineProps({
   requiresFirstname: Boolean,
   hasMealOptions: Boolean,
   requiresMealOptions: Boolean,
+  hasSalutation: Boolean,
+  requiresSalutation: Boolean,
+  hasEmail: Boolean,
+  requiresEmail: Boolean,
+  salutations: Array,
   mealOptions: Array,
   errors: {
     type: Object,
@@ -54,8 +76,9 @@ const props = defineProps({
 
 const emit = defineEmits(['update:individual']);
 
-
 const individual = ref({
+  salutation: props.salutations[0] ? props.salutations[0].value : null,
+  email: null,
   name: null,
   firstname: null,
   meal_options: props.mealOptions[0] ? props.mealOptions[0].value : null,

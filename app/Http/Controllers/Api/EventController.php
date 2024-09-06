@@ -40,6 +40,8 @@ class EventController extends Controller
         'Vegan' => $event->has_meal_option_vegan ? __('Vegan') : null,
       ],
       'has_button_additional_individuals' => $event->has_button_additional_individuals,
+      'has_field_additional_individual_salutation' => $event->has_button_additional_individuals ? $event->has_field_additional_individual_salutation : false,
+      'has_field_additional_individual_email' => $event->has_button_additional_individuals ? $event->has_field_additional_individual_email : false,
       'has_field_additional_individual_name' => $event->has_button_additional_individuals ? $event->has_field_additional_individual_name : false,
       'has_field_additional_individual_firstname' => $event->has_button_additional_individuals ? $event->has_field_additional_individual_firstname : false,
     ]);
@@ -78,10 +80,18 @@ class EventController extends Controller
     $additional_individuals = [];
     foreach ($request->input('additional_individuals') as $additional_individual)
     {
-      $name = $additional_individual['firstname'] . ' ' .$additional_individual['name'];
-      $meal_options = $additional_individual['meal_options'] ?? null; 
-      $additional_individuals[] = $name . ($meal_options ? ' - ' . $meal_options : '');
+      // create an array with salutation, email, name, firstname and meal_options
+      $additional_individual_data = [
+        'salutation' => $additional_individual['salutation'] ?? null,
+        'email' => $additional_individual['email'] ?? null,
+        'name' => $additional_individual['firstname'] . ' ' . $additional_individual['name'],
+        'meal_options' => $additional_individual['meal_options'] ?? null,
+      ];
+
+      // create comma separated string
+      $additional_individuals[] = implode(', ', array_filter($additional_individual_data));
     }
+
     // add newline instead of comma
     $data['additional_individuals'] = implode("\n", $additional_individuals);
 

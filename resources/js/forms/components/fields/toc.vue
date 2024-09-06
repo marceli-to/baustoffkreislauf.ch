@@ -1,7 +1,7 @@
 <template>
-  <div class="relative !mt-30">
+  <div class="relative !mt-20 lg:!mt-30">
     <div :class="['flex checkboxes', { 'has-error': error }]">
-      <div class="flex items-start mr-15 mt-4">
+      <div class="flex items-start mr-15 mt-2 lg:mt-4">
         <input id="toc" name="toc" type="checkbox" :checked="modelValue" @change="updateValue">
       </div>
       <label for="toc" class="hyphens-auto" v-if="locale === 'de'">

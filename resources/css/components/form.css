@@ -3,7 +3,7 @@ input[type=email],
 input[type=tel],
 textarea,
 select {
-  @apply w-full py-10 px-10 text-base bg-transparent border-black border rounded-md !ring-0 focus:outline-none focus:!ring-0 focus:border-turquoise  focus:text-black placeholder:text-black
+  @apply w-full py-10 px-10 text-sm lg:text-base bg-transparent border-black border rounded-md !ring-0 focus:outline-none focus:!ring-0 focus:border-turquoise  focus:text-black placeholder:text-black
 }
 
 .has-error input[type=text],
@@ -14,9 +14,8 @@ select {
   @apply bg-red-600 text-white
 }
 
-label:has(+ input[type=text]:focus),
-label:has(+ input[type=email]:focus) {
-
+label {
+  @apply text-sm lg:text-base
 }
 
 .has-error label {
@@ -24,7 +23,7 @@ label:has(+ input[type=email]:focus) {
 }
 
 select {
-  @apply bg-right-center bg-transparent appearance-none bg-dropdown bg-[length:22px_auto] bg-no-repeat accent-transparent
+  @apply bg-right-center bg-transparent appearance-none bg-dropdown bg-[length:16px_auto] lg:bg-[length:22px_auto] bg-no-repeat accent-transparent
 }
 
 textarea {
@@ -32,7 +31,6 @@ textarea {
   field-sizing: content;
   resize: vertical;
 } 
-
 
 .checkboxes label {
   @apply cursor-pointer
@@ -43,7 +41,7 @@ textarea {
 }
 
 .checkboxes input[type=checkbox] {
-  @apply appearance-none w-28 h-28 rounded-md ring-0 focus:ring-0 !ring-offset-0 !outline-none border border-black text-black bg-white !accent-black
+  @apply appearance-none w-24 lg:w-28 h-24 lg:h-28 rounded-md ring-0 focus:ring-0 !ring-offset-0 !outline-none border border-black text-black bg-white !accent-black
 }
 
 .checkboxes.has-error input[type=checkbox] {
@@ -52,7 +50,5 @@ textarea {
 
 .checkboxes input[type=checkbox]:checked {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23000000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='40 12 18 34 8 24'%3E%3C/polyline%3E%3C/svg%3E");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 18px;
+  @apply bg-center bg-no-repeat bg-[length:16px_auto] lg:bg-[length:18px_auto]
 }
