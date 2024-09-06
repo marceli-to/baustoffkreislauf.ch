@@ -1,12 +1,12 @@
 <article class="col-span-full">
   <h1 class="mb-5 xl:mb-10">{{ title }}</h1>
   <span class="text-sm lg:text-base">{{ event_date iso_format="Do MMMM YYYY" }}</span>
-  <div id="event-forms" class="mt-20 xl:mt-30">
-    <h2 class="text-base md:text-md lg:text-lg">
-      {{ "Anmeldung" | trans }}
-    </h2>
-    {{ if has_form }}
+  {{ if has_form }}
+    <div id="event-forms" class="mt-20 xl:mt-30">
+      <h2 class="text-base md:text-md lg:text-lg">
+        {{ "Anmeldung" | trans }}
+      </h2>
       <event-registration :event-id="'{{ origin_id ?? id }}'"></event-registration>
-    {{ endif }}
-  </div>
+    </div>
+  {{ endif }}
 </article>
