@@ -76,15 +76,35 @@
         @update:error="errors.location = $event"
       />
     </form-group>
-    <form-group v-if="hasMealOptions">
-      <form-label id="meal_options" :label="__('Menüwunsch')" :required="requiresMealOptions" />
-      <form-select-field 
-        v-model="form.meal_options" 
-        :error="__(errors.meal_options)"
-        @update:error="errors.meal_options = $event"
-        :options="mealOptions"
+    <form-group v-if="hasCostCenter">
+      <form-label id="cost_center" :label="__('Kostenstelle')" />
+      <form-textarea-field 
+        v-model="form.cost_center" 
+        :error="__(errors.cost_center)"
+        @update:error="errors.cost_center = $event"
       />
     </form-group>
+
+    <template v-if="hasMealOptions">
+      <form-group>
+        <form-checkbox-field 
+          v-model="form.wants_meal_options" 
+          :id="'wants_meal_options'"
+          :name="'wants_meal_options'"
+          :value="'wants_meal_options'"
+          :label="__('Essen/Apéro')"
+        />
+      </form-group>
+      <form-group v-if="form.wants_meal_options">
+        <form-label id="meal_options" :label="__('Menüwunsch')" :required="requiresMealOptions" />
+        <form-select-field 
+          v-model="form.meal_options" 
+          :error="__(errors.meal_options)"
+          @update:error="errors.meal_options = $event"
+          :options="mealOptions"
+          />
+      </form-group>
+    </template>
 
     <form-group v-if="hasRemarks">
       <form-label id="remarks" :label="__('Bemerkungen')" />
@@ -164,6 +184,7 @@ import FormTextareaField from '@/forms/components/fields/textarea.vue';
 import FormLabel from '@/forms/components/fields/label.vue';
 import FormButton from '@/forms/components/fields/button.vue';
 import FormSelectField from '@/forms/components/fields/select.vue';
+import FormCheckboxField from '@/forms/components/fields/checkbox.vue';
 import FormToc from '@/forms/components/fields/toc.vue';
 import AdditionalIndividual from '@/forms/components/AdditionalIndividual.vue';
 import SuccessAlert from '@/forms/components/alerts/success.vue';
@@ -200,6 +221,8 @@ const requiresLocation = ref(false);
 const hasAddress = ref(false);
 const requiresAddress = ref(false);
 const hasMealOptions = ref(false);
+const wantsMealOptions = ref(false);
+const hasCostCenter = ref(false);
 const hasRemarks = ref(false);
 const requiresMealOptions = ref(false);
 const mealOptions = ref([]);
@@ -229,6 +252,8 @@ const form = ref({
   location: null,
   address: null,
   remarks: null,
+  cost_center: null,
+  wants_meal_options: false,
   meal_options: null,
   additional_individuals: [],
 });
@@ -266,6 +291,7 @@ onMounted(async () => {
     hasLocation.value = response.data.has_location;
     requiresLocation.value = response.data.requires_location;
     hasAddress.value = response.data.has_address;
+    hasCostCenter.value = response.data.has_cost_center;
     hasRemarks.value = response.data.has_remarks;
     requiresAddress.value = response.data.requires_address;
     hasMealOptions.value = response.data.has_meal_options;
@@ -322,15 +348,14 @@ watch(additionalIndividuals, (newValue) => {
 }, { deep: true });
 
 function addAdditionalIndividual() {
-  console.log(hasSalutation.value);
   additionalIndividuals.value.push({
     salutation: hasSalutation.value ? salutations.value[0].value : null,
     email: null,
     name: null,
     firstname: null,
-    meal_options: hasMealOptions.value ? mealOptions.value[0].value : null,
+    wants_meal_options: false,
+    meal_options: null,
   });
-  console.log(additionalIndividuals.value);
   form.value.additional_individuals = additionalIndividuals.value;
 }
 

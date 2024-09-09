@@ -64,6 +64,13 @@
     </div>
     <br>
   @endif
+  @if ($data['cost_center'])
+    <div class="text-base">
+      <strong>{{ __('Kostenstelle', [], $data['locale']) }}</strong><br>
+      {{ $data['cost_center'] }}
+    </div>
+    <br>
+  @endif
   @if ($data['remarks'])
     <div class="text-base">
       <strong>{{ __('Bemerkungen', [], $data['locale']) }}</strong><br>

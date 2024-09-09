@@ -31,12 +31,12 @@ class EventController extends Controller
       'requires_location' => $event->requires_location,
       'has_address' => $event->has_address,
       'requires_address' => $event->requires_address,
+      'has_cost_center' => $event->has_cost_center,
       'has_remarks' => $event->has_remarks,
       'has_meal_options' => $event->has_meal_options,
       'requires_meal_options' => $event->requires_meal_options,
       'meal_options' => [
         'Fleisch' => $event->has_meal_option_meat ? __('Fleisch') : null,
-        'Fisch' => $event->has_meal_option_fish ? __('Fisch') : null,
         'Vegetarisch' => $event->has_meal_option_vegetarian ? __('Vegetarisch') : null,
         'Vegan' => $event->has_meal_option_vegan ? __('Vegan') : null,
       ],
@@ -72,7 +72,9 @@ class EventController extends Controller
       'location' => $request->input('location'),
       'address' => $request->input('address'),
       'remarks' => $request->input('remarks'),
-      'meal_options' => $request->input('meal_options'),
+      'cost_center' => $request->input('cost_center'),
+      'wants_meal_options' => $request->input('wants_meal_options'),
+      'meal_options' => $request->input('wants_meal_options') && $request->input('meal_options') ? $request->input('meal_options') : null,
       'locale' => $request->input('locale'),
     ];
 
@@ -86,7 +88,8 @@ class EventController extends Controller
         'salutation' => $additional_individual['salutation'] ?? null,
         'email' => $additional_individual['email'] ?? null,
         'name' => $additional_individual['firstname'] . ' ' . $additional_individual['name'],
-        'meal_options' => $additional_individual['meal_options'] ?? null,
+        'wants_meal_options' => $additional_individual['wants_meal_options'] ?? false,
+        'meal_options' => $additional_individual['meal_options'] ?? 'ohne Essen',
       ];
 
       // create comma separated string
@@ -192,7 +195,7 @@ class EventController extends Controller
       $validationRules['additional_individuals.*.firstname'] = 'required';
       
       if ($event->has_meal_options && $event->requires_meal_options) {
-        $validationRules['additional_individuals.*.meal_options'] = 'required';
+        $validationRules['additional_individuals.*.meal_options'] = 'required_if:additional_individuals.*.wants_meal_options,true';
       }
     }
 

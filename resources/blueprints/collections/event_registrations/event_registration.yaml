@@ -123,6 +123,18 @@ tabs:
               replicator_preview: true
               hide_display: false
           -
+            handle: cost_center
+            field:
+              antlers: false
+              type: textarea
+              display: Kostenstelle
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: remarks
             field:
               antlers: false

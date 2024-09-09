@@ -28,15 +28,21 @@ export function useI18n() {
   const _getTranslations = () => {
     const locale = _getLocale();
     if (locale && locale !== fallback_locale) {
-      const storedTranslations = localStorage.getItem(`bks_i18n_${locale}`);
-      if (storedTranslations) {
+      const storedTranslations = localStorage.getItem(`bks_${locale}`);
+      const expirationTime = localStorage.getItem(`bks_${locale}_expiration`); 
+      if (storedTranslations && expirationTime && new Date(expirationTime) > new Date()) {
         translations.value = JSON.parse(storedTranslations);
         hasTranslations.value = true;
       } else {
         axios.get(`${routes.get}/${locale}`).then(response => {
           translations.value = JSON.parse(response.data);
           hasTranslations.value = true;
-          localStorage.setItem(`bks_i18n_${locale}`, JSON.stringify(translations.value));
+          const expirationTime = new Date();
+          expirationTime.setHours(expirationTime.getHours() + 2);
+          localStorage.removeItem(`bks_${locale}`);
+          localStorage.removeItem(`bks_${locale}_expiration`);
+          localStorage.setItem(`bks_${locale}_expiration`, expirationTime.toISOString());
+          localStorage.setItem(`bks_${locale}`, JSON.stringify(translations.value));
         });
       }
     }

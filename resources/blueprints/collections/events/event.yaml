@@ -433,6 +433,18 @@ tabs:
               replicator_preview: true
               hide_display: false
           -
+            handle: has_cost_center
+            field:
+              default: false
+              type: toggle
+              display: 'Feld "Kostenstelle"'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: meal_options
             field:
               type: section
@@ -477,21 +489,6 @@ tabs:
               default: true
               type: toggle
               display: 'Option "Fleisch"'
-              localizable: false
-              width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
-              if:
-                has_meal_options: 'equals true'
-          -
-            handle: has_meal_option_fish
-            field:
-              default: true
-              type: toggle
-              display: 'Option "Fisch"'
               localizable: false
               width: 33
               listable: hidden
