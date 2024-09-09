@@ -5,7 +5,7 @@
         <input id="toc" name="toc" type="checkbox" :checked="modelValue" @change="updateValue">
       </div>
       <label for="toc" class="hyphens-auto" v-if="locale === 'de'">
-        Mit der Anmeldung bestätigen Sie die entsprechenden <a href="/datenschutz" target="_blank">Teilnahme- und Annulationsbedingungen</a> sowie <a href="/datenschutz" target="_blank">Datenschutzbestimmungen</a>
+        Mit der Anmeldung bestätigen Sie die entsprechenden <a href="/datenschutz" target="_blank">Teilnahme- und Annullationsbedingungen</a> sowie <a href="/datenschutz" target="_blank">Datenschutzbestimmungen</a>
       </label>
       <label for="toc" class="hyphens-auto" v-else-if="locale === 'fr'">
         En vous inscrivant, vous confirmez les <a href="/datenschutz" target="_blank">conditions de participation et d'annulation correspondantes</a> ainsi que la <a href="/datenschutz" target="_blank">politique de confidentialité</a>

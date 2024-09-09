@@ -252,7 +252,7 @@ class EventController extends Controller
     }
 
     // add message for toc
-    $validationMessages['toc.accepted'] = __('Sie müssen die Teilnahme- und Annulationsbedingungen sowie die Datenschutzbestimmungen akzeptieren');
+    $validationMessages['toc.accepted'] = __('Sie müssen die Teilnahme- und Annullationsbedingungen sowie die Datenschutzbestimmungen akzeptieren');
 
     return [
       'rules' => $validationRules,
