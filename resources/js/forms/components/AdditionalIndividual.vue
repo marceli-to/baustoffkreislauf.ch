@@ -36,11 +36,11 @@
     <template v-if="hasMealOptions">
       <form-group>
         <label>{{ __('Essen/Apéro') }}</label>
-        <div class="flex gap-x-15 items-center mt-3 lg:mt-10 relative">
+        <div class="flex gap-x-20 lg:gap-x-30 items-center mt-3 lg:mt-10 relative">
           <form-radio-field 
             v-model="individual.wants_meal_options" 
-            :id="'wants_meal_options'"
-            :name="'wants_meal_options'"
+            :id="'individual_wants_meal_options_yes'"
+            :name="'individual_wants_meal_options'"
             :error="__(errors.wants_meal_options)"
             @update:error="errors.wants_meal_options = $event"
             @update:modelValue="individual.wants_meal_options = $event"
@@ -49,8 +49,8 @@
           />
           <form-radio-field 
             v-model="individual.wants_meal_options" 
-            :id="'wants_meal_options'"
-            :name="'wants_meal_options'"
+            :id="'individual_wants_meal_options_no'"
+            :name="'individual_wants_meal_options'"
             :error="__(errors.wants_meal_options)"
             @update:error="errors.wants_meal_options = $event"
             @update:modelValue="individual.wants_meal_options = $event"
@@ -106,14 +106,13 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:individual']);
-const localWantsMealOptions = ref(false);
 const individual = ref({
   salutation: props.salutations[0] ? props.salutations[0].value : null,
   email: null,
   name: null,
   firstname: null,
-  meal_options: null,
   wants_meal_options: null,
+  meal_options: null,
 });
 
 // Watch for changes in the individual object and emit them to the parent
@@ -121,12 +120,12 @@ watch(individual, (newValue) => {
   emit('update:individual', newValue);
 }, { deep: true });
 
-// Watch for changes in localWantsMealOptions
-watch(localWantsMealOptions, (newValue) => {
-  emit('update:individual', {
-    ...individual.value,
-    meal_options: props.mealOptions[0] ? props.mealOptions[0].value : null,
-    wants_meal_options: newValue
-  });
+// Watch for changes in wants_meal_options
+watch(() => individual.value.wants_meal_options, (newValue) => {
+  if (newValue === 'true') {
+    individual.value.meal_options = props.mealOptions[0]?.value ?? null;
+  } else {
+    individual.value.meal_options = null;
+  }
 });
 </script>

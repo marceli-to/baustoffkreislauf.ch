@@ -88,10 +88,10 @@
     <template v-if="hasMealOptions">
       <form-group>
         <label>{{ __('Essen/Apéro') }}</label>
-        <div class="flex gap-x-15 items-center mt-3 lg:mt-10 relative">
+        <div class="flex gap-x-20 lg:gap-x-30 items-center mt-3 lg:mt-10 relative">
           <form-radio-field 
             v-model="form.wants_meal_options" 
-            :id="'wants_meal_options'"
+            :id="'wants_meal_options_yes'"
             :name="'wants_meal_options'"
             :error="__(errors.wants_meal_options)"
             @update:error="errors.wants_meal_options = $event"
@@ -101,7 +101,7 @@
           />
           <form-radio-field 
             v-model="form.wants_meal_options" 
-            :id="'wants_meal_options'"
+            :id="'wants_meal_options_no'"
             :name="'wants_meal_options'"
             :error="__(errors.wants_meal_options)"
             @update:error="errors.wants_meal_options = $event"
@@ -313,7 +313,6 @@ onMounted(async () => {
     requiresAddress.value = response.data.requires_address;
     hasMealOptions.value = response.data.has_meal_options;
     if (hasMealOptions.value) {   
-      requiresMealOptions.value = response.data.requires_meal_options;
       
       if (response.data.meal_options) {
        Object.entries(response.data.meal_options).forEach(([key, value]) => {

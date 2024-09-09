@@ -38,7 +38,7 @@ export function useI18n() {
           translations.value = JSON.parse(response.data);
           hasTranslations.value = true;
           const expirationTime = new Date();
-          expirationTime.setHours(expirationTime.getHours() + 2);
+          expirationTime.setMinutes(expirationTime.getMinutes() + 30);
           localStorage.removeItem(`bks_${locale}`);
           localStorage.removeItem(`bks_${locale}_expiration`);
           localStorage.setItem(`bks_${locale}_expiration`, expirationTime.toISOString());

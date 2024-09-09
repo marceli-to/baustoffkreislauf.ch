@@ -462,27 +462,11 @@ tabs:
               type: toggle
               display: Aktivieren
               localizable: false
-              width: 66
               listable: hidden
               instructions_position: above
               visibility: visible
               replicator_preview: true
               hide_display: false
-          -
-            handle: requires_meal_options
-            field:
-              default: true
-              type: toggle
-              display: Pflichtfeld
-              localizable: false
-              width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
-              if:
-                has_meal_options: 'equals true'
           -
             handle: has_meal_option_meat
             field:
