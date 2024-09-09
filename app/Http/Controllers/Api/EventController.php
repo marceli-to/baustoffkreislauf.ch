@@ -167,7 +167,7 @@ class EventController extends Controller
     }
 
     if ($event->has_email && $event->requires_email) {
-      $validationRules['email'] = 'required|email';
+      $validationRules['email'] = 'required|email|regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
     } 
 
     if ($event->has_phone && $event->requires_phone) {
@@ -219,6 +219,7 @@ class EventController extends Controller
     if ($event->has_email && $event->requires_email) {
       $validationMessages['email.required'] = __('E-Mail-Adresse ist erforderlich');
       $validationMessages['email.email'] = __('E-Mail-Adresse muss gültig sein');
+      $validationMessages['email.regex'] = __('E-Mail-Adresse muss gültig sein');
     }
 
     if ($event->has_phone && $event->requires_phone) {
