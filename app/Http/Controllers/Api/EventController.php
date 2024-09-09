@@ -4,7 +4,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Notification;
-use App\Notifications\UserEventRegistrationConfirmation;
+use App\Notifications\UserEventRegistrationNotification;
+use App\Notifications\OwnerEventRegistrationNotification;
 use Illuminate\Support\Facades\Validator;
 
 class EventController extends Controller
@@ -101,7 +102,13 @@ class EventController extends Controller
       ->data($data)
       ->save();
     
-    Notification::route('mail', $request->input('email'))->notify(new UserEventRegistrationConfirmation($data));
+    Notification::route('mail', $request->input('email'))
+      ->notify(new UserEventRegistrationNotification($data)
+    );
+
+    Notification::route('mail', env('MAIL_TO'))
+      ->notify(new OwnerEventRegistrationNotification($data)
+    );
 
     return response()->json(['message' => 'Store successful']);
   }

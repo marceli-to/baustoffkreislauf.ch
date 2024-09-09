@@ -5,10 +5,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class UserEventRegistrationConfirmation extends Notification
+class UserEventRegistrationNotification extends Notification
 {
   use Queueable;
 
+  protected $data;
   /**
    * Create a new notification instance.
    *
@@ -42,7 +43,7 @@ class UserEventRegistrationConfirmation extends Notification
       ->from(env('MAIL_FROM_ADDRESS'))
       ->replyTo(env('MAIL_TO'))
       ->subject('Anmeldung ' . $this->data['title'])
-      ->markdown('mail.user-event-registration-confirmation', ['data' => $this->data]);
+      ->markdown('mail.user-event-registration', ['data' => $this->data]);
   }
 
   /**

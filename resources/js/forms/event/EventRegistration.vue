@@ -149,6 +149,7 @@
         type="submit" 
         :label="__('Anmelden')"
         :disabled="isSubmitting"
+        :submitting="isSubmitting"
       />
     </form-group>
   </form>
