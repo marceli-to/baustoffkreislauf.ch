@@ -159,7 +159,7 @@ tabs:
             field:
               default: false
               type: toggle
-              display: 'Nur Mitglieder von Baustoff Kreislauf Schweiz'
+              display: 'Nur für Mitglieder'
               localizable: false
               listable: hidden
               instructions_position: above
