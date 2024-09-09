@@ -187,13 +187,15 @@ class EventController extends Controller
     }
 
     if ($event->has_meal_options && $event->requires_meal_options) {
-      $validationRules['meal_options'] = 'required';
+      $validationRules['wants_meal_options'] = 'required';
+      $validationRules['meal_options'] = 'required_if:wants_meal_options,true';
     }
 
     if ($event->has_button_additional_individuals) {
       $validationRules['additional_individuals.*.name'] = 'required';
       $validationRules['additional_individuals.*.firstname'] = 'required';
-      
+      $validationRules['additional_individuals.*.wants_meal_options'] = 'required';
+
       if ($event->has_meal_options && $event->requires_meal_options) {
         $validationRules['additional_individuals.*.meal_options'] = 'required_if:additional_individuals.*.wants_meal_options,true';
       }
@@ -242,10 +244,15 @@ class EventController extends Controller
       $validationMessages['meal_options.required'] = __('Essen ist erforderlich');
     }
 
+    if ($event->has_meal_options && $event->requires_meal_options) {
+      $validationMessages['wants_meal_options.required'] = __('Angabe ist erforderlich');
+    }
+
     if ($event->has_button_additional_individuals) {
       $validationMessages['additional_individuals.*.name.required'] = __('Name ist erforderlich');
       $validationMessages['additional_individuals.*.firstname.required'] = __('Vorname ist erforderlich');
-
+      $validationMessages['additional_individuals.*.wants_meal_options.required'] = __('Angabe ist erforderlich');
+      
       if ($event->has_meal_options && $event->requires_meal_options) {
         $validationMessages['additional_individuals.*.meal_options.required'] = __('Essen ist erforderlich');
       }

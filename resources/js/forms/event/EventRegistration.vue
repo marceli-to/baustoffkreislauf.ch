@@ -87,15 +87,32 @@
 
     <template v-if="hasMealOptions">
       <form-group>
-        <form-checkbox-field 
-          v-model="form.wants_meal_options" 
-          :id="'wants_meal_options'"
-          :name="'wants_meal_options'"
-          :value="'wants_meal_options'"
-          :label="__('Essen/Apéro')"
-        />
+        <label>{{ __('Essen/Apéro') }}</label>
+        <div class="flex gap-x-15 items-center mt-3 lg:mt-10 relative">
+          <form-radio-field 
+            v-model="form.wants_meal_options" 
+            :id="'wants_meal_options'"
+            :name="'wants_meal_options'"
+            :error="__(errors.wants_meal_options)"
+            @update:error="errors.wants_meal_options = $event"
+            @update:modelValue="form.wants_meal_options = $event"
+            :value="'true'"
+            :label="__('Ja')"
+          />
+          <form-radio-field 
+            v-model="form.wants_meal_options" 
+            :id="'wants_meal_options'"
+            :name="'wants_meal_options'"
+            :error="__(errors.wants_meal_options)"
+            @update:error="errors.wants_meal_options = $event"
+            @update:modelValue="form.wants_meal_options = $event"
+            :value="'false'"
+            :label="__('Nein')"
+          />
+          <Error :error="__(errors.wants_meal_options)" />
+        </div>
       </form-group>
-      <form-group v-if="form.wants_meal_options">
+      <form-group v-if="form.wants_meal_options == 'true'">
         <form-label id="meal_options" :label="__('Menüwunsch')" :required="requiresMealOptions" />
         <form-select-field 
           v-model="form.meal_options" 
@@ -184,8 +201,9 @@ import FormTextareaField from '@/forms/components/fields/textarea.vue';
 import FormLabel from '@/forms/components/fields/label.vue';
 import FormButton from '@/forms/components/fields/button.vue';
 import FormSelectField from '@/forms/components/fields/select.vue';
-import FormCheckboxField from '@/forms/components/fields/checkbox.vue';
+import FormRadioField from '@/forms/components/fields/radio.vue';
 import FormToc from '@/forms/components/fields/toc.vue';
+import Error from '@/forms/components/fields/error.vue';
 import AdditionalIndividual from '@/forms/components/AdditionalIndividual.vue';
 import SuccessAlert from '@/forms/components/alerts/success.vue';
 import ErrorAlert from '@/forms/components/alerts/error.vue';
@@ -203,7 +221,6 @@ const isLoaded = ref(false);
 const isSubmitting = ref(false);
 const formSuccess = ref(false);
 const formError = ref(false);
-
 const hasSalutation = ref(false);
 const requiresSalutation = ref(false);
 const hasName = ref(false);
@@ -253,7 +270,7 @@ const form = ref({
   address: null,
   remarks: null,
   cost_center: null,
-  wants_meal_options: false,
+  wants_meal_options: null,
   meal_options: null,
   additional_individuals: [],
 });
@@ -353,7 +370,7 @@ function addAdditionalIndividual() {
     email: null,
     name: null,
     firstname: null,
-    wants_meal_options: false,
+    wants_meal_options: null,
     meal_options: null,
   });
   form.value.additional_individuals = additionalIndividuals.value;

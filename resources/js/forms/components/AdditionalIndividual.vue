@@ -35,15 +35,32 @@
     </form-group>
     <template v-if="hasMealOptions">
       <form-group>
-        <form-checkbox-field 
-          v-model="localWantsMealOptions" 
-          :id="'local_wants_meal_options'"
-          :name="'local_wants_meal_options'"
-          :value="'local_wants_meal_options'"
-          :label="__('Essen/Apéro')"
-        />
+        <label>{{ __('Essen/Apéro') }}</label>
+        <div class="flex gap-x-15 items-center mt-3 lg:mt-10 relative">
+          <form-radio-field 
+            v-model="individual.wants_meal_options" 
+            :id="'wants_meal_options'"
+            :name="'wants_meal_options'"
+            :error="__(errors.wants_meal_options)"
+            @update:error="errors.wants_meal_options = $event"
+            @update:modelValue="individual.wants_meal_options = $event"
+            :value="'true'"
+            :label="__('Ja')"
+          />
+          <form-radio-field 
+            v-model="individual.wants_meal_options" 
+            :id="'wants_meal_options'"
+            :name="'wants_meal_options'"
+            :error="__(errors.wants_meal_options)"
+            @update:error="errors.wants_meal_options = $event"
+            @update:modelValue="individual.wants_meal_options = $event"
+            :value="'false'"
+            :label="__('Nein')"
+          />
+          <Error :error="__(errors.wants_meal_options)" />
+        </div>
       </form-group>
-      <form-group v-if="localWantsMealOptions">
+      <form-group v-if="individual.wants_meal_options == 'true'">
         <form-label id="meal_options" :label="__('Menüwunsch')" :required="requiresMealOptions" />
         <form-select-field 
           v-model="individual.meal_options" 
@@ -64,7 +81,8 @@ import FormGroup from '@/forms/components/fields/group.vue';
 import FormTextField from '@/forms/components/fields/text.vue';
 import FormLabel from '@/forms/components/fields/label.vue';
 import FormSelectField from '@/forms/components/fields/select.vue';
-import FormCheckboxField from '@/forms/components/fields/checkbox.vue';
+import FormRadioField from '@/forms/components/fields/radio.vue';
+import Error from '@/forms/components/fields/error.vue';
 
 const { __ } = useI18n();
 
@@ -95,7 +113,7 @@ const individual = ref({
   name: null,
   firstname: null,
   meal_options: null,
-  wants_meal_options: false,
+  wants_meal_options: null,
 });
 
 // Watch for changes in the individual object and emit them to the parent

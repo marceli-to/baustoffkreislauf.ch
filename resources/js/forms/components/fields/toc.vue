@@ -46,5 +46,6 @@ const emit = defineEmits(['update:modelValue', 'update:error']);
 
 const updateValue = (event) => {
   emit('update:modelValue', event.target.checked);
+  emit('update:error', null);
 }
 </script>
