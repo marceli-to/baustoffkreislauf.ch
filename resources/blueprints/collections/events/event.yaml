@@ -5,6 +5,22 @@ tabs:
       -
         fields:
           -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: true
+              validate:
+                - required
+              display: Titel
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              input_type: text
+              antlers: false
+              hide_display: false
+          -
             handle: event_date
             field:
               mode: single
@@ -24,20 +40,131 @@ tabs:
               replicator_preview: true
               hide_display: false
           -
-            handle: title
+            handle: location
             field:
-              type: text
-              required: true
-              localizable: true
-              validate:
-                - required
-              display: Titel
-              instructions_position: above
+              antlers: false
+              type: textarea
+              display: Ort
+              localizable: false
               listable: hidden
+              instructions_position: above
               visibility: visible
               replicator_preview: true
+              hide_display: false
+              width: 50
+          -
+            handle: google_maps_url
+            field:
               input_type: text
               antlers: false
+              type: text
+              display: 'Google Maps'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              width: 50
+          -
+            handle: description
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - removeformat
+                - anchor
+                - h1
+                - lead
+              smart_typography: false
+              save_html: false
+              inline: false
+              toolbar_mode: floating
+              reading_time: false
+              word_count: false
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: true
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: false
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: Beschreibung
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: program_file
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              folder: downloads
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Programm (PDF)'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: fee_members
+            field:
+              input_type: number
+              antlers: false
+              type: text
+              display: 'Teilnahmegebühr Mitglieder'
+              localizable: false
+              width: 50
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              instructions: 'Nur Betrag (z.B. 45.00)'
+          -
+            handle: fee_non_members
+            field:
+              input_type: number
+              antlers: false
+              type: text
+              display: 'Teilnahmegebühr Nicht-Mitglieder'
+              localizable: false
+              width: 50
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              instructions: 'Nur Betrag (z.B. 60.00)'
+          -
+            handle: members_only
+            field:
+              default: false
+              type: toggle
+              display: 'Nur Mitglieder von Baustoff Kreislauf Schweiz'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
               hide_display: false
   registration:
     display: Anmeldeformular
