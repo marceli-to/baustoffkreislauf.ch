@@ -2,7 +2,11 @@
   <div class="relative">
     <textarea
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)">
+      @input="$emit('update:modelValue', $event.target.value)"
+      @focus="$emit('update:error', '')"
+      :class="[
+        { '!border-raspberry': error },
+      ]">
     </textarea>
     <Error :error="error" />
   </div>
@@ -21,5 +25,5 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(['update:modelValue']);
+defineEmits(['update:modelValue', 'update:error']);
 </script>

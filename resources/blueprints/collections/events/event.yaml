@@ -186,6 +186,27 @@ tabs:
               replicator_preview: true
               hide_display: false
           -
+            handle: registration_deadline
+            field:
+              mode: single
+              inline: false
+              full_width: false
+              columns: 1
+              rows: 1
+              time_enabled: false
+              time_seconds_enabled: false
+              format: d.m.Y
+              type: date
+              display: Anmeldefrist
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
             handle: contact_information
             field:
               type: section
@@ -421,23 +442,39 @@ tabs:
               if:
                 has_location: 'equals true'
           -
-            handle: has_remarks
+            handle: has_cost_center
             field:
-              default: true
+              default: false
               type: toggle
-              display: 'Feld "Bemerkungen"'
+              display: 'Feld "Kostenstelle"'
               localizable: false
               listable: hidden
               instructions_position: above
               visibility: visible
               replicator_preview: true
               hide_display: false
+              width: 66
           -
-            handle: has_cost_center
+            handle: requires_cost_center
             field:
               default: false
               type: toggle
-              display: 'Feld "Kostenstelle"'
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_cost_center: 'equals true'
+          -
+            handle: has_remarks
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Bemerkungen"'
               localizable: false
               listable: hidden
               instructions_position: above
@@ -587,6 +624,21 @@ tabs:
               default: true
               type: toggle
               display: 'Feld "Name"'
+              localizable: false
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                has_button_additional_individuals: 'equals true'
+          -
+            handle: has_field_additional_individual_cost_center
+            field:
+              default: false
+              type: toggle
+              display: 'Feld "Kostenstelle"'
               localizable: false
               width: 50
               listable: hidden

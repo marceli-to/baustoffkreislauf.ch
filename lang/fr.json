@@ -51,6 +51,7 @@
   "Ort ist erforderlich": "La localité est requise",
   "Adresse ist erforderlich": "L'adresse est requise",
   "Essen ist erforderlich": "Le choix de menu est requis",
+  "Kostenstelle ist erforderlich": "Le centre de coût est requis",
   "Ja": "Oui",
   "Nein": "Non",
   "Sie müssen die Teilnahme- und Annullationsbedingungen sowie die Datenschutzbestimmungen akzeptieren": "Vous devez accepter les conditions de participation et d'annulation ainsi que la politique de confidentialité",
@@ -60,5 +61,7 @@
   "Baustoff Kreislauf Schweiz<br>Schwanengasse 12<br>3011 Bern": "<strong>Matériaux de construction circulaires Suisse</strong><br>Schwanengasse 12<br>3011 Berne",
   "Bemerkungen": "Remarques",
   "Kostenstelle": "Centre de coût",
-  "Essen/Apéro": "Repas/Apéritif"
+  "Essen/Apéro": "Repas/Apéritif",
+  "Anmeldung ist möglich bis": "Inscription possible jusqu'au",
+  "Anmeldung ist nicht mehr möglich...": "Inscription non plus possible..."
 }

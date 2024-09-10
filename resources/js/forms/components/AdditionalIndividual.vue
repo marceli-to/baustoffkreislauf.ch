@@ -33,6 +33,14 @@
         @update:error="errors.email = $event"
       />
     </form-group>
+    <form-group v-if="hasCostCenter">
+      <form-label id="cost_center" :label="__('Kostenstelle')" :required="requiresCostCenter" />
+      <form-textarea-field 
+        v-model="individual.cost_center" 
+        :error="__(errors.cost_center)"
+        @update:error="errors.cost_center = $event"
+      />
+    </form-group>
     <template v-if="hasMealOptions">
       <form-group>
         <label>{{ __('Essen/Apéro') }}</label>
@@ -79,6 +87,7 @@ import { ref, watch } from 'vue';
 import { useI18n } from '@/composables/i18n';
 import FormGroup from '@/forms/components/fields/group.vue';
 import FormTextField from '@/forms/components/fields/text.vue';
+import FormTextareaField from '@/forms/components/fields/textarea.vue';
 import FormLabel from '@/forms/components/fields/label.vue';
 import FormSelectField from '@/forms/components/fields/select.vue';
 import FormRadioField from '@/forms/components/fields/radio.vue';
@@ -95,6 +104,8 @@ const props = defineProps({
   requiresMealOptions: Boolean,
   hasSalutation: Boolean,
   requiresSalutation: Boolean,
+  hasCostCenter: Boolean,
+  requiresCostCenter: Boolean,
   hasEmail: Boolean,
   requiresEmail: Boolean,
   salutations: Array,
@@ -113,6 +124,7 @@ const individual = ref({
   firstname: null,
   wants_meal_options: null,
   meal_options: null,
+  cost_center: null,
 });
 
 // Watch for changes in the individual object and emit them to the parent

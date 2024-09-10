@@ -32,6 +32,7 @@ class EventController extends Controller
       'has_address' => $event->has_address,
       'requires_address' => $event->requires_address,
       'has_cost_center' => $event->has_cost_center,
+      'requires_cost_center' => $event->requires_cost_center,
       'has_remarks' => $event->has_remarks,
       'has_meal_options' => $event->has_meal_options,
       'meal_options' => [
@@ -40,10 +41,11 @@ class EventController extends Controller
         'Vegan' => $event->has_meal_option_vegan ? __('Vegan') : null,
       ],
       'has_button_additional_individuals' => $event->has_button_additional_individuals,
-      'has_field_additional_individual_salutation' => $event->has_button_additional_individuals ? $event->has_field_additional_individual_salutation : false,
-      'has_field_additional_individual_email' => $event->has_button_additional_individuals ? $event->has_field_additional_individual_email : false,
-      'has_field_additional_individual_name' => $event->has_button_additional_individuals ? $event->has_field_additional_individual_name : false,
-      'has_field_additional_individual_firstname' => $event->has_button_additional_individuals ? $event->has_field_additional_individual_firstname : false,
+      'has_field_additional_individual_salutation' => $event->has_field_additional_individual_salutation,
+      'has_field_additional_individual_email' => $event->has_field_additional_individual_email,
+      'has_field_additional_individual_name' => $event->has_field_additional_individual_name,
+      'has_field_additional_individual_firstname' => $event->has_field_additional_individual_firstname,
+      'has_field_additional_individual_cost_center' => $event->has_field_additional_individual_cost_center,
     ]);
   }
 
@@ -88,6 +90,7 @@ class EventController extends Controller
         'email' => $additional_individual['email'] ?? null,
         'name' => $additional_individual['firstname'] . ' ' . $additional_individual['name'],
         'meal_options' => $additional_individual['meal_options'] ?? 'ohne Essen',
+        'cost_center' => $additional_individual['cost_center'] ?? null,
       ];
 
       // create comma separated string
@@ -184,81 +187,66 @@ class EventController extends Controller
       $validationRules['address'] = 'required';
     }
 
+    if ($event->has_cost_center && $event->requires_cost_center) {
+      $validationRules['cost_center'] = 'required';
+    }
+
     if ($event->has_meal_options) {
       $validationRules['wants_meal_options'] = 'required';
       $validationRules['meal_options'] = 'required_if:wants_meal_options,true';
     }
 
     if ($event->has_button_additional_individuals) {
-      $validationRules['additional_individuals.*.name'] = 'required';
-      $validationRules['additional_individuals.*.firstname'] = 'required';
-      $validationRules['additional_individuals.*.wants_meal_options'] = 'required';
-
-      if ($event->has_meal_options) {
-        $validationRules['additional_individuals.*.meal_options'] = 'required_if:additional_individuals.*.wants_meal_options,true';
+      if ($event->has_field_additional_individual_name) {
+        $validationRules['additional_individuals.*.name'] = 'required';
       }
+
+      if ($event->has_field_additional_individual_firstname) {
+        $validationRules['additional_individuals.*.firstname'] = 'required';
+      }
+
+      if ($event->has_field_additional_individual_email) {
+        $validationRules['additional_individuals.*.email'] = 'required|email|regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
+      }
+
+      if ($event->has_field_additional_individual_cost_center) {
+        $validationRules['additional_individuals.*.cost_center'] = 'required';
+      }
+    }
+
+    if ($event->has_button_additional_individuals && $event->has_meal_options) {
+      $validationRules['additional_individuals.*.wants_meal_options'] = 'required';
+      $validationRules['additional_individuals.*.meal_options'] = 'required_if:additional_individuals.*.wants_meal_options,true';
     }
 
     $validationRules['toc'] = 'accepted';
 
     // Set validation messages
-    $validationMessages = [];
-
-    if ($event->has_salutation && $event->requires_salutation) {
-      $validationMessages['salutation.required'] = __('Anrede ist erforderlich');
-    }
-
-    if ($event->has_name && $event->requires_name) {
-      $validationMessages['name.required'] = __('Name ist erforderlich');
-    }
-
-    if ($event->has_firstname && $event->requires_firstname) {
-      $validationMessages['firstname.required'] = __('Vorname ist erforderlich');
-    }
-
-    if ($event->has_email && $event->requires_email) {
-      $validationMessages['email.required'] = __('E-Mail-Adresse ist erforderlich');
-      $validationMessages['email.email'] = __('E-Mail-Adresse muss gültig sein');
-      $validationMessages['email.regex'] = __('E-Mail-Adresse muss gültig sein');
-    }
-
-    if ($event->has_phone && $event->requires_phone) {
-      $validationMessages['phone.required'] = __('Telefonnummer ist erforderlich');
-    }
-
-    if ($event->has_company && $event->requires_company) {
-      $validationMessages['company.required'] = __('Firma ist erforderlich');
-    }
+    $validationMessages = [
+      'salutation.required' => __('Anrede ist erforderlich'),
+      'name.required' => __('Name ist erforderlich'),
+      'firstname.required' => __('Vorname ist erforderlich'),
+      'email.required' => __('E-Mail-Adresse ist erforderlich'),
+      'email.email' => __('E-Mail-Adresse muss gültig sein'),
+      'email.regex' => __('E-Mail-Adresse muss gültig sein'),
+      'phone.required' => __('Telefonnummer ist erforderlich'),
+      'company.required' => __('Firma ist erforderlich'),
+      'location.required' => __('Ort ist erforderlich'),
+      'address.required' => __('Adresse ist erforderlich'),
+      'cost_center.required' => __('Kostenstelle ist erforderlich'),
+      'meal_options.required' => __('Essen ist erforderlich'),
+      'wants_meal_options.required' => __('Angabe ist erforderlich'),
+      'additional_individuals.*.name.required' => __('Name ist erforderlich'),
+      'additional_individuals.*.firstname.required' => __('Vorname ist erforderlich'),
+      'additional_individuals.*.email.required' => __('E-Mail-Adresse ist erforderlich'),
+      'additional_individuals.*.email.email' => __('E-Mail-Adresse muss gültig sein'),
+      'additional_individuals.*.email.regex' => __('E-Mail-Adresse muss gültig sein'),
+      'additional_individuals.*.meal_options.required' => __('Essen ist erforderlich'),
+      'additional_individuals.*.cost_center.required' => __('Kostenstelle ist erforderlich'),
+      'additional_individuals.*.wants_meal_options.required' => __('Angabe ist erforderlich'),
+      'toc.accepted' => __('Sie müssen die Teilnahme- und Annullationsbedingungen sowie die Datenschutzbestimmungen akzeptieren'),
+    ];
     
-    if ($event->has_location && $event->requires_location) {
-      $validationMessages['location.required'] = __('Ort ist erforderlich');
-    }
-
-    if ($event->has_address && $event->requires_address) {
-      $validationMessages['address.required'] = __('Adresse ist erforderlich');
-    }
-
-    if ($event->has_meal_options) {
-      $validationMessages['meal_options.required'] = __('Essen ist erforderlich');
-    }
-
-    if ($event->has_meal_options) {
-      $validationMessages['wants_meal_options.required'] = __('Angabe ist erforderlich');
-    }
-
-    if ($event->has_button_additional_individuals) {
-      $validationMessages['additional_individuals.*.name.required'] = __('Name ist erforderlich');
-      $validationMessages['additional_individuals.*.firstname.required'] = __('Vorname ist erforderlich');
-      $validationMessages['additional_individuals.*.wants_meal_options.required'] = __('Angabe ist erforderlich');
-
-      if ($event->has_meal_options) {
-        $validationMessages['additional_individuals.*.meal_options.required'] = __('Essen ist erforderlich');
-      }
-    }
-
-    // add message for toc
-    $validationMessages['toc.accepted'] = __('Sie müssen die Teilnahme- und Annullationsbedingungen sowie die Datenschutzbestimmungen akzeptieren');
-
     return [
       'rules' => $validationRules,
       'messages' => $validationMessages,

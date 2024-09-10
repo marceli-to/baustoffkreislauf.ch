@@ -77,7 +77,7 @@
       />
     </form-group>
     <form-group v-if="hasCostCenter">
-      <form-label id="cost_center" :label="__('Kostenstelle')" />
+      <form-label id="cost_center" :label="__('Kostenstelle')" :required="requiresCostCenter" />
       <form-textarea-field 
         v-model="form.cost_center" 
         :error="__(errors.cost_center)"
@@ -123,15 +123,6 @@
       </form-group>
     </template>
 
-    <form-group v-if="hasRemarks">
-      <form-label id="remarks" :label="__('Bemerkungen')" />
-      <form-textarea-field 
-        v-model="form.remarks" 
-        :error="__(errors.remarks)"
-        @update:error="errors.remarks = $event"
-      />
-    </form-group>
-
     <template v-if="hasButtonAdditionalIndividuals">
       <div>
         <h3 class="mt-15 xl:mt-30 mb:5 xl:mb-10">{{ __('Weitere Person') }}</h3>
@@ -140,13 +131,15 @@
             :hasSalutation="hasFieldAdditionalIndividualSalutation"
             :requiresSalutation="true"
             :hasEmail="hasFieldAdditionalIndividualEmail"
-            :requiresEmail="false"
+            :requiresEmail="requiresEmail"
             :hasName="hasFieldAdditionalIndividualName"
             :requiresName="requiresName"
             :hasFirstname="hasFieldAdditionalIndividualFirstname"
             :requiresFirstname="requiresFirstname"
             :hasMealOptions="hasMealOptions"
             :requiresMealOptions="requiresMealOptions"
+            :hasCostCenter="hasFieldAdditionalIndividualCostCenter"
+            :requiresCostCenter="requiresCostCenter"
             :salutations="salutations"
             :mealOptions="mealOptions"
             :errors="errors.additional_individuals ? errors.additional_individuals[index] : {}"
@@ -172,6 +165,16 @@
         </form-group>
       </div>
     </template>
+
+    <form-group v-if="hasRemarks">
+      <form-label id="remarks" :label="__('Bemerkungen')" />
+      <form-textarea-field 
+        v-model="form.remarks" 
+        :error="__(errors.remarks)"
+        @update:error="errors.remarks = $event"
+      />
+    </form-group>
+    
     <form-group>
       <form-toc 
         id="toc" 
@@ -240,6 +243,7 @@ const requiresAddress = ref(false);
 const hasMealOptions = ref(false);
 const wantsMealOptions = ref(false);
 const hasCostCenter = ref(false);
+const requiresCostCenter = ref(false);
 const hasRemarks = ref(false);
 const requiresMealOptions = ref(false);
 const mealOptions = ref([]);
@@ -249,6 +253,7 @@ const hasFieldAdditionalIndividualSalutation = ref(false);
 const hasFieldAdditionalIndividualEmail = ref(false);
 const hasFieldAdditionalIndividualName = ref(false);
 const hasFieldAdditionalIndividualFirstname = ref(false);
+const hasFieldAdditionalIndividualCostCenter = ref(false);
 
 const locale = ref(document.documentElement.lang);
 
@@ -309,6 +314,7 @@ onMounted(async () => {
     requiresLocation.value = response.data.requires_location;
     hasAddress.value = response.data.has_address;
     hasCostCenter.value = response.data.has_cost_center;
+    requiresCostCenter.value = response.data.requires_cost_center;
     hasRemarks.value = response.data.has_remarks;
     requiresAddress.value = response.data.requires_address;
     hasMealOptions.value = response.data.has_meal_options;
@@ -333,6 +339,7 @@ onMounted(async () => {
     hasFieldAdditionalIndividualEmail.value = response.data.has_field_additional_individual_email;
     hasFieldAdditionalIndividualName.value = response.data.has_field_additional_individual_name;
     hasFieldAdditionalIndividualFirstname.value = response.data.has_field_additional_individual_firstname;
+    hasFieldAdditionalIndividualCostCenter.value = response.data.has_field_additional_individual_cost_center;
 
   } catch (error) {
     console.error(error);
