@@ -25,10 +25,11 @@ class OwnerEventRegistrationNotification extends Notification
 
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-            ->from(env('MAIL_FROM_ADDRESS'))
-            ->subject('Neue Anmeldung: ' . $this->data['title'])
-            ->markdown('mail.owner-event-registration', ['data' => $this->data]);
+      return (new MailMessage)
+        ->from(env('MAIL_FROM_ADDRESS'))
+        ->replyTo(env('MAIL_REPLY_TO_ADDRESS'))
+        ->subject('Neue Anmeldung: ' . $this->data['title'])
+        ->markdown('mail.owner-event-registration', ['data' => $this->data]);
     }
 
     public function toArray($notifiable)
