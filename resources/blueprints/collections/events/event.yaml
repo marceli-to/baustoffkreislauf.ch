@@ -206,6 +206,7 @@ tabs:
               hide_display: false
               validate:
                 - required
+                - 'required_if:has_form,true'
           -
             handle: contact_information
             field:
