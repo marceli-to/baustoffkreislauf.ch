@@ -3,12 +3,26 @@
   {{ collection from="events" as="events" sort="event_date:asc" event_date:is_after="now" }}
     {{ if events }}
       {{ events}}
-        <p>
-          <a href="{{ url }}">
-            <strong>{{ event_date iso_format="Do MMMM YYYY" }}:</strong>
-            {{ title }}
-          </a>
-        </p>
+        <div class="mb-20 xl:mb-30">
+          <strong>{{ event_date iso_format="Do MMMM YYYY" }}:</strong> {{ title }}
+          {{ if program_file || has_form }}
+            <div class="flex gap-x-10">
+            {{ if program_file }}
+              <a 
+                href="{{ program_file }}" 
+                title="{{ "Download Programm" | trans }}"
+                target="_blank">
+                {{ "Programm" | trans }}
+              </a>
+            {{ endif }}
+            {{ if has_form }}
+              <a href="{{ url }}">
+                {{ "Anmeldung" | trans }}
+              </a>
+            {{ endif }}
+            </div>
+          {{ endif }}
+        </div>
       {{ /events}}
     {{ /if }}
   {{ /collection }}
