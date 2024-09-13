@@ -205,7 +205,6 @@ tabs:
               replicator_preview: true
               hide_display: false
               validate:
-                - required
                 - 'required_if:has_form,true'
           -
             handle: contact_information
