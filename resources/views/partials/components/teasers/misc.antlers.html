@@ -2,7 +2,7 @@
   {{ if link }}
     <a href="{{ link }}" target="{{ link | is_external_url ? '_blank' : '_self' }}" class="group no-underline">
       {{ partial:components/media/image/teaser }}
-      <h2 class="mb-20 xl:mb-30 mt-10">
+      <h2 class="mb-20 xl:mb-30 mt-10 hyphens-auto">
         {{ title }}
       </h2>
       {{ text ?? '' }}
@@ -12,7 +12,7 @@
     </a>
   {{ else }}
     {{ partial:components/media/image/teaser }}
-    <h2 class="mb-20 xl:mb-30 mt-10">
+    <h2 class="mb-20 xl:mb-30 mt-10 hyphens-auto">
       {{ title }}
     </h2>
     {{ text ?? '' }}
