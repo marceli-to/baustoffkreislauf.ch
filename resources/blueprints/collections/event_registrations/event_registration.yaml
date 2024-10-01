@@ -127,7 +127,7 @@ tabs:
             field:
               antlers: false
               type: textarea
-              display: Kostenstelle
+              display: Rechnungsadresse
               localizable: false
               listable: hidden
               instructions_position: above

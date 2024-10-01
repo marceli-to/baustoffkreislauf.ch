@@ -66,7 +66,7 @@
   @endif
   @if ($data['cost_center'])
     <div class="text-base">
-      <strong>{{ __('Kostenstelle', [], $data['locale']) }}</strong><br>
+      <strong>{{ __('Rechnungsadresse', [], $data['locale']) }}</strong><br>
       {{ $data['cost_center'] }}
     </div>
     <br>

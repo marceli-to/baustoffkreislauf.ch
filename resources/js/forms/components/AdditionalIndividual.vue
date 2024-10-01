@@ -34,7 +34,7 @@
       />
     </form-group>
     <form-group v-if="hasCostCenter">
-      <form-label id="cost_center" :label="__('Kostenstelle')" :required="requiresCostCenter" />
+      <form-label id="cost_center" :label="__('Rechnungsadresse')" :required="requiresCostCenter" />
       <form-textarea-field 
         v-model="individual.cost_center" 
         :error="__(errors.cost_center)"

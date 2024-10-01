@@ -446,7 +446,7 @@ tabs:
             field:
               default: false
               type: toggle
-              display: 'Feld "Kostenstelle"'
+              display: 'Feld "Rechnungsadresse"'
               localizable: false
               listable: hidden
               instructions_position: above
@@ -638,7 +638,7 @@ tabs:
             field:
               default: false
               type: toggle
-              display: 'Feld "Kostenstelle"'
+              display: 'Feld "Rechnungsadresse"'
               localizable: false
               width: 50
               listable: hidden
