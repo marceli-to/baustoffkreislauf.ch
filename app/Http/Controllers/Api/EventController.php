@@ -233,7 +233,7 @@ class EventController extends Controller
       'company.required' => __('Firma ist erforderlich'),
       'location.required' => __('Ort ist erforderlich'),
       'address.required' => __('Adresse ist erforderlich'),
-      'cost_center.required' => __('Rechnungsadresse ist erforderlich'),
+      'cost_center.required' => __('Kostenstelle ist erforderlich'),
       'meal_options.required' => __('Essen ist erforderlich'),
       'wants_meal_options.required' => __('Angabe ist erforderlich'),
       'additional_individuals.*.name.required' => __('Name ist erforderlich'),
@@ -242,7 +242,7 @@ class EventController extends Controller
       'additional_individuals.*.email.email' => __('E-Mail-Adresse muss gültig sein'),
       'additional_individuals.*.email.regex' => __('E-Mail-Adresse muss gültig sein'),
       'additional_individuals.*.meal_options.required' => __('Essen ist erforderlich'),
-      'additional_individuals.*.cost_center.required' => __('Rechnungsadresse ist erforderlich'),
+      'additional_individuals.*.cost_center.required' => __('Kostenstelle ist erforderlich'),
       'additional_individuals.*.wants_meal_options.required' => __('Angabe ist erforderlich'),
       'toc.accepted' => __('Sie müssen die Teilnahme- und Annullationsbedingungen sowie die Datenschutzbestimmungen akzeptieren'),
     ];
