@@ -75,7 +75,7 @@ class EventController extends Controller
       'remarks' => $request->input('remarks'),
       'cost_center' => $request->input('cost_center'),
       'wants_meal_options' => $request->input('wants_meal_options'),
-      'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : null,
+      'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen',
       'locale' => $request->input('locale'),
     ];
 
