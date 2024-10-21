@@ -3,7 +3,7 @@
   <span>{{ event_date iso_format="Do MMMM YYYY" }}</span>
   {{ if has_form }}
     <div id="event-forms" class="mt-25 lg:mt-50">
-      {{ if registration_deadline | is_future }}
+      {{ if registration_deadline | modify_date("+1 day") | is_future }}
         <h2>{{ "Anmeldung" | trans }}</h2>
         <p>
           {{ "Anmeldung ist möglich bis" | trans }} <strong>{{ registration_deadline iso_format="Do MMMM YYYY" }}</strong>
