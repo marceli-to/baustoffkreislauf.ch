@@ -1,5 +1,5 @@
 <div class="grid grid-cols-12 gap-x-15 lg:gap-x-20 gap-y-30 lg:gap-y-60">
-  {{ collection from="posts" as="posts" limit="25" taxonomy:category="{{ category:keyword }}" }}
+  {{ collection from="posts" as="posts" limit="25" taxonomy:category="{{ category:keyword }}" sort="published_at:desc" }}
     {{ if no_results }}
       <p class="sm:col-span-6">{{ "Im Moment sind leider keine Beiträge vorhanden." | trans }}</p>
     {{ else }}
