@@ -129,6 +129,26 @@ tabs:
               replicator_preview: true
               hide_display: false
               container: assets
+          -
+            handle: published_at
+            field:
+              mode: single
+              inline: false
+              full_width: false
+              columns: 1
+              rows: 1
+              time_enabled: false
+              time_seconds_enabled: false
+              type: date
+              display: 'Publiziert am'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
   teaser:
     display: Vorschau
     sections:
