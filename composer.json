@@ -19,7 +19,7 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.1",
         "rias/statamic-collection-groups": "^1.1",
-        "statamic/cms": "^4.0",
+        "statamic/cms": "^5.0",
         "symfony/yaml": "^6.4"
     },
     "require-dev": {

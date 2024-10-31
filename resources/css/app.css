@@ -64,3 +64,7 @@ main.privacy h2 {
   @apply text-base md:text-md lg:text-md mb-5 lg:mb-10
 
 }
+
+.triangle-effect {
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}

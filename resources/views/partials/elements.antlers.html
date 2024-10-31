@@ -1,3 +1,4 @@
+
 <section class="col-span-full md:col-span-10">
 
   {{ if type == 'team' }}
@@ -37,7 +38,9 @@
     {{ content  }}
 
       {{ if type == 'text'}}
-        {{ text }}
+        <div class="{{ has_indent ? 'lg:pl-80 [&>h1]:lg:-ml-80' : ''}}">
+          {{ text }}
+        </div>
       {{ /if }}
 
       {{ if type == 'newsletter_form' }}

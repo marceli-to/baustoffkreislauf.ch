@@ -6,6 +6,12 @@
     {{ partial:layout/header }}
   {{ /slot:header }}
 
+  {{ slot:header_image }}
+    {{ if header_image }}
+      {{ partial:components/media/image/header :image="header_image" }}
+    {{ /if }}
+  {{ /slot:header_image }}
+
   {{ partial:layout/main }}
 
   {{ slot:footer }}

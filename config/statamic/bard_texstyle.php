@@ -24,14 +24,25 @@ return [
         // ],
 
         'lead' => [
-            'type' => 'paragraph',
-            'name' => 'Lead',
-            'ident' => 'L',
-            'icon' => null,
-            'class' => 'lead',
-            'cp_css' => 'font-size: 1.5rem; font-weight: 700; line-height: 1.4',
-            'cp_badge' => false,
+          'type' => 'paragraph',
+          'name' => 'Lead Text',
+          'ident' => 'L',
+          'icon' => null,
+          'class' => 'lead',
+          'cp_css' => 'font-size: 1.5rem; font-weight: 700; line-height: 1.4',
+          'cp_badge' => false,
         ],
+
+        'text-medium' => [
+          'type' => 'paragraph',
+          'name' => 'Medium Text',
+          'ident' => 'M',
+          'icon' => null,
+          'class' => 'text-md md:text-lg lg:text-xl leading-[1.2]',
+          'cp_css' => 'font-size: 1.25rem; font-weight: 400; line-height: 1.4',
+          'cp_badge' => false,
+        ],
+
 
         // 'brand' => [
         //     'type' => 'span',

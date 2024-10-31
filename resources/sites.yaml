@@ -1,0 +1,15 @@
+de:
+  name: Deutsch
+  locale: de
+  abbreviation: d
+  url: '{{ config:app:url }}'
+fr:
+  name: Francais
+  locale: fr
+  lang: fr
+  url: '{{ config:app:url }}/fr/'
+it:
+  name: Italiano
+  locale: it
+  lang: it
+  url: '{{ config:app:url }}/it/'

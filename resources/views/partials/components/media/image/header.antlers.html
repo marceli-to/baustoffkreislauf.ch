@@ -1,0 +1,17 @@
+<figure class="mt-20 xl:mt-40 bg-white">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="{{ glide:image preset='xl-webp' }}" type="image/webp">
+    <source media="(min-width: 768px)" srcset="{{ glide:image preset='lg-webp' }}" type="image/webp">
+    <source srcset="{{ glide:image preset='md-webp' }}" type="image/webp">
+    <source media="(min-width: 1024px)" srcset="{{ glide:image preset='xl' }}" type="image/jpeg">
+    <source media="(min-width: 768px)" srcset="{{ glide:image preset='lg' }}" type="image/jpeg">
+    <img 
+      src="{{ glide:image preset='md' }}" 
+      alt="{{ image:alt }}" 
+      title="{{ image:alt }}" 
+      height="{{ image:height }}" 
+      width="{{ image:width }}"
+      class="w-full h-full object-cover block aspect-[16/6] xl:aspect-[16/5] triangle-effect"
+      loading="lazy">
+  </picture>
+</figure>
