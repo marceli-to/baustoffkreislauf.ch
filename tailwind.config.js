@@ -24,6 +24,7 @@ export default {
         'acumin-bold': ['acumin-pro', ...defaultTheme.fontFamily.sans],
         'acumin-medium': ['acumin-pro', ...defaultTheme.fontFamily.sans],
         'acumin-regular': ['acumin-pro', ...defaultTheme.fontFamily.sans],
+        'geller': ['geller-text', ...defaultTheme.fontFamily.sans],
       },
 
       fontSize: {
@@ -40,7 +41,9 @@ export default {
       colors: {
         'lime': '#99D654',
         'turquoise': '#7bb1af',
-        'raspberry': '#DB2955'
+        'raspberry': '#DB2955',
+        'fog': '#ECECEC',
+        'sand': '#B7A887',
       },
 
       listStyleType: {

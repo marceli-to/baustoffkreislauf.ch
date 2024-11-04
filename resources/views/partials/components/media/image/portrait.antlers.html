@@ -1,11 +1,11 @@
 <figure>
   {{ if image }}
     <picture>
-      <source media="(min-width: 768px)" srcset="{{ glide:image preset='md-portrait-webp' }}" type="image/webp">
-      <source srcset="{{ glide:image preset='sm-portrait-webp' }}" type="image/webp">
-      <source media="(min-width: 768px)" srcset="{{ glide:image preset='md-portrait' }}" type="image/jpeg">
+      <source media="(min-width: 768px)" srcset="{{ glide:image preset='md-rounded-webp' }}" type="image/webp">
+      <source srcset="{{ glide:image preset='sm-rounded-webp' }}" type="image/webp">
+      <source media="(min-width: 768px)" srcset="{{ glide:image preset='md-rounded' }}" type="image/jpeg">
       <img 
-        src="{{ glide:image preset='sm-portrait' }}" 
+        src="{{ glide:image preset='sm-rounded' }}" 
         alt="{{ image:alt }}" 
         title="{{ image:alt }}" 
         height="{{ image:height }}" 

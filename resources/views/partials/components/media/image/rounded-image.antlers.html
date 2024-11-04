@@ -1,0 +1,16 @@
+
+<figure>
+  <picture>
+    <source media="(min-width: 768px)" srcset="{{ glide:image preset='lg-rounded-webp' }}" type="image/webp">
+    <source media="(min-width: 768px)" srcset="{{ glide:image preset='lg-rounded' }}" type="image/jpeg">
+    <source srcset="{{ glide:image preset='md-rounded-webp' }}" type="image/webp">
+    <img 
+      src="{{ glide:image preset='md-rounded' }}" 
+      alt="{{ image:alt }}" 
+      title="{{ image:alt }}" 
+      height="{{ image:height }}" 
+      width="{{ image:width }}"
+      class="block w-full h-auto rounded-full aspect-square {{ class ?? '' }}"
+      loading="lazy">
+  </picture>
+</figure>

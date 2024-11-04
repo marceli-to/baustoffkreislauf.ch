@@ -19,10 +19,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-main section:not(:last-of-type) {
-  @apply mb-30 xl:mb-60
-}
-
 main p:not(:last-child) {
   @apply mb-20 xl:mb-30
 }
@@ -55,10 +51,6 @@ strong {
   @apply font-acumin-bold font-bold
 }
 
-.bg-pattern {
-  @apply bg-[url('../img/pattern.svg')] bg-no-repeat bg-[length:70%_auto] sm:bg-[length:60%_auto] md:bg-[length:50%_auto] bg-[position:top_0_right_0] bg-opacity-10;
-}
-
 /* Special pages */
 main.privacy h2 {
   @apply text-base md:text-md lg:text-md mb-5 lg:mb-10
@@ -66,5 +58,5 @@ main.privacy h2 {
 }
 
 .triangle-effect {
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }

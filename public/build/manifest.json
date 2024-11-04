@@ -1,12 +1,8 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-a25caff1.css",
+    "file": "assets/app-9f252281.css",
     "isEntry": true,
     "src": "resources/css/app.css"
-  },
-  "resources/img/pattern.svg": {
-    "file": "assets/pattern-468c56f9.svg",
-    "src": "resources/img/pattern.svg"
   },
   "resources/js/app.css": {
     "file": "assets/app-d66ac298.css",

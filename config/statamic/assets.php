@@ -122,12 +122,13 @@ return [
           'lg-fs' => ['w' => 1280, 'h' => 720, 'q' => 90, 'fit' => 'crop_focal'],
           'xl-fs' => ['w' => 1440, 'h' => 810, 'q' => 90, 'fit' => 'crop_focal'],
 
-          // Portrait images
-          'sm-portrait-webp' => ['w' => 480, 'h' => 480, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'md-portrait-webp' => ['w' => 640, 'h' => 640, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'sm-portrait' => ['w' => 480, 'h' => 480, 'q' => 90, 'fit' => 'crop_focal'],
-          'md-portrait' => ['w' => 640, 'h' => 640, 'q' => 90, 'fit' => 'crop_focal'],
-
+          // Rounded images
+          'sm-rounded-webp' => ['w' => 480, 'h' => 480, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
+          'md-rounded-webp' => ['w' => 640, 'h' => 640, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
+          'lg-rounded-webp' => ['w' => 900, 'h' => 900, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
+          'sm-rounded' => ['w' => 480, 'h' => 480, 'q' => 90, 'fit' => 'crop_focal'],
+          'md-rounded' => ['w' => 640, 'h' => 640, 'q' => 90, 'fit' => 'crop_focal'],
+          'lg-rounded' => ['w' => 900, 'h' => 900, 'q' => 90, 'fit' => 'crop_focal'],
 
           'max_upload_size' => ['w' => 4000, 'h' => 4000, 'fit' => 'max'],
 

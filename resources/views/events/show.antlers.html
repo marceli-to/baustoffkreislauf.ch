@@ -1,4 +1,4 @@
-<article class="col-span-full">
+{{ partial:layout/content }}
   <h1 class="mb-5 lg:mb-10">{{ title }}</h1>
   <span>{{ event_date iso_format="Do MMMM YYYY" }}</span>
   {{ if has_form }}
@@ -14,4 +14,4 @@
       {{ endif }}
     </div>
   {{ endif }}
-</article>
+{{ /partial:layout/content }}

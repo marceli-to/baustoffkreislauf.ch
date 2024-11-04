@@ -1,0 +1,8 @@
+title: Zitat
+fields:
+  -
+    handle: quote
+    field:
+      type: textarea
+      display: Zitat
+      localizable: false

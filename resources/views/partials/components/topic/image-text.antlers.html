@@ -1,0 +1,12 @@
+<div class="py-20 xl:py-40 [&:nth-child(odd)]:bg-fog !my-0">
+  {{ partial:layout/content }}
+    <div class="sm:grid sm:grid-cols-12 sm:gap-15 xl:gap-30">
+      <div class="sm:col-span-4 hidden sm:flex flex-col justify-center">
+        {{ partial:components/media/image/rounded-image }}
+      </div>
+      <div class="sm:col-span-8 [&>h2]:text-sm [&>h2]:lg:text-base [&>h2]:font-acumin-bold [&>h2]:font-bold [&>h2]:mb-5 pt-5 xl:pt-15 border-t border-black">
+        {{ text }}
+      </div>
+    </div>
+  {{ /partial:layout/content }}
+</div>

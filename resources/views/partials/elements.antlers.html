@@ -1,40 +1,54 @@
 
-<section class="col-span-full md:col-span-10">
-
-  {{ if type == 'team' }}
+{{ if type == 'team' }}
+  {{ partial:layout/content }}
     {{ partial:components/team/wrapper }}
-  {{ /if }}
+  {{ /partial:layout/content }}
+{{ /if }}
 
-  {{ if type == 'teasers' }}
+{{ if type == 'teasers' }}
+  {{ partial:layout/content }}
     {{ partial:components/teasers/wrapper }}
-  {{ /if }}
+  {{ /partial:layout/content }}
+{{ /if }}
 
-  {{ if type == 'image' }}
+{{ if type == 'image' }}
+  {{ partial:layout/content }}
     {{ partial:components/media/image/fullscreen }}
-  {{ /if }}
+  {{ /partial:layout/content }}
+{{ /if }}
 
-  {{ if type == 'images' }}
+{{ if type == 'images' }}
+  {{ partial:layout/content }}
     {{ partial:components/media/images }}
-  {{ /if }}
+  {{ /partial:layout/content }}
+{{ /if }}
 
-  {{ if type == 'splash' }}
+{{ if type == 'splash' }}
+  {{ partial:layout/content }}
     {{ partial:components/misc/splash }}
-  {{ /if }}
+  {{ /partial:layout/content }}
+{{ /if }}
 
-  {{ if type == 'newsletter_form' }}
+{{ if type == 'newsletter_form' }}
+  {{ partial:layout/content }}
     {{ partial:forms/newsletter }}
-  {{ /if }}
+  {{ /partial:layout/content }}
+{{ /if }}
 
-  {{ if type == 'list_posts' }}
+{{ if type == 'list_posts' }}
+  {{ partial:layout/content }}
     {{ partial:components/post/list }}
-  {{ /if }}
+  {{ /partial:layout/content }}
+{{ /if }}
 
-  {{ if type == 'events' }}
+{{ if type == 'events' }}
+  {{ partial:layout/content }}
     {{ partial:events/list }}
-  {{ /if }}
+  {{ /partial:layout/content }}
+{{ /if }}
 
-  {{ if type == 'editor' }}
-
+{{ if type == 'editor' }}
+  {{ partial:layout/content }}
     {{ content  }}
 
       {{ if type == 'text'}}
@@ -60,6 +74,17 @@
       {{ /if }}
 
     {{ /content  }}
-  {{ /if }}
-  
-</section>
+  {{ /partial:layout/content }}
+{{ /if }}
+
+{{ if type == 'quote' }}
+  {{ partial:components/misc/quote }}
+{{ /if }}
+
+{{ if type == 'teaser_topics' }}
+  {{ partial:components/topic/teaser }}
+{{ /if }}
+
+{{ if type == 'image_text_topic' }}
+  {{ partial:components/topic/image-text }}
+{{ /if }}

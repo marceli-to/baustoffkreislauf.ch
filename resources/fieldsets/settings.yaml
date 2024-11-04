@@ -3,74 +3,32 @@ fields:
   -
     handle: has_pattern
     field:
-      default: false
       type: toggle
       display: 'Background Pattern'
-      icon: toggle
       localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
   -
     handle: page_class
     field:
       options:
         privacy: Privacy
-      taggable: false
-      push_tags: false
-      multiple: false
-      clearable: false
-      searchable: true
-      cast_booleans: false
       type: select
       display: 'Page class'
-      icon: select
       localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
   -
     handle: template
     field:
-      hide_partials: true
-      blueprint: false
       type: template
       display: Template
-      icon: template
       localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
   -
     handle: layout
     field:
-      hide_partials: true
-      blueprint: false
       type: template
       display: Layout
-      icon: template
       localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
   -
     handle: debug
     field:
-      default: false
       type: toggle
       display: Debug
-      icon: toggle
       localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false

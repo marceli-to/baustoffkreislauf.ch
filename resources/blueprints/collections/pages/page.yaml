@@ -62,6 +62,13 @@ tabs:
                       fields:
                         -
                           import: images
+                    image_text_topic:
+                      display: 'Bild/Text (Fachbereich)'
+                      instructions: 'Bild/Text Element für Fachbereich hinzufügen.'
+                      icon: text-formatting-wrap-image-left
+                      fields:
+                        -
+                          import: image_text_topic
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack
@@ -94,6 +101,20 @@ tabs:
                       fields:
                         -
                           import: events
+                    teaser_topics:
+                      display: 'Teaser Themen'
+                      instructions: 'Teaser für Unterseiten "Themen" hinzufügen.'
+                      icon: text-formatting-initial-letter
+                      fields:
+                        -
+                          import: teaser_topics
+                    quote:
+                      display: Zitat
+                      instructions: 'Zitat hinzufügen'
+                      icon: text-formatting-quotation
+                      fields:
+                        -
+                          import: quote
   media:
     display: Medien
     sections:

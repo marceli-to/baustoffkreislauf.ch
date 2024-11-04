@@ -1,0 +1,10 @@
+title: 'Teaser Themen'
+fields:
+  -
+    handle: topic
+    field:
+      collections:
+        - pages
+      type: entries
+      display: Thema
+      localizable: false
