@@ -4,7 +4,7 @@
       {{ __(option.label) }}
     </option>
   </select>
-  <div v-if="error" class="text-red-600 absolute bottom-5 right-0 text-xxs">{{ error }}</div>
+  <div v-if="error" class="text-red-600 absolute bottom-5 right-0 text-xxxs">{{ error }}</div>
 </template>
 
 <script setup>

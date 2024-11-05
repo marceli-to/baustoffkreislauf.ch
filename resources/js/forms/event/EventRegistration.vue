@@ -149,7 +149,7 @@
             <a 
               href="javascript:;" 
               @click.prevent="removeAdditionalIndividual(index)" 
-              class="mt-5 mb-10 xl:mt-10 xl:mb-20 inline-block text-xs xl:text-sm">
+              class="mt-5 mb-10 xl:mt-10 xl:mb-20 inline-block text-xxs xl:text-xs">
               {{ __('Person Entfernen') }}
             </a>
           </div>

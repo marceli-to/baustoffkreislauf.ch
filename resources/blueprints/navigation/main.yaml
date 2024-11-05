@@ -5,8 +5,8 @@ tabs:
       -
         fields:
           -
-            handle: has_offset
+            handle: is_special
             field:
               type: toggle
-              display: Absetzen
+              display: Spezial
               localizable: false

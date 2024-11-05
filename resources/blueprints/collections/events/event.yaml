@@ -13,58 +13,26 @@ tabs:
               validate:
                 - required
               display: Titel
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              input_type: text
-              antlers: false
-              hide_display: false
           -
             handle: event_date
             field:
-              mode: single
-              inline: false
-              full_width: false
-              columns: 1
-              rows: 1
-              time_enabled: false
-              time_seconds_enabled: false
               format: d.m.Y
               type: date
               display: Datum
               localizable: true
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: location
             field:
-              antlers: false
               type: textarea
               display: Ort
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               width: 50
           -
             handle: google_maps_url
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Google Maps'
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               width: 50
           -
             handle: description
@@ -79,93 +47,46 @@ tabs:
                 - anchor
                 - h1
                 - lead
-              smart_typography: false
-              save_html: false
-              inline: false
               toolbar_mode: floating
-              reading_time: false
-              word_count: false
-              fullscreen: true
-              allow_source: true
-              enable_input_rules: true
-              enable_paste_rules: true
               remove_empty_nodes: true
-              antlers: false
-              link_noopener: false
-              link_noreferrer: false
-              target_blank: false
-              always_show_set_button: false
-              collapse: false
-              previews: true
               type: bard
               display: Beschreibung
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: program_file
             field:
               max_files: 1
-              mode: list
               container: assets
               folder: downloads
-              restrict: false
-              allow_uploads: true
-              show_filename: true
-              show_set_alt: true
               type: assets
               display: 'Programm (PDF)'
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: fee_members
             field:
               input_type: number
-              antlers: false
               type: text
               display: 'Teilnahmegebühr Mitglieder'
               localizable: false
               width: 50
-              listable: hidden
               instructions_position: below
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               instructions: 'Nur Betrag (z.B. 45.00)'
           -
             handle: fee_non_members
             field:
               input_type: number
-              antlers: false
               type: text
               display: 'Teilnahmegebühr Nicht-Mitglieder'
               localizable: false
               width: 50
-              listable: hidden
               instructions_position: below
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               instructions: 'Nur Betrag (z.B. 60.00)'
           -
             handle: members_only
             field:
-              default: false
               type: toggle
               display: 'Nur für Mitglieder'
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
   registration:
     display: Anmeldeformular
     sections:
@@ -180,30 +101,13 @@ tabs:
               display: Anmeldeformular
               instructions: 'Anmeldeformular angezeigen'
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: registration_deadline
             field:
-              mode: single
-              inline: false
-              full_width: false
-              columns: 1
-              rows: 1
-              time_enabled: false
-              time_seconds_enabled: false
               format: d.m.Y
               type: date
               display: Anmeldefrist
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               validate:
                 - 'required_if:has_form,true'
           -
@@ -212,11 +116,6 @@ tabs:
               type: section
               display: Kontaktinformationen
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: has_company
             field:
@@ -225,11 +124,6 @@ tabs:
               display: 'Feld "Firma"'
               localizable: false
               width: 66
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: requires_company
             field:
@@ -238,11 +132,6 @@ tabs:
               display: Pflichtfeld
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_company: 'equals true'
           -
@@ -253,11 +142,6 @@ tabs:
               display: 'Feld "Anrede"'
               localizable: false
               width: 66
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: requires_salutation
             field:
@@ -266,11 +150,6 @@ tabs:
               display: Pflichtfeld
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_salutation: 'equals true'
           -
@@ -281,11 +160,6 @@ tabs:
               display: 'Feld "Name"'
               localizable: false
               width: 66
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: requires_name
             field:
@@ -294,11 +168,6 @@ tabs:
               display: Pflichtfeld
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_name: 'equals true'
           -
@@ -309,11 +178,6 @@ tabs:
               display: 'Feld "Vorname"'
               localizable: false
               width: 66
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: requires_firstname
             field:
@@ -322,11 +186,6 @@ tabs:
               display: Pflichtfeld
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_firstname: 'equals true'
           -
@@ -337,11 +196,6 @@ tabs:
               display: 'Feld "E-Mail"'
               localizable: false
               width: 66
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: requires_email
             field:
@@ -350,11 +204,6 @@ tabs:
               display: Pflichtfeld
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_email: 'equals true'
           -
@@ -365,11 +214,6 @@ tabs:
               display: 'Feld "Telefon"'
               localizable: false
               width: 66
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: requires_phone
             field:
@@ -378,11 +222,6 @@ tabs:
               display: Pflichtfeld
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_phone: 'equals true'
           -
@@ -393,11 +232,6 @@ tabs:
               display: 'Feld "Adresse"'
               localizable: false
               width: 66
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: requires_address
             field:
@@ -406,11 +240,6 @@ tabs:
               display: Pflichtfeld
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_address: 'equals true'
           -
@@ -421,11 +250,6 @@ tabs:
               display: 'Feld "PLZ/Ort"'
               localizable: false
               width: 66
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: requires_location
             field:
@@ -434,39 +258,22 @@ tabs:
               display: Pflichtfeld
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_location: 'equals true'
           -
             handle: has_cost_center
             field:
-              default: false
               type: toggle
               display: 'Feld "Kostenstelle"'
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               width: 66
           -
             handle: requires_cost_center
             field:
-              default: false
               type: toggle
               display: Pflichtfeld
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_cost_center: 'equals true'
           -
@@ -476,22 +283,12 @@ tabs:
               type: toggle
               display: 'Feld "Bemerkungen"'
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: meal_options
             field:
               type: section
               display: 'Auswahl Menüoptionen'
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: has_meal_options
             field:
@@ -499,11 +296,6 @@ tabs:
               type: toggle
               display: Aktivieren
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: has_meal_option_meat
             field:
@@ -512,11 +304,6 @@ tabs:
               display: 'Option "Fleisch"'
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_meal_options: 'equals true'
           -
@@ -527,11 +314,6 @@ tabs:
               display: 'Option "Vegetarisch"'
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_meal_options: 'equals true'
           -
@@ -542,11 +324,6 @@ tabs:
               display: 'Option "Vegan"'
               localizable: false
               width: 33
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_meal_options: 'equals true'
           -
@@ -555,11 +332,6 @@ tabs:
               type: section
               display: 'Zusätzliche Teilnehmer'
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               instructions: 'Hinzufügen weiterer Personen ermöglichen'
           -
             handle: has_button_additional_individuals
@@ -568,11 +340,6 @@ tabs:
               type: toggle
               display: Aktivieren
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: has_field_additional_individual_salutation
             field:
@@ -581,11 +348,6 @@ tabs:
               display: 'Feld "Anrede"'
               localizable: false
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_button_additional_individuals: 'equals true'
           -
@@ -596,11 +358,6 @@ tabs:
               display: 'Feld "E-Mail"'
               localizable: false
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_button_additional_individuals: 'equals true'
           -
@@ -611,11 +368,6 @@ tabs:
               display: 'Feld "Vorname"'
               localizable: false
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_button_additional_individuals: 'equals true'
           -
@@ -626,26 +378,15 @@ tabs:
               display: 'Feld "Name"'
               localizable: false
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_button_additional_individuals: 'equals true'
           -
             handle: has_field_additional_individual_cost_center
             field:
-              default: false
               type: toggle
               display: 'Feld "Kostenstelle"'
               localizable: false
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               if:
                 has_button_additional_individuals: 'equals true'
   sidebar:

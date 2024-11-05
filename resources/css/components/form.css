@@ -3,7 +3,7 @@ input[type=email],
 input[type=tel],
 textarea,
 select {
-  @apply w-full py-10 px-10 text-sm lg:text-base bg-transparent border-black border rounded-md !ring-0 focus:outline-none focus:!ring-0 focus:border-turquoise  focus:text-black placeholder:text-black
+  @apply w-full py-10 px-10 text-xs lg:text-base bg-transparent border-black border rounded-md !ring-0 focus:outline-none focus:!ring-0 focus:border-turquoise  focus:text-black placeholder:text-black
 }
 
 .has-error input[type=text],
@@ -15,7 +15,7 @@ select {
 }
 
 label {
-  @apply text-sm lg:text-base
+  @apply text-xs lg:text-base
 }
 
 .has-error label {

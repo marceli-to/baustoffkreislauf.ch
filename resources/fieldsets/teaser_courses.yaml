@@ -1,0 +1,14 @@
+title: 'Teaser Kurse'
+fields:
+  -
+    handle: intro
+    field:
+      buttons:
+        - bold
+        - unorderedlist
+        - removeformat
+        - anchor
+      remove_empty_nodes: false
+      type: bard
+      display: Einleitungstext
+      localizable: false

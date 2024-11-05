@@ -101,6 +101,13 @@ tabs:
                       fields:
                         -
                           import: events
+                    teaser_courses:
+                      display: 'Teaser Kurse'
+                      instructions: 'Teaser für Kurse hinzufügen.'
+                      icon: text-formatting-initial-letter
+                      fields:
+                        -
+                          import: teaser_courses
                     teaser_topics:
                       display: 'Teaser Themen'
                       instructions: 'Teaser für Unterseiten "Themen" hinzufügen.'

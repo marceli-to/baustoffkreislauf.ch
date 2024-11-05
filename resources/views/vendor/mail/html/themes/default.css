@@ -195,12 +195,12 @@ footer {
   line-height: 1.3;
 }
 
-.text-small {
+.text-xsall {
   font-size: 14px;
   line-height: 1.3;
 }
 
-.text-xsmall {
+.text-xxsmall {
   font-size: 13px;
   line-height: 1 !important;
 }

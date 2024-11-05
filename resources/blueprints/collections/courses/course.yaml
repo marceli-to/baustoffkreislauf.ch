@@ -1,0 +1,141 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: course_date
+            field:
+              format: d.m.Y
+              type: date
+              display: Datum
+              localizable: false
+          -
+            handle: location
+            field:
+              type: textarea
+              display: Ort
+              localizable: false
+              width: 50
+          -
+            handle: google_maps_url
+            field:
+              type: text
+              display: 'Google Maps'
+              localizable: false
+              width: 50
+          -
+            handle: description
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - unorderedlist
+                - removeformat
+                - anchor
+                - lead
+              toolbar_mode: floating
+              remove_empty_nodes: true
+              type: bard
+              display: Beschreibung
+              localizable: false
+          -
+            handle: program_file
+            field:
+              max_files: 1
+              container: assets
+              folder: kurse
+              type: assets
+              display: 'Programm (PDF)'
+              localizable: false
+          -
+            handle: fee_members
+            field:
+              type: text
+              display: 'Teilnahmegebühr Mitglieder'
+              instructions: 'Nur Betrag (z.B. 45.00)'
+              localizable: false
+              width: 50
+              instructions_position: below
+          -
+            handle: fee_non_members
+            field:
+              type: text
+              display: 'Teilnahmegebühr Nicht-Mitglieder'
+              instructions: 'Nur Betrag (z.B. 60.00)'
+              localizable: false
+              width: 50
+              instructions_position: below
+          -
+            handle: members_only
+            field:
+              type: toggle
+              display: 'Nur für Mitglieder'
+              localizable: false
+  images:
+    display: Bilder
+    sections:
+      -
+        display: Bilder
+        fields:
+          -
+            handle: images
+            field:
+              container: assets
+              folder: kurse
+              type: assets
+              display: Bilder
+              instructions: 'Eines oder mehrere Bilder hinzufügen. Werden mehrere Bilder hochgeladne, wird das erste als Quer- und das zweite als Hochformat ausgegeben.'
+              localizable: false
+              instructions_position: below
+  registration:
+    display: Anmeldeformular
+    sections:
+      -
+        display: Formular-Felder
+        fields:
+          -
+            handle: has_form
+            field:
+              default: true
+              type: toggle
+              display: Anmeldeformular
+              localizable: false
+          -
+            handle: registration_deadline
+            field:
+              format: d.m.Y
+              type: date
+              display: Anmeldefrist
+              localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - courses
+              max_items: 1
+              listable: false
+              localizable: true
+title: Kurse

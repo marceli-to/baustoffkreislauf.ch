@@ -36,7 +36,7 @@ main ul {
 }
 
 main ul li::marker {
-  @apply text-xxs w-20 h-20 block
+  @apply text-xxxs w-20 h-20 block
 }
 
 main ol {

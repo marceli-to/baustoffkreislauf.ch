@@ -28,10 +28,11 @@ export default {
       },
 
       fontSize: {
-        'xxs': '0.75rem',   // 12px
-        'xs': '0.875rem',   // 14px
-        'sm': '1rem',       // 16px
-        'base': '1.25rem',  // 18px
+        'xxxs': '0.75rem',   // 12px
+        'xxs': '0.875rem',   // 14px
+        'xs': '1rem',       // 16px
+        'sm': '1.125rem',   // 18px
+        'base': '1.25rem',  // 20px
         'md': '1.375rem',   // 22px
         'lg': '1.625rem',    // 26px
         'xl': '2.375rem',    // 38px
