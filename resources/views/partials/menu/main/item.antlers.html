@@ -1,51 +1,51 @@
 {{ if children }}
-<li class="border-b-black border-b md:border-0 relative group" x-data="{ submenu: false }">
-  <span class="flex w-full pl-20 pr-15  md:p-0 justify-between items-center">
+  <li class="border-b-black border-b md:border-0 relative group {{ has_offset ? 'md:absolute md:right-0 xl:right-26 md:top-1' : ''}}" x-data="{ submenu: false }">
+    <span class="flex w-full pl-20 pr-15  md:p-0 justify-between items-center">
+      <a 
+        href="{{ url }}" 
+        class="w-full py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black hover:no-underline group-hover:!no-underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }} {{ has_offset ? 'md:bg-turquoise md:!leading-none md:!flex md:!items-center md:!pb-6 md:!pt-3 md:!px-6 md:!no-underline leading-none' : ''}} {{ has_offset && (is_current || is_parent) ? 'md:!bg-lime' : ''}}"
+        target="{{ is_external ? '_blank' : '_self' }}"
+        title="{{ title }}">
+        {{ title }}
+      </a>
+      {{ if children }}
+        <a href="javascript:;" title="{{ "Menü anzeigen" | trans }}" x-on:click="submenu = ! submenu">
+          {{ partial:icons/chevron-down class="w-20 h-auto md:hidden" }}
+        </a>
+      {{ /if }}
+    </span>
+    {{ if children }}
+      <div 
+        class="md:absolute md:left-0 md:hidden group-hover:md:!block md:pt-10 xl:pt-15 md:pb-5 xl:pb-10 md:bg-white md:z-50"
+        x-show="submenu">
+        <ul class="{{ is_current || is_parent ? '' : '' }}">
+          {{ children }}
+            {{ partial:menu/main/item-child }}
+          {{ /children }}
+        </ul>
+      </div>
+    {{ /if }}
+  </li>
+{{ else }}
+  <li class="border-b-black border-b md:border-0 relative group {{ has_offset ? 'md:absolute md:right-0 xl:right-26 md:top-1' : ''}}">
     <a 
       href="{{ url }}" 
-      class="w-full py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black hover:no-underline group-hover:!no-underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }}"
+      class="block w-full pl-20 pr-15 py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black md:hover:underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }} {{ has_offset ? 'bg-turquoise md:!leading-none md:!flex md:!items-center md:!py-6 md:!px-6 md:!no-underline leading-none' : ''}} {{ has_offset && (is_current || is_parent) ? 'md:!bg-lime' : ''}}"
       target="{{ is_external ? '_blank' : '_self' }}"
       title="{{ title }}">
       {{ title }}
+      {{ if children }}
+        {{ partial:icons/chevron-down class="w-20 h-auto" }}
+      {{ /if }}
     </a>
     {{ if children }}
-      <a href="javascript:;" title="{{ "Menü anzeigen" | trans }}" x-on:click="submenu = ! submenu">
-        {{ partial:icons/chevron-down class="w-20 h-auto md:hidden" }}
-      </a>
+      <div class="absolute left-0 hidden group-hover:md:block md:pt-10 xl:pt-15 md:pb-5 xl:pb-10 bg-white z-50">
+        <ul class="{{ is_current || is_parent ? '' : '' }}">
+          {{ children }}
+            {{ partial:menu/main/item-child }}
+          {{ /children }}
+        </ul>
+      </div>
     {{ /if }}
-  </span>
-  {{ if children }}
-    <div 
-      class="md:absolute md:left-0 md:hidden group-hover:md:!block md:pt-10 xl:pt-15 md:pb-5 xl:pb-10 md:bg-white md:z-50"
-      x-show="submenu">
-      <ul class="{{ is_current || is_parent ? '' : '' }}">
-        {{ children }}
-          {{ partial:menu/main/item-child }}
-        {{ /children }}
-      </ul>
-    </div>
-  {{ /if }}
-</li>
-{{ else }}
-<li class="border-b-black border-b md:border-0 relative group">
-  <a 
-    href="{{ url }}" 
-    class="block w-full pl-20 pr-15 py-10 md:p-0 text-md md:text-base font-acumin-bold font-bold hover:text-lime md:hover:text-black md:hover:underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }}"
-    target="{{ is_external ? '_blank' : '_self' }}"
-    title="{{ title }}">
-    {{ title }}
-    {{ if children }}
-      {{ partial:icons/chevron-down class="w-20 h-auto" }}
-    {{ /if }}
-  </a>
-  {{ if children }}
-    <div class="absolute left-0 hidden group-hover:md:block md:pt-10 xl:pt-15 md:pb-5 xl:pb-10 bg-white z-50">
-      <ul class="{{ is_current || is_parent ? '' : '' }}">
-        {{ children }}
-          {{ partial:menu/main/item-child }}
-        {{ /children }}
-      </ul>
-    </div>
-  {{ /if }}
-</li>
+  </li>
 {{ /if }}

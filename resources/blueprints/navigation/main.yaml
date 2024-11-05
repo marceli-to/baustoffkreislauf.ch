@@ -1,0 +1,12 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: has_offset
+            field:
+              type: toggle
+              display: Absetzen
+              localizable: false

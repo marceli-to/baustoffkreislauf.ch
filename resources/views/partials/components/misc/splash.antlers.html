@@ -1,15 +1,25 @@
+{{ if intro }}
+  <div class="lg:pl-100 xl:pl-160 mb-15 xl:mb-30">
+    {{ intro }}
+  </div>
+{{ /if }}
 <div class="bg-lime p-15 md:p-20 xl:p-40">
   <div class="font-acumin-medium font-medium ">
     {{ if hint_federation }}
-    {{ if splash_content:text }}
-      <div class="[&>p>a]:inline-block [&>p>a]:mb-5 [&>p]:!mb-0 [&>h2]:hyphens-auto [&>h2]:leading-[1.4] [&>h2]:mb-15 [&>h2]:lg:mb-20">
-        {{ splash_content:text }}
-      </div>
+      {{ if splash_content:text }}
+        <div class="[&>p>a]:inline-block [&>p>a]:mb-5 [&>p]:!mb-0 [&>h2]:hyphens-auto [&>h2]:leading-[1.4] [&>h2]:mb-15 [&>h2]:lg:mb-20">
+          {{ splash_content:text }}
+        </div>
       {{ /if }}
     {{ else }}
       <div class="[&>p>a]:inline-block [&>p>a]:mb-5 [&>h2]:hyphens-auto [&>h2]:leading-[1.4] [&>h2]:mb-15 [&>h2]:lg:mb-20">
         {{ text }}
       </div>
+      {{ if logo }}
+        <figure class="flex justify-end mt-10 xl:mt-15">
+          <img src="{{ logo:url }}" alt="{{ logo:alt }}" class="block w-full max-w-120 xl:max-w-160 h-auto">
+        </figure>
+      {{ /if }}
     {{ /if }}
   </div>
 </div>

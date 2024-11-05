@@ -8,6 +8,20 @@ fields:
       localizable: false
       instructions: 'Falls aktiviert, wird der globale Hinweistext übernommen. Dieser ist bearbeitbar in «Globals».'
   -
+    handle: intro
+    field:
+      buttons:
+        - bold
+        - anchor
+      toolbar_mode: floating
+      remove_empty_nodes: true
+      type: bard
+      display: Einleitung
+      instructions: 'Optionaler Einleitungstext (oberhalb der Box)'
+      localizable: false
+      unless:
+        hint_federation: 'equals true'
+  -
     handle: text
     field:
       buttons:
@@ -25,6 +39,15 @@ fields:
       if:
         hint_federation: 'equals false'
   -
+    handle: has_link
+    field:
+      type: toggle
+      display: Verlinken
+      instructions: 'Kompletter Störer verlinken'
+      localizable: false
+      unless:
+        hint_federation: 'equals true'
+  -
     handle: link
     field:
       collections:
@@ -36,6 +59,7 @@ fields:
       width: 50
       if:
         hint_federation: 'equals false'
+        has_link: 'equals true'
   -
     handle: link_text
     field:
@@ -45,3 +69,15 @@ fields:
       width: 50
       if:
         hint_federation: 'equals false'
+        has_link: 'equals true'
+  -
+    handle: logo
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Logo
+      instructions: 'Optionales Logo'
+      localizable: false
+      unless:
+        hint_federation: 'equals true'
