@@ -1,72 +1,88 @@
 {{ if intro }}
   {{ partial:layout/content }}
-    <div class="text-base xl:text-lg hyphens-auto">
+    <div class="text-base lg:text-lg hyphens-auto">
       {{ intro }}
     </div>
   {{ /partial:layout/content }}
 {{ /if }}
 <div 
-  class="bg-fog w-full relative !mt-20 xl:!mt-40 pt-20 xl:pt-40 pb-30 xl:pb-60"
+  class="bg-fog w-full relative !mt-20 lg:!mt-40 pt-20 lg:pt-40 pb-30 lg:pb-60"
   x-data="{ active: null }">
   {{ partial:layout/content }}
     <div class="grid grid-cols-12 gap-x-15 gap-y-25 mx-auto">
-      {{ collection from="courses" }}
-        <div
-          x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}'; 
-          $nextTick(() => {
-            if (active === '{{ id }}') {
+      {{ collection from="courses" sort="course_date:asc" }}
+        {{ if course_date | modify_date("+1 day") | is_future }}
+          <div
+            x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}'; 
+            $nextTick(() => {
               $el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          })"
-          class="col-span-12 md:col-span-6 hyphens-auto no-underline group cursor-pointer scroll-mt-115 md:scroll-mt-45"
-          :class="{ 'md:!col-span-12': active === '{{ id }}' }"
-          title="{{ title }}">
-          <div class="flex justify-between items-center gap-x-10">
-            <hr class="!bg-black w-full h-2" />
-            <span class="flex-shrink-0" :class="{ 'rotate-180': active === '{{ id }}' }">
-              {{ partial:icons/chevron-down class="w-20 xl:w-28 h-auto" }}
-            </span>
-          </div>
-          <div 
-            class="bg-white leading-[1.45] mt-10 p-15 xl:p-20 xl:pt-15 group-hover:bg-turquoise transition-all"
-            :class="{ '!bg-turquoise': active === '{{ id }}' }">
-            <h2 class="text-base xl:text-lg leading-[1.25] mb-5 xl:mb-10">
-              {{ title }}
-            </h2>
-            Datum: {{ course_date iso_format="Do MMMM YYYY" }}
-            {{ if google_maps_url && location }}
-            <br>Ort: <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a>
-            {{ /if }}
-            {{ if !google_maps_url && location }}
-              <br>Ort: {{ location }}
-            {{ /if }}
-            {{ if target_group }}
-              <br>Zielgruppe: {{ target_group }}
-            {{ /if }}
-            {{ if registration_deadline | modify_date("+1 day") | is_future }}
-              <br>Anmeldung: {{ registration_deadline iso_format="Do MMMM YYYY" }}
-            {{ /if }}
-            <div 
-              class="mt-15 xl:mt-25 hidden text-xs xl:text-sm"
-              :class="{ '!block': active === '{{ id }}' }">
-              {{ description }}
+            })"
+            class="col-span-12 md:col-span-6 hyphens-auto no-underline group cursor-pointer scroll-mt-115 md:scroll-mt-45"
+            :class="{ 'md:!col-span-12': active === '{{ id }}' }"
+            title="{{ title }}">
+            <div class="flex justify-between items-center gap-x-10">
+              <hr class="!bg-black w-full h-2" />
+              <span class="flex-shrink-0" :class="{ 'rotate-180': active === '{{ id }}' }">
+                {{ partial:icons/chevron-down class="w-20 lg:w-28 h-auto" }}
+              </span>
             </div>
             <div 
-              class="hidden text-xs xl:text-sm mt-15 xl:mt-25"
-              :class="{ '!block': active === '{{ id }}' }">
-              {{ if fee_members }}
-               <div>
-                Teilnahmegebühr für Mitglieder von Baustoff Kreislauf Schweiz: <strong>CHF {{ fee_members }}</strong>
-              </div>
-              {{ /if }}
-              {{ if fee_non_members }}
-                <div>
-                  Teilnahmegebühr für Nicht-Mitglieder: <strong>CHF {{ fee_non_members }}</strong>
+              class="bg-white leading-[1.45] mt-10 p-15 lg:p-20 lg:pt-15 group-hover:bg-turquoise transition-all"
+              :class="{ '!bg-turquoise': active === '{{ id }}' }">
+              {{ if images }}
+                <div class="hidden" :class="{ '!grid grid-cols-12 gap-x-10 lg:gap-x-15 mb-10 lg:mb-15': active === '{{ id }}' }">
+                  {{ images }}
+                    {{ if first }}
+                      <div class="{{ images | count > 1 ? 'col-span-8' : 'col-span-12' }}">
+                        {{ partial:components/media/image/image 
+                          :image="url" 
+                          class="w-full h-full object-cover {{ images | count > 1 ? 'aspect-[16/10]' : 'aspect-[16/8]' }}" }}
+                      </div>
+                    {{ else }}
+                      <div class="col-span-4 relative">
+                        {{ partial:components/media/image/image 
+                          :image="url" 
+                          class="absolute w-full h-full object-cover" }}
+                      </div>
+                    {{ /if }}
+                  {{ /images }}
                 </div>
               {{ /if }}
+
+              <h2 class="text-base lg:text-lg leading-[1.25] mb-5">
+                {{ title }}
+              </h2>
+              Datum: {{ course_date iso_format="Do MMMM YYYY" }}
+              {{ if google_maps_url && location }}
+              <br>Ort: <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a>
+              {{ /if }}
+              {{ if !google_maps_url && location }}
+                <br>Ort: {{ location }}
+              {{ /if }}
+              {{ if target_group }}
+                <br>Zielgruppe: {{ target_group }}
+              {{ /if }}
+              {{ if registration_deadline | modify_date("+1 day") | is_future }}
+                <br>Anmeldung: {{ registration_deadline iso_format="Do MMMM YYYY" }}
+              {{ /if }}
+              <div class="hidden text-xs lg:text-sm flex-col gap-y-15 lg:gap-y-25 mt-15 lg:mt-25" :class="{ '!flex': active === '{{ id }}' }">
+                <div>{{ description }}</div>
+                <div>
+                  {{ if fee_members }}
+                    <div>
+                      Teilnahmegebühr für Mitglieder von Baustoff Kreislauf Schweiz: <strong>CHF {{ fee_members }}</strong>
+                    </div>
+                  {{ /if }}
+                  {{ if fee_non_members }}
+                    <div>
+                    Teilnahmegebühr für Nicht-Mitglieder: <strong>CHF {{ fee_non_members }}</strong>
+                  </div>
+                {{ /if }}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        {{ /if }}
       {{ /collection }}
     </div>
   {{ /partial:layout/content }}
