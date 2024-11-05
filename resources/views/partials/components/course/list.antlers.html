@@ -6,26 +6,29 @@
   {{ /partial:layout/content }}
 {{ /if }}
 <div 
-  class="bg-fog w-full relative !mt-20 xl:!mt-40 py-15 xl:py-30"
+  class="bg-fog w-full relative !mt-20 xl:!mt-40 pt-20 xl:pt-40 pb-30 xl:pb-60"
   x-data="{ active: null }">
   {{ partial:layout/content }}
     <div class="grid grid-cols-12 gap-x-15 gap-y-25 mx-auto">
       {{ collection from="courses" }}
         <div
-          x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}'"
-          class="col-span-12 md:col-span-6 hyphens-auto no-underline group cursor-pointer"
+          x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}'; 
+          $nextTick(() => {
+            if (active === '{{ id }}') {
+              $el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          })"
+          class="col-span-12 md:col-span-6 hyphens-auto no-underline group cursor-pointer scroll-mt-115 md:scroll-mt-45"
           :class="{ 'md:!col-span-12': active === '{{ id }}' }"
           title="{{ title }}">
-          <span class="flex justify-between items-center gap-x-10">
+          <div class="flex justify-between items-center gap-x-10">
             <hr class="!bg-black w-full h-2" />
-            <span 
-              class="flex-shrink-0"
-              :class="{ 'rotate-180': active === '{{ id }}' }">
+            <span class="flex-shrink-0" :class="{ 'rotate-180': active === '{{ id }}' }">
               {{ partial:icons/chevron-down class="w-20 xl:w-28 h-auto" }}
             </span>
-          </span>
-          <span 
-            class="bg-white block leading-[1.45] mt-10 p-15 xl:p-20 xl:pt-15 group-hover:bg-turquoise transition-all"
+          </div>
+          <div 
+            class="bg-white leading-[1.45] mt-10 p-15 xl:p-20 xl:pt-15 group-hover:bg-turquoise transition-all"
             :class="{ '!bg-turquoise': active === '{{ id }}' }">
             <h2 class="text-base xl:text-lg leading-[1.25] mb-5 xl:mb-10">
               {{ title }}
@@ -62,7 +65,7 @@
                 </div>
               {{ /if }}
             </div>
-          </span>
+          </div>
         </div>
       {{ /collection }}
     </div>
