@@ -28,6 +28,7 @@ fields:
         - h2
         - h3
         - bold
+        - unorderedlist
         - removeformat
         - anchor
         - text-medium

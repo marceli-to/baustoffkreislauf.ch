@@ -43,6 +43,7 @@ main ol {
   @apply p-0 m-0 mb-15 xl:mb-20 ml-16 list-decimal
 }
 
+main ul li,
 main ol li {
   @apply mb-10
 }
