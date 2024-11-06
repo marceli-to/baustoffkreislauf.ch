@@ -29,6 +29,7 @@
             <div 
               class="bg-white leading-[1.45] mt-10 p-15 lg:p-20 lg:pt-15 group-hover:bg-turquoise transition-all"
               :class="{ '!bg-turquoise': active === '{{ id }}' }">
+
               {{ if images }}
                 <div class="hidden" :class="{ '!grid grid-cols-12 gap-x-10 lg:gap-x-15 mb-10 lg:mb-15': active === '{{ id }}' }">
                   {{ images }}
@@ -52,31 +53,43 @@
               <h2 class="text-base lg:text-lg leading-[1.25] mb-5">
                 {{ title }}
               </h2>
+
               Datum: {{ course_date iso_format="Do MMMM YYYY" }}
+
               {{ if google_maps_url && location }}
               <br>Ort: <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a>
               {{ /if }}
+
               {{ if !google_maps_url && location }}
                 <br>Ort: {{ location }}
               {{ /if }}
+
               {{ if target_group }}
                 <br>Zielgruppe: {{ target_group }}
               {{ /if }}
+
               {{ if registration_deadline | modify_date("+1 day") | is_future }}
                 <br>Anmeldung: {{ registration_deadline iso_format="Do MMMM YYYY" }}
               {{ /if }}
+
               <div class="hidden text-xs lg:text-sm flex-col gap-y-15 lg:gap-y-25 mt-15 lg:mt-25" :class="{ '!flex': active === '{{ id }}' }">
                 <div>{{ description }}</div>
-                <div>
-                  {{ if fee_members }}
-                    <div>
-                      Teilnahmegebühr für Mitglieder von Baustoff Kreislauf Schweiz: <strong>CHF {{ fee_members }}</strong>
-                    </div>
-                  {{ /if }}
-                  {{ if fee_non_members }}
-                    <div>
-                    Teilnahmegebühr für Nicht-Mitglieder: <strong>CHF {{ fee_non_members }}</strong>
+                {{ if program_file }}
+                  <div>
+                    <a href="{{ program_file:url }}" target="_blank" class="no-underlinehover:!underline underline-offset-4">
+                     {{ 'Programm' | trans }}
+                    </a>
                   </div>
+                {{ /if }}
+                <div>
+                  {{ if fee_members || fee_non_members }}
+                    <strong>{{ 'Teilnahmegebühr' | trans }}</strong><br>
+                    {{ if fee_members }}
+                    {{ 'Mitglieder Baustoff Kreislauf Schweiz:' | trans }} <strong>CHF {{ fee_members }}</strong>
+                    {{ /if }}
+                    {{ if fee_non_members }}
+                      <br>{{ 'Nicht-Mitglieder:' | trans }} <strong>CHF {{ fee_non_members }}</strong>
+                    {{ /if }}
                 {{ /if }}
                 </div>
               </div>

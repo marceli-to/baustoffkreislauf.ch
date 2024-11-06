@@ -98,6 +98,7 @@ tabs:
               instructions: 'Eines oder mehrere Bilder hinzufügen. Werden mehrere Bilder hochgeladne, wird das erste als Quer- und das zweite als Hochformat ausgegeben.'
               localizable: false
               instructions_position: below
+              max_files: 2
   registration:
     display: Anmeldeformular
     sections:
