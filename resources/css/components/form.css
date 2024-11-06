@@ -27,7 +27,7 @@ select {
 }
 
 textarea {
-  @apply min-h-[80px] block border;
+  @apply min-h-[80px] block border px-10;
   field-sizing: content;
   resize: vertical;
 } 

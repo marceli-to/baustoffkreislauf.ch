@@ -53,6 +53,7 @@ class CourseController extends Controller
     // build data
     $data = [
       'title' => $course->title,
+      'date' => $course->course_date->translatedFormat('d. F Y'),
       'course_id' => $course->id,
       'salutation' => $request->input('salutation'),
       'name' => $request->input('name'),

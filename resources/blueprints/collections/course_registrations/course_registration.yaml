@@ -1,0 +1,92 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: course_id
+            field:
+              type: hidden
+              display: Kurs
+              localizable: false
+          -
+            handle: company
+            field:
+              type: text
+              display: Firma
+              localizable: false
+          -
+            handle: salutation
+            field:
+              type: text
+              display: Anrede
+              localizable: false
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              localizable: false
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+              localizable: false
+          -
+            handle: email
+            field:
+              type: text
+              display: E-Mail
+              localizable: false
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+              localizable: false
+          -
+            handle: address
+            field:
+              type: text
+              display: 'Strasse, Nr.'
+              localizable: false
+          -
+            handle: location
+            field:
+              type: text
+              display: 'PLZ / Ort'
+              localizable: false
+          -
+            handle: cost_center
+            field:
+              type: textarea
+              display: Kostenstelle
+              localizable: false
+          -
+            handle: remarks
+            field:
+              type: textarea
+              display: Bemerkungen
+              localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: 'Anmeldungen Kurse'

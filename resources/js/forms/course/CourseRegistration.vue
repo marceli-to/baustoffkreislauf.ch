@@ -1,20 +1,21 @@
 <template>
-  <template v-if="formSuccess">
-    <success-alert>
-      {{ __('Vielen Dank für Ihre Anmeldung!') }}
-    </success-alert>
-  </template>
-  <template v-if="formError">
-    <error-alert>
-      {{ __('Bitte überprüfen Sie die eingegebenen Daten.') }}
-    </error-alert>
-  </template>
   <template v-if="isLoaded">
     <h1 class="mb-5 lg:mb-10">{{ title }}</h1>
     <span>{{ date }}</span>
     <div class="mt-25 lg:mt-50">
       <h2>{{ __('Anmeldung') }}</h2>
       <p>{{ __('Anmeldung ist möglich bis') }} <strong>{{ registrationDeadline }}</strong></p>
+      <template v-if="formSuccess">
+        <success-alert>
+          {{ __('Vielen Dank für Ihre Anmeldung!') }}
+        </success-alert>
+      </template>
+      <template v-if="formError">
+        <error-alert>
+          {{ __('Bitte überprüfen Sie die eingegebenen Daten.') }}
+        </error-alert>
+      </template>
+
       <form @submit.prevent="submitForm" class="space-y-15 lg:space-y-30 max-w-2xl">
         <form-group v-if="hasSalutation">
           <form-label id="salutation" :label="__('Anrede')" :required="requiresSalutation" />
@@ -176,6 +177,7 @@ const salutations = ref([
 ]);
 
 const form = ref({
+  course_id: null,
   salutation: null,
   name: null,
   firstname: null,
@@ -207,6 +209,7 @@ onMounted(async () => {
     isLoaded.value = true;
     title.value = response.data.title;
     date.value = response.data.date;
+    form.value.course_id = id;
     registrationDeadline.value = response.data.registration_deadline;
     hasSalutation.value = response.data.has_salutation;
     requiresSalutation.value = response.data.requires_salutation;
@@ -282,7 +285,7 @@ function handleSuccess() {
   isSubmitting.value = false;
   formSuccess.value = true;
   window.scrollTo({
-    top: 0,
+    top: 250,
     behavior: 'smooth'
   });
 }
@@ -295,9 +298,8 @@ function handleError(error) {
     Object.keys(error.response.data.errors).forEach(key => {
       errors.value[key] = error.response.data.errors[key];
     });
-
     window.scrollTo({
-      top: 0,
+      top: 250,
       behavior: 'smooth'
     });
   }

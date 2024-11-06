@@ -57,7 +57,7 @@ export default {
       },
 
       backgroundPosition: {
-        'right-center': 'right 10px center',
+        'right-center': 'right center',
       },
     },
 
