@@ -88,12 +88,19 @@ tabs:
                         -
                           import: splash
                     newsletter_form:
-                      display: 'Newsletter Formular'
+                      display: 'Formular Newsletter'
                       instructions: 'Newsletter Formular hinzufügen'
                       icon: form-text-field
                       fields:
                         -
                           import: newsletter_form
+                    course_form:
+                      display: 'Formular Kursanmeldung'
+                      instructions: 'Formular für Kursanmeldungen'
+                      icon: form-text-field
+                      fields:
+                        -
+                          import: course_form
                     events:
                       display: Anlässe
                       instructions: 'Liste der Anlässe hinzufügen.'
@@ -115,6 +122,13 @@ tabs:
                       fields:
                         -
                           import: teaser_topics
+                    teaser_services:
+                      display: 'Teaser Dienstleistungen'
+                      instructions: 'Teaser für Dienstleistungen hinzufügen.'
+                      icon: text-formatting-initial-letter
+                      fields:
+                        -
+                          import: teaser_services
                     quote:
                       display: Zitat
                       instructions: 'Zitat hinzufügen'
@@ -131,12 +145,12 @@ tabs:
           -
             handle: header_image
             field:
-              max_files: 1
               container: assets
               folder: mood
               type: assets
-              display: Headerbild
+              display: Headerbilder
               localizable: false
+              instructions: 'Sind mehrere Bilder hinterlegt, wird zufällig eines ausgewählt.'
   seo:
     display: SEO
     sections:

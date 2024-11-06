@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class OwnerEventRegistrationNotification extends Notification
+class OwnerEventRegistration extends Notification
 {
     use Queueable;
 

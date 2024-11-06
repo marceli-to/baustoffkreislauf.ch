@@ -20,10 +20,7 @@ export default {
       },
       
       fontFamily: {
-        'acumin-black': ['acumin-pro', ...defaultTheme.fontFamily.sans],
-        'acumin-bold': ['acumin-pro', ...defaultTheme.fontFamily.sans],
-        'acumin-medium': ['acumin-pro', ...defaultTheme.fontFamily.sans],
-        'acumin-regular': ['acumin-pro', ...defaultTheme.fontFamily.sans],
+        'acumin': ['acumin-pro', ...defaultTheme.fontFamily.sans],
         'geller': ['geller-text', ...defaultTheme.fontFamily.sans],
       },
 

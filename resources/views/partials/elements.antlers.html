@@ -90,5 +90,15 @@
 {{ /if }}
 
 {{ if type == 'teaser_courses' }}
-  {{ partial:components/course/list }}
+  {{ partial:course/teaser }}
+{{ /if }}
+
+{{ if type == 'course_form' }}
+  {{ partial:layout/content }}
+    {{ partial:course/form }}
+  {{ /partial:layout/content }}
+{{ /if }}
+
+{{ if type == 'teaser_services' }}
+  {{ partial:components/service/teaser }}
 {{ /if }}

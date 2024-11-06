@@ -8,7 +8,7 @@
 
   {{ slot:header_image }}
     {{ if header_image }}
-      {{ partial:components/media/image/header :image="header_image" }}
+      {{ partial:components/media/image/header :image="header_image | random" }}
     {{ /if }}
   {{ /slot:header_image }}
 

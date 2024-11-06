@@ -8,3 +8,4 @@ Alpine.start();
 
 import './modules/swiper.js';
 import './forms/event/app.js';
+import './forms/course/app.js';

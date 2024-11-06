@@ -24,7 +24,7 @@ main p:not(:last-child) {
 }
 
 main p.lead {
-  @apply font-acumin-bold font-bold text-lg md:text-xl xl:text-xl leading-[1.2]
+  @apply font-bold text-lg md:text-xl xl:text-xl leading-[1.2]
 }
 
 main a {
@@ -53,7 +53,7 @@ main ol li {
 }
 
 strong {
-  @apply font-acumin-bold font-bold
+  @apply font-bold
 }
 
 /* Special pages */

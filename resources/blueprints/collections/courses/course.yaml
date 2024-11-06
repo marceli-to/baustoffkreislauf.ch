@@ -34,6 +34,12 @@ tabs:
               localizable: false
               width: 50
           -
+            handle: target_group
+            field:
+              type: text
+              display: Zielgruppe
+              localizable: false
+          -
             handle: description
             field:
               buttons:
@@ -76,12 +82,6 @@ tabs:
               localizable: false
               width: 50
               instructions_position: below
-          -
-            handle: members_only
-            field:
-              type: toggle
-              display: 'Nur für Mitglieder'
-              localizable: false
   images:
     display: Bilder
     sections:
@@ -118,6 +118,179 @@ tabs:
               format: d.m.Y
               type: date
               display: Anmeldefrist
+              localizable: false
+          -
+            handle: contact_information
+            field:
+              type: section
+              display: Kontaktinformationen
+              localizable: false
+          -
+            handle: has_company
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Firma"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_company
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_company: 'equals true'
+          -
+            handle: has_salutation
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Anrede"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_salutation
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_salutation: 'equals true'
+          -
+            handle: has_name
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Name"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_name
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_name: 'equals true'
+          -
+            handle: has_firstname
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Vorname"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_firstname
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_firstname: 'equals true'
+          -
+            handle: has_email
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "E-Mail"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_email
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_email: 'equals true'
+          -
+            handle: has_phone
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Telefon"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_phone
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_phone: 'equals true'
+          -
+            handle: has_address
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Adresse"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_address
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_address: 'equals true'
+          -
+            handle: has_location
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "PLZ/Ort"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_location
+            field:
+              default: true
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_location: 'equals true'
+          -
+            handle: has_cost_center
+            field:
+              type: toggle
+              display: 'Feld "Kostenstelle"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_cost_center
+            field:
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_cost_center: 'equals true'
+          -
+            handle: has_remarks
+            field:
+              default: true
+              type: toggle
+              display: 'Feld "Bemerkungen"'
               localizable: false
   sidebar:
     display: Sidebar
