@@ -35,7 +35,7 @@ export default {
         'base': '1.25rem',  // 20px
         'md': '1.375rem',   // 22px
         'lg': '1.625rem',    // 26px
-        'xl': '2.375rem',    // 38px
+        'xl': '2.25rem',     // 36px
         '2xl': '3.125rem',   // 50px
       },
 
