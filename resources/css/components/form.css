@@ -3,7 +3,7 @@ input[type=email],
 input[type=tel],
 textarea,
 select {
-  @apply w-full py-10 px-10 text-xs lg:text-base bg-transparent border-black border rounded-md !ring-0 focus:outline-none focus:!ring-0 focus:border-turquoise  focus:text-black placeholder:text-black
+  @apply w-full py-10 text-xs lg:text-base bg-transparent border-b border-lime !ring-0 focus:outline-none focus:!ring-0 focus:border-black focus:text-black placeholder:text-black
 }
 
 .has-error input[type=text],
@@ -15,7 +15,7 @@ select {
 }
 
 label {
-  @apply text-xs lg:text-base
+  @apply text-xs lg:text-sm
 }
 
 .has-error label {
@@ -27,7 +27,7 @@ select {
 }
 
 textarea {
-  @apply min-h-[80px] block;
+  @apply min-h-[80px] block border;
   field-sizing: content;
   resize: vertical;
 } 
@@ -42,11 +42,11 @@ textarea {
 
 .checkboxes input[type=checkbox],
 .checkboxes input[type=radio] {
-  @apply appearance-none w-24 lg:w-28 h-24 lg:h-28 ring-0 focus:ring-0 !ring-offset-0 !outline-none border border-black text-black bg-white !accent-black
+  @apply appearance-none w-24 lg:w-28 h-24 lg:h-28 ring-0 focus:ring-0 !ring-offset-0 !outline-none border border-lime text-black bg-white !accent-lime
 }
 
 .checkboxes input[type=checkbox] {
-  @apply rounded-md
+  /* @apply rounded-md */
 }
 
 .checkboxes input[type=radio] {
@@ -62,11 +62,11 @@ textarea {
 }
 
 .checkboxes input[type=checkbox]:checked {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23000000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='40 12 18 34 8 24'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%2399D654' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='40 12 18 34 8 24'%3E%3C/polyline%3E%3C/svg%3E");
   @apply bg-center bg-no-repeat bg-[length:16px_auto] lg:bg-[length:18px_auto]
 }
 
 .checkboxes input[type=radio]:checked {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='%23000000' stroke='%23000000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='24' cy='24' r='20'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='%2399D654' stroke='%2399D654' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='24' cy='24' r='20'/%3E%3C/svg%3E");
   @apply bg-center bg-no-repeat bg-[length:14px_auto] lg:bg-[length:16px_auto]
 } 

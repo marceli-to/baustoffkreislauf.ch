@@ -9,7 +9,7 @@
       {{ __('Bitte überprüfen Sie die eingegebenen Daten.') }}
     </error-alert>
   </template>
-  <form @submit.prevent="submitForm" v-if="isLoaded" class="space-y-15 lg:space-y-20 max-w-lg">
+  <form @submit.prevent="submitForm" v-if="isLoaded" class="space-y-15 lg:space-y-30 max-w-2xl">
     <form-group v-if="hasSalutation">
       <form-label id="salutation" :label="__('Anrede')" :required="requiresSalutation" />
       <form-select-field 
@@ -184,7 +184,7 @@
         @update:error="errors.toc = $event"
       />
     </form-group>
-    <form-group classes="!mt-30">
+    <form-group classes="!mt-30 lg:!mt-60 mx-auto flex justify-center">
       <form-button 
         type="submit" 
         :label="__('Anmelden')"
