@@ -1,22 +1,54 @@
-<div class="col-span-12 xs:col-span-6 md:col-span-4 bg-cloud p-10 xl:p-25 !no-underline">
+<div class="bg-cloud col-span-12 sm:col-span-6 lg:col-span-4 p-15 pb-20 xl:p-25 xl:!pb-48 relative">
   <div class="aspect-[3/4] flex flex-col justify-center">
   {{ if preview_image }}
     {{ partial:components/media/image/publication :image="preview_image" class="border border-silver" }}
   {{ /if }}
   </div>
-  <div class="text-xxs lg:text-sm leading-[1.4] pt-5 lg:pt-10">
-    <h3 class="text-xs lg:text-base font-bold hyphens-auto leading-[1.2]">
+  <div class="text-xs lg:text-sm xl:text-base leading-[1.4] xl:leading-[1.3] pt-10">
+    <h3 class="text-xs lg:text-base font-bold hyphens-auto max-w-[260px] lg:max-w-[300px]">
       {{ title }}
     </h3>
-    {{ if description }}
-      <div>
-        {{ description }}
+    {{ date iso_format="DD.MM.YYYY"}}
+    <div class="max-w-[260px] lg:max-w-[280px]">
+      {{ if description }}<div>{{ description }}</div>{{ /if }}
+      {{ if copyright }}<div>&copy; {{ copyright }}</div>{{ /if }}
+    </div>
+  </div>
+  <a 
+    href="javascript:;"
+    x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}';" 
+    class="absolute bottom-5 right-5 p-5 xl:bottom-10 xl:right-10 bg-lime aspect-square rounded-full w-32 xl:w-44 inline-flex items-center justify-center group">
+    <span 
+      :class="{ '-rotate-180': active === '{{ id }}' }">
+      {{ partial:icons/chevron-down-publications class="w-20 xl:w-30" }}
+    </span>
+  </a>
+  <div 
+    x-cloak
+    x-show="active === '{{ id }}'"
+    class="bg-lime absolute bottom-0 left-0 z-20 w-full translate-y-full py-5 xl:py-10 transition-all font-bold flex flex-col gap-5 xl:gap-10">
+    {{ files }}
+      <div class="px-10 xl:px-25">
+        {{ if description }}
+          <div>
+            {{ description }}
+          </div>
+        {{ /if }}
+        <a 
+          href="{{ file:url }}" 
+          class="flex items-center gap-5 text-xs lg:text-base no-underline hover:underline underline-offset-4"
+          target="_blank">
+          {{ partial:icons/arrow-right class="w-15" }}
+          {{ file:extension | upper }}, {{ file:size }}, {{ language | upper }}
+        </a>
       </div>
-    {{ /if }}
-    {{ if copyright }}
-      <div>
-        &copy; {{ copyright }}
-      </div>
-    {{ /if }}
+    {{ /files }}
+    {{ if orderable }}
+    <a 
+      href="mailto:info@baustoffkreislauf.ch?subject=Bestellung Publikation «{{ title }}»"
+      class="!no-underline border-none bg-black font-bold tracking-widest uppercase text-white hover:text-lime py-15 px-10 xl:px-25 relative xl:top-10 leading-none inline-flex items-center transition-all">
+      {{ 'Bestellen' | trans }}
+    </a>
+  {{ /if }}
   </div>
 </div>

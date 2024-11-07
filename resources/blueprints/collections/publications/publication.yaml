@@ -50,6 +50,7 @@ tabs:
               type: replicator
               display: Dateien
               localizable: false
+              collapse: true
               sets:
                 files:
                   display: Dateien
@@ -76,6 +77,23 @@ tabs:
                             type: text
                             display: Beschreibung
                             localizable: false
+                        -
+                          handle: language
+                          field:
+                            options:
+                              -
+                                key: de
+                                value: Deutsch
+                              -
+                                key: fr
+                                value: Francais
+                              -
+                                key: it
+                                value: Italiano
+                            type: select
+                            display: Sprache
+                            localizable: false
+                            default: de
           -
             handle: orderable
             field:

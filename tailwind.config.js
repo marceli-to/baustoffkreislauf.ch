@@ -18,7 +18,11 @@ export default {
         'xs': '414px',
         'huge': '1180px',
       },
-      
+
+      maxWidth: {
+        '8xl': '1370px',
+      },
+
       fontFamily: {
         'acumin': ['acumin-pro', ...defaultTheme.fontFamily.sans],
         'geller': ['geller-text', ...defaultTheme.fontFamily.sans],

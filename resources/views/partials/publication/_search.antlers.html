@@ -1,0 +1,33 @@
+<div class="flex items-center w-1/2 sm:w-full"></div>
+  <form 
+    method="get"
+    action="/dienstleistungen/publikationen"
+    class="relative search-form">
+
+    <select name="sort">
+      <option value="desc" {{ get:sort == 'desc' ? 'selected' : '' }}>Nach Datum absteigend</option>
+      <option value="asc"{{ get:sort == 'asc' ? 'selected' : '' }}>Nach Datum aufsteigend</option>
+    </select>
+
+    <input 
+      type="text" 
+      name="q" 
+      value="{{ get:q }}"
+      placeholder="{{ "Suche" | trans }}">
+
+    <div class="flex flex-col items-center mt-40">
+      <button type="submit" class="border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white hover:text-black py-15 px-20 lg:px-40 leading-none flex items-center transition-all">
+        {{ "Anzeigen" | trans }}
+      </button>
+    </div>
+
+  </form>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('keyword') || urlParams.has('sort')) {
+    document.querySelector('.search-form').scrollIntoView({ behavior: 'smooth' });
+  }
+});
+</script>

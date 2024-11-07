@@ -1,10 +1,25 @@
 {{ partial:layout/content }}
-  [Filter]
+  {{ partial:publication/_search }}
 {{ /partial:layout/content }}
-{{ partial:layout/content-fullscreen badge="Downloads" badgeClass="!hidden md:!flex" }}
-  <div class="grid grid-cols-12 gap-x-15 gap-y-25 md:ml-30 xl:ml-0">
-    {{ collection from="publications" sort="date:asc" }}
-      {{ partial:publication/item }}
-    {{ /collection }}
+{{ partial:layout/content-fullscreen badge="Downloads" badgeClass="!hidden md:!flex" wide="true" }}
+  <div 
+    class="grid grid-cols-12 gap-x-15 gap-y-25 xl:gap-x-20 xl:gap-y-60 md:ml-30 xl:ml-0"
+    x-data="{ active: null }">
+
+    {{ if get:q }}
+      {{ search:results index="publications" sort="date:{{ get:sort ? get:sort : 'asc' }}" }}
+        {{ if no_results }}
+          <div class="col-span-12 sm:col-span-6 lg:col-span-4 lg:col-start-2 p-15 pb-20 xl:p-25 xl:!pb-48">
+            <p>{{ "Keine Resultate gefunden für" | trans }} {{ get:q }}.</p>
+          </div>
+        {{ else }}
+          {{ partial:publication/item }}
+        {{ /if }}
+      {{ /search:results }}
+    {{ else }}
+      {{ collection from="publications" sort="date:{{ get:sort ? get:sort : 'desc' }}" }}
+        {{ partial:publication/item }}
+      {{ /collection }}
+    {{ /if }}
   </div>
 {{ /partial:layout/content-fullscreen }}

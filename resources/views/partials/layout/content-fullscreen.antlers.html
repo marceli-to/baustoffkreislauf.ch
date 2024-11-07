@@ -4,7 +4,13 @@
     {{ badge | trans }}
     </span>
   {{ /if }}
-  {{ partial:layout/content }}
-    {{ slot }}
-  {{ /partial:layout/content }}
+  {{ if wide }}
+    <div class="mx-auto max-w-7xl">
+      {{ slot }}
+    </div>
+  {{ else }}
+    {{ partial:layout/content }}
+      {{ slot }}
+    {{ /partial:layout/content }}
+  {{ /if }}
 </div>
