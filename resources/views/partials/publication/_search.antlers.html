@@ -1,8 +1,22 @@
 <div class="flex items-center w-1/2 sm:w-full"></div>
   <form 
     method="get"
-    action="/dienstleistungen/publikationen"
-    class="relative search-form">
+    action="{{ url }}"
+    class="relative js-search-form">
+
+    <select name="category">
+      <option value="">{{ "Alle" | trans }}</option>
+      {{ taxonomy:category_publication }}
+        <option 
+          value="{{ slug }}" 
+          {{ if get:category == slug }}
+          selected
+          {{ /if }}
+          >
+          {{ title }}
+        </option>
+    {{ /taxonomy:category_publication }}
+    </select>
 
     <select name="sort">
       <option value="desc" {{ get:sort == 'desc' ? 'selected' : '' }}>Nach Datum absteigend</option>
@@ -19,6 +33,7 @@
       <button type="submit" class="border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white hover:text-black py-15 px-20 lg:px-40 leading-none flex items-center transition-all">
         {{ "Anzeigen" | trans }}
       </button>
+      <a href="{{ url }}" class="text-black hover:text-lime js-reset-search">{{ "Zurücksetzen" | trans }}</a>
     </div>
 
   </form>
@@ -27,7 +42,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has('keyword') || urlParams.has('sort')) {
-    document.querySelector('.search-form').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('.js-search-form').scrollIntoView({ behavior: 'smooth' });
   }
+
 });
 </script>

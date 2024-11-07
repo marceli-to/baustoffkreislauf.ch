@@ -17,7 +17,7 @@
         {{ /if }}
       {{ /search:results }}
     {{ else }}
-      {{ collection from="publications" sort="date:{{ get:sort ? get:sort : 'desc' }}" }}
+      {{ collection locale="de" from="publications" sort="date:{{ get:sort ? get:sort : 'desc' }}" taxonomy:category_publication="{{ get:category }}" }}
         {{ partial:publication/item }}
       {{ /collection }}
     {{ /if }}

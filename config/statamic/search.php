@@ -39,8 +39,8 @@ return [
 
         'publications' => [
           'driver' => 'local',
-          'searchables' => 'collection:publications',
-          'fields' => ['title', 'description'],
+          'searchables' => ['collection:publications', 'taxonomy:category_publication'],
+          'fields' => ['title', 'description', 'copyright', 'date'],
         ],
 
     ],
