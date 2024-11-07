@@ -1,0 +1,10 @@
+<div class="bg-fog w-full relative !mt-20 lg:!mt-40 py-20 lg:py-40">
+  {{ if badge }}
+    <span class="bg-black text-white uppercase font-bold text-xxs leading-none tracking-[.2rem] absolute left-15 top-1/2 h-auto py-10 px-10 flex justify-center items-center -rotate-90 translate-x-[-50%] translate-y-[-50%] {{ badgeClass ?? '' }}">
+    {{ badge | trans }}
+    </span>
+  {{ /if }}
+  {{ partial:layout/content }}
+    {{ slot }}
+  {{ /partial:layout/content }}
+</div>

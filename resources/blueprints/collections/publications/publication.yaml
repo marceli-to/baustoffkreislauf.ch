@@ -1,0 +1,105 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              localizable: false
+              validate:
+                - required
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: preview_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Vorschaubild
+              localizable: false
+              folder: publikationen_und_produkte
+          -
+            handle: description
+            field:
+              type: text
+              display: Beschreibung
+              localizable: false
+              width: 50
+          -
+            handle: copyright
+            field:
+              type: text
+              display: Quelle/Copyright
+              localizable: false
+              width: 50
+          -
+            handle: files
+            field:
+              type: replicator
+              display: Dateien
+              localizable: false
+              sets:
+                files:
+                  display: Dateien
+                  instructions: 'Dateien hinzufügen'
+                  icon: file-content-list
+                  sets:
+                    files:
+                      display: Dateien
+                      instructions: 'Dateien hinzufügen'
+                      icon: file-content-list
+                      fields:
+                        -
+                          handle: file
+                          field:
+                            max_files: 1
+                            container: assets
+                            folder: publikationen_und_produkte
+                            type: assets
+                            display: Datei
+                            localizable: false
+                        -
+                          handle: description
+                          field:
+                            type: text
+                            display: Beschreibung
+                            localizable: false
+          -
+            handle: orderable
+            field:
+              type: toggle
+              display: 'Bestellbar?'
+              localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - publications
+              max_items: 1
+              listable: false
+              localizable: true
+title: Publikationen

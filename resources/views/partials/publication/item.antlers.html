@@ -1,0 +1,22 @@
+<div class="col-span-12 xs:col-span-6 md:col-span-4 bg-cloud p-10 xl:p-25 !no-underline">
+  <div class="aspect-[3/4] flex flex-col justify-center">
+  {{ if preview_image }}
+    {{ partial:components/media/image/publication :image="preview_image" class="border border-silver" }}
+  {{ /if }}
+  </div>
+  <div class="text-xxs lg:text-sm leading-[1.4] pt-5 lg:pt-10">
+    <h3 class="text-xs lg:text-base font-bold hyphens-auto leading-[1.2]">
+      {{ title }}
+    </h3>
+    {{ if description }}
+      <div>
+        {{ description }}
+      </div>
+    {{ /if }}
+    {{ if copyright }}
+      <div>
+        &copy; {{ copyright }}
+      </div>
+    {{ /if }}
+  </div>
+</div>

@@ -42,6 +42,8 @@ export default {
         'raspberry': '#DB2955',
         'fog': '#ECECEC',
         'sand': '#B7A887',
+        'cloud': '#f6f6f6',
+        'silver': '#d0d0d0',
       },
 
       listStyleType: {

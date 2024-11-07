@@ -1,0 +1,10 @@
+{{ partial:layout/content }}
+  [Filter]
+{{ /partial:layout/content }}
+{{ partial:layout/content-fullscreen badge="Downloads" badgeClass="!hidden md:!flex" }}
+  <div class="grid grid-cols-12 gap-x-15 gap-y-25 md:ml-30 xl:ml-0">
+    {{ collection from="publications" sort="date:asc" }}
+      {{ partial:publication/item }}
+    {{ /collection }}
+  </div>
+{{ /partial:layout/content-fullscreen }}

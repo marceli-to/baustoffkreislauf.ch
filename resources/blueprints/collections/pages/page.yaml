@@ -136,6 +136,13 @@ tabs:
                       fields:
                         -
                           import: quote
+                    publications:
+                      display: Publikationen
+                      instructions: 'Liste aller Publikationen anzeigen.'
+                      icon: download-arrow-down
+                      fields:
+                        -
+                          import: publications
   media:
     display: Medien
     sections:

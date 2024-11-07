@@ -102,3 +102,7 @@
 {{ if type == 'teaser_services' }}
   {{ partial:components/service/teaser }}
 {{ /if }}
+
+{{ if type == 'publications' }}
+  {{ partial:publication/listing }}
+{{ /if }}
