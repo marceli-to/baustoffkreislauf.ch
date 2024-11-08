@@ -52,7 +52,7 @@
     {{ content  }}
 
       {{ if type == 'text'}}
-        <div class="{{ has_indent ? 'lg:pl-100 [&>h1]:lg:-ml-100 [&>h1]:xl:-ml-160 xl:pl-160' : ''}}">
+        <div class="max-w-3xl lg:max-w-none {{ has_indent ? 'lg:pl-100 [&>h1]:lg:-ml-100 [&>h1]:xl:-ml-160 xl:pl-160' : ''}}">
           {{ text }}
         </div>
       {{ /if }}

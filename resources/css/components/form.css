@@ -70,3 +70,24 @@ textarea {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='%2399D654' stroke='%2399D654' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='24' cy='24' r='20'/%3E%3C/svg%3E");
   @apply bg-center bg-no-repeat bg-[length:14px_auto] lg:bg-[length:16px_auto]
 } 
+
+/* Search form */
+.search-dropdown {
+  @apply relative 
+}
+
+.search-dropdown select {
+  @apply border-b-0 relative bg-none py-5 bg-white
+}
+
+.search-dropdown:before {
+  @apply block content-[''] bg-dropdown-search bg-[length:20px_10px] md:bg-[length:28px_14px] h-10 md:h-14 w-full bg-no-repeat bg-right-center md:bg-right-bottom z-30 absolute bottom-10 md:-bottom-2 left-0 pointer-events-none
+}
+
+.search-dropdown:after {
+  @apply block content-[''] bg-black w-full md:w-[calc(100%_-_32px)] h-1 absolute bottom-0 left-0 z-10 
+}
+
+.search-input input {
+  @apply border-b-black py-5
+}

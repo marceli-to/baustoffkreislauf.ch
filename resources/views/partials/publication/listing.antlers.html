@@ -1,16 +1,16 @@
 {{ partial:layout/content }}
   {{ partial:publication/_search }}
 {{ /partial:layout/content }}
-{{ partial:layout/content-fullscreen badge="Downloads" badgeClass="!hidden md:!flex" wide="true" }}
+{{ partial:layout/content-fullscreen badge="Downloads" badgeClass="!hidden lg:!flex" wide="true" }}
   <div 
-    class="grid grid-cols-12 gap-x-15 gap-y-25 xl:gap-x-20 xl:gap-y-60 md:ml-30 xl:ml-0"
+    class="grid grid-cols-12 gap-x-15 gap-y-25 xl:gap-x-20 xl:gap-y-45 md:ml-30 xl:ml-0"
     x-data="{ active: null }">
 
     {{ if get:q }}
       {{ search:results index="publications" sort="date:{{ get:sort ? get:sort : 'asc' }}" }}
         {{ if no_results }}
-          <div class="col-span-12 sm:col-span-6 lg:col-span-4 lg:col-start-2 p-15 pb-20 xl:p-25 xl:!pb-48">
-            <p>{{ "Keine Resultate gefunden für" | trans }} {{ get:q }}.</p>
+          <div class="col-span-12 sm:col-span-6 lg:col-span-4 lg:col-start-2 md:-ml-16 px-15 lg:px-0 lg:py-30">
+            <p>{{ "Keine Resultate gefunden für" | trans }} <strong>{{ get:q }}</strong>.</p>
           </div>
         {{ else }}
           {{ partial:publication/item }}

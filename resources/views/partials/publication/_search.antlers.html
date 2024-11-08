@@ -3,47 +3,46 @@
     method="get"
     action="{{ url }}"
     class="relative js-search-form">
-
-    <select name="category">
-      <option value="">{{ "Alle" | trans }}</option>
-      {{ taxonomy:category_publication }}
-        <option 
-          value="{{ slug }}" 
-          {{ if get:category == slug }}
-          selected
-          {{ /if }}
-          >
-          {{ title }}
-        </option>
-    {{ /taxonomy:category_publication }}
-    </select>
-
-    <select name="sort">
-      <option value="desc" {{ get:sort == 'desc' ? 'selected' : '' }}>Nach Datum absteigend</option>
-      <option value="asc"{{ get:sort == 'asc' ? 'selected' : '' }}>Nach Datum aufsteigend</option>
-    </select>
-
-    <input 
-      type="text" 
-      name="q" 
-      value="{{ get:q }}"
-      placeholder="{{ "Suche" | trans }}">
-
-    <div class="flex flex-col items-center mt-40">
+    <div class="flex flex-col md:flex-row items-center gap-20">
+      <div class="search-dropdown w-full">
+        <select name="category">
+          <option value="" disabled selected hidden>{{ "Alle Rubriken" | trans }}</option>
+          {{ taxonomy:category_publication }}
+            <option 
+              value="{{ slug }}" 
+              {{ if get:category == slug }}
+              selected
+              {{ /if }}
+              >
+              {{ title }}
+            </option>
+        {{ /taxonomy:category_publication }}
+        </select>
+      </div>
+      <div class="search-dropdown w-full">
+        <select name="sort">
+          <option value="" disabled selected hidden class="font-bold">{{ "Sortierung" | trans }}</option>
+          <option value="desc" {{ get:sort == 'desc' ? 'selected' : '' }}>{{ "Neueste zuerst" | trans }}</option>
+          <option value="asc"{{ get:sort == 'asc' ? 'selected' : '' }}>{{ "Älteste zuerst" | trans }}</option>
+        </select>
+      </div>
+      <div class="search-input w-full">
+        <input type="text" name="q" value="{{ get:q }}" placeholder="{{ "Suche" | trans }}">
+      </div>
+    </div>
+    <div class="flex flex-col items-center gap-y-15 mt-30 md:mt-45">
       <button type="submit" class="border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white hover:text-black py-15 px-20 lg:px-40 leading-none flex items-center transition-all">
         {{ "Anzeigen" | trans }}
       </button>
-      <a href="{{ url }}" class="text-black hover:text-lime js-reset-search">{{ "Zurücksetzen" | trans }}</a>
+      <a href="{{ url }}" class="text-black font-bold no-underline hover:underline underline-offset-4 js-reset-search">{{ "Zurücksetzen" | trans }}</a>
     </div>
-
   </form>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has('keyword') || urlParams.has('sort')) {
+  if (urlParams.has('q') || urlParams.has('sort')) {
     document.querySelector('.js-search-form').scrollIntoView({ behavior: 'smooth' });
   }
-
 });
 </script>

@@ -60,6 +60,7 @@ export default {
 
       backgroundImage: {
         'dropdown': "url(\"data:image/svg+xml,%3Csvg width='28' height='15' viewBox='0 0 28 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 1L14 13.5L26.5 1' stroke='%2399D654' stroke-width='2'/%3E%3C/svg%3E\")",
+        'dropdown-search': "url(\"data:image/svg+xml,%3Csvg width='43' height='22' viewBox='0 0 43 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.400024 0.400024L21 21L41.7 0.400024' stroke='currentColor'/%3E%3C/svg%3E\")",
       },
 
       backgroundPosition: {
