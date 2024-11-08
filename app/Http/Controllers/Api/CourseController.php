@@ -10,13 +10,15 @@ use Illuminate\Support\Facades\Validator;
 
 class CourseController extends Controller
 {
-  public function get($courseId)
+  public function get($courseId, $locale = 'de')
   {
-    $course = Entry::find($courseId, 'de');
+    $course = Entry::find($courseId, $locale);
+    $date = \Carbon\Carbon::parse($course->course_date)->locale($locale);
+    $registrationDeadline = \Carbon\Carbon::parse($course->registration_deadline)->locale($locale);
     return response()->json([
       'title' => $course->title,
-      'date' => $course->course_date->translatedFormat('d. F Y'),
-      'registration_deadline' => $course->registration_deadline->translatedFormat('d. F Y'),
+      'date' => $date->translatedFormat('d. F Y'),
+      'registration_deadline' => $registrationDeadline->translatedFormat('d. F Y'),
       'has_salutation' => $course->has_salutation,
       'requires_salutation' => $course->requires_salutation,
       'has_name' => $course->has_name,
@@ -51,9 +53,10 @@ class CourseController extends Controller
     $slug = $course->title . ' ' . $request->input('firstname') . ' ' . $request->input('name');
 
     // build data
+    $date = Carbon::parse($course->course_date)->locale($request->input('locale'));
     $data = [
       'title' => $course->title,
-      'date' => $course->course_date->translatedFormat('d. F Y'),
+      'date' => $date->translatedFormat('d. F Y'),
       'course_id' => $course->id,
       'salutation' => $request->input('salutation'),
       'name' => $request->input('name'),

@@ -22,4 +22,4 @@ Route::post('/event/register', [EventController::class, 'register']);
 Route::get('/event/{eventId}', [EventController::class, 'get']);
 
 Route::post('/course/register', [CourseController::class, 'register']);
-Route::get('/course/{courseId}', [CourseController::class, 'get']);
+Route::get('/course/{courseId}/{locale}', [CourseController::class, 'get']);

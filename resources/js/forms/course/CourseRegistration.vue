@@ -205,7 +205,7 @@ const errors = ref({
 onMounted(async () => {
   try {
     const id = new URLSearchParams(window.location.search).get('id');
-    const response = await axios.get(`/api/course/${id}`);
+    const response = await axios.get(`/api/course/${id}/${locale.value}`);
     isLoaded.value = true;
     title.value = response.data.title;
     date.value = response.data.date;

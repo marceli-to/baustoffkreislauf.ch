@@ -6,7 +6,7 @@
         class="w-full py-10 md:p-0 text-md md:text-base font-bold hover:text-lime md:hover:text-black hover:no-underline group-hover:!no-underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }} {{ special ? 'font-normal !text-black md:text-black md:!leading-none md:!flex md:!items-center md:!pb-6 md:!pt-3 md:!px-6 md:!no-underline leading-none' : ''}} {{ special && (is_current || is_parent) ? 'md:!bg-lime' : ''}}"
         target="{{ is_external ? '_blank' : '_self' }}"
         title="{{ title }}">
-        {{ title }}
+        {{ title | replace(' ', '&nbsp;') }}
       </a>
       {{ if children }}
         <a href="javascript:;" title="{{ "Menü anzeigen" | trans }}" x-on:click="submenu = ! submenu">
@@ -33,7 +33,7 @@
       class="block w-full pl-20 pr-15 py-10 md:p-0 text-md md:text-base font-bold hover:text-lime md:hover:text-black md:hover:underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }} {{ special ? 'font-normal !text-black md:!leading-none md:!flex md:!items-center md:!py-6 md:!px-6 md:!no-underline leading-none' : ''}} {{ special && (is_current || is_parent) ? 'md:!bg-lime' : ''}}"
       target="{{ is_external ? '_blank' : '_self' }}"
       title="{{ title }}">
-      {{ title}}
+      {{ title | replace(' ', '&nbsp;') }}
       {{ if children }}
         {{ partial:icons/chevron-down class="w-20 h-auto" }}
       {{ /if }}
