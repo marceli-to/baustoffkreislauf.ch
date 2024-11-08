@@ -1,7 +1,7 @@
 {{ partial:layout/content }}
   <h1>{{ title }}</h1>
   {{ if lead }}
-    <p>
+    <p class="max-w-3xl lg:max-w-none">
       {{ if location && date }}{{ location }}, {{ date iso_format="Do MMMM YYYY" }} – {{ elseif location && !date }} {{ location }} – {{elseif !location && date }}{{ date iso_format="Do MMMM YYYY"}} – {{ /if }}
       <strong>{{ lead }}</strong>
     </p>
@@ -9,8 +9,10 @@
 
   {{ content }}
 
-    {{ if type == 'text'}}
-      {{ text }}
+    {{ if type == 'text' }}
+      <div class="max-w-3xl lg:max-w-none">
+        {{ text }}
+      </div>
     {{ /if }}
 
     {{ if type == 'image' ||  type == 'images' || type == 'image_slideshow' || type == 'video' }}
