@@ -3,88 +3,55 @@ fields:
   -
     handle: image
     field:
-      mode: list
       container: assets
-      restrict: false
-      allow_uploads: true
-      show_filename: true
-      show_set_alt: true
       type: assets
       display: Bild
-      icon: assets
       instructions: 'Ein quadratisches Bild hinzufügen.'
       localizable: false
-      listable: hidden
       instructions_position: below
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
       max_files: 1
       folder: portraits
   -
     handle: firstname
     field:
-      input_type: text
-      antlers: false
       type: text
       display: Vorname
-      icon: text
       localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
       validate:
         - required
       width: 50
   -
     handle: name
     field:
-      input_type: text
-      antlers: false
       type: text
       display: Name
-      icon: text
       localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
       validate:
         - required
       width: 50
   -
     handle: email
     field:
-      input_type: text
       default: '@baustoffkreislauf.ch'
-      antlers: false
       type: text
       display: E-Mail
-      icon: text
       localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
       validate:
         - required
       autocomplete: name
   -
     handle: position
     field:
-      input_type: text
-      antlers: false
       type: text
-      display: Firma/Funktion
-      icon: text
-      instructions: 'Firma/Funktion ist optional'
+      display: Funktion
+      instructions: 'Funktion ist optional'
       localizable: false
-      listable: hidden
       instructions_position: below
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+  -
+    handle: company
+    field:
+      type: text
+      display: Firma
+      instructions: 'Firma ist optional'
+      localizable: false
+      instructions_position: below

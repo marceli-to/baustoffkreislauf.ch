@@ -1,7 +1,7 @@
 <li class="block group border-t-black border-t {{ last ? 'md:border-b-black md:border-b' : '' }}">
   <a 
     href="{{ url }}" 
-    class=" {{ is_current || is_parent ? 'text-lime' : '' }} block whitespace-nowrap hover:text-lime transition-colors text-xs md:text-xs py-13 md:py-8 pr-5 pl-35 md:pl-5"
+    class=" {{ is_current || is_parent ? 'text-lime' : '' }} {{ special ? 'md:text-right' : '' }} block whitespace-nowrap hover:text-lime transition-colors text-xs md:text-xs py-13 md:py-8 pr-5 pl-35 md:pl-5"
     title="{{ title }}">
     {{ title }}
   </a>

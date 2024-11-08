@@ -5,9 +5,9 @@
     </div>
   {{ /partial:layout/content }}
 {{ /if }}
-{{ partial:layout/content-fullscreen badge="Lehrgänge &Kurse" badgeClass="!hidden md:!flex" }}
+{{ partial:layout/content-fullscreen badge="Lehrgänge & Kurse" badgeClass="!hidden md:!flex" }}
   <div class="grid grid-cols-12 gap-x-15 gap-y-25 md:ml-30 lg:ml-10 xl:ml-0" x-data="{ active: null }">
-    {{ collection from="courses" sort="course_date:asc" }}
+    {{ collection locale="de" from="courses" sort="course_date:asc" }}
       {{ if course_date | modify_date("+1 day") | is_future }}
         <div
           x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}'; 
