@@ -15,7 +15,7 @@
     {{ if !no_results }}
       <div class="mb-10 md:mb-20 lg:mb-30">
         <a href="{{ url }}" class="block no-underline hover:text-turquoise transition-colors mb-5 lg:mb-10 group">
-          <h2 class="mb-5 lg:mb-10 text-lg lg:text-xl">{{ title }}</h2>
+          <h2 class="mb-5 text-lg lg:text-xl">{{ title }}</h2>
           <div class="text-xxs lg:!text-xs">{{ searchable_content | highlight:{keyword} }}</div>
         </a>
         <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ title }}"</div>
@@ -38,7 +38,7 @@
     {{ if !no_results }}
       <div class="mb-10 md:mb-20 lg:mb-30">
         <a href="/dienstleistungen/berufe-kurse" class="block no-underline hover:text-turquoise transition-colors group">
-          <h2 class="mb-5 lg:mb-10 text-lg lg:text-xl">{{ title }}</h2>
+          <h2 class="mb-5 text-lg lg:text-xl">{{ title }}</h2>
         </a>
         <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ "Berufe & Kurse" | trans }}"</div>
       </div>
