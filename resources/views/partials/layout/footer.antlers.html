@@ -13,7 +13,7 @@
           <a 
             href="mailto:{{ contact_information:email }}" 
             title="{{ "E-Mail Adresse" | trans }}"
-            class="block hover:underline underline-offset-2 decoration-1">
+            class="block underline underline-offset-2 hover:no-underline decoration-1">
             {{ contact_information:email }}
           </a>
         {{ /if }}
@@ -22,7 +22,7 @@
           <a 
             href="tel:{{ contact_information:phone }}" 
             title="{{ "Telefonnummer" | trans }}"
-            class="block hover:underline underline-offset-2 decoration-1">
+            class="block underline underline-offset-2 hover:no-underline decoration-1">
             T {{ contact_information:phone }}
           </a>
         {{ /if }}

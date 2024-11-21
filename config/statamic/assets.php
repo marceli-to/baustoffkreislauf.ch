@@ -105,12 +105,14 @@ return [
           'lg-webp' => ['w' => 1280, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
           'xl-webp' => ['w' => 1440, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
           '2xl-webp' => ['w' => 1680, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
+          '3xl-webp' => ['w' => 2000, 'h' => 10000, 'q' => 90, 'fit' => 'contain', 'fm' => 'webp'],
 
           'sm' => ['w' => 480, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           'md' => ['w' => 768, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           'lg' => ['w' => 1280, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           'xl' => ['w' => 1440, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           '2xl' => ['w' => 1680, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
+          '3xl' => ['w' => 2000, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
 
           // Full width images
           'sm-fs-webp' => ['w' => 480, 'h' => 270, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
