@@ -18,7 +18,7 @@
           <h2 class="mb-5 text-lg lg:text-xl">{{ title }}</h2>
           <div class="text-xxs lg:!text-xs">{{ searchable_content | highlight:{keyword} }}</div>
         </a>
-        <div class="text-xxs text-neutral-400 italic">{{ "Gefunden in:" | trans }} "{{ title }}"</div>
+        <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ title }}"</div>
       </div>
     {{ /if }}
   {{ /search:results }}
@@ -29,7 +29,7 @@
         <a href="/dienstleistungen/publikationen?q={{ get:q }}" class="block no-underline hover:text-turquoise transition-colors mb-5 group">
           <h2 class="text-lg lg:text-xl !mb-0">{{ title }}</h2>
         </a>
-        <div class="text-xxs text-neutral-400 italic">{{ "Gefunden in:" | trans }} "{{ "Arbeitshilfen & Publikationen" | trans }}"</div>
+        <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ "Arbeitshilfen & Publikationen" | trans }}"</div>
       </div>
     {{ /if }}
   {{ /search:results }}
@@ -40,7 +40,7 @@
         <a href="/dienstleistungen/berufe-kurse" class="block no-underline hover:text-turquoise transition-colors group">
           <h2 class="mb-5 text-lg lg:text-xl">{{ title }}</h2>
         </a>
-        <div class="text-xxs text-neutral-400 italic">{{ "Gefunden in:" | trans }} "{{ "Berufe & Kurse" | trans }}"</div>
+        <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ "Berufe & Kurse" | trans }}"</div>
       </div>
     {{ /if }}
   {{ /search:results }}
