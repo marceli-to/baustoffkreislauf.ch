@@ -1,9 +1,9 @@
 {{ if children }}
-  <li class="border-b-black border-b md:border-0 relative group {{ special ? 'bg-turquoise' : '' }} {{ special && (is_current || is_parent) ? '!bg-lime' : ''}}" x-data="{ submenu: false }">
+  <li class="border-b-black border-b md:border-0 relative group {{ is_special ? 'bg-turquoise' : '' }} {{ is_special && (is_current || is_parent) ? '!bg-lime' : ''}}" x-data="{ submenu: false }">
     <span class="flex w-full pl-20 pr-15 md:p-0 justify-between items-center">
       <a 
         href="{{ url }}" 
-        class="w-full py-10 md:p-0 text-md md:text-base font-bold hover:text-lime md:hover:text-black hover:no-underline group-hover:!no-underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }} {{ special ? 'font-normal !text-black md:text-black md:!leading-none md:!flex md:!items-center md:!pb-6 md:!pt-3 md:!px-6 md:!no-underline leading-none' : ''}} {{ special && (is_current || is_parent) ? 'md:!bg-lime' : ''}}"
+        class="w-full py-10 md:p-0 text-md md:text-base font-bold hover:text-lime md:hover:text-black hover:no-underline group-hover:!no-underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }} {{ is_special ? 'font-normal !text-black md:text-black md:!leading-none md:!flex md:!items-center md:!pb-6 md:!pt-3 md:!px-6 md:!no-underline leading-none' : ''}} {{ is_special && (is_current || is_parent) ? 'md:!bg-lime' : ''}}"
         target="{{ is_external ? '_blank' : '_self' }}"
         title="{{ title }}">
         {{ title | replace(' ', '&nbsp;') }}
@@ -16,7 +16,7 @@
     </span>
     {{ if children }}
       <div 
-        class="md:absolute {{ special ? 'md:right-0' : 'md:left-0' }} w-auto min-w-full md:hidden group-hover:md:!block md:pt-6 md:pb-5 xl:pb-10 md:z-50"
+        class="md:absolute {{ is_special ? 'md:right-0 xl:right-auto xl:left-0' : 'md:left-0' }} w-auto min-w-full md:hidden group-hover:md:!block md:pt-6 md:pb-5 xl:pb-10 md:z-50"
         x-show="submenu">
         <ul class="{{ is_current || is_parent ? '' : '' }} bg-white">
           {{ children }}
@@ -30,7 +30,7 @@
   <li class="border-b-black border-b md:border-0 relative group">
     <a 
       href="{{ url }}" 
-      class="block w-full pl-20 pr-15 py-10 md:p-0 text-md md:text-base font-bold hover:text-lime md:hover:text-black md:hover:underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }} {{ special ? 'font-normal !text-black md:!leading-none md:!flex md:!items-center md:!py-6 md:!px-6 md:!no-underline leading-none' : ''}} {{ special && (is_current || is_parent) ? 'md:!bg-lime' : ''}}"
+      class="block w-full pl-20 pr-15 py-10 md:p-0 text-md md:text-base font-bold hover:text-lime md:hover:text-black md:hover:underline md:underline-offset-12 {{ is_current || is_parent || slug == category:slug ? 'text-lime md:text-black md:underline' : '' }} {{ is_special ? 'font-normal !text-black md:!leading-none md:!flex md:!items-center md:!py-6 md:!px-6 md:!no-underline leading-none' : ''}} {{ is_special && (is_current || is_parent) ? 'md:!bg-lime' : ''}}"
       target="{{ is_external ? '_blank' : '_self' }}"
       title="{{ title }}">
       {{ title | replace(' ', '&nbsp;') }}

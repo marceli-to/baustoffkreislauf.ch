@@ -1,0 +1,17 @@
+<form 
+  action="/{{"suche" | trans }}" 
+  method="GET" 
+  class="mt-30 md:mt-0 mb-10 md:mb-20 max-w-[240px] w-full">
+  <div class="relative">
+    <input 
+      type="text" 
+      name="q" 
+      value="{{ get:q }}"
+      class="!border !border-black !p-5 !text-xxs lg:!text-xs">
+    <button 
+      class="absolute top-1 right-1 px-7 bg-turquoise inline-block h-[calc(100%_-_2px)]" 
+      type="submit">
+      {{ partial:icons/magnifier class="w-20 h-auto" }}
+    </button>
+  </div>
+</form>

@@ -1,5 +1,5 @@
 h1 {
-  @apply font-medium text-lg md:text-xl lg:text-2xl 2xl:text-3xl leading-[1.2] xl:leading-[1.1] mb-25 xl:mb-45
+  @apply font-medium text-lg md:text-xl lg:text-2xl 2xl:text-3xl leading-[1.2] xl:leading-[1.1] mb-25 xl:mb-45 text-pretty
 }
 
 h2 {

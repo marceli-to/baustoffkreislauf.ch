@@ -28,7 +28,10 @@
         {{ /if }}
 
       </div>
-      {{ partial:menu/footer/wrapper class="col-span-full md:col-span-4 md:flex md:justify-end mt-20 md:mt-0" }}
+      <div class="col-span-full md:col-span-4 md:flex md:flex-col md:items-end">
+        {{ partial:search/quick }}
+        {{ partial:menu/footer/wrapper class="md:flex md:justify-end mt-20 md:mt-0" }}
+      </div>
     </div>
   {{ /partial:layout/inner }}
 </footer>

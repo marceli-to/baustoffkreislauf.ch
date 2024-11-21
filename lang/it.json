@@ -81,5 +81,12 @@
   "Programm": "Programma",
   "Teilnahmegebühr für Mitglieder:": "Costo partecipazione per i soci",
   "Teilnahmegebühr für Nicht-Mitglieder:": "Costo partecipazione per i non soci",
-  "Im Moment sind leider keine Publikationen vorhanden.": "Per ora non abbiamo pubblicazioni disponibili."
+  "Im Moment sind leider keine Publikationen vorhanden.": "Per ora non abbiamo pubblicazioni disponibili.",
+  "suche": "it/ricerca",
+  "Suchbegriff": "Parola chiave",
+  "Arbeitshilfen & Publikationen": "Ausili & Pubblicazioni",
+  "Berufe & Kurse": "Professioni e corsi",
+  "/dienstleistungen/publikationen": "/it/servizi/pubblicazioni-e-prodotti",
+  "/dienstleistungen/berufe-kurse": "/it/servizi/professioni-e-corsi",
+  "Gefunden in:": "Trovato in:"
 }

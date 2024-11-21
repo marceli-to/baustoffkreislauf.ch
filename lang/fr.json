@@ -83,5 +83,12 @@
   "Fachthemen": "Thèmes spécialisés",
   "Anzeigen": "Afficher",
   "Zurücksetzen": "Réinitialiser",
-  "Im Moment sind leider keine Publikationen vorhanden.": "Il n'y a actuellement aucune publication disponible."
+  "Im Moment sind leider keine Publikationen vorhanden.": "Il n'y a actuellement aucune publication disponible.",
+  "suche": "fr/rechercher",
+  "Suchbegriff": "Rechercher",
+  "Arbeitshilfen & Publikationen": "Outils de travail et publications",
+  "Berufe & Kurse": "Métiers et cours",
+  "/dienstleistungen/publikationen": "/fr/prestations/publications-et-produits",
+  "/dienstleistungen/berufe-kurse": "/fr/prestations/metiers-et-cours",
+  "Gefunden in:": "Trouvé dans:"
 }

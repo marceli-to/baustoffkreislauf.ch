@@ -2,4 +2,11 @@ tabs:
   main:
     display: Main
     sections:
-      - {  }
+      -
+        fields:
+          -
+            handle: is_special
+            field:
+              type: toggle
+              display: 'Spezial?'
+              localizable: false
