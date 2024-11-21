@@ -60,25 +60,52 @@ class UpdateIndex extends Command
                 foreach ($pageElements as $element) {
                     $this->info("Processing element type: " . ($element['type'] ?? 'unknown'));
 
-                    // Handle editor content
-                    if (isset($element['type']) && $element['type'] === 'editor' && isset($element['content'])) {
-                        foreach ($element['content'] as $content_block) {
-                            $this->processContentBlock($content_block, $content);
-                        }
-                    }
+                    switch ($element['type'] ?? '') {
+                        case 'editor':
+                            if (isset($element['content'])) {
+                                foreach ($element['content'] as $content_block) {
+                                    $this->processContentBlock($content_block, $content);
+                                }
+                            }
+                            break;
 
-                    // Handle team members
-                    if (isset($element['type']) && $element['type'] === 'team' && isset($element['team_members'])) {
-                        foreach ($element['team_members'] as $member) {
-                            $memberInfo = array_filter([
-                                $member['firstname'] ?? '',
-                                $member['name'] ?? '',
-                                $member['position'] ?? '',
-                                $member['email'] ?? ''
-                            ]);
-                            $content = array_merge($content, $memberInfo);
-                            $this->info("Added team member: " . implode(' ', $memberInfo));
-                        }
+                        case 'image_text_topic':
+                            if (isset($element['text'])) {
+                                foreach ($element['text'] as $content_block) {
+                                    $this->processContentBlock($content_block, $content);
+                                }
+                            }
+                            break;
+
+                        case 'quote':
+                            if (isset($element['quote'])) {
+                                $content[] = $element['quote'];
+                                $this->info("Added quote content");
+                            }
+                            break;
+
+                        case 'splash':
+                            if (isset($element['text'])) {
+                                foreach ($element['text'] as $content_block) {
+                                    $this->processContentBlock($content_block, $content);
+                                }
+                            }
+                            break;
+
+                        case 'team':
+                            if (isset($element['team_members'])) {
+                                foreach ($element['team_members'] as $member) {
+                                    $memberInfo = array_filter([
+                                        $member['firstname'] ?? '',
+                                        $member['name'] ?? '',
+                                        $member['position'] ?? '',
+                                        $member['email'] ?? ''
+                                    ]);
+                                    $content = array_merge($content, $memberInfo);
+                                    $this->info("Added team member: " . implode(' ', $memberInfo));
+                                }
+                            }
+                            break;
                     }
                 }
             }

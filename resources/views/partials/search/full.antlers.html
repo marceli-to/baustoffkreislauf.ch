@@ -49,6 +49,7 @@
         <div class="mb-10 md:mb-20 lg:mb-30">
           <a href="{{ "/dienstleistungen/berufe-kurse" | trans }}" class="block no-underline hover:text-turquoise transition-colors group">
             <h2 class="mb-5 text-md lg:text-lg">{{ title }}</h2>
+            <div class="text-xxs lg:!text-xs">{{ course_date iso_format="Do MMMM YYYY" }}, {{ location }}</div>
           </a>
           <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ "Berufe & Kurse" | trans }}"</div>
         </div>
