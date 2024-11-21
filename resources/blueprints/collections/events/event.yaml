@@ -409,4 +409,12 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+  search:
+    display: Suche
+    sections:
+      -
+        display: Suche
+        fields:
+          -
+            import: search_index
 title: Anlässe

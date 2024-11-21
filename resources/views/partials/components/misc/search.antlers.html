@@ -1,0 +1,48 @@
+<h1>{{ "Suche" | trans }}</h1>
+
+<form action="/suche" class="mb-50">
+  <input type="text" name="q" placeholder="Suchbegriff..." value="{{ get:q }}">
+  <div class="flex items-center gap-y-15 mt-20 md:mt-35">
+    <button type="submit" class="border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white hover:text-black py-15 px-20 lg:px-40 leading-none flex items-center transition-all">
+      {{ "Suchen" | trans }}
+    </button>
+  </div>
+</form>
+
+{{ if get:q }}
+  {{ keyword = get:q }}
+  {{ search:results index="default" }}
+    {{ if !no_results }}
+      <div class="mb-10 md:mb-20 lg:mb-30">
+        <a href="{{ url }}" class="block no-underline hover:underline underline-offset-4 mb-5 lg:mb-10">
+          <h2 class="mb-5 lg:mb-10 text-lg lg:text-xl">{{ title }}</h2>
+          <div class="text-xxs lg:!text-xs">{{ searchable_content | highlight:{keyword} }}</div>
+        </a>
+        <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ title }}"</div>
+      </div>
+    {{ /if }}
+  {{ /search:results }}
+
+  {{ search:results index="publications" }}
+    {{ if !no_results }}
+      <div class="mb-10 md:mb-20 lg:mb-30">
+        <a href="/dienstleistungen/publikationen?q={{ get:q }}" class="block no-underline hover:underline underline-offset-4 mb-5 lg:mb-10">
+          <h2 class="text-lg lg:text-xl !mb-0">{{ title }}</h2>
+        </a>
+        <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ "Arbeitshilfen & Publikationen" | trans }}"</div>
+      </div>
+    {{ /if }}
+  {{ /search:results }}
+
+  {{ search:results index="courses" }}
+    {{ if !no_results }}
+      <div class="mb-10 md:mb-20 lg:mb-30">
+        <a href="/dienstleistungen/berufe-kurse" class="no-underline hover:underline">
+          <h2 class="mb-5 lg:mb-10 text-lg lg:text-xl">{{ title }}</h2>
+        </a>
+        <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ "Berufe & Kurse" | trans }}"</div>
+      </div>
+    {{ /if }}
+  {{ /search:results }}
+
+{{ /if }}

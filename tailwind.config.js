@@ -17,6 +17,7 @@ export default {
       screens: {
         'xs': '414px',
         'huge': '1180px',
+        '2xl': '1380px',
       },
 
       maxWidth: {
@@ -38,6 +39,7 @@ export default {
         'lg': '1.625rem',    // 26px
         'xl': '2.25rem',     // 36px
         '2xl': '3.125rem',   // 50px
+        '3xl': '3.75rem',    // 60px
       },
 
       colors: {

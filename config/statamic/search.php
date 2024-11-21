@@ -25,23 +25,28 @@ return [
 
     'indexes' => [
 
-        'default' => [
-            'driver' => 'local',
-            'searchables' => 'all',
-            'fields' => ['title'],
+      'default' => [
+        'driver' => 'local',
+        'searchables' => ['collection:posts', 'collection:pages', 'collection:events'],
+        'fields' => [
+          'title',
+          'description',
+          'content',
+          'searchable_content',
         ],
+      ],
 
-        // 'blog' => [
-        //   'driver' => 'local',
-        //   'searchables' => 'collection:posts',
-        //   'fields' => ['title', 'content'],
-        // ],
+      'publications' => [
+        'driver' => 'local',
+        'searchables' => ['collection:publications'],
+        'fields' => ['title', 'description', 'copyright', 'date'],
+      ],
 
-        'publications' => [
-          'driver' => 'local',
-          'searchables' => ['collection:publications', 'taxonomy:category_publication'],
-          'fields' => ['title', 'description', 'copyright', 'date'],
-        ],
+      'courses' => [
+        'driver' => 'local',
+        'searchables' => ['collection:courses'],
+        'fields' => ['title', 'description', 'date'],
+      ],
 
     ],
 

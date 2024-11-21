@@ -106,3 +106,9 @@
 {{ if type == 'publications' }}
   {{ partial:publication/listing }}
 {{ /if }}
+
+{{ if type == 'search' }}
+  {{ partial:layout/content }}
+    {{ partial:components/misc/search }}
+  {{ /partial:layout/content }}
+{{ /if }}

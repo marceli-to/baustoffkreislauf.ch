@@ -7,36 +7,17 @@ tabs:
           -
             handle: location
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Ort
               localizable: true
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: date
             field:
-              mode: single
-              inline: false
-              full_width: false
-              columns: 1
-              rows: 1
-              time_enabled: false
-              time_seconds_enabled: false
               type: date
               display: Datum
               localizable: false
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: title
             field:
@@ -48,15 +29,9 @@ tabs:
           -
             handle: lead
             field:
-              antlers: false
               type: textarea
               display: Lead
               localizable: true
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: content
             field:
@@ -68,25 +43,15 @@ tabs:
                 - orderedlist
                 - removeformat
                 - anchor
-              smart_typography: false
-              save_html: false
-              inline: false
-              toolbar_mode: fixed
-              reading_time: false
-              word_count: false
-              fullscreen: true
-              allow_source: true
-              enable_input_rules: true
-              enable_paste_rules: true
               remove_empty_nodes: false
-              antlers: false
-              link_noopener: false
-              link_noreferrer: false
-              target_blank: false
+              collapse: true
+              type: bard
+              display: Inhalt
+              localizable: true
+              container: assets
               sets:
                 content_elements:
                   display: Hauptelemente
-                  instructions: null
                   icon: addon-boxes-stack
                   sets:
                     image:
@@ -117,36 +82,12 @@ tabs:
                       fields:
                         -
                           import: video
-              always_show_set_button: false
-              collapse: true
-              previews: true
-              type: bard
-              display: Inhalt
-              localizable: true
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
-              container: assets
           -
             handle: published_at
             field:
-              mode: single
-              inline: false
-              full_width: false
-              columns: 1
-              rows: 1
-              time_enabled: false
-              time_seconds_enabled: false
               type: date
               display: 'Publiziert am'
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               validate:
                 - required
   teaser:
@@ -158,47 +99,24 @@ tabs:
             handle: preview_image
             field:
               max_files: 1
-              mode: list
               container: assets
-              restrict: false
-              allow_uploads: true
-              show_filename: true
-              show_set_alt: true
               type: assets
               display: Bild
               localizable: false
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
           -
             handle: preview_title
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Titel
               localizable: true
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               validate:
                 - required
           -
             handle: preview_text
             field:
-              antlers: false
               type: textarea
               display: Text
               localizable: true
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
   sidebar:
     display: Sidebar
     sections:
@@ -213,13 +131,7 @@ tabs:
               display: Kategorie
               mode: select
               localizable: false
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
               max_items: 1
-              create: true
-              hide_display: false
           -
             handle: tags
             field:
@@ -235,14 +147,7 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              from: title
-              generate: true
               show_regenerate: true
-              hide_display: false
   seo:
     display: SEO
     sections:
@@ -251,4 +156,12 @@ tabs:
         fields:
           -
             import: seo
+  settings:
+    display: Einstellungen
+    sections:
+      -
+        display: Einstellungen
+        fields:
+          -
+            import: search_index
 title: Beiträge

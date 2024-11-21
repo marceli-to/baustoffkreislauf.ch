@@ -143,6 +143,13 @@ tabs:
                       fields:
                         -
                           import: publications
+                    search:
+                      display: Suche
+                      instructions: 'Suche hinzufügen'
+                      icon: search-magnifying-glass
+                      fields:
+                        -
+                          import: search
   media:
     display: Medien
     sections:
@@ -174,6 +181,8 @@ tabs:
         fields:
           -
             import: settings
+          -
+            import: search_index
   sidebar:
     display: Sidebar
     sections:

@@ -1,0 +1,9 @@
+title: Suchindex
+fields:
+  -
+    handle: searchable_content
+    field:
+      type: markdown
+      display: Inhalt
+      localizable: false
+      visibility: read_only
