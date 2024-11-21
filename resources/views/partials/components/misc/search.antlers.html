@@ -14,7 +14,7 @@
   {{ search:results index="default" }}
     {{ if !no_results }}
       <div class="mb-10 md:mb-20 lg:mb-30">
-        <a href="{{ url }}" class="block no-underline hover:text-turquoise transition-colors mb-5 lg:mb-10 group">
+        <a href="{{ url }}" class="block no-underline hover:text-turquoise transition-colors mb-5 group">
           <h2 class="mb-5 text-lg lg:text-xl">{{ title }}</h2>
           <div class="text-xxs lg:!text-xs">{{ searchable_content | highlight:{keyword} }}</div>
         </a>
@@ -26,7 +26,7 @@
   {{ search:results index="publications" }}
     {{ if !no_results }}
       <div class="mb-10 md:mb-20 lg:mb-30">
-        <a href="/dienstleistungen/publikationen?q={{ get:q }}" class="block no-underline hover:text-turquoise transition-colors mb-5 lg:mb-10 group">
+        <a href="/dienstleistungen/publikationen?q={{ get:q }}" class="block no-underline hover:text-turquoise transition-colors mb-5 group">
           <h2 class="text-lg lg:text-xl !mb-0">{{ title }}</h2>
         </a>
         <div class="text-xxs text-neutral-400 italic">{{ "Gefunden in:" | trans }} "{{ "Arbeitshilfen & Publikationen" | trans }}"</div>
