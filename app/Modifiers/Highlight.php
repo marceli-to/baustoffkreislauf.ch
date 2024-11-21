@@ -43,7 +43,7 @@ class Highlight extends Modifier
             
             return $startEllipsis . 
                    $prefix . 
-                   '<mark class="bg-yellow-100">' . $matches[2] . '</mark>' . 
+                   '<mark class="bg-turquoise group-hover:!bg-black group-hover:text-white">' . $matches[2] . '</mark>' . 
                    $suffix .
                    $endEllipsis;
         }
