@@ -57,6 +57,10 @@
         </div>
       {{ /if }}
 
+      {{ if type == 'button_panel' }}
+        {{ partial:components/misc/button_panel }}
+      {{ /if }}
+
       {{ if type == 'newsletter_form' }}
         {{ partial:forms/newsletter }}
       {{ /if }}

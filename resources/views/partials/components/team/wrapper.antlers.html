@@ -9,14 +9,14 @@
         <div class="col-span-6 sm:col-span-4 lg:col-span-3">
           {{ if email }}
             <a href="mailto:{{ email }}" 
-              class="!no-underline group" 
+              class="underline underline-offset-4 decoration-1 hover:no-underline group" 
               title="E-Mail {{ firstname }} {{ name }}">
               {{ partial:components/media/image/portrait }}
-              <h3 class="text-xs lg:text-base mt-10 xl:mt-15 group-hover:text-turquoise transition-colors text-center">
+              <h3 class="text-xs lg:text-base mt-10 xl:mt-15 text-center">
                 {{ firstname }} {{ name }}
               </h3>
               {{ if position || company }}
-                <div class="text-xxs xl:text-xs text-center w-full block group-hover:text-turquoise transition-colors">
+                <div class="text-xxs xl:text-xs text-center w-full block">
                   {{ if position }}
                     <div>{{ position }}</div>
                   {{ /if }}

@@ -56,6 +56,29 @@ fields:
               fields:
                 -
                   import: newsletter_form
+            button_panel:
+              display: 'Button (Kachel)'
+              instructions: 'Button hinzufügen'
+              icon: link
+              fields:
+                -
+                  handle: link_url
+                  field:
+                    collections:
+                      - pages
+                      - events
+                      - courses
+                      - publications
+                    container: assets
+                    type: link
+                    display: Link
+                    localizable: true
+                -
+                  handle: link_text
+                  field:
+                    type: text
+                    display: Text
+                    localizable: true
   -
     handle: has_indent
     field:
