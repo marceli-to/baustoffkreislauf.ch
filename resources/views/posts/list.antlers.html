@@ -4,7 +4,7 @@
       <p class="sm:col-span-6">{{ "Im Moment sind leider keine Beiträge vorhanden." | trans }}</p>
     {{ else }}
       {{ posts }}
-        {{ partial:partials/components/teasers/post }}
+        {{ partial:posts/teaser }}
       {{ /posts }}
     {{ /if }}
   {{ /collection }}

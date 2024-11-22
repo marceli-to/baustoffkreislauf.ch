@@ -37,7 +37,7 @@
 
 {{ if type == 'list_posts' }}
   {{ partial:layout/content }}
-    {{ partial:components/post/list }}
+    {{ partial:posts/list }}
   {{ /partial:layout/content }}
 {{ /if }}
 
@@ -94,12 +94,12 @@
 {{ /if }}
 
 {{ if type == 'teaser_courses' }}
-  {{ partial:course/teaser }}
+  {{ partial:course/list }}
 {{ /if }}
 
 {{ if type == 'course_form' }}
   {{ partial:layout/content }}
-    {{ partial:course/form }}
+    {{ partial:course/show }}
   {{ /partial:layout/content }}
 {{ /if }}
 
