@@ -12,7 +12,7 @@
         "php": "^8.2",
         "doefom/statamic-export": "^0.4.0",
         "guzzlehttp/guzzle": "^7.2",
-        "jacksleight/statamic-bard-texstyle": "^3.1",
+        "jacksleight/statamic-bard-texstyle": "^3.3",
         "laravel/framework": "^10.8",
         "laravel/pail": "^1.1",
         "laravel/sanctum": "^3.2",
