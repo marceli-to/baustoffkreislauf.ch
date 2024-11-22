@@ -1,4 +1,5 @@
-{{ partial:layout/content }}
+{{ partial:layout/content sectionClass="!col-span-full" }}
+  {{ partial:components/misc/button_back}}
   <h1 class="mb-5 lg:mb-10">{{ title }}</h1>
   <span>{{ event_date iso_format="Do MMMM YYYY" }}</span>
   {{ if has_form }}

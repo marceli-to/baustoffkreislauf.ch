@@ -13,12 +13,8 @@ class CourseController extends Controller
   public function get($courseId, $locale = 'de')
   {
     $course = Entry::find($courseId, $locale);
-    $date = \Carbon\Carbon::parse($course->course_date)->locale($locale);
-    $registrationDeadline = \Carbon\Carbon::parse($course->registration_deadline)->locale($locale);
     return response()->json([
       'title' => $course->title,
-      'date' => $date->translatedFormat('d. F Y'),
-      'registration_deadline' => $registrationDeadline->translatedFormat('d. F Y'),
       'has_salutation' => $course->has_salutation,
       'requires_salutation' => $course->requires_salutation,
       'has_name' => $course->has_name,

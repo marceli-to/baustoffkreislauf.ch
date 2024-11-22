@@ -5,6 +5,7 @@
     </div>
   {{ /partial:layout/content }}
 {{ /if }}
+
 {{ partial:layout/content-fullscreen badge="Lehrgänge & Kurse" badgeClass="!hidden md:!flex" }}
   <div class="grid grid-cols-12 gap-x-15 gap-y-25 md:ml-30 lg:ml-10 xl:ml-0" x-data="{ active: null }">
     {{ collection locale="de" from="courses" sort="course_date:asc" }}
@@ -88,7 +89,7 @@
               </div>
               <div class="mt-10">
                 <a 
-                  href="{{ link id="907b4b8c-bce1-4a54-bd05-9bc92e8dc78f" }}?id={{ id }}"
+                  href="{{ url }}"
                   class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
                   {{ 'Anmelden' | trans }}
                 </a>

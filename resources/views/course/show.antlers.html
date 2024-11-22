@@ -1,9 +1,18 @@
-<a 
-  href="javascript:history.back()" 
-  class="inline-flex items-center gap-5 text-xs lg:text-base no-underline hover:underline underline-offset-4 mb-10 lg:mb-20">
-  {{ partial:icons/arrow-left class="block w-12 h-auto hover:text-lime transition-colors" }}
-  {{ "Zurück zur Übersicht" | trans }}
-</a>
-<div id="course-form">
-  <course-registration></course-registration>  
-</div>
+{{ partial:layout/content sectionClass="!col-span-full" }}
+  {{ partial:components/misc/button_back}}
+  <h1 class="mb-5 lg:mb-10">{{ title }}</h1>
+  <span>{{ course_date iso_format="Do MMMM YYYY" }}</span>
+  {{ if has_form }}
+    <div id="course-form" class="mt-25 lg:mt-50">
+      {{ if registration_deadline | modify_date("+1 day") | is_future }}
+        <h2>{{ "Anmeldung" | trans }}</h2>
+        <p>
+          {{ "Anmeldung ist möglich bis" | trans }} <strong>{{ registration_deadline iso_format="Do MMMM YYYY" }}</strong>
+        </p>
+        <course-registration :course-id="'{{ id }}'"></course-registration>
+      {{ else }}
+        <p>{{ "Anmeldung ist nicht mehr möglich..." | trans }}</p>
+      {{ endif }}
+    </div>
+  {{ endif }}
+{{ /partial:layout/content }}

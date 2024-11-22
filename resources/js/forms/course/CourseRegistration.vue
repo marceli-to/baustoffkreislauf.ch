@@ -1,125 +1,119 @@
 <template>
   <template v-if="isLoaded">
-    <h1 class="mb-5 lg:mb-10">{{ title }}</h1>
-    <span>{{ date }}</span>
-    <div class="mt-25 lg:mt-50">
-      <h2>{{ __('Anmeldung') }}</h2>
-      <p>{{ __('Anmeldung ist möglich bis') }} <strong>{{ registrationDeadline }}</strong></p>
-      <template v-if="formSuccess">
-        <success-alert>
-          {{ __('Vielen Dank für Ihre Anmeldung!') }}
-        </success-alert>
-      </template>
-      <template v-if="formError">
-        <error-alert>
-          {{ __('Bitte überprüfen Sie die eingegebenen Daten.') }}
-        </error-alert>
-      </template>
+    <template v-if="formSuccess">
+      <success-alert>
+        {{ __('Vielen Dank für Ihre Anmeldung!') }}
+      </success-alert>
+    </template>
+    <template v-if="formError">
+      <error-alert>
+        {{ __('Bitte überprüfen Sie die eingegebenen Daten.') }}
+      </error-alert>
+    </template>
 
-      <form @submit.prevent="submitForm" class="space-y-15 lg:space-y-30 max-w-2xl">
-        <form-group v-if="hasSalutation">
-          <form-label id="salutation" :label="__('Anrede')" :required="requiresSalutation" />
-          <form-select-field 
-            v-model="form.salutation" 
-            :error="__(errors.salutation)"
-            @update:error="errors.salutation = $event"
-            :options="salutations"
-          />
-        </form-group>
-        <form-group v-if="hasCompany">
-          <form-label id="company" :label="__('Firma')" :required="requiresCompany" />
-          <form-text-field 
-            v-model="form.company" 
-            :error="__(errors.company)"
-            @update:error="errors.company = $event"
-          />
-        </form-group>
-        <form-group v-if="hasFirstname">
-          <form-label id="firstname" :label="__('Vorname')" :required="requiresFirstname" />
-          <form-text-field 
-            v-model="form.firstname" 
-            :error="__(errors.firstname)"
-            @update:error="errors.firstname = $event"
-          />
-        </form-group>
-        <form-group v-if="hasName">
-          <form-label id="name" :label="__('Name')" :required="requiresName" />
-          <form-text-field 
-            v-model="form.name" 
-            :error="__(errors.name)"
-            @update:error="errors.name = $event"
-          />
-        </form-group>
-        <form-group v-if="hasEmail">
-          <form-label id="email" :label="__('E-Mail')" :required="requiresEmail" />
-          <form-text-field 
-            type="email"
-            v-model="form.email" 
-            :error="__(errors.email)"
-            @update:error="errors.email = $event"
-          />
-        </form-group>
-        <form-group v-if="hasPhone">
-          <form-label id="phone" :label="__('Telefon')" :required="requiresPhone" />
-          <form-text-field 
-            v-model="form.phone" 
-            :error="__(errors.phone)"
-            @update:error="errors.phone = $event"
-          />
-        </form-group>
-        <form-group v-if="hasAddress">
-          <form-label id="address" :label="__('Strasse, Nr.')" :required="requiresAddress" />
-          <form-text-field 
-            v-model="form.address" 
-            :error="__(errors.address)"
-            @update:error="errors.address = $event"
-          />
-        </form-group>
-        <form-group v-if="hasLocation">
-          <form-label id="location" :label="__('PLZ/Ort')" :required="requiresLocation" />
-          <form-text-field 
-            v-model="form.location" 
-            :error="__(errors.location)"
-            @update:error="errors.location = $event"
-          />
-        </form-group>
-        <form-group v-if="hasCostCenter">
-          <form-label id="cost_center" :label="__('Kostenstelle')" :required="requiresCostCenter" />
-          <form-textarea-field 
-            v-model="form.cost_center" 
-            :error="__(errors.cost_center)"
-            @update:error="errors.cost_center = $event"
-          />
-        </form-group>
+    <form @submit.prevent="submitForm" class="space-y-15 lg:space-y-30 max-w-2xl">
+      <form-group v-if="hasSalutation">
+        <form-label id="salutation" :label="__('Anrede')" :required="requiresSalutation" />
+        <form-select-field 
+          v-model="form.salutation" 
+          :error="__(errors.salutation)"
+          @update:error="errors.salutation = $event"
+          :options="salutations"
+        />
+      </form-group>
+      <form-group v-if="hasCompany">
+        <form-label id="company" :label="__('Firma')" :required="requiresCompany" />
+        <form-text-field 
+          v-model="form.company" 
+          :error="__(errors.company)"
+          @update:error="errors.company = $event"
+        />
+      </form-group>
+      <form-group v-if="hasFirstname">
+        <form-label id="firstname" :label="__('Vorname')" :required="requiresFirstname" />
+        <form-text-field 
+          v-model="form.firstname" 
+          :error="__(errors.firstname)"
+          @update:error="errors.firstname = $event"
+        />
+      </form-group>
+      <form-group v-if="hasName">
+        <form-label id="name" :label="__('Name')" :required="requiresName" />
+        <form-text-field 
+          v-model="form.name" 
+          :error="__(errors.name)"
+          @update:error="errors.name = $event"
+        />
+      </form-group>
+      <form-group v-if="hasEmail">
+        <form-label id="email" :label="__('E-Mail')" :required="requiresEmail" />
+        <form-text-field 
+          type="email"
+          v-model="form.email" 
+          :error="__(errors.email)"
+          @update:error="errors.email = $event"
+        />
+      </form-group>
+      <form-group v-if="hasPhone">
+        <form-label id="phone" :label="__('Telefon')" :required="requiresPhone" />
+        <form-text-field 
+          v-model="form.phone" 
+          :error="__(errors.phone)"
+          @update:error="errors.phone = $event"
+        />
+      </form-group>
+      <form-group v-if="hasAddress">
+        <form-label id="address" :label="__('Strasse, Nr.')" :required="requiresAddress" />
+        <form-text-field 
+          v-model="form.address" 
+          :error="__(errors.address)"
+          @update:error="errors.address = $event"
+        />
+      </form-group>
+      <form-group v-if="hasLocation">
+        <form-label id="location" :label="__('PLZ/Ort')" :required="requiresLocation" />
+        <form-text-field 
+          v-model="form.location" 
+          :error="__(errors.location)"
+          @update:error="errors.location = $event"
+        />
+      </form-group>
+      <form-group v-if="hasCostCenter">
+        <form-label id="cost_center" :label="__('Kostenstelle')" :required="requiresCostCenter" />
+        <form-textarea-field 
+          v-model="form.cost_center" 
+          :error="__(errors.cost_center)"
+          @update:error="errors.cost_center = $event"
+        />
+      </form-group>
 
-        <form-group v-if="hasRemarks">
-          <form-label id="remarks" :label="__('Bemerkungen')" />
-          <form-textarea-field 
-            v-model="form.remarks" 
-            :error="__(errors.remarks)"
-            @update:error="errors.remarks = $event"
-          />
-        </form-group>
-        
-        <form-group>
-          <form-toc 
-            id="toc" 
-            label="Datenschutzerklärung" 
-            v-model="form.toc"
-            :error="errors.toc" 
-            @update:error="errors.toc = $event"
-          />
-        </form-group>
-        <form-group classes="!mt-30 lg:!mt-60 mx-auto flex justify-center">
-          <form-button 
-            type="submit" 
-            :label="__('Anmelden')"
-            :disabled="isSubmitting"
-            :submitting="isSubmitting"
-          />
-        </form-group>
-      </form>
-    </div>
+      <form-group v-if="hasRemarks">
+        <form-label id="remarks" :label="__('Bemerkungen')" />
+        <form-textarea-field 
+          v-model="form.remarks" 
+          :error="__(errors.remarks)"
+          @update:error="errors.remarks = $event"
+        />
+      </form-group>
+      
+      <form-group>
+        <form-toc 
+          id="toc" 
+          label="Datenschutzerklärung" 
+          v-model="form.toc"
+          :error="errors.toc" 
+          @update:error="errors.toc = $event"
+        />
+      </form-group>
+      <form-group classes="!mt-30 lg:!mt-60 mx-auto flex justify-center">
+        <form-button 
+          type="submit" 
+          :label="__('Anmelden')"
+          :disabled="isSubmitting"
+          :submitting="isSubmitting"
+        />
+      </form-group>
+    </form>
   </template>
 </template>
 <script setup>
@@ -139,6 +133,13 @@ import AdditionalIndividual from '@/forms/components/AdditionalIndividual.vue';
 import SuccessAlert from '@/forms/components/alerts/success.vue';
 import ErrorAlert from '@/forms/components/alerts/error.vue';
 
+const props = defineProps({
+  courseId: {
+    type: String,
+    required: true,
+  },
+});
+
 const { __ } = useI18n();
 
 const isLoaded = ref(false);
@@ -146,8 +147,6 @@ const isSubmitting = ref(false);
 const formSuccess = ref(false);
 const formError = ref(false);
 const title = ref('');
-const date = ref('');
-const registrationDeadline = ref('');
 const hasSalutation = ref(false);
 const requiresSalutation = ref(false);
 const hasName = ref(false);
@@ -177,7 +176,7 @@ const salutations = ref([
 ]);
 
 const form = ref({
-  course_id: null,
+  course_id: props.courseId,
   salutation: null,
   name: null,
   firstname: null,
@@ -204,13 +203,10 @@ const errors = ref({
 
 onMounted(async () => {
   try {
-    const id = new URLSearchParams(window.location.search).get('id');
-    const response = await axios.get(`/api/course/${id}/${locale.value}`);
+    const response = await axios.get(`/api/course/${props.courseId}/${locale.value}`);
     isLoaded.value = true;
+    console.log(response);
     title.value = response.data.title;
-    date.value = response.data.date;
-    form.value.course_id = id;
-    registrationDeadline.value = response.data.registration_deadline;
     hasSalutation.value = response.data.has_salutation;
     requiresSalutation.value = response.data.requires_salutation;
     hasName.value = response.data.has_name;
@@ -257,7 +253,7 @@ async function submitForm() {
 
 function handleSuccess() {
   form.value = {
-    course_id: new URLSearchParams(window.location.search).get('id'),
+    course_id: props.courseId,
     salutation: null,
     name: null,
     firstname: null,
