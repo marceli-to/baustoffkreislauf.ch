@@ -205,7 +205,6 @@ onMounted(async () => {
   try {
     const response = await axios.get(`/api/course/${props.courseId}/${locale.value}`);
     isLoaded.value = true;
-    console.log(response);
     title.value = response.data.title;
     hasSalutation.value = response.data.has_salutation;
     requiresSalutation.value = response.data.requires_salutation;
