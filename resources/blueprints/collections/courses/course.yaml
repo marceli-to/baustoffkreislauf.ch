@@ -82,6 +82,26 @@ tabs:
               localizable: false
               width: 50
               instructions_position: below
+          -
+            handle: panel_theme
+            field:
+              options:
+                -
+                  key: bg-lime
+                  value: Hellgrün
+                -
+                  key: bg-turquoise
+                  value: Blaugrün
+                -
+                  key: bg-sand
+                  value: Braun
+                -
+                  key: bg-white
+                  value: Weiss
+              default: bg-white
+              type: select
+              display: 'Kachelfarbe (Vorschau)'
+              localizable: false
   images:
     display: Bilder
     sections:
