@@ -8,3 +8,30 @@ fields:
       type: entries
       display: Thema
       localizable: false
+  -
+    handle: topic_preview
+    field:
+      type: replicator
+      display: 'Themen (Vorschau)'
+      localizable: false
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            topic_description:
+              display: Kurzbeschreibung
+              instructions: 'Kurzbeschreibung hinzufügen'
+              icon: text-formatting-initial-letter
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Titel
+                    localizable: true
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Beschreibung
+                    localizable: true

@@ -23,6 +23,7 @@
         "symfony/yaml": "^6.4"
     },
     "require-dev": {
+        "aaronfrancis/solo": "^0.2.1",
         "barryvdh/laravel-debugbar": "^3.8.1",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",

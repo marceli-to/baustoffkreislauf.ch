@@ -1,13 +1,26 @@
 {{ partial:layout/content-fullscreen badge="Fachthemen" badgeClass="!hidden md:!flex" }}
   <div class="grid grid-cols-12 gap-x-15 gap-y-25 md:ml-30 xl:ml-0">
-    {{ topic }}
-      <a 
-        href="{{ url }}"
-        class="col-span-12 md:col-span-6 border-t border-black bg-white p-15 lg:p-20 lg:pt-15 text-base lg:text-lg leading-[1.25] hyphens-auto no-underline hover:bg-lime transition-all"
-        title="{{ title }}">
-        {{ title }}
-      </a>
-    {{ /topic }}
+    {{# this will be used at a later time. currently we just show a title and a description
+      {{ topic }}
+        <a 
+          href="{{ url }}"
+          class="col-span-12 md:col-span-6 border-t border-black bg-white p-15 lg:p-20 lg:pt-15 text-base lg:text-lg leading-[1.25] hyphens-auto no-underline hover:bg-lime transition-all"
+          title="{{ title }}">
+          {{ title }}
+        </a>
+      {{ /topic }}
+    #}}
+    {{ topic_preview }}
+      <div class="col-span-12 md:col-span-6 border-t border-black bg-white p-15 lg:p-20 lg:pt-15 hyphens-auto">
+        <h3 class="text-base lg:text-lg leading-[1.25] hyphens-auto mb-5 lg:mb-10">
+          {{ title }}
+        </h3>
+        {{ if description }}
+          <p>{{ description }}</p>
+        {{ /if }}
+      </div>
+   {{ /topic_preview }}
+
   </div>
 {{ /partial:layout/content-fullscreen }}
 
