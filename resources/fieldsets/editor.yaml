@@ -79,6 +79,20 @@ fields:
                     type: text
                     display: Text
                     localizable: true
+                -
+                  handle: target
+                  field:
+                    options:
+                      -
+                        key: _blank
+                        value: 'Neuer Tab'
+                      -
+                        key: _self
+                        value: 'Gleicher Tab'
+                    default: _self
+                    type: select
+                    display: 'Öffnen in'
+                    localizable: false
   -
     handle: has_indent
     field:

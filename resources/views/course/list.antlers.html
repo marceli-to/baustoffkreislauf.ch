@@ -25,8 +25,8 @@
             </span>
           </div>
           <div 
-            class="{{ panel_theme ? panel_theme : 'bg-white' }} leading-[1.45] mt-10 p-15 lg:p-20 lg:pt-15 group-hover:bg-turquoise transition-all"
-            :class="{ '!{{ panel_theme != 'bg-white' ? panel_theme : 'bg-turquoise' }}': active === '{{ id }}' }">
+            class="{{ panel_theme ? panel_theme : 'bg-white' }} leading-[1.45] mt-10 p-15 lg:p-20 lg:pt-15 group-hover:bg-black/10 transition-all"
+            :class="{ '{{ panel_theme != 'bg-white' ? '!{{ panel_theme }} group-hover:!{{ panel_theme }}' : '!bg-white !text-black group-hover:!bg-white group-hover:!text-black' }}': active === '{{ id }}' }">
 
             {{ if images }}
               <div class="hidden" :class="{ '!grid grid-cols-12 gap-x-10 lg:gap-x-15 mb-10 lg:mb-15': active === '{{ id }}' }">
