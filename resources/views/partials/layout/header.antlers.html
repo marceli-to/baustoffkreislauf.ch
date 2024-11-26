@@ -1,5 +1,5 @@
-<header class="bg-white sticky md:relative top-0 z-20 w-full h-100 md:h-auto md:pt-20 md:pb-10">
-  {{ partial:layout/inner class="relative h-100 flex justify-between items-center md:hidden" }}
+<header class="bg-white sticky lg:relative top-0 z-20 w-full h-100 lg:h-auto lg:pt-20 lg:pb-10">
+  {{ partial:layout/inner class="relative h-100 flex justify-between items-center lg:hidden" }}
     <a 
       href="{{ site:url }}" 
       title="Home"
@@ -23,17 +23,16 @@
     {{ partial:menu/wrapper }}
   {{ /partial:layout/inner }}
 
-  {{ partial:layout/inner class="relative hidden md:grid md:grid-cols-12 md:gap-16 huge:pr-0" }}
+  {{ partial:layout/inner class="relative hidden lg:grid lg:grid-cols-12 lg:gap-16 huge:pr-0" }}
     <div class="col-span-10">
       <a 
         href="{{ site:url }}" 
         title="Home"
-        class="group block md:mt-20 xl:mt-20 2xl:-translate-x-109">
+        class="group block lg:mt-20 xl:mt-20 2xl:-translate-x-109">
         {{ partial:icons/logo class="block w-auto h-60 xl:h-80" }}
       </a>
-      <div class="flex flex-col md:flex-row md:justify-between">
+      <div class="flex flex-col lg:flex-row lg:justify-between">
         {{ partial:menu/main/wrapper class="mt-30 xl:mt-40" }}
-        {{# {{ partial:menu/main/special class="mt-30 xl:mt-40" }} #}}
       </div>
     </div>
     <div class="col-span-2 flex flex-col gap-y-20 justify-between items-end">
