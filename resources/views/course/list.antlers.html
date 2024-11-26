@@ -52,7 +52,11 @@
               {{ title }}
             </h2>
 
-            {{ 'Datum:' | trans }} {{ course_date iso_format="Do MMMM YYYY" }}
+            {{ if !periode }}
+              {{ 'Datum:' | trans }} {{ course_date iso_format="Do MMMM YYYY" }}
+            {{ else }}
+              {{ 'Datum:' | trans }} {{ periode }}
+            {{ /if }}
 
             {{ if google_maps_url && location }}
               <br>{{ 'Ort:' | trans }} <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a>

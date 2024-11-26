@@ -1,7 +1,12 @@
 {{ partial:layout/content sectionClass="!col-span-full" }}
   {{ partial:components/misc/button_back}}
   <h1 class="mb-5 lg:mb-10">{{ title }}</h1>
+  {{ if !periode }}
   <span>{{ course_date iso_format="Do MMMM YYYY" }}</span>
+  {{ else }}
+    <span>{{ periode }}</span>
+  {{ /if }}
+
   {{ if has_form }}
     <div id="course-form" class="mt-25 lg:mt-50">
       {{ if registration_deadline | modify_date("+1 day") | is_future }}

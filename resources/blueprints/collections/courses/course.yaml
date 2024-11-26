@@ -19,6 +19,14 @@ tabs:
               type: date
               display: Datum
               localizable: false
+              instructions: 'Bei mehrtägigen Kursen, jeweils den 1. Kurstag angeben.'
+          -
+            handle: periode
+            field:
+              type: text
+              display: 'Daten (mehrtägige Kurse)'
+              instructions: 'Bei mehrtägigen Kursen kann der Zeitraum (z.B. 11.-13.01.2025) angegeben werden.'
+              localizable: false
           -
             handle: location
             field:
