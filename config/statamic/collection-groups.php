@@ -17,6 +17,6 @@
 return [
   'Anmeldungen' => [
     'Anlässe' => 'event_registrations',
-    'Kurse' => 'course_registrations',
+    //'Kurse' => 'course_registrations',
   ],
 ];
