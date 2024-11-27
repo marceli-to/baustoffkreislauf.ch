@@ -1,7 +1,7 @@
 {{ partial:layout/content }}
   <h1>{{ title }}</h1>
 {{ /partial:layout/content }}
-{{ partial:layout/content-fullscreen badge="Anlässe" badgeClass="!hidden md:!flex" }}
+{{ partial:layout/content-fullscreen badge="{{ 'Anlässe' | trans}}" badgeClass="!hidden md:!flex" }}
   <div class="grid grid-cols-12 gap-x-15 gap-y-25 md:ml-30 lg:ml-10 xl:ml-0" x-data="{ active: null }">
     {{ collection from="events" as="events" sort="event_date:asc" }}
       {{ if events }}
