@@ -24,6 +24,10 @@ export default {
         '8xl': '1370px',
       },
 
+      backgroundImage: {
+        'pattern': "url('../img/pattern.svg')",
+      },
+
       fontFamily: {
         'acumin': ['acumin-pro', ...defaultTheme.fontFamily.sans],
         'geller': ['geller-text', ...defaultTheme.fontFamily.sans],
