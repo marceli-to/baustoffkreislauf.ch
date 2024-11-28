@@ -25,7 +25,7 @@ export default {
       },
 
       backgroundImage: {
-        'pattern': "url('../img/pattern.svg')",
+        'pattern': "url('/img/pattern.svg')",
       },
 
       fontFamily: {
