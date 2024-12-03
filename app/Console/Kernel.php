@@ -10,7 +10,10 @@ class Kernel extends ConsoleKernel
    */
   protected function schedule(Schedule $schedule): void
   {
-    $schedule->command('update:index')->hourly();
+    if (app()->environment('production'))
+    {
+      $schedule->command('update:index')->hourly();
+    }
   }
 
   /**
