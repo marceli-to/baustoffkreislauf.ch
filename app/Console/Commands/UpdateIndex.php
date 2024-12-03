@@ -30,6 +30,12 @@ class UpdateIndex extends Command
         $this->call('statamic:search:update', ['--all' => true]);
 
         $this->info('Index update completed!');
+
+        // Send an email notification to m@marceli.to
+        \Mail::raw('Search index update completed.', function($message) {
+          $message->subject('BKS Update Search Index');
+          $message->to('m@marceli.to');
+        });
     }
 
     private function updateEntries($entries, $type)
