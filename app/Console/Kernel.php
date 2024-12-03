@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
   {
     if (app()->environment('production'))
     {
-      $schedule->command('update:index')->hourly();
+      $schedule->command('update:index')->everyFifteenMinutes();
     }
   }
 
