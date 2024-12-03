@@ -57,10 +57,10 @@
     </div>
     <br>
   @endif
-  @if ($data['location'])
+  @if ($data['zip'] && $data['city'])
     <div class="text-base">
       <strong>{{ __('PLZ/Ort', [], $data['locale']) }}</strong><br>
-      {{ $data['location'] }}
+      {{ $data['zip'] }} {{ $data['city'] }}
     </div>
     <br>
   @endif

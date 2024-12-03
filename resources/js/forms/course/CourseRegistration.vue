@@ -70,11 +70,27 @@
           @update:error="errors.address = $event"
         />
       </form-group>
-      <form-group v-if="hasLocation">
+      <!-- <form-group v-if="hasLocation">
         <form-label id="location" :label="__('PLZ/Ort')" :required="requiresLocation" />
         <form-text-field 
           v-model="form.location" 
           :error="__(errors.location)"
+          @update:error="errors.location = $event"
+        />
+      </form-group> -->
+      <form-group v-if="hasLocation">
+        <form-label id="zip" :label="__('PLZ')" :required="requiresLocation" />
+        <form-text-field 
+          v-model="form.zip" 
+          :error="__(errors.zip)"
+          @update:error="errors.location = $event"
+        />
+      </form-group>
+      <form-group v-if="hasLocation">
+        <form-label id="city" :label="__('Ort')" :required="requiresLocation" />
+        <form-text-field 
+          v-model="form.city" 
+          :error="__(errors.city)"
           @update:error="errors.location = $event"
         />
       </form-group>
@@ -184,6 +200,8 @@ const form = ref({
   phone: null,
   company: null,
   location: null,
+  zip: null,
+  city: null,
   address: null,
   remarks: null,
   cost_center: null,
@@ -260,6 +278,8 @@ function handleSuccess() {
     phone: null,
     company: null,
     location: null,
+    zip: null,
+    city: null,
     address: null,
   };
 

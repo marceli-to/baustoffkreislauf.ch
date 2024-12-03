@@ -67,6 +67,18 @@ tabs:
               display: 'PLZ / Ort'
               localizable: false
           -
+            handle: zip
+            field:
+              type: text
+              display: Postleitzahl
+              localizable: false
+          -
+            handle: city
+            field:
+              type: text
+              display: Ort
+              localizable: false
+          -
             handle: cost_center
             field:
               type: textarea

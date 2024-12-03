@@ -70,7 +70,9 @@ class EventController extends Controller
       'email' => $request->input('email'),
       'phone' => $request->input('phone'),
       'company' => $request->input('company'),
-      'location' => $request->input('location'),
+      // 'location' => $request->input('location'),
+      'zip' => $request->input('zip'),
+      'city' => $request->input('city'),
       'address' => $request->input('address'),
       'remarks' => $request->input('remarks'),
       'cost_center' => $request->input('cost_center'),
@@ -180,7 +182,9 @@ class EventController extends Controller
     }
 
     if ($event->has_location && $event->requires_location) {
-      $validationRules['location'] = 'required';
+      // $validationRules['location'] = 'required';
+      $validationRules['zip'] = 'required';
+      $validationRules['city'] = 'required';
     }
 
     if ($event->has_address && $event->requires_address) {
@@ -231,7 +235,9 @@ class EventController extends Controller
       'email.regex' => __('E-Mail-Adresse muss gültig sein'),
       'phone.required' => __('Telefonnummer ist erforderlich'),
       'company.required' => __('Firma ist erforderlich'),
-      'location.required' => __('Ort ist erforderlich'),
+      // 'location.required' => __('Ort ist erforderlich'),
+      'zip.required' => __('PLZ ist erforderlich'),
+      'city.required' => __('Ort ist erforderlich'),
       'address.required' => __('Adresse ist erforderlich'),
       'cost_center.required' => __('Kostenstelle ist erforderlich'),
       'meal_options.required' => __('Essen ist erforderlich'),
