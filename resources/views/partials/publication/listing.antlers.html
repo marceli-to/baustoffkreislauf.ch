@@ -17,7 +17,7 @@
         {{ /if }}
       {{ /search:results }}
     {{ else }}
-      {{ collection locale="de" from="publications" sort="date:{{ get:sort ? get:sort : 'desc' }}" taxonomy:category_publication="{{ get:category }}" }}
+      {{ collection from="publications" sort="date:{{ get:sort ? get:sort : 'desc' }}" taxonomy:category_publication="{{ get:category }}" }}
         {{ if no_results }}
           <div class="col-span-12 lg:col-span-6 lg:col-start-2 md:-ml-16 px-15 lg:px-0 lg:py-30">
             <p>{{ "Im Moment sind leider keine Publikationen vorhanden." | trans }}</p>
@@ -25,7 +25,6 @@
         {{ else }}
           {{ partial:publication/item }}
         {{ /if }}
-
       {{ /collection }}
     {{ /if }}
   </div>

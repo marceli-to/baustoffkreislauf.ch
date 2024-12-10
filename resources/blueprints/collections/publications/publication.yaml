@@ -10,7 +10,7 @@ tabs:
               type: date
               required: true
               default: now
-              localizable: false
+              localizable: true
               validate:
                 - required
           -
@@ -18,7 +18,7 @@ tabs:
             field:
               type: text
               required: true
-              localizable: false
+              localizable: true
               validate:
                 - required
           -
@@ -28,21 +28,21 @@ tabs:
               container: assets
               type: assets
               display: Vorschaubild
-              localizable: false
+              localizable: true
               folder: publikationen_und_produkte
           -
             handle: description
             field:
               type: text
               display: Beschreibung
-              localizable: false
+              localizable: true
               width: 50
           -
             handle: copyright
             field:
               type: text
               display: Quelle/Copyright
-              localizable: false
+              localizable: true
               width: 50
           -
             handle: files
@@ -120,4 +120,13 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: category_publication
+            field:
+              type: terms
+              taxonomies:
+                - category_publication
+              display: 'Kategorie Publikation'
+              mode: select
+              localizable: false
 title: Publikationen
