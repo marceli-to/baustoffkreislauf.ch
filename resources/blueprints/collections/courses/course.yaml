@@ -141,6 +141,12 @@ tabs:
               display: Anmeldeformular
               localizable: false
           -
+            handle: form_external
+            field:
+              type: text
+              display: 'Anmeldeformular (Extern)'
+              localizable: false
+          -
             handle: registration_deadline
             field:
               format: d.m.Y
