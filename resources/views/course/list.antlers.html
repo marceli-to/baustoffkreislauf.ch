@@ -99,7 +99,16 @@
                     {{ 'Anmelden' | trans }}
                   </a>
                 </div>
-              {{ /if }}
+              {{ else if form_external }}
+                <div class="mt-10">
+                  <a 
+                    href="{{ form_external }}"
+                    target="_blank"
+                    class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
+                    {{ 'Anmelden' | trans }}
+                  </a>
+                </div>
+            {{ /if }}
             </div>
           </div>
         </div>
