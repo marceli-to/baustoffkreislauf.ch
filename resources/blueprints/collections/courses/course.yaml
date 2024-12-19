@@ -9,7 +9,7 @@ tabs:
             field:
               type: text
               required: true
-              localizable: false
+              localizable: true
               validate:
                 - required
           -
@@ -18,7 +18,7 @@ tabs:
               format: d.m.Y
               type: date
               display: Datum
-              localizable: false
+              localizable: true
               instructions: 'Bei mehrtägigen Kursen, jeweils den 1. Kurstag angeben.'
           -
             handle: periode
@@ -26,27 +26,27 @@ tabs:
               type: text
               display: 'Daten (mehrtägige Kurse)'
               instructions: 'Bei mehrtägigen Kursen kann der Zeitraum (z.B. 11.-13.01.2025) angegeben werden.'
-              localizable: false
+              localizable: true
           -
             handle: location
             field:
               type: textarea
               display: Ort
-              localizable: false
+              localizable: true
               width: 50
           -
             handle: google_maps_url
             field:
               type: text
               display: 'Google Maps'
-              localizable: false
+              localizable: true
               width: 50
           -
             handle: target_group
             field:
               type: text
               display: Zielgruppe
-              localizable: false
+              localizable: true
           -
             handle: description
             field:
@@ -62,7 +62,7 @@ tabs:
               remove_empty_nodes: true
               type: bard
               display: Beschreibung
-              localizable: false
+              localizable: true
           -
             handle: program_file
             field:
@@ -71,7 +71,7 @@ tabs:
               folder: kurse
               type: assets
               display: 'Programm (PDF)'
-              localizable: false
+              localizable: true
           -
             handle: fee_members
             field:
@@ -87,7 +87,7 @@ tabs:
               type: text
               display: 'Teilnahmegebühr Nicht-Mitglieder'
               instructions: 'Nur Betrag (z.B. 60.00)'
-              localizable: false
+              localizable: true
               width: 50
               instructions_position: below
           -
@@ -109,7 +109,7 @@ tabs:
               default: bg-white
               type: select
               display: 'Kachelfarbe (Vorschau)'
-              localizable: false
+              localizable: true
   images:
     display: Bilder
     sections:
