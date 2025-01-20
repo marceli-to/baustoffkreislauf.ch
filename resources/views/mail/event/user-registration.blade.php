@@ -74,7 +74,7 @@
   @if ($data['party'])
     <div class="text-base">
       <strong>{{ __('Partei/Verband/Organisation', [], $data['locale']) }}</strong><br>
-      {{ $data['party'] }}
+      {{ $data['party'] | nl2br }}
     </div>
     <br>
   @endif
@@ -88,7 +88,7 @@
   @if ($data['remarks'])
     <div class="text-base">
       <strong>{{ __('Bemerkungen', [], $data['locale']) }}</strong><br>
-      {{ $data['remarks'] }}
+      {{ $data['remarks'] | nl2br }}
     </div>
     <br>
   @endif
