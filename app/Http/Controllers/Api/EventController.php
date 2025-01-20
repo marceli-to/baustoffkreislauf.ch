@@ -33,6 +33,10 @@ class EventController extends Controller
       'requires_address' => $event->requires_address,
       'has_cost_center' => $event->has_cost_center,
       'requires_cost_center' => $event->requires_cost_center,
+      'has_party' => $event->has_party,
+      'requires_party' => $event->requires_party,
+      'has_language' => $event->has_language,
+      'requires_language' => $event->requires_language,
       'has_remarks' => $event->has_remarks,
       'has_meal_options' => $event->has_meal_options,
       'meal_options' => [
@@ -65,6 +69,7 @@ class EventController extends Controller
       'title' => $event->title,
       'event_id' => $event->id,
       'salutation' => $request->input('salutation'),
+      'language' => $request->input('language') ?? null,
       'name' => $request->input('name'),
       'firstname' => $request->input('firstname'),
       'email' => $request->input('email'),
@@ -76,6 +81,7 @@ class EventController extends Controller
       'address' => $request->input('address'),
       'remarks' => $request->input('remarks'),
       'cost_center' => $request->input('cost_center'),
+      'party' => $request->input('party'),
       'wants_meal_options' => $request->input('wants_meal_options'),
       'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen',
       'locale' => $request->input('locale'),
@@ -195,6 +201,14 @@ class EventController extends Controller
       $validationRules['cost_center'] = 'required';
     }
 
+    if ($event->has_party && $event->requires_party) {
+      $validationRules['party'] = 'required';
+    }
+
+    if ($event->has_language && $event->requires_language) {
+      $validationRules['language'] = 'required';
+    }
+
     if ($event->has_meal_options) {
       $validationRules['wants_meal_options'] = 'required';
       $validationRules['meal_options'] = 'required_if:wants_meal_options,true';
@@ -240,6 +254,8 @@ class EventController extends Controller
       'city.required' => __('Ort ist erforderlich'),
       'address.required' => __('Adresse ist erforderlich'),
       'cost_center.required' => __('Kostenstelle ist erforderlich'),
+      'party.required' => __('Partei/Verband/Organisation ist erforderlich'),
+      'language.required' => __('Sprache ist erforderlich'),
       'meal_options.required' => __('Essen ist erforderlich'),
       'wants_meal_options.required' => __('Angabe ist erforderlich'),
       'additional_individuals.*.name.required' => __('Name ist erforderlich'),

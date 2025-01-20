@@ -68,14 +68,6 @@
         @update:error="errors.address = $event"
       />
     </form-group>
-    <!-- <form-group v-if="hasLocation">
-      <form-label id="location" :label="__('PLZ/Ort')" :required="requiresLocation" />
-      <form-text-field 
-        v-model="form.location" 
-        :error="__(errors.location)"
-        @update:error="errors.location = $event"
-      />
-    </form-group> -->
     <form-group v-if="hasLocation">
       <form-label id="zip" :label="__('PLZ')" :required="requiresLocation" />
       <form-text-field 
@@ -100,7 +92,23 @@
         @update:error="errors.cost_center = $event"
       />
     </form-group>
-
+    <form-group v-if="hasParty">
+      <form-label id="party" :label="__('Partei/Verband/Organisation')" :required="requiresParty" />
+      <form-textarea-field 
+        v-model="form.party" 
+        :error="__(errors.party)"
+        @update:error="errors.party = $event"
+      />
+    </form-group>
+    <form-group v-if="hasLanguage">
+      <form-label id="language" :label="__('Sprache')" :required="requiresLanguage" />
+      <form-select-field 
+        v-model="form.language" 
+        :error="__(errors.language)"
+        @update:error="errors.language = $event"
+        :options="languages"
+      />
+    </form-group>
     <template v-if="hasMealOptions">
       <form-group>
         <label>{{ __('Essen/Apéro') }}</label>
@@ -260,6 +268,10 @@ const hasMealOptions = ref(false);
 const wantsMealOptions = ref(false);
 const hasCostCenter = ref(false);
 const requiresCostCenter = ref(false);
+const hasParty = ref(false);
+const requiresParty = ref(false);
+const hasLanguage = ref(false);
+const requiresLanguage = ref(false);
 const hasRemarks = ref(false);
 const requiresMealOptions = ref(false);
 const mealOptions = ref([]);
@@ -279,6 +291,11 @@ const salutations = ref([
   { label: 'Divers', value: 'Divers' },
 ]);
 
+const languages = ref([
+  { label: 'Deutsch', value: 'Deutsch' },
+  { label: 'Französisch', value: 'Französisch' },
+]);
+
 const form = ref({
   event_id: props.eventId,
   salutation: null,
@@ -293,6 +310,8 @@ const form = ref({
   address: null,
   remarks: null,
   cost_center: null,
+  party: null,
+  language: null,
   wants_meal_options: null,
   meal_options: null,
   additional_individuals: [],
@@ -333,6 +352,10 @@ onMounted(async () => {
     hasAddress.value = response.data.has_address;
     hasCostCenter.value = response.data.has_cost_center;
     requiresCostCenter.value = response.data.requires_cost_center;
+    hasParty.value = response.data.has_party;
+    requiresParty.value = response.data.requires_party;
+    hasLanguage.value = response.data.has_language;
+    requiresLanguage.value = response.data.requires_language;
     hasRemarks.value = response.data.has_remarks;
     requiresAddress.value = response.data.requires_address;
     hasMealOptions.value = response.data.has_meal_options;
@@ -351,6 +374,9 @@ onMounted(async () => {
 
     if (hasSalutation.value) {
       form.value.salutation = salutations.value[0].value;
+    }
+    if (hasLanguage.value) {
+      form.value.language = languages.value[0].value;
     }
     hasButtonAdditionalIndividuals.value = response.data.has_button_additional_individuals;
     hasFieldAdditionalIndividualSalutation.value = response.data.has_field_additional_individual_salutation;
@@ -419,11 +445,18 @@ function handleSuccess() {
     city: null,
     address: null,
     meal_options: null,
+    party: null,
+    cost_center: null,
+    language: null,
     additional_individuals: [],
   };
 
   if (hasSalutation.value) {
     form.value.salutation = salutations.value[0].value;
+  }
+
+  if (hasLanguage.value) {
+    form.value.language = languages.value[0].value;
   }
 
   // reset additional_individuals
@@ -467,7 +500,6 @@ function handleError(error) {
         });
       });
     }
-
 
     window.scrollTo({
       top: 0,

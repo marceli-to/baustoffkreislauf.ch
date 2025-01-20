@@ -71,6 +71,20 @@
     </div>
     <br>
   @endif
+  @if ($data['party'])
+    <div class="text-base">
+      <strong>{{ __('Partei/Verband/Organisation', [], $data['locale']) }}</strong><br>
+      {{ $data['party'] }}
+    </div>
+    <br>
+  @endif
+  @if ($data['language'])
+    <div class="text-base">
+      <strong>{{ __('Sprache', [], $data['locale']) }}</strong><br>
+      {{ __($data['language'], [], $data['locale']) }}
+    </div>
+    <br>
+  @endif
   @if ($data['remarks'])
     <div class="text-base">
       <strong>{{ __('Bemerkungen', [], $data['locale']) }}</strong><br>

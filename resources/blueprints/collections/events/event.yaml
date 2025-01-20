@@ -277,6 +277,38 @@ tabs:
               if:
                 has_cost_center: 'equals true'
           -
+            handle: has_party
+            field:
+              type: toggle
+              display: 'Feld "Partei/Verband/Organisation"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_party
+            field:
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_party: 'equals true'
+          -
+            handle: has_language
+            field:
+              type: toggle
+              display: 'Feld "Sprache"'
+              localizable: false
+              width: 66
+          -
+            handle: requires_language
+            field:
+              type: toggle
+              display: Pflichtfeld
+              localizable: false
+              width: 33
+              if:
+                has_language: 'equals true'
+          -
             handle: has_remarks
             field:
               default: true
