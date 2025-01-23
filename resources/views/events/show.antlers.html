@@ -2,6 +2,8 @@
   {{ partial:components/misc/button_back }}
   <h1 class="mb-5 lg:mb-10">{{ title }}</h1>
   <span>{{ event_date iso_format="Do MMMM YYYY" }}</span>
+  <div class="mt-10 lg:mt-20">{{ description }}</div>
+
   {{ if program_file }}
     <div class="mt-10 lg:mt-20">
       <a href="{{ program_file:url }}" target="_blank" class="underline underline-offset-4 hover:no-underline">
