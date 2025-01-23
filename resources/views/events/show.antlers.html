@@ -1,7 +1,14 @@
 {{ partial:layout/content sectionClass="!col-span-full" }}
-  {{ partial:components/misc/button_back}}
+  {{ partial:components/misc/button_back }}
   <h1 class="mb-5 lg:mb-10">{{ title }}</h1>
   <span>{{ event_date iso_format="Do MMMM YYYY" }}</span>
+  {{ if program_file }}
+    <div>
+      <a href="{{ program_file:url }}" target="_blank" class="underline underline-offset-4 hover:no-underline">
+        {{ 'Programm' | trans }}
+      </a>
+    </div>
+  {{ /if }}
   {{ if has_form }}
     <div id="event-form" class="mt-25 lg:mt-50">
       {{ if registration_deadline | modify_date("+1 day") | is_future }}
