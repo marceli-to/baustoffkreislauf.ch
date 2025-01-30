@@ -79,6 +79,18 @@ tabs:
               display: Ort
               localizable: false
           -
+            handle: party
+            field:
+              type: textarea
+              display: Partei/Verband/Organisation
+              localizable: false
+          -
+            handle: language
+            field:
+              type: text
+              display: Sprache
+              localizable: false
+          -
             handle: cost_center
             field:
               type: textarea
