@@ -19,20 +19,20 @@ tabs:
               format: d.m.Y
               type: date
               display: Datum
-              localizable: true
+              localizable: false
           -
             handle: location
             field:
               type: textarea
               display: Ort
-              localizable: false
+              localizable: true
               width: 50
           -
             handle: google_maps_url
             field:
               type: text
               display: 'Google Maps'
-              localizable: false
+              localizable: true
               width: 50
           -
             handle: description
@@ -51,7 +51,7 @@ tabs:
               remove_empty_nodes: true
               type: bard
               display: Beschreibung
-              localizable: false
+              localizable: true
           -
             handle: program_file
             field:
@@ -60,7 +60,7 @@ tabs:
               folder: downloads
               type: assets
               display: 'Programm (PDF)'
-              localizable: false
+              localizable: true
           -
             handle: without_charge
             field:
@@ -73,7 +73,7 @@ tabs:
               input_type: number
               type: text
               display: 'Teilnahmegebühr Mitglieder'
-              localizable: false
+              localizable: true
               width: 50
               instructions_position: below
               instructions: 'Nur Betrag (z.B. 45.00)'
@@ -85,7 +85,7 @@ tabs:
               input_type: number
               type: text
               display: 'Teilnahmegebühr Nicht-Mitglieder'
-              localizable: false
+              localizable: true
               width: 50
               instructions_position: below
               instructions: 'Nur Betrag (z.B. 60.00)'
