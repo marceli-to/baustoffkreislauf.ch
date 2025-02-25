@@ -62,6 +62,12 @@ tabs:
               display: 'Programm (PDF)'
               localizable: false
           -
+            handle: without_charge
+            field:
+              type: toggle
+              display: 'Kostenlos?'
+              localizable: false
+          -
             handle: fee_members
             field:
               input_type: number
@@ -71,6 +77,8 @@ tabs:
               width: 50
               instructions_position: below
               instructions: 'Nur Betrag (z.B. 45.00)'
+              unless:
+                without_charge: 'equals true'
           -
             handle: fee_non_members
             field:
@@ -81,6 +89,8 @@ tabs:
               width: 50
               instructions_position: below
               instructions: 'Nur Betrag (z.B. 60.00)'
+              unless:
+                without_charge: 'equals true'
           -
             handle: members_only
             field:

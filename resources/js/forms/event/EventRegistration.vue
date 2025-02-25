@@ -204,6 +204,7 @@
         id="toc" 
         label="Datenschutzerklärung" 
         v-model="form.toc"
+        :withoutCharge="withoutCharge"
         :error="errors.toc" 
         @update:error="errors.toc = $event"
       />
@@ -248,6 +249,7 @@ const isLoaded = ref(false);
 const isSubmitting = ref(false);
 const formSuccess = ref(false);
 const formError = ref(false);
+const withoutCharge = ref(false);
 const hasSalutation = ref(false);
 const requiresSalutation = ref(false);
 const hasName = ref(false);
@@ -335,6 +337,7 @@ onMounted(async () => {
   try {
     const response = await axios.get(`/api/event/${props.eventId}`);
     isLoaded.value = true;
+    withoutCharge.value = response.data.without_charge;
     hasSalutation.value = response.data.has_salutation;
     requiresSalutation.value = response.data.requires_salutation;
     hasName.value = response.data.has_name;

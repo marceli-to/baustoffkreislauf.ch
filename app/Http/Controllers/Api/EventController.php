@@ -16,6 +16,7 @@ class EventController extends Controller
     return response()->json([
       'title' => $event->title,
       'has_salutation' => $event->has_salutation,
+      'without_charge' => $event->without_charge,
       'requires_salutation' => $event->requires_salutation,
       'has_name' => $event->has_name,
       'requires_name' => $event->requires_name,
