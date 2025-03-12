@@ -11,6 +11,15 @@ export default {
     './content/**/*.md'
   ],
 
+  safelist: [
+    'sm:col-span-1',
+    'sm:col-span-2',
+    'sm:col-span-3',
+    'sm:col-span-4',
+    'sm:col-span-5',
+    'sm:col-span-6',
+  ],
+
   theme: {
     extend: {
 
