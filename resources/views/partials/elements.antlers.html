@@ -75,6 +75,10 @@
         {{ partial:components/downloads/images }}
       {{ /if }}
 
+      {{ if type == 'protected_file' }}
+        {{ partial:components/downloads/protected_file }}
+      {{ /if }}
+
     {{ /content  }}
   {{ /partial:layout/content }}
 {{ /if }}
@@ -114,3 +118,10 @@
     {{ partial:search/full }}
   {{ /partial:layout/content }}
 {{ /if }}
+
+{{ if type == 'sponsors' }}
+  {{ partial:layout/content }}
+    {{ partial:components/sponsors/wrapper }}
+  {{ /partial:layout/content }}
+{{ /if }}
+

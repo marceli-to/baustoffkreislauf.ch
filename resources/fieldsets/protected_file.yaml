@@ -1,0 +1,23 @@
+title: 'Datei (geschützt)'
+fields:
+  -
+    handle: description
+    field:
+      type: text
+      display: Bezeichnung
+      localizable: false
+  -
+    handle: file
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Datei
+      localizable: false
+      folder: protected
+  -
+    handle: remark
+    field:
+      type: textarea
+      display: Hinweis
+      localizable: false

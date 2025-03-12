@@ -24,6 +24,13 @@ fields:
           display: Medien/Downloads
           icon: download-arrow-down
           sets:
+            protected_file:
+              display: 'Datei (geschützt)'
+              instructions: 'Passwortgeschützte Datei hinzufügen'
+              icon: file-zip
+              fields:
+                -
+                  import: protected_file
             press_release:
               display: Medienmitteilung
               instructions: 'Medienmitteilung als Download'

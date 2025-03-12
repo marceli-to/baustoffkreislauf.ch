@@ -1,0 +1,80 @@
+title: Sponsoren
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+      localizable: false
+      validate:
+        - required
+  -
+    handle: sponsor_group
+    field:
+      type: replicator
+      display: 'Sponsoren Gruppe'
+      localizable: false
+      sets:
+        sponsor_group:
+          display: 'Sponsoren Gruppe'
+          instructions: 'Sponsoren Gruppe hinzufügen'
+          icon: media-image-picture-orientation
+          sets:
+            sponsor_group:
+              display: 'Sponsoren Gruppe'
+              instructions: 'Sponsoren Gruppe hinzufügen'
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  handle: group_title
+                  field:
+                    type: text
+                    display: Gruppentitel
+                    instructions: 'z.B. Gold-Sponsoren'
+                    localizable: false
+                -
+                  handle: logo_grid
+                  field:
+                    options:
+                      -
+                        key: 6
+                        value: 2-spaltig
+                      -
+                        key: 4
+                        value: 3-spaltig
+                      -
+                        key: 3
+                        value: 4-spaltig
+                    default: 6
+                    type: select
+                    display: 'Logo Raster'
+                    localizable: false
+                -
+                  handle: logos
+                  field:
+                    type: replicator
+                    display: Logos
+                    localizable: false
+                    sets:
+                      neue_setgruppe:
+                        display: 'Neue Setgruppe'
+                        sets:
+                          logos:
+                            display: Logos
+                            instructions: 'Logos hinzufügen'
+                            icon: media-image-picture-orientation
+                            fields:
+                              -
+                                handle: image
+                                field:
+                                  max_files: 1
+                                  container: assets
+                                  type: assets
+                                  display: Logo
+                                  localizable: false
+                              -
+                                handle: website
+                                field:
+                                  type: text
+                                  display: Webseite
+                                  localizable: false

@@ -15,10 +15,10 @@ class DownloadController extends Controller
     }
 
     // Get the file path
-    $path = Storage::disk('assets')->path('downloads/' . $filename);
+    $path = Storage::disk('assets')->path('protected/' . $filename);
 
     // Check if file exists
-    if (!Storage::disk('assets')->exists('downloads/' . $filename)) {
+    if (!Storage::disk('assets')->exists('protected/' . $filename)) {
       abort(404);
     }
 

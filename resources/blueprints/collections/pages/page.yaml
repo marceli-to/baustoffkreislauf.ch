@@ -150,6 +150,13 @@ tabs:
                       fields:
                         -
                           import: search
+                    sponsors:
+                      display: Sponsoren
+                      instructions: 'Sponsoren hinzufügen'
+                      icon: media-image-picture-gallery
+                      fields:
+                        -
+                          import: sponsors
   media:
     display: Medien
     sections:

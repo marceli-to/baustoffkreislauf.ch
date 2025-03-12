@@ -1,0 +1,16 @@
+<div class="my-15">
+  <a 
+    href="/download/{{ file.filename }}.{{ file.extension }}"
+    class="no-underline hover:underline underline-offset-4"
+    title="{{ description }}">
+    {{ description }}
+  </a>
+  {{ if remark }}
+    <div>
+      <em class="text-xs lg:text-sm">
+        {{ remark | nl2br }}
+      </em>
+    </div>
+  {{ /if }}
+
+</div>

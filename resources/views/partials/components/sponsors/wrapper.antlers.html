@@ -1,0 +1,46 @@
+<section>
+  <h1>{{ title }}</h1>
+
+  {{ sponsor_group }}
+    <div class="mb-25 xl:mb-45 last-of-type:mb-0 last-of-type:xl:mb-0">
+      <h2 class="mb-15 xl:mb-30">{{ group_title }}</h2>
+      <div class="sm:grid sm:grid-cols-12 gap-x-20 lg:gap-x-40">
+        {{ logos }}
+        {{ if website }}
+          <a 
+            href="{{ website }}"
+            class="block sm:col-span-{{ logo_grid }}"
+            target="_blank"
+            title="{{ 'Website' | trans }} {{ image:alt }}">
+            <picture>
+              <source srcset="{{ glide:image preset='md-webp' }}" type="image/webp">
+              <img 
+                src="{{ glide:image preset='md' }}" 
+                alt="{{ image:alt }}" 
+                title="{{ image:alt }}" 
+                height="{{ image:height }}" 
+                width="{{ image:width }}"
+                class="block w-full h-auto {{ class ?? '' }}"
+                loading="lazy">
+            </picture>
+          </a>
+        {{ else }}
+          <div class="sm:col-span-{{ logo_grid }}">
+            <picture>
+              <source srcset="{{ glide:image preset='md-webp' }}" type="image/webp">
+              <img 
+                src="{{ glide:image preset='md' }}" 
+                alt="{{ image:alt }}" 
+                title="{{ image:alt }}" 
+                height="{{ image:height }}" 
+                width="{{ image:width }}"
+                class="block w-full h-auto {{ class ?? '' }}"
+                loading="lazy">
+            </picture>
+          </div>
+          {{ /if }}
+        {{ /logos }}
+      </div>
+    </div>
+  {{ /sponsor_group }}
+</section>
