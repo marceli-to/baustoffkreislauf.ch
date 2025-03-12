@@ -1,0 +1,32 @@
+{{ partial:layout/content }}
+  <article class="relative">
+    <h1>{{ 'Login' | trans }}</h1>
+    <form method="POST" action="{{ route:login }}" class="max-w-xs">
+      {{ csrf_field }}
+      <input type="hidden" name="redirect" value="{{ get:redirect }}">
+      <div class="space-y-16">
+        <input 
+        type="hidden" 
+        name="email" 
+        value="blindside-baustofftage@baustoffkreislauf.ch"
+        class="!ring-0 border-b border-b-scarlett appearance-none bg-white py-6 px-4 w-full">
+
+        <div class="">
+          <label class="block mb-6" for="password">Password</label>
+          <input 
+            type="password" 
+            name="password" 
+            id="password" required
+            class="!ring-0 border-b border-b-scarlett appearance-none bg-white py-6 px-4 w-full">
+        </div>
+        <div class="!mt-24">
+          <button 
+            type="submit" 
+            class="border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white hover:text-black py-15 px-20 lg:px-40 leading-none flex items-center transition-all">
+            Log in
+          </button>
+        </div>
+      </div>
+    </form>
+  </article>
+  {{ /partial:layout/content }}

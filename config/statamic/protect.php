@@ -36,9 +36,9 @@ return [
         ],
 
         'logged_in' => [
-            'driver' => 'auth',
-            'login_url' => '/login',
-            'append_redirect' => true,
+          'driver' => 'auth',
+          'login_url' => '/login',
+          'append_redirect' => true,
         ],
 
         'password' => [

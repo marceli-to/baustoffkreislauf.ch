@@ -1,0 +1,5 @@
+<form method="POST" action="{{ route:logout }}">
+  {{ csrf_field }}
+  <input type="hidden" name="redirect" value="{{ config:app:url }}">
+  <button type="submit" class="text-xs">Logout</button>
+</form>
