@@ -3,7 +3,9 @@
 {{ partial:layout/body }}
 
   {{ slot:header }}
-    {{ partial:layout/header }}
+    {{ if !hide_header }}
+      {{ partial:layout/header }}
+    {{ /if }}
   {{ /slot:header }}
 
   {{ slot:header_image }}

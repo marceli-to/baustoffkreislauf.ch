@@ -7,6 +7,13 @@ fields:
       display: 'Background Pattern'
       localizable: false
   -
+    handle: hide_header
+    field:
+      type: toggle
+      display: 'Hide Header?'
+      instructions: 'Aktuelle Seite ohne Header anzeigen.'
+      localizable: false
+  -
     handle: page_class
     field:
       options:

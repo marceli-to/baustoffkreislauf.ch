@@ -1,4 +1,4 @@
-<main role="main" class="w-full flex-grow flex flex-col space-y-30 xl:space-y-60 py-30 xl:py-60 relative {{ header_image ? '!pt-10 lg:!pt-30' : ''}} {{ has_pattern ? '!pt-0' : ''}} {{ page_class }}">
+<main role="main" class="w-full flex-grow flex flex-col space-y-30 xl:space-y-60 py-30 xl:py-60 relative {{ header_image ? '!pt-10 lg:!pt-30' : ''}} {{ has_pattern || hide_header ? '!pt-0' : ''}} {{ page_class }}">
   {{ if has_pattern }}
     {{ partial:components/misc/pattern }}
   {{ /if }}
