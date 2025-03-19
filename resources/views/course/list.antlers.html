@@ -52,26 +52,32 @@
               {{ title }}
             </h2>
 
-            {{ if !periode }}
-              {{ 'Datum:' | trans }} {{ course_date iso_format="Do MMMM YYYY" }}
-            {{ else }}
-              {{ 'Datum:' | trans }} {{ periode }}
+            {{ if course_date || periode }}
+              <div>
+                {{ if !periode }}
+                  {{ 'Datum:' | trans }} {{ course_date iso_format="Do MMMM YYYY" }}
+                {{ else }}
+                  {{ 'Datum:' | trans }} {{ periode }}
+                {{ /if }}
+              </div>
             {{ /if }}
 
             {{ if google_maps_url && location }}
-              <br>{{ 'Ort:' | trans }} <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a>
+              <div>{{ 'Ort:' | trans }} <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a></div>
             {{ /if }}
 
             {{ if !google_maps_url && location }}
-              <br>{{ 'Ort:' | trans }} {{ location }}
+              <div>{{ 'Ort:' | trans }} {{ location }}</div>
             {{ /if }}
 
             {{ if target_group }}
-              <br>{{ 'Zielgruppe:' | trans }} {{ target_group }}
+              <div>{{ 'Zielgruppe:' | trans }} {{ target_group }}</div>
             {{ /if }}
 
-            {{ if registration_deadline | modify_date("+1 day") | is_future }}
-              <br>{{ 'Anmeldung bis:' | trans }} {{ registration_deadline iso_format="Do MMMM YYYY" }}
+            {{ if registration_deadline }}
+              {{ if registration_deadline | modify_date("+1 day") | is_future }}
+                <div>{{ 'Anmeldung bis:' | trans }} {{ registration_deadline iso_format="Do MMMM YYYY" }}</div>
+              {{ /if }}
             {{ /if }}
 
             <div class="hidden text-xs lg:text-sm flex-col gap-y-15 lg:gap-y-25 mt-15 lg:mt-25" :class="{ '!flex': active === '{{ id }}' }">
