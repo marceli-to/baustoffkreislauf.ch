@@ -10,6 +10,7 @@
     "type": "project",
     "require": {
         "php": "^8.2",
+        "alt-design/alt-password-protect": "^1.2",
         "doefom/statamic-export": "^0.4.0",
         "guzzlehttp/guzzle": "^7.2",
         "jacksleight/statamic-bard-texstyle": "^3.3",

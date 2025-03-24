@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1597de0f55b91514900ee153c82624a3",
+    "content-hash": "9b198f4254022c5dde1564cd8eeeba31",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -68,6 +68,48 @@
                 "source": "https://github.com/ajthinking/archetype/tree/v2.0.0"
             },
             "time": "2024-05-11T08:05:58+00:00"
+        },
+        {
+            "name": "alt-design/alt-password-protect",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alt-design/Alt-Password-Protect-Addon.git",
+                "reference": "a602486faf3b96fcc138d2bd999ae2d163412743"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alt-design/Alt-Password-Protect-Addon/zipball/a602486faf3b96fcc138d2bd999ae2d163412743",
+                "reference": "a602486faf3b96fcc138d2bd999ae2d163412743",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "AltDesign\\AltPasswordProtect\\ServiceProvider"
+                    ]
+                },
+                "statamic": {
+                    "name": "Alt Password Protect",
+                    "description": "Alt Password Protect addon"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltDesign\\AltPasswordProtect\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Alt Password Protect - hide your pages behind a password",
+            "support": {
+                "issues": "https://github.com/alt-design/Alt-Password-Protect-Addon/issues",
+                "source": "https://github.com/alt-design/Alt-Password-Protect-Addon/tree/v1.2.2"
+            },
+            "time": "2025-01-22T12:07:04+00:00"
         },
         {
             "name": "brick/math",
@@ -10768,12 +10810,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.2"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
