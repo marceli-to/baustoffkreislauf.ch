@@ -21,3 +21,9 @@ fields:
       type: textarea
       display: Hinweis
       localizable: false
+  -
+    handle: user_group
+    field:
+      type: user_groups
+      display: 'User Gruppe'
+      localizable: false
