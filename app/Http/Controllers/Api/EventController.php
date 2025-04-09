@@ -36,6 +36,8 @@ class EventController extends Controller
       'requires_cost_center' => $event->requires_cost_center,
       'has_party' => $event->has_party,
       'requires_party' => $event->requires_party,
+      'has_affiliation' => $event->has_affiliation,
+      'requires_affiliation' => $event->requires_affiliation,
       'has_language' => $event->has_language,
       'requires_language' => $event->requires_language,
       'has_remarks' => $event->has_remarks,
@@ -83,6 +85,7 @@ class EventController extends Controller
       'cost_center' => $request->input('cost_center'),
       'language' => $request->input('language'),
       'party' => $request->input('party'),
+      'affiliation' => $request->input('affiliation'),
       'wants_meal_options' => $request->input('wants_meal_options'),
       'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen',
       'locale' => $request->input('locale'),
@@ -206,6 +209,10 @@ class EventController extends Controller
       $validationRules['party'] = 'required';
     }
 
+    if ($event->has_affiliation && $event->requires_affiliation) {
+      $validationRules['affiliation'] = 'required';
+    }
+
     if ($event->has_language && $event->requires_language) {
       $validationRules['language'] = 'required';
     }
@@ -256,6 +263,7 @@ class EventController extends Controller
       'address.required' => __('Adresse ist erforderlich'),
       'cost_center.required' => __('Kostenstelle ist erforderlich'),
       'party.required' => __('Partei/Verband/Organisation ist erforderlich'),
+      'affiliation.required' => __('Zugehörigkeit ist erforderlich'),
       'language.required' => __('Sprache ist erforderlich'),
       'meal_options.required' => __('Essen ist erforderlich'),
       'wants_meal_options.required' => __('Angabe ist erforderlich'),

@@ -78,6 +78,13 @@
     </div>
     <br>
   @endif
+  @if ($data['affiliation'])
+    <div class="text-base">
+      <strong>{{ __('Zugehörigkeit', [], $data['locale']) }}</strong><br>
+      {{ $data['affiliation'] }}
+    </div>
+    <br>
+  @endif
   @if ($data['language'])
     <div class="text-base">
       <strong>{{ __('Sprache', [], $data['locale']) }}</strong><br>

@@ -56,6 +56,7 @@
   "Essen ist erforderlich": "Le choix de menu est requis",
   "Kostenstelle ist erforderlich": "Le centre de coût est requis",
   "Partei/Verband/Organisation ist erforderlich": "La partie/association/organisation est requise",
+  "Zugehörigkeit ist erforderlich": "L'affiliation est requise",
   "Sprache ist erforderlich": "La langue est requise",
   "Partei/Verband/Organisation": "Partie/association/organisation",
   "Ja": "Oui",
@@ -101,5 +102,9 @@
   "Anlässe": "Agenda",
   "Zielgruppe:": "Groupe cible :",
   "Webseite": "Site web",
-  "Geschützter Bereich": "Zone protégée"
+  "Geschützter Bereich": "Zone protégée",
+  "Zugehörigkeit": "Affiliation",
+  "Mitglied Baustoff Kreislauf Schweiz": "Membre de l'association Matériaux de construction circulaires Suisse",
+  "Liste OdA Abfall- und Rohstoffwirtschaft / Behörde": "Liste OdA Abfall- und Rohstoffwirtschaft / Behörde",
+  "Andere": "Autre"
 }

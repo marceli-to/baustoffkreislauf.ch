@@ -85,6 +85,12 @@ tabs:
               display: Partei/Verband/Organisation
               localizable: false
           -
+            handle: affiliation
+            field:
+              type: textarea
+              display: Zugehörigkeit
+              localizable: false
+          -
             handle: language
             field:
               type: text
@@ -125,4 +131,29 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
+  alt_password_protect:
+    display: Passwort
+    sections:
+      -
+        fields:
+          -
+            handle: protect
+            field:
+              options:
+                none: None
+                alt_password_protect_default: 'Default Password'
+                alt_password_protect_custom: 'Custom Password'
+              max_items: 1
+              default: none
+              type: select
+              display: 'Password Protect'
+              localizable: false
+          -
+            handle: alt_protect_custom_password
+            field:
+              type: text
+              display: 'Custom Password'
+              if:
+                protect: 'equals alt_password_protect_custom'
+              localizable: false
 title: 'Anmeldungen Anlässe'

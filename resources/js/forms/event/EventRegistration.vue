@@ -100,6 +100,15 @@
         @update:error="errors.party = $event"
       />
     </form-group>
+    <form-group v-if="hasAffiliation">
+      <form-label id="affiliation" :label="__('Zugehörigkeit')" :required="requiresAffiliation" />
+      <form-select-field 
+        v-model="form.affiliation" 
+        :error="__(errors.affiliation)"
+        @update:error="errors.affiliation = $event"
+        :options="affiliations"
+      />
+    </form-group>
     <form-group v-if="hasLanguage">
       <form-label id="language" :label="__('Sprache')" :required="requiresLanguage" />
       <form-select-field 
@@ -272,6 +281,8 @@ const hasCostCenter = ref(false);
 const requiresCostCenter = ref(false);
 const hasParty = ref(false);
 const requiresParty = ref(false);
+const hasAffiliation = ref(false);
+const requiresAffiliation = ref(false);
 const hasLanguage = ref(false);
 const requiresLanguage = ref(false);
 const hasRemarks = ref(false);
@@ -298,6 +309,12 @@ const languages = ref([
   { label: 'Französisch', value: 'Französisch' },
 ]);
 
+const affiliations = ref([
+  { label: 'Mitglied Baustoff Kreislauf Schweiz', value: 'Mitglied Baustoff Kreislauf Schweiz' },
+  { label: 'Liste OdA Abfall- und Rohstoffwirtschaft / Behörde', value: 'Liste OdA Abfall- und Rohstoffwirtschaft / Behörde' },
+  { label: 'Andere', value: 'Andere' }
+]);
+
 const form = ref({
   event_id: props.eventId,
   salutation: null,
@@ -313,6 +330,7 @@ const form = ref({
   remarks: null,
   cost_center: null,
   party: null,
+  affiliation: null,
   language: null,
   wants_meal_options: null,
   meal_options: null,
@@ -357,11 +375,14 @@ onMounted(async () => {
     requiresCostCenter.value = response.data.requires_cost_center;
     hasParty.value = response.data.has_party;
     requiresParty.value = response.data.requires_party;
+    hasAffiliation.value = response.data.has_affiliation;
+    requiresAffiliation.value = response.data.requires_affiliation;
     hasLanguage.value = response.data.has_language;
     requiresLanguage.value = response.data.requires_language;
     hasRemarks.value = response.data.has_remarks;
     requiresAddress.value = response.data.requires_address;
     hasMealOptions.value = response.data.has_meal_options;
+
     if (hasMealOptions.value) {   
       
       if (response.data.meal_options) {
@@ -380,6 +401,9 @@ onMounted(async () => {
     }
     if (hasLanguage.value) {
       form.value.language = languages.value[0].value;
+    }
+    if (hasAffiliation.value) {
+      form.value.affiliation = affiliations.value[0].value;
     }
     hasButtonAdditionalIndividuals.value = response.data.has_button_additional_individuals;
     hasFieldAdditionalIndividualSalutation.value = response.data.has_field_additional_individual_salutation;
@@ -449,6 +473,7 @@ function handleSuccess() {
     address: null,
     meal_options: null,
     party: null,
+    affiliation: null,
     cost_center: null,
     language: null,
     additional_individuals: [],
@@ -460,6 +485,10 @@ function handleSuccess() {
 
   if (hasLanguage.value) {
     form.value.language = languages.value[0].value;
+  }
+
+  if (hasAffiliation.value) {
+    form.value.affiliation = affiliations.value[0].value;
   }
 
   // reset additional_individuals

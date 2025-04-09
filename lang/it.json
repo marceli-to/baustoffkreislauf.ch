@@ -56,6 +56,7 @@
   "Angabe ist erforderlich": "L'angobazione è obbligatoria",
   "Kostenstelle ist erforderlich": "Il centro di costo è obbligatorio",
   "Partei/Verband/Organisation ist erforderlich": "La parte/associazione/organizzazione é obbligatoria",
+  "Zugehörigkeit ist erforderlich": "L'affiliation est requise",
   "Partei/Verband/Organisation": "Parte/associazione/organizzazione",
   "Sprache ist erforderlich": "La lingua é obbligatoria",
   "Ja": "Si",
@@ -99,5 +100,9 @@
   "Anlässe": "Agenda",
   "Zielgruppe:": "Gruppo target:",
   "Webseite": "Sito web",
-  "Geschützter Bereich": "Area protetta"
+  "Geschützter Bereich": "Area protetta",
+  "Zugehörigkeit": "Affiliazione",
+  "Mitglied Baustoff Kreislauf Schweiz": "Membro di l'associazione Matériaux de construction circulaires Suisse",
+  "Liste OdA Abfall- und Rohstoffwirtschaft / Behörde": "Liste OdA Abfall- und Rohstoffwirtschaft / Behörde",
+  "Andere": "Altro"
 }
