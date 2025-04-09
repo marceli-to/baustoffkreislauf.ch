@@ -4,6 +4,12 @@
   <span>{{ event_date iso_format="Do MMMM YYYY" }}</span>
   <div class="mt-10 lg:mt-20">
     {{ description }}
+    {{ if google_maps_url && location }}
+      <div>{{ 'Ort:' | trans }} <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a></div>
+    {{ /if }}
+    {{ if !google_maps_url && location }}
+      <div>{{ 'Ort:' | trans }} {{ location }}</div>
+    {{ /if }}
   </div>
 
   {{ if program_file }}
