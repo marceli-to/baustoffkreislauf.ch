@@ -32,7 +32,16 @@
                 {{ event_date iso_format="Do MMMM YYYY" }}
 
                 <div class="hidden text-xs lg:text-sm flex-col gap-y-15 lg:gap-y-25 mt-15 lg:mt-25" :class="{ '!flex': active === '{{ id }}' }">
-                  <div>{{ description }}</div>
+                  <div>
+                    {{ description ?? '' }}
+                    {{ if google_maps_url && location }}
+                      <div>{{ 'Ort:' | trans }} <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a></div>
+                    {{ /if }}
+        
+                    {{ if !google_maps_url && location }}
+                      <div>{{ 'Ort:' | trans }} {{ location }}</div>
+                    {{ /if }}
+                  </div>
                   {{ if program_file }}
                     <div>
                       <a href="{{ program_file:url }}" target="_blank" class="underline underline-offset-4 hover:no-underline">
