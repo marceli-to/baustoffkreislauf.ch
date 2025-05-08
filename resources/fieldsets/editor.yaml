@@ -100,6 +100,13 @@ fields:
                     type: select
                     display: 'Öffnen in'
                     localizable: false
+            embed_code:
+              display: 'Embed Code'
+              instructions: 'Feld für eingebetteten Code hinzufügen'
+              icon: programming-script-code-brackets
+              fields:
+                -
+                  import: embed_code
   -
     handle: has_indent
     field:

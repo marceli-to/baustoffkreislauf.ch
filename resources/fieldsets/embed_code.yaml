@@ -1,0 +1,8 @@
+title: Code
+fields:
+  -
+    handle: code
+    field:
+      type: textarea
+      display: Code
+      localizable: false

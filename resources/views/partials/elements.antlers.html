@@ -79,6 +79,10 @@
         {{ partial:components/downloads/protected_file }}
       {{ /if }}
 
+      {{ if type == 'embed_code' }}
+       {{ code }}
+      {{ /if }}
+
     {{ /content  }}
   {{ /partial:layout/content }}
 {{ /if }}
@@ -124,4 +128,5 @@
     {{ partial:components/sponsors/wrapper }}
   {{ /partial:layout/content }}
 {{ /if }}
+
 

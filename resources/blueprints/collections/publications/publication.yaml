@@ -45,6 +45,12 @@ tabs:
               localizable: true
               width: 50
           -
+            handle: cost
+            field:
+              type: textarea
+              display: Kosten/Preis
+              localizable: false
+          -
             handle: files
             field:
               type: replicator
