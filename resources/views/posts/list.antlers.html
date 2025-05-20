@@ -21,7 +21,7 @@
     {{ /collection }}
   {{ /if }}
 </div>
-{{ if !is_archive }}
+{{ if !is_archive && !is_homepage }}
   <div class="mt-60 lg:mt-90 flex justify-center w-full">
     {{ if locale == 'de' }}
       <a 
