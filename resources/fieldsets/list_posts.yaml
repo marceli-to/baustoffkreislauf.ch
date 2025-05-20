@@ -4,15 +4,14 @@ fields:
     handle: category
     field:
       max_items: 1
-      mode: default
-      create: true
       taxonomies:
         - category
       type: terms
       display: Kategorie
       localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+  -
+    handle: is_archive
+    field:
+      type: toggle
+      display: 'Archiv?'
+      localizable: false

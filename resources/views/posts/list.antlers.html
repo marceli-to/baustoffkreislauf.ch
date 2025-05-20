@@ -1,11 +1,51 @@
 <div class="grid grid-cols-12 gap-x-15 lg:gap-x-20 gap-y-30 lg:gap-y-60 mt-20 md:mt-40">
-  {{ collection from="posts" as="posts" limit="25" taxonomy:category="{{ category:keyword }}" sort="published_at:desc" }}
-    {{ if no_results }}
-      <p class="sm:col-span-6">{{ "Im Moment sind leider keine Beiträge vorhanden." | trans }}</p>
-    {{ else }}
-      {{ posts }}
-        {{ partial:posts/teaser }}
-      {{ /posts }}
-    {{ /if }}
-  {{ /collection }}
+  {{ if is_archive }}
+    {{ collection from="posts" as="posts" offset="8" taxonomy:category="{{ category:keyword }}" sort="published_at:desc" }}
+      {{ if no_results }}
+        <p class="sm:col-span-6">{{ "Im Moment sind leider keine Beiträge vorhanden." | trans }}</p>
+      {{ else }}
+        {{ posts }}
+          {{ partial:posts/teaser }}
+        {{ /posts }}
+      {{ /if }}
+    {{ /collection }}
+  {{ else }}
+    {{ collection from="posts" as="posts" limit="8" taxonomy:category="{{ category:keyword }}" sort="published_at:desc" }}
+      {{ if no_results }}
+        <p class="sm:col-span-6">{{ "Im Moment sind leider keine Beiträge vorhanden." | trans }}</p>
+      {{ else }}
+        {{ posts }}
+          {{ partial:posts/teaser }}
+        {{ /posts }}
+      {{ /if }}
+    {{ /collection }}
+  {{ /if }}
 </div>
+{{ if !is_archive }}
+  <div class="mt-60 lg:mt-90 flex justify-center w-full">
+    {{ if locale == 'de' }}
+      <a 
+        href="/aktuell/aktuell-archiv" 
+        title="Archiv"
+        class="no-underline border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white text-center hover:text-black py-10 px-20 inline-flex items-center transition-all">
+        Ältere Beiträge
+      </a>
+    {{ /if }}
+    {{ if locale == 'fr' }}
+      <a 
+        href="/fr/actualites/actualites-archives" 
+        title="Archive"
+        class="no-underline border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white text-center hover:text-black py-10 px-20 inline-flex items-center transition-all">
+        Articles antérieurs
+      </a>
+    {{ /if }}
+    {{ if locale == 'it' }}
+      <a 
+        href="/it/attualita/attuale-archivio" 
+        title="Archiv"
+        class="no-underline border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white text-center hover:text-black py-10 px-20 inline-flex items-center transition-all">
+        Articoli precedenti
+      </a>
+    {{ /if }}
+  </div>
+{{ /if }}
