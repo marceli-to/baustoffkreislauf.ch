@@ -1,4 +1,4 @@
-<div class="mb-30 md:mb-0 last-of-type:mb-0 col-span-full sm:col-span-6">
+<div class="mb-30 md:mb-0 last-of-type:mb-0 col-span-full sm:col-span-6 {{ has_border_top ? 'border-t border-black pt-15' : '' }} ">
   {{ if link }}
     <a href="{{ link }}" target="{{ link | is_external_url ? '_blank' : '_self' }}" class="group no-underline">
       {{ partial:components/media/image/teaser }}
