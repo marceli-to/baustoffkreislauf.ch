@@ -123,8 +123,8 @@ tabs:
                         -
                           import: teaser_topics
                     teaser_services:
-                      display: 'Teaser Dienstleistungen'
-                      instructions: 'Teaser für Dienstleistungen hinzufügen.'
+                      display: 'Teaser Unterseiten'
+                      instructions: 'Teaser für Unterseiten (z.B. Dienstleistungen) hinzufügen'
                       icon: text-formatting-initial-letter
                       fields:
                         -
