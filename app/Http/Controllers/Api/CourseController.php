@@ -49,7 +49,8 @@ class CourseController extends Controller
     $slug = $course->title . ' ' . $request->input('firstname') . ' ' . $request->input('name');
 
     // build data
-    $date = Carbon::parse($course->course_date)->locale($request->input('locale'));
+    $date = \Carbon\Carbon::parse($course->course_date)->locale($request->input('locale'));
+    
     $data = [
       'title' => $course->title,
       'date' => $date->translatedFormat('d. F Y'),
