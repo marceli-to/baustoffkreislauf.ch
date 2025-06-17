@@ -129,6 +129,11 @@ tabs:
                       fields:
                         -
                           import: teaser_services
+                    teaser_training_initiatives:
+                      display: 'Teaser Weiterbildung/Initiativen'
+                      instructions: 'Teaser für Weiterbildung/Initiativen hinzufügen'
+                      icon: text-formatting-initial-letter
+                      fields: {  }
                     quote:
                       display: Zitat
                       instructions: 'Zitat hinzufügen'

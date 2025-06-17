@@ -1,0 +1,39 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: has_border_top
+            field:
+              type: toggle
+              display: 'Rahmen (oben)'
+              localizable: false
+              default: true
+          -
+            import: teaser
+            config:
+              title:
+                required: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - teaser
+              max_items: 1
+              listable: false
+              localizable: true
+title: Teaser

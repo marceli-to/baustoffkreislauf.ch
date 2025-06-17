@@ -11,6 +11,12 @@
   {{ /partial:layout/content }}
 {{ /if }}
 
+{{ if type == 'teaser_training_initiatives' }}
+  {{ partial:layout/content }}
+    {{ partial:components/teasers/wrapper is_collection="true" }}
+  {{ /partial:layout/content }}
+{{ /if }}
+
 {{ if type == 'image' }}
   {{ partial:layout/content }}
     {{ partial:components/media/image/fullscreen }}
