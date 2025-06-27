@@ -10,9 +10,9 @@
   {{ if has_form }}
     <div id="course-form" class="mt-25 lg:mt-50">
       {{ if registration_deadline | modify_date("+1 day") | is_future }}
-        <h2>{{ "Anmeldung" | trans }}</h2>
+        <h2>Anmeldung/Inscription/Inscription</h2>
         <p>
-          {{ "Anmeldung ist möglich bis" | trans }} <strong>{{ registration_deadline iso_format="Do MMMM YYYY" }}</strong>
+          Anmeldung ist möglich bis / Inscription possible jusqu'au / Inscrizione possibile fino al <strong>{{ registration_deadline iso_format="Do MMMM YYYY" }}</strong>
         </p>
         <course-registration :course-id="'{{ id }}'"></course-registration>
       {{ else }}

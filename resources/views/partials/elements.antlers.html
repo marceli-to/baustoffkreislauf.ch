@@ -115,6 +115,18 @@
   {{ /partial:layout/content }}
 {{ /if }}
 
+{{ if type == 'course_form' }}
+  {{ partial:layout/content }}
+    {{ partial:course/show }}
+  {{ /partial:layout/content }}
+{{ /if }}
+
+{{ if type == 'order_form' }}
+  {{ partial:layout/content }}
+    {{ partial:publication/form }}
+  {{ /partial:layout/content }}
+{{ /if }}
+
 {{ if type == 'teaser_services' }}
   {{ partial:components/service/teaser }}
 {{ /if }}

@@ -16,15 +16,30 @@
         </label>
       </template>
       <template v-else>
-        <label for="toc" class="hyphens-auto" v-if="locale === 'de'">
+        <template v-if="multiLanguage">
+          <div>
+            <label for="toc" class="hyphens-auto">
+              Mit der Anmeldung bestätigen Sie die entsprechenden <a href="/annullationsbedingungen" target="_blank">Teilnahme- und Annullationsbedingungen</a> sowie <a href="/datenschutz" target="_blank">Datenschutzbestimmungen</a>
+            </label><br>
+            <label for="toc" class="hyphens-auto">
+              En vous inscrivant, vous confirmez les <a href="/annullationsbedingungen" target="_blank">conditions de participation et d'annulation correspondantes</a> ainsi que la <a href="/fr/protection-des-donnees" target="_blank">politique de confidentialité</a>
+            </label><br>
+            <label for="toc" class="hyphens-auto">
+              Con l'iscrizione, confermi le <a href="/annullationsbedingungen" target="_blank">condizioni di partecipazione e di annullamento corrispondenti</a> e la <a href="/it/protezione-dati" target="_blank">politica sulla privacy</a>
+            </label>
+          </div>
+        </template>
+        <template v-else>
+          <label for="toc" class="hyphens-auto" v-if="locale === 'de'">
           Mit der Anmeldung bestätigen Sie die entsprechenden <a href="/annullationsbedingungen" target="_blank">Teilnahme- und Annullationsbedingungen</a> sowie <a href="/datenschutz" target="_blank">Datenschutzbestimmungen</a>
-        </label>
-        <label for="toc" class="hyphens-auto" v-else-if="locale === 'fr'">
-          En vous inscrivant, vous confirmez les <a href="/annullationsbedingungen" target="_blank">conditions de participation et d'annulation correspondantes</a> ainsi que la <a href="/fr/protection-des-donnees" target="_blank">politique de confidentialité</a>
-        </label>
-        <label for="toc" class="hyphens-auto" v-else-if="locale === 'it'">
-          Con l'iscrizione, confermi le <a href="/annullationsbedingungen" target="_blank">condizioni di partecipazione e di annullamento corrispondenti</a> e la <a href="/it/protezione-dati" target="_blank">politica sulla privacy</a>
-        </label>
+          </label>
+          <label for="toc" class="hyphens-auto" v-else-if="locale === 'fr'">
+            En vous inscrivant, vous confirmez les <a href="/annullationsbedingungen" target="_blank">conditions de participation et d'annulation correspondantes</a> ainsi que la <a href="/fr/protection-des-donnees" target="_blank">politique de confidentialité</a>
+          </label>
+          <label for="toc" class="hyphens-auto" v-else-if="locale === 'it'">
+            Con l'iscrizione, confermi le <a href="/annullationsbedingungen" target="_blank">condizioni di partecipazione e di annullamento corrispondenti</a> e la <a href="/it/protezione-dati" target="_blank">politica sulla privacy</a>
+          </label>          
+        </template>
       </template>
     </div>
   </div>
@@ -40,6 +55,10 @@ const props = defineProps({
   label: {
     type: String,
     required: true
+  },
+  multiLanguage: {
+    type: Boolean,
+    default: false
   },
   error: {
     type: String,

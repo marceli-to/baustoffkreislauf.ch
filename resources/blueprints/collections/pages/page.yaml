@@ -162,6 +162,11 @@ tabs:
                       fields:
                         -
                           import: sponsors
+                    order_form:
+                      display: 'Bestellformular Publikationen'
+                      instructions: 'Bestellformular für Publikationen'
+                      icon: form-address-field
+                      fields: {  }
   media:
     display: Medien
     sections:

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EventController;
 use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\TranslationController;
+use App\Http\Controllers\Api\PublicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,8 @@ Route::get('/event/{eventId}', [EventController::class, 'get']);
 
 Route::post('/course/register', [CourseController::class, 'register']);
 Route::get('/course/{courseId}/{locale}', [CourseController::class, 'get']);
+
+Route::post('/publication/order', [PublicationController::class, 'order']);
+Route::get('/publication/{publicationId}', [PublicationController::class, 'get']);
+
+

@@ -2,18 +2,22 @@
   <template v-if="isLoaded">
     <template v-if="formSuccess">
       <success-alert>
-        {{ __('Vielen Dank für Ihre Anmeldung!') }}
+        Vielen Dank für Ihre Anmeldung!<br>
+        Merci pour votre inscription !<br>
+        Grazie per la tua iscrizione!
       </success-alert>
     </template>
     <template v-if="formError">
       <error-alert>
-        {{ __('Bitte überprüfen Sie die eingegebenen Daten.') }}
+        Bitte überprüfen Sie die eingegebenen Daten.<br>
+        Veuillez vérifier les données saisies.<br>
+        Controlla i tuoi dati.
       </error-alert>
     </template>
 
     <form @submit.prevent="submitForm" class="space-y-15 lg:space-y-30 max-w-2xl">
       <form-group v-if="hasSalutation">
-        <form-label id="salutation" :label="__('Anrede')" :required="requiresSalutation" />
+        <form-label id="salutation" label="Anrede / Titre / Appellativo" :required="requiresSalutation" />
         <form-select-field 
           v-model="form.salutation" 
           :error="__(errors.salutation)"
@@ -22,7 +26,7 @@
         />
       </form-group>
       <form-group v-if="hasCompany">
-        <form-label id="company" :label="__('Firma')" :required="requiresCompany" />
+        <form-label id="company" label="Firma / Société / Azienda" :required="requiresCompany" />
         <form-text-field 
           v-model="form.company" 
           :error="__(errors.company)"
@@ -30,7 +34,7 @@
         />
       </form-group>
       <form-group v-if="hasFirstname">
-        <form-label id="firstname" :label="__('Vorname')" :required="requiresFirstname" />
+        <form-label id="firstname" label="Vorname / Prénom / Prenome" :required="requiresFirstname" />
         <form-text-field 
           v-model="form.firstname" 
           :error="__(errors.firstname)"
@@ -38,7 +42,7 @@
         />
       </form-group>
       <form-group v-if="hasName">
-        <form-label id="name" :label="__('Name')" :required="requiresName" />
+        <form-label id="name" label="Name / Nom / Nome" :required="requiresName" />
         <form-text-field 
           v-model="form.name" 
           :error="__(errors.name)"
@@ -46,7 +50,7 @@
         />
       </form-group>
       <form-group v-if="hasEmail">
-        <form-label id="email" :label="__('E-Mail')" :required="requiresEmail" />
+        <form-label id="email" label="E-Mail / E-mail / Email" :required="requiresEmail" />
         <form-text-field 
           type="email"
           v-model="form.email" 
@@ -55,7 +59,7 @@
         />
       </form-group>
       <form-group v-if="hasPhone">
-        <form-label id="phone" :label="__('Telefon')" :required="requiresPhone" />
+        <form-label id="phone" label="Telefon / Téléphone / Telefono" :required="requiresPhone" />
         <form-text-field 
           v-model="form.phone" 
           :error="__(errors.phone)"
@@ -63,23 +67,15 @@
         />
       </form-group>
       <form-group v-if="hasAddress">
-        <form-label id="address" :label="__('Strasse, Nr.')" :required="requiresAddress" />
+        <form-label id="address" label="Strasse, Nr. / Rue, n° / Via, n." :required="requiresAddress" />
         <form-text-field 
           v-model="form.address" 
           :error="__(errors.address)"
           @update:error="errors.address = $event"
         />
       </form-group>
-      <!-- <form-group v-if="hasLocation">
-        <form-label id="location" :label="__('PLZ/Ort')" :required="requiresLocation" />
-        <form-text-field 
-          v-model="form.location" 
-          :error="__(errors.location)"
-          @update:error="errors.location = $event"
-        />
-      </form-group> -->
       <form-group v-if="hasLocation">
-        <form-label id="zip" :label="__('PLZ')" :required="requiresLocation" />
+        <form-label id="zip" label="PLZ / NPA / CAP" :required="requiresLocation" />
         <form-text-field 
           v-model="form.zip" 
           :error="__(errors.zip)"
@@ -87,7 +83,7 @@
         />
       </form-group>
       <form-group v-if="hasLocation">
-        <form-label id="city" :label="__('Ort')" :required="requiresLocation" />
+        <form-label id="city" label="Ort / Localité / Località" :required="requiresLocation" />
         <form-text-field 
           v-model="form.city" 
           :error="__(errors.city)"
@@ -95,7 +91,7 @@
         />
       </form-group>
       <form-group v-if="hasCostCenter">
-        <form-label id="cost_center" :label="__('Kostenstelle')" :required="requiresCostCenter" />
+        <form-label id="cost_center" label="Kostenstelle / Centre de coût / Centro di costo" :required="requiresCostCenter" />
         <form-textarea-field 
           v-model="form.cost_center" 
           :error="__(errors.cost_center)"
@@ -104,7 +100,7 @@
       </form-group>
 
       <form-group v-if="hasRemarks">
-        <form-label id="remarks" :label="__('Bemerkungen')" />
+        <form-label id="remarks" label="Bemerkungen / Remarques / Note" />
         <form-textarea-field 
           v-model="form.remarks" 
           :error="__(errors.remarks)"
@@ -116,6 +112,7 @@
         <form-toc 
           id="toc" 
           label="Datenschutzerklärung" 
+          :multiLanguage="true"
           v-model="form.toc"
           :error="errors.toc" 
           @update:error="errors.toc = $event"
@@ -124,7 +121,7 @@
       <form-group classes="!mt-30 lg:!mt-60 mx-auto flex justify-center">
         <form-button 
           type="submit" 
-          :label="__('Anmelden')"
+          label="Anmelden / S'inscrire / Registro"
           :disabled="isSubmitting"
           :submitting="isSubmitting"
         />
@@ -186,9 +183,9 @@ const hasRemarks = ref(false);
 const locale = ref(document.documentElement.lang);
 
 const salutations = ref([
-  { label: 'Frau', value: 'Frau' },
-  { label: 'Herr', value: 'Herr' },
-  { label: 'Divers', value: 'Divers' },
+  { label: 'Frau/Madame/Signora', value: 'Frau' },
+  { label: 'Herr/Monsieur/Signore', value: 'Herr' },
+  { label: 'Divers/Autre/Altro', value: 'Divers' },
 ]);
 
 const form = ref({
