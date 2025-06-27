@@ -104,5 +104,17 @@
   "Zugehörigkeit": "Affiliazione",
   "Mitglied Baustoff Kreislauf Schweiz": "Membri Materiali di costruzione circolari Svizzera",
   "Liste OdA Abfall- und Rohstoffwirtschaft / Behörde": "Elenco oml Gestione dei rifiuti e delle materie prime / Autorità",
-  "Andere": "Altri"
+  "Andere": "Altri",
+  "Vielen Dank für Ihre Bestellung!": "Grazie per la tua iscrizione!",
+  "Artikel": "Articolo",
+  "Anzahl": "Quantità",
+  "Rechnungsadresse": "Indirizzo di fatturazione",
+  "Lieferadresse": "Indirizzo di consegna",
+  "Lieferadresse (falls abweichend von Rechnungsadresse)": "Indirizzo di consegna (se diverso dall'indirizzo di fatturazione)",
+  "Bestellen": "Ordine",
+  "Anzahl ist erforderlich": "Quantità è necessaria",
+  "Rechnungsadresse ist erforderlich": "L'indirizzo di fatturazione è richiesto",
+  "Bestellformular": "Modulo di ordine",
+  "Guten Tag<br><br>Vielen Dank für Ihre Bestellung.": "Buongiorno<br><br>Grazie per la tua iscrizione."
+  
 }

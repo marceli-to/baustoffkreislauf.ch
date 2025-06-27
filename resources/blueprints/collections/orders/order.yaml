@@ -1,0 +1,96 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+              display: Publikation
+          -
+            handle: order_date
+            field:
+              type: date
+              display: Datum
+              localizable: false
+          -
+            handle: quantity
+            field:
+              type: text
+              display: Anzahl
+              localizable: false
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+              localizable: false
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              localizable: false
+          -
+            handle: email
+            field:
+              type: text
+              display: E-Mail
+              localizable: false
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+              localizable: false
+          -
+            handle: company
+            field:
+              type: text
+              display: Firma
+              localizable: false
+          -
+            handle: invoice_address
+            field:
+              type: textarea
+              display: Rechnungsadresse
+              localizable: false
+          -
+            handle: delivery_address
+            field:
+              type: textarea
+              display: Lieferadresse
+              localizable: false
+          -
+            handle: remarks
+            field:
+              type: textarea
+              display: Bemerkungen
+              localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - orders
+              max_items: 1
+              listable: false
+              localizable: true
+title: 'Bestellungen Publikationen'

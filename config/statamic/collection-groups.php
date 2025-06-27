@@ -19,4 +19,7 @@ return [
     'Anlässe' => 'event_registrations',
     'Kurse' => 'course_registrations',
   ],
+  'Bestellungen' => [
+    'Publikationen' => 'orders',
+  ],
 ];

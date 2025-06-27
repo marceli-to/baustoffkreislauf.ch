@@ -3,9 +3,14 @@ input[type=email],
 input[type=tel],
 input[type=search],
 input[type=password],
+input[type=number],
 textarea,
 select {
   @apply w-full py-10 text-xs lg:text-base bg-transparent border-b border-lime !ring-0 focus:outline-none focus:!ring-0 focus:border-black focus:text-black placeholder:text-black
+}
+
+input[type=number] {
+  @apply appearance-none;
 }
 
 .has-error input[type=text],

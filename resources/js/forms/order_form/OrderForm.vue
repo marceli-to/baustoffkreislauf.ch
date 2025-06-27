@@ -1,7 +1,7 @@
 <template>
   <template v-if="formSuccess">
     <success-alert>
-      {{ __('Vielen Dank für Ihre Anmeldung!') }}
+      {{ __('Vielen Dank für Ihre Bestellung!') }}
     </success-alert>
   </template>
   <template v-if="formError">
@@ -12,16 +12,15 @@
   <form @submit.prevent="submitForm" v-if="isLoaded" class="space-y-15 lg:space-y-30 max-w-2xl">
 
     <div class="border border-lime bg-lime/10 p-10 lg:p-20">
-      <h2>{{ publication.title }}</h2>
+      <h2>{{__('Artikel') }}: {{ publication.title }}</h2>
       <p>{{ publication.cost }}</p>
     </div>
-
     <form-group>
-      <form-label id="company" :label="__('Firma')" :required="true" />
-      <form-text-field 
-        v-model="form.company" 
-        :error="__(errors.company)"
-        @update:error="errors.company = $event"
+      <form-label id="quantity" :label="__('Anzahl')" :required="true" />
+      <form-number-field 
+        v-model.number="form.quantity"
+        :error="__(errors.quantity)"
+        @update:error="errors.quantity = $event"
       />
     </form-group>
     <form-group>
@@ -57,41 +56,41 @@
         @update:error="errors.phone = $event"
       />
     </form-group>
-    <form-group >
-      <form-label id="address" :label="__('Strasse, Nr.')" :required="true" />
+    <form-group>
+      <form-label id="company" :label="__('Firma')" />
       <form-text-field 
-        v-model="form.address" 
-        :error="__(errors.address)"
-        @update:error="errors.address = $event"
+        v-model="form.company" 
+        :error="__(errors.company)"
+        @update:error="errors.company = $event"
       />
     </form-group>
     <form-group>
-      <form-label id="zip" :label="__('PLZ')" :required="true" />
-      <form-text-field 
-        v-model="form.zip" 
-        :error="__(errors.zip)"
-        @update:error="errors.location = $event"
+      <form-label id="invoice_address" :label="__('Rechnungsadresse')" :required="true" />
+      <form-textarea-field 
+        v-model="form.invoice_address" 
+        :error="__(errors.invoice_address)"
+        classes="min-h-125"
+        @update:error="errors.invoice_address = $event"
       />
     </form-group>
     <form-group>
-      <form-label id="city" :label="__('Ort')" :required="true" />
-      <form-text-field 
-        v-model="form.city" 
-        :error="__(errors.city)"
-        @update:error="errors.location = $event"
+      <form-label id="delivery_address" :label="__('Lieferadresse (falls abweichend von Rechnungsadresse)')" />
+      <form-textarea-field 
+        v-model="form.delivery_address" 
+        :error="__(errors.delivery_address)"
+        classes="min-h-125"
+        @update:error="errors.delivery_address = $event"
       />
     </form-group>
-
     <form-group>
       <form-label id="remarks" :label="__('Bemerkungen')" />
       <form-textarea-field 
         v-model="form.remarks" 
         :error="__(errors.remarks)"
+        classes="min-h-125"
         @update:error="errors.remarks = $event"
       />
     </form-group>
-    
-
     <form-group classes="!mt-30 lg:!mt-60 mx-auto flex justify-center">
       <form-button 
         type="submit" 
@@ -108,6 +107,7 @@ import axios from 'axios';
 import { useI18n } from '@/composables/i18n';
 import FormGroup from '@/forms/components/fields/group.vue';
 import FormTextField from '@/forms/components/fields/text.vue';
+import FormNumberField from '@/forms/components/fields/number.vue';
 import FormTextareaField from '@/forms/components/fields/textarea.vue';
 import FormLabel from '@/forms/components/fields/label.vue';
 import FormButton from '@/forms/components/fields/button.vue';
@@ -134,37 +134,42 @@ const formSuccess = ref(false);
 const formError = ref(false);
 
 const publication = ref(null);
+const locale = ref(document.documentElement.lang);
 
 const form = ref({
   publication_id: props.publicationId,
-  company: null,
+  quantity: 1,
   name: null,
   firstname: null,
   email: null,
   phone: null,
-  location: null,
-  zip: null,
-  city: null,
-  address: null,
+  company: null,
+  invoice_address: null,
+  delivery_address: null,
   remarks: null,
+  locale: locale.value,
 });
 
 const errors = ref({
+    quantity: '',
     name: '',
     firstname: '',
     email: '',
     phone: '',
-    company: '',
-    location: '',
-    address: '',
+    invoice_address: '',
   }
 );
+
+watch(() => form.value.quantity, (newVal) => {
+  if (newVal !== null && newVal < 1) {
+    form.value.quantity = 1;
+  }
+});
 
 onMounted(async () => {
   try {
     const response = await axios.get(`/api/publication/${props.publicationId}`);
     publication.value = response.data.publication;
-    console.log(publication.value);
     isLoaded.value = true;
   } catch (error) {
     console.error(error);
@@ -176,7 +181,7 @@ async function submitForm() {
   formSuccess.value = false;
   formError.value = false;
   try {
-    const response = await axios.post('/api/event/register', {
+    const response = await axios.post('/api/publication/order', {
       ...form.value,
     });
     handleSuccess();
@@ -184,7 +189,6 @@ async function submitForm() {
     handleError(error);
   }
 }
-
 
 function handleSuccess() {
   form.value = {
@@ -194,10 +198,8 @@ function handleSuccess() {
     email: null,
     phone: null,
     company: null,
-    location: null,
-    zip: null,
-    city: null,
-    address: null,
+    invoice_address: null,
+    delivery_address: null,
     remarks: null,
   };
 
@@ -206,9 +208,8 @@ function handleSuccess() {
     firstname: '',
     email: '',
     phone: '',
-    company: '',
     location: '',
-    address: '',
+    invoice_address: '',
   };
   
   isSubmitting.value = false;
