@@ -28,22 +28,24 @@
     x-cloak
     x-show="active === '{{ id }}'"
     class="bg-lime absolute bottom-0 left-0 z-20 w-full translate-y-full py-5 xl:py-10 transition-all font-bold flex flex-col gap-5">
-    {{ files }}
-      <div class="px-10 xl:px-25">
-        {{ if description }}
-          <div>
-            {{ description }}
-          </div>
-        {{ /if }}
-        <a 
-          href="{{ file:url }}" 
-          class="flex items-center gap-5 text-xs lg:text-base no-underline hover:underline underline-offset-4"
-          target="_blank">
-          {{ partial:icons/arrow-right class="w-15" }}
-          {{ file:extension | upper }}, {{ file:size_megabytes }} MB, {{ language | upper }}
-        </a>
-      </div>
-    {{ /files }}
+    {{ if files }}
+      {{ files }}
+        <div class="px-10 xl:px-25">
+          {{ if description }}
+            <div>
+              {{ description }}
+            </div>
+          {{ /if }}
+          <a 
+            href="{{ file:url }}" 
+            class="flex items-center gap-5 text-xs lg:text-base no-underline hover:underline underline-offset-4"
+            target="_blank">
+            {{ partial:icons/arrow-right class="w-15" }}
+            {{ file:extension | upper }}, {{ file:size_megabytes }} MB, {{ language | upper }}
+          </a>
+        </div>
+      {{ /files }}
+    {{ /if }}
     {{ if orderable }}
       
       {{# <a 
