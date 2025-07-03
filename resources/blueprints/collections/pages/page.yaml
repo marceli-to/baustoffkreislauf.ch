@@ -129,11 +129,19 @@ tabs:
                       fields:
                         -
                           import: teaser_services
-                    teaser_training_initiatives:
-                      display: 'Teaser Weiterbildung/Initiativen'
-                      instructions: 'Teaser für Weiterbildung/Initiativen hinzufügen'
+                    teaser_collection:
+                      display: 'Teaser (Collection)'
+                      instructions: 'Teaser aus Kollektion auswählen & hinzufügen'
                       icon: text-formatting-initial-letter
-                      fields: {  }
+                      fields:
+                        -
+                          handle: entries
+                          field:
+                            collections:
+                              - teaser
+                            type: entries
+                            display: Einträge
+                            localizable: false
                     quote:
                       display: Zitat
                       instructions: 'Zitat hinzufügen'
