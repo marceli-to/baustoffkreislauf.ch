@@ -34,10 +34,10 @@
           Mit der Anmeldung bestätigen Sie die entsprechenden <a href="/annullationsbedingungen" target="_blank">Teilnahme- und Annullationsbedingungen</a> sowie <a href="/datenschutz" target="_blank">Datenschutzbestimmungen</a>
           </label>
           <label for="toc" class="hyphens-auto" v-else-if="locale === 'fr'">
-            En vous inscrivant, vous confirmez les <a href="/annullationsbedingungen" target="_blank">conditions de participation et d'annulation correspondantes</a> ainsi que la <a href="/fr/protection-des-donnees" target="_blank">politique de confidentialité</a>
+            En vous inscrivant, vous confirmez les <a href="/fr/conditions-dannulation" target="_blank">conditions de participation et d'annulation correspondantes</a> ainsi que la <a href="/fr/protection-des-donnees" target="_blank">politique de confidentialité</a>
           </label>
           <label for="toc" class="hyphens-auto" v-else-if="locale === 'it'">
-            Con l'iscrizione, confermi le <a href="/annullationsbedingungen" target="_blank">condizioni di partecipazione e di annullamento corrispondenti</a> e la <a href="/it/protezione-dati" target="_blank">politica sulla privacy</a>
+            Con l'iscrizione, confermi le <a href="/it/condizioni-di-annullamento" target="_blank">condizioni di partecipazione e di annullamento corrispondenti</a> e la <a href="/it/protezione-dati" target="_blank">politica sulla privacy</a>
           </label>          
         </template>
       </template>

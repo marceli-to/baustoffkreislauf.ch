@@ -4,20 +4,10 @@ fields:
     handle: image
     field:
       max_files: 1
-      mode: list
       container: assets
-      restrict: false
-      allow_uploads: true
-      show_filename: true
-      show_set_alt: true
       type: assets
       display: Bild
-      localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: true
   -
     handle: image_ratio
     field:
@@ -25,35 +15,17 @@ fields:
         portrait: Hochformat
         landscape: Querformat
         square: Quadrat
-      taggable: false
-      push_tags: false
-      multiple: false
-      clearable: false
-      searchable: true
-      cast_booleans: false
       type: select
       display: 'Format Vorschaubild'
-      localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: true
       default: portrait
       instructions: 'Seitenverhältnis für Vorschaubild'
   -
     handle: title
     field:
-      input_type: text
-      antlers: false
       type: text
       display: Titel
-      localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: true
       validate:
         - required
   -
@@ -62,32 +34,11 @@ fields:
       buttons:
         - bold
         - anchor
-      smart_typography: false
-      save_html: false
-      inline: false
       toolbar_mode: floating
-      reading_time: false
-      word_count: false
-      fullscreen: true
-      allow_source: true
-      enable_input_rules: true
-      enable_paste_rules: true
       remove_empty_nodes: true
-      antlers: false
-      link_noopener: false
-      link_noreferrer: false
-      target_blank: false
-      always_show_set_button: false
-      collapse: false
-      previews: true
       type: bard
       display: Text
-      localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: true
       validate:
         - required
   -
@@ -98,24 +49,12 @@ fields:
       container: assets
       type: link
       display: Link
-      localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: true
       width: 50
   -
     handle: link_text
     field:
-      input_type: text
-      antlers: false
       type: text
       display: Linktext
-      localizable: false
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: true
       width: 50
