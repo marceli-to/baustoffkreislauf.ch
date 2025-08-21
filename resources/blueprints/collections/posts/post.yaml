@@ -102,7 +102,7 @@ tabs:
               container: assets
               type: assets
               display: Bild
-              localizable: false
+              localizable: true
           -
             handle: preview_title
             field:
