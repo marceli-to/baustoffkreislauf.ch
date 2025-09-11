@@ -36,7 +36,7 @@
     {{ search:results index="publications" }}
       {{ if !no_results }}
         <div class="mb-10 md:mb-20 lg:mb-30">
-          <a href="{{ "/dienstleistungen/publikationen" | trans }}?q={{ get:q }}" class="block no-underline hover:text-turquoise transition-colors mb-5 group">
+          <a href="{{ "/fachbereiche/publikationen" | trans }}?q={{ get:q }}" class="block no-underline hover:text-turquoise transition-colors mb-5 group">
             <h2 class="text-lg lg:text-xl !mb-0">{{ title }}</h2>
           </a>
           <div class="text-xxs text-neutral-400">{{ "Gefunden in:" | trans }} "{{ "Arbeitshilfen & Publikationen" | trans }}"</div>
@@ -47,7 +47,7 @@
     {{ search:results index="courses" }}
       {{ if !no_results }}
         <div class="mb-10 md:mb-20 lg:mb-30">
-          <a href="{{ "/dienstleistungen/aus-und-weiterbildung" | trans }}" class="block no-underline hover:text-turquoise transition-colors group">
+          <a href="{{ "/fachbereiche/aus-und-weiterbildung" | trans }}" class="block no-underline hover:text-turquoise transition-colors group">
             <h2 class="mb-5 text-md lg:text-lg">{{ title }}</h2>
             <div class="text-xxs lg:!text-xs">{{ course_date iso_format="Do MMMM YYYY" }}, {{ location }}</div>
           </a>

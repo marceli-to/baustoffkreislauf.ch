@@ -47,36 +47,28 @@
       {{ /files }}
     {{ /if }}
     {{ if orderable }}
-      
-      {{# <a 
-        href="mailto:info@baustoffkreislauf.ch?subject=Bestellung Publikation «{{ title }}»"
-        class="!no-underline border-none bg-black font-bold tracking-widest uppercase text-white hover:text-lime py-15 px-10 xl:px-25 relative xl:top-10 leading-none inline-flex items-center transition-all">
-        {{ 'Bestellen' | trans }}
-      </a> #}}
 
       {{ if site:locale == 'de'}}
         <a 
-          href="/dienstleistungen/publikationen/bestellung-arbeitshilfen-publikationen?id={{ id }}"
+          href="/fachbereiche/publikationen/bestellung-arbeitshilfen-publikationen?id={{ id }}"
           class="!no-underline border-none bg-black font-bold tracking-widest uppercase text-white hover:text-lime py-15 px-10 xl:px-25 relative {{ if files }}xl:top-10{{ /if }} leading-none inline-flex items-center transition-all">
           {{ 'Bestellen' | trans }}
         </a>
       {{ /if }}
       {{ if site:locale == 'fr'}}
         <a 
-          href="/fr/prestations/outils-de-travail-et-publications/commande-outils-de-travail-et-publications?id={{ id }}"
+          href="/fr/fachbereiche/outils-de-travail-et-publications/commande-outils-de-travail-et-publications?id={{ id }}"
           class="!no-underline border-none bg-black font-bold tracking-widest uppercase text-white hover:text-lime py-15 px-10 xl:px-25 relative {{ if files }}xl:top-10{{ /if }} leading-none inline-flex items-center transition-all">
           {{ 'Bestellen' | trans }}
         </a>
       {{ /if }}
       {{ if site:locale == 'it'}}
         <a 
-          href="/it/servizi/ausili-e-pubblicazioni/ordine-ausili-e-pubblicazioni?id={{ id }}"
+          href="/it/fachbereiche/ausili-e-pubblicazioni/ordine-ausili-e-pubblicazioni?id={{ id }}"
           class="!no-underline border-none bg-black font-bold tracking-widest uppercase text-white hover:text-lime py-15 px-10 xl:px-25 relative {{ if files }}xl:top-10{{ /if }} leading-none inline-flex items-center transition-all">
           {{ 'Bestellen' | trans }}
         </a>
       {{ /if }}
-
-
 
     {{ /if }}
   </div>
