@@ -69,6 +69,13 @@ tabs:
                       fields:
                         -
                           import: image_text_topic
+                    video:
+                      display: Video
+                      instructions: 'Video hinzufügen'
+                      icon: media-webcam-video
+                      fields:
+                        -
+                          import: video
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack
