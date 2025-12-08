@@ -57,7 +57,7 @@
   @endif
   <div class="text-base">
     <strong>{{ __('Lieferadresse', [], $data['locale']) }}</strong><br>
-    {!! nl2br($data['delivery_address']) ?? '–' !!}
+    {!! $data['delivery_address'] ? nl2br($data['delivery_address']) : '–' !!}
   </div>
   <br>
   @if ($data['remarks'])
