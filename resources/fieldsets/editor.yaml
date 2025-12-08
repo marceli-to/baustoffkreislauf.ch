@@ -21,9 +21,16 @@ fields:
       localizable: true
       sets:
         downloads:
-          display: Medien/Downloads
-          icon: download-arrow-down
+          display: Medien
+          icon: addon-boxes-stack
           sets:
+            video:
+              display: Video
+              instructions: 'Video hinzufügen'
+              icon: media-webcam-video
+              fields:
+                -
+                  import: video
             protected_file:
               display: 'Datei (geschützt)'
               instructions: 'Passwortgeschützte Datei hinzufügen'

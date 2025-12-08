@@ -89,6 +89,10 @@
        {{ code }}
       {{ /if }}
 
+      {{ if type == 'video' }}
+        {{ partial:components/media/video}}
+      {{ /if }}
+
     {{ /content  }}
   {{ /partial:layout/content }}
 {{ /if }}
@@ -144,6 +148,12 @@
 {{ if type == 'sponsors' }}
   {{ partial:layout/content }}
     {{ partial:components/sponsors/wrapper }}
+  {{ /partial:layout/content }}
+{{ /if }}
+
+{{ if type == 'video' }}
+  {{ partial:layout/content }}
+    {{ partial:components/media/video }}
   {{ /partial:layout/content }}
 {{ /if }}
 
