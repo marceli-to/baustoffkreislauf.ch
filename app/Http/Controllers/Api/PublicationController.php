@@ -60,7 +60,7 @@ class PublicationController extends Controller
       ->notify(new OrderConfirmation($data)
     );
 
-    Notification::route('mail', 'm@marceli.to')
+    Notification::route('mail', 'info@baustoffkreislauf.ch')
       ->notify(new Order($data)
     );
 
