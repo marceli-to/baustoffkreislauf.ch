@@ -37,7 +37,7 @@ class PublicationController extends Controller
     $data = [
       'title' => $publication->title,
       'publication_id' => $publication->id,
-      'order_date' => now()->translatedFormat('d. F Y'),
+      'order_date' => now()->format('Y-m-d'),
       'quantity' => $request->input('quantity'),
       'name' => $request->input('name'),
       'firstname' => $request->input('firstname'),
