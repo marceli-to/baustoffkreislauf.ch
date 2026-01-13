@@ -19,7 +19,7 @@ tabs:
               format: d.m.Y
               type: date
               display: Datum
-              localizable: false
+              localizable: true
           -
             handle: location
             field:
