@@ -81,7 +81,7 @@
   @if ($data['affiliation'])
     <div class="text-base">
       <strong>{{ __('Zugehörigkeit', [], $data['locale']) }}</strong><br>
-      {{ $data['affiliation'] }}
+      {{ __($data['affiliation'], [], $data['locale']) }}
     </div>
     <br>
   @endif
@@ -102,7 +102,7 @@
   @if ($data['meal_options'])
     <div class="text-base">
       <strong>{{ __('Verpflegung', [], $data['locale']) }}</strong><br>
-      {{ $data['meal_options'] }}
+      {{ __($data['meal_options'], [], $data['locale']) }}
     </div>
     <br>
   @endif
