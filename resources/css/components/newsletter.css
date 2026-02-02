@@ -1,0 +1,19 @@
+.inf-form h4 {
+    @apply font-bold my-10 lg:my-20
+}
+
+.inf-form .inf-content {
+  @apply mt-20 lg:mt-40
+}
+
+.inf-form .inf-input {
+  @apply mb-20 lg:mb-40
+}
+
+.inf-form .inf-submit input {
+  @apply !mt-0 no-underline border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white text-center hover:text-black py-10 px-20 inline-flex items-center transition-all cursor-pointer
+}
+
+.inf-form .inf-submit {
+  @apply my-20 lg:my-40
+}
