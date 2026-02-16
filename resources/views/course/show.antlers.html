@@ -9,6 +9,7 @@
 
   {{ if has_form }}
     <div id="course-form" class="mt-25 lg:mt-50">
+      {{ if registration_deadline }}
       {{ if registration_deadline | modify_date("+1 day") | is_future }}
         <h2>Anmeldung/Inscription/Inscription</h2>
         <p>
@@ -18,6 +19,7 @@
       {{ else }}
         <p>{{ "Anmeldung ist nicht mehr möglich..." | trans }}</p>
       {{ endif }}
+      {{ /if }}
     </div>
   {{ endif }}
 {{ /partial:layout/content }}

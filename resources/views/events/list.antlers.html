@@ -6,6 +6,7 @@
     {{ collection from="events" as="events" sort="event_date:asc" }}
       {{ if events }}
         {{ events }}
+          {{ if event_date }}
           {{ if event_date | modify_date("+1 day") | is_future }}
             <div
               x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}'; 
@@ -62,6 +63,7 @@
                 </div>
               </div>
             </div>
+          {{ /if }}
           {{ /if }}
         {{ /events }}
       {{ /if }}
