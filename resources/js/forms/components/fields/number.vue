@@ -2,7 +2,7 @@
   <div class="relative">
     <input
       type="number"
-      min="1"
+      min="0"
       step="1"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"

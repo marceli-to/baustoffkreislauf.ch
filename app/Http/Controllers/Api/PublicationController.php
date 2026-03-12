@@ -71,7 +71,8 @@ class PublicationController extends Controller
 
   protected function validateRequest(Request $request, $event)
   {
-    $validationRules = $this->getValidationRules($event);
+    $hasLanguages = !empty($event->languages);
+    $validationRules = $this->getValidationRules($hasLanguages);
 
     $validator = Validator::make(
       $request->all(),
@@ -92,22 +93,28 @@ class PublicationController extends Controller
       return response()->json(['errors' => $formattedErrors], 422);
     }
 
-    // Ensure at least one language has quantity > 0
-    $quantities = $request->input('quantities', []);
-    if (is_array($quantities) && array_sum($quantities) < 1) {
-      return response()->json(['errors' => [
-        'quantities' => __('Bitte mindestens eine Anzahl grösser als 0 angeben'),
-      ]], 422);
+    if ($hasLanguages) {
+      // Ensure at least one language has quantity > 0
+      $quantities = $request->input('quantities', []);
+      if (is_array($quantities) && array_sum($quantities) < 1) {
+        return response()->json(['errors' => [
+          'quantities' => __('Bitte mindestens eine Anzahl grösser als 0 angeben'),
+        ]], 422);
+      }
     }
 
     return TRUE;
   }
 
-  protected function getValidationRules()
+  protected function getValidationRules($hasLanguages = true)
   {
     $validationRules = [];
-    $validationRules['quantities'] = 'required|array';
-    $validationRules['quantities.*'] = 'integer|min:0';
+    if ($hasLanguages) {
+      $validationRules['quantities'] = 'present|array';
+      $validationRules['quantities.*'] = 'nullable|integer|min:0';
+    } else {
+      $validationRules['quantity'] = 'required|integer|min:1';
+    }
     $validationRules['name'] = 'required';
     $validationRules['firstname'] = 'required';
     $validationRules['email'] = 'required|email|regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/';

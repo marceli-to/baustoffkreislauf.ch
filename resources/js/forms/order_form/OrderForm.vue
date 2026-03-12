@@ -176,9 +176,16 @@ const languageLabels = { de: 'Deutsch', fr: 'Français', it: 'Italiano' };
 
 const availableLanguages = computed(() => {
   if (!publication.value || !publication.value.languages) return [];
-  return Object.entries(publication.value.languages)
+  const langs = publication.value.languages;
+  if (Array.isArray(langs)) {
+    return langs.map(lang => {
+      const code = typeof lang === 'object' ? (lang.value || lang.key || Object.values(lang)[0]) : lang;
+      return { value: code, label: code.toUpperCase() };
+    });
+  }
+  return Object.entries(langs)
     .filter(([key, value]) => value)
-    .map(([key]) => ({ value: key, label: languageLabels[key] || key }));
+    .map(([key]) => ({ value: key, label: key.toUpperCase() }));
 });
 
 watch(() => form.value.quantities, (newVal) => {

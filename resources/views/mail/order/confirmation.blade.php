@@ -8,11 +8,23 @@
     {{ $data['title'] }}
   </div>
   <br>
-  <div class="text-base">
-    <strong>{{ __('Anzahl', [], $data['locale']) }}</strong><br>
-    {{ $data['quantity'] }}
-  </div>
-  <br>
+  @if (!empty($data['quantities']))
+    @foreach ($data['quantities'] as $lang => $qty)
+      @if ($qty > 0)
+        <div class="text-base">
+          <strong>{{ __('Anzahl', [], $data['locale']) }} ({{ strtoupper($lang) }})</strong><br>
+          {{ $qty }}
+        </div>
+        <br>
+      @endif
+    @endforeach
+  @else
+    <div class="text-base">
+      <strong>{{ __('Anzahl', [], $data['locale']) }}</strong><br>
+      {{ $data['quantity'] }}
+    </div>
+    <br>
+  @endif
   @if ($data['firstname'])
     <div class="text-base">
       <strong>{{ __('Vorname', [], $data['locale']) }}</strong><br>
