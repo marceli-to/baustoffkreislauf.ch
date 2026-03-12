@@ -3,6 +3,18 @@ fields:
   -
     handle: alt
     field:
-      display: 'Alt Text'
+      display: 'Alt Text (DE)'
       type: text
-      instructions: 'Description of the image'
+      instructions: 'Bildbeschreibung Deutsch'
+  -
+    handle: alt_fr
+    field:
+      display: 'Alt Text (FR)'
+      type: text
+      instructions: 'Description de l''image en français'
+  -
+    handle: alt_it
+    field:
+      display: 'Alt Text (IT)'
+      type: text
+      instructions: 'Descrizione dell''immagine in italiano'

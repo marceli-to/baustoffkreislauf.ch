@@ -2,8 +2,8 @@
   <source srcset="{{ glide:preview_image preset='md-webp' }}" type="image/webp">
   <img 
     src="{{ glide:image preset='md' }}" 
-    alt="{{ preview_image:alt }}" 
-    title="{{ preview_image:alt }}" 
+    alt="{{ partial:helpers/asset-alt :alt="preview_image:alt" :alt_fr="preview_image:alt_fr" :alt_it="preview_image:alt_it" }}"
+    title="{{ partial:helpers/asset-alt :alt="preview_image:alt" :alt_fr="preview_image:alt_fr" :alt_it="preview_image:alt_it" }}" 
     height="{{ preview_image:height }}" 
     width="{{ preview_image:width }}"
     class="block w-auto h-35 sm:h-50 {{ class ?? '' }}"

@@ -7,8 +7,8 @@
     <source media="(min-width: 768px)" srcset="{{ glide:image preset='lg' }}" type="image/jpeg">
     <img 
       src="{{ glide:image preset='md' }}" 
-      alt="{{ image:alt }}" 
-      title="{{ image:alt }}" 
+      alt="{{ partial:helpers/asset-alt :alt="image:alt" :alt_fr="image:alt_fr" :alt_it="image:alt_it" }}"
+      title="{{ partial:helpers/asset-alt :alt="image:alt" :alt_fr="image:alt_fr" :alt_it="image:alt_it" }}" 
       height="{{ image:height }}" 
       width="{{ image:width }}"
       class="block {{ class ?? '' }}"

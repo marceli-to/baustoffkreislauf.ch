@@ -38,7 +38,7 @@ fields:
                     antlers: false
                     type: textarea
                     display: Legende
-                    localizable: false
+                    localizable: true
                     listable: hidden
                     instructions_position: above
                     visibility: visible

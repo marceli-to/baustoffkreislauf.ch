@@ -7,8 +7,8 @@
     <source media="(min-width: 768px)" srcset="{{ glide:image_download preset='lg' }}" type="image/jpeg">
     <img 
       src="{{ glide:image_download preset='md' }}" 
-      alt="{{ image_download:alt }}" 
-      title="{{ image_download:alt }}" 
+      alt="{{ partial:helpers/asset-alt :alt="image_download:alt" :alt_fr="image_download:alt_fr" :alt_it="image_download:alt_it" }}"
+      title="{{ partial:helpers/asset-alt :alt="image_download:alt" :alt_fr="image_download:alt_fr" :alt_it="image_download:alt_it" }}" 
       height="{{ image_download:height }}" 
       width="{{ image_download:width }}"
       class="block w-full h-full aspect-[3/2] object-cover {{ class ?? '' }}"
