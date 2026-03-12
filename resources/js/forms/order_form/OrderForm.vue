@@ -15,9 +15,19 @@
       <h2>{{__('Artikel') }}: {{ publication.title }}</h2>
       <p>{{ publication.cost }}</p>
     </div>
-    <form-group>
+    <template v-if="availableLanguages.length > 0">
+      <form-group v-for="lang in availableLanguages" :key="lang.value">
+        <form-label :id="'quantity_' + lang.value" :label="__('Anzahl') + ' (' + lang.label + ')'" :required="true" />
+        <form-number-field
+          v-model.number="form.quantities[lang.value]"
+          :error="__(errors['quantities.' + lang.value])"
+          @update:error="errors['quantities.' + lang.value] = $event"
+        />
+      </form-group>
+    </template>
+    <form-group v-else>
       <form-label id="quantity" :label="__('Anzahl')" :required="true" />
-      <form-number-field 
+      <form-number-field
         v-model.number="form.quantity"
         :error="__(errors.quantity)"
         @update:error="errors.quantity = $event"
@@ -102,7 +112,7 @@
   </form>
 </template>
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import axios from 'axios';
 import { useI18n } from '@/composables/i18n';
 import FormGroup from '@/forms/components/fields/group.vue';
@@ -138,6 +148,7 @@ const locale = ref(document.documentElement.lang);
 
 const form = ref({
   publication_id: props.publicationId,
+  quantities: {},
   quantity: 1,
   name: null,
   firstname: null,
@@ -151,6 +162,7 @@ const form = ref({
 });
 
 const errors = ref({
+    quantities: '',
     quantity: '',
     name: '',
     firstname: '',
@@ -160,16 +172,34 @@ const errors = ref({
   }
 );
 
-watch(() => form.value.quantity, (newVal) => {
-  if (newVal !== null && newVal < 1) {
-    form.value.quantity = 1;
-  }
+const languageLabels = { de: 'Deutsch', fr: 'Français', it: 'Italiano' };
+
+const availableLanguages = computed(() => {
+  if (!publication.value || !publication.value.languages) return [];
+  return Object.entries(publication.value.languages)
+    .filter(([key, value]) => value)
+    .map(([key]) => ({ value: key, label: languageLabels[key] || key }));
 });
+
+watch(() => form.value.quantities, (newVal) => {
+  if (newVal) {
+    Object.keys(newVal).forEach(key => {
+      if (newVal[key] !== null && newVal[key] < 0) {
+        newVal[key] = 0;
+      }
+    });
+  }
+}, { deep: true });
 
 onMounted(async () => {
   try {
     const response = await axios.get(`/api/publication/${props.publicationId}`);
     publication.value = response.data.publication;
+    const quantities = {};
+    availableLanguages.value.forEach(lang => {
+      quantities[lang.value] = 0;
+    });
+    form.value.quantities = quantities;
     isLoaded.value = true;
   } catch (error) {
     console.error(error);
@@ -192,7 +222,8 @@ async function submitForm() {
 
 function handleSuccess() {
   form.value = {
-    publication_id: props.eventId,
+    publication_id: props.publicationId,
+    quantities: {},
     name: null,
     firstname: null,
     email: null,
@@ -204,11 +235,12 @@ function handleSuccess() {
   };
 
   errors.value = {
+    quantities: '',
+    quantity: '',
     name: '',
     firstname: '',
     email: '',
     phone: '',
-    location: '',
     invoice_address: '',
   };
   

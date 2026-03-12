@@ -51,6 +51,17 @@ tabs:
               display: Kosten/Preis
               localizable: true
           -
+            handle: languages
+            field:
+              type: checkboxes
+              display: 'Verfügbare Sprachen'
+              instructions: 'In welchen Sprachen ist die Publikation verfügbar?'
+              localizable: false
+              options:
+                de: Deutsch
+                fr: Français
+                it: Italiano
+          -
             handle: files
             field:
               type: replicator

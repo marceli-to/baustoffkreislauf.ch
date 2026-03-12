@@ -18,6 +18,7 @@ class PublicationController extends Controller
         'date' => $publication->date,
         'title' => $publication->title,
         'cost' => $publication->cost,
+        'languages' => $publication->languages ?? [],
       ],
     ]);
   }
@@ -38,6 +39,7 @@ class PublicationController extends Controller
       'title' => $publication->title,
       'publication_id' => $publication->id,
       'order_date' => now()->format('Y-m-d'),
+      'quantities' => $request->input('quantities', []),
       'quantity' => $request->input('quantity'),
       'name' => $request->input('name'),
       'firstname' => $request->input('firstname'),
@@ -90,13 +92,22 @@ class PublicationController extends Controller
       return response()->json(['errors' => $formattedErrors], 422);
     }
 
+    // Ensure at least one language has quantity > 0
+    $quantities = $request->input('quantities', []);
+    if (is_array($quantities) && array_sum($quantities) < 1) {
+      return response()->json(['errors' => [
+        'quantities' => __('Bitte mindestens eine Anzahl grösser als 0 angeben'),
+      ]], 422);
+    }
+
     return TRUE;
   }
 
   protected function getValidationRules()
   {
     $validationRules = [];
-    $validationRules['quantity'] = 'required';
+    $validationRules['quantities'] = 'required|array';
+    $validationRules['quantities.*'] = 'integer|min:0';
     $validationRules['name'] = 'required';
     $validationRules['firstname'] = 'required';
     $validationRules['email'] = 'required|email|regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
@@ -105,7 +116,7 @@ class PublicationController extends Controller
 
     // Set validation messages
     $validationMessages = [
-      'quantity.required' => __('Anzahl ist erforderlich'),
+      'quantities.required' => __('Bitte mindestens eine Sprache mit Anzahl angeben'),
       'name.required' => __('Name ist erforderlich'),
       'firstname.required' => __('Vorname ist erforderlich'),
       'email.required' => __('E-Mail-Adresse ist erforderlich'),
