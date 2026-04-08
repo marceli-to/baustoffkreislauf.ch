@@ -92,7 +92,9 @@ class EventController extends Controller
       'party' => $request->input('party'),
       'affiliation' => $request->input('affiliation'),
       'wants_meal_options' => $request->input('wants_meal_options'),
-      'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen',
+      'meal_options' => $event->has_meal_options
+        ? ($request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen')
+        : null,
       'participation_type' => is_array($request->input('participation_type'))
         ? implode("\n", $request->input('participation_type'))
         : null,
