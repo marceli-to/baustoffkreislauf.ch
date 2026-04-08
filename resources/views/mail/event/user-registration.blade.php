@@ -125,6 +125,13 @@
     </div>
     <br>
   @endif
+  @if (!empty($data['meal_occasion_food_preference']))
+    <div class="text-base">
+      <strong>{{ __('Menüwunsch', [], $data['locale']) }}</strong><br>
+      {{ __($data['meal_occasion_food_preference'], [], $data['locale']) }}
+    </div>
+    <br>
+  @endif
   @if ($data['additional_individuals'])
     <div class="text-base">
       <strong>{{ __('Zusätzliche Teilnehmer', [], $data['locale']) }}</strong><br>
