@@ -133,6 +133,12 @@ tabs:
               display: 'Apéro'
               localizable: false
           -
+            handle: meal_occasion_food_preference
+            field:
+              type: text
+              display: 'Essenswahl'
+              localizable: false
+          -
             handle: additional_individuals
             field:
               type: textarea

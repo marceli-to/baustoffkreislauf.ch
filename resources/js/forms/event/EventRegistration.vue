@@ -203,6 +203,13 @@
           </div>
         </div>
       </form-group>
+      <form-group v-if="mealOccasionOptions.length > 0 && (form.meal_occasion_lunch || form.meal_occasion_apero)">
+        <form-label id="meal_occasion_food_preference" :label="__('Menüwunsch')" />
+        <form-select-field
+          v-model="form.meal_occasion_food_preference"
+          :options="mealOccasionOptions"
+        />
+      </form-group>
     </template>
 
     <template v-if="hasButtonAdditionalIndividuals">
@@ -227,6 +234,7 @@
             :hasMealOccasions="hasMealOccasions"
             :hasMealOccasionLunch="hasMealOccasionLunch"
             :hasMealOccasionApero="hasMealOccasionApero"
+            :mealOccasionOptions="mealOccasionOptions"
             :salutations="salutations"
             :mealOptions="mealOptions"
             :errors="errors.additional_individuals ? errors.additional_individuals[index] : {}"
@@ -347,6 +355,7 @@ const hasMealOccasionLunch = ref(false);
 const hasMealOccasionApero = ref(false);
 const requiresMealOptions = ref(false);
 const mealOptions = ref([]);
+const mealOccasionOptions = ref([]);
 const hasButtonAdditionalIndividuals = ref(false);
 const additionalIndividuals = ref([]);
 const hasFieldAdditionalIndividualSalutation = ref(false);
@@ -396,6 +405,7 @@ const form = ref({
   participation_type: [],
   meal_occasion_lunch: false,
   meal_occasion_apero: false,
+  meal_occasion_food_preference: null,
   additional_individuals: [],
 });
 
@@ -473,6 +483,18 @@ onMounted(async () => {
     hasMealOccasions.value = response.data.has_meal_occasions;
     hasMealOccasionLunch.value = response.data.has_meal_occasion_lunch;
     hasMealOccasionApero.value = response.data.has_meal_occasion_apero;
+
+    if (hasMealOccasions.value && response.data.meal_occasion_options) {
+      Object.entries(response.data.meal_occasion_options).forEach(([key, value]) => {
+        if (value) {
+          mealOccasionOptions.value.push({ label: __(key), value: key });
+        }
+      });
+      if (mealOccasionOptions.value.length > 0) {
+        form.value.meal_occasion_food_preference = mealOccasionOptions.value[0].value;
+      }
+    }
+
     hasButtonAdditionalIndividuals.value = response.data.has_button_additional_individuals;
     hasFieldAdditionalIndividualSalutation.value = response.data.has_field_additional_individual_salutation;
     hasFieldAdditionalIndividualEmail.value = response.data.has_field_additional_individual_email;
@@ -536,6 +558,7 @@ function addAdditionalIndividual() {
     participation_type: [],
     meal_occasion_lunch: false,
     meal_occasion_apero: false,
+    meal_occasion_food_preference: mealOccasionOptions.value.length > 0 ? mealOccasionOptions.value[0].value : null,
   });
   form.value.additional_individuals = additionalIndividuals.value;
 }
@@ -566,6 +589,7 @@ function handleSuccess() {
     participation_type: [],
     meal_occasion_lunch: false,
     meal_occasion_apero: false,
+    meal_occasion_food_preference: mealOccasionOptions.value.length > 0 ? mealOccasionOptions.value[0].value : null,
     additional_individuals: [],
   };
 

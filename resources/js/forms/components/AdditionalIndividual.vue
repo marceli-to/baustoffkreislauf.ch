@@ -124,6 +124,13 @@
           </div>
         </div>
       </form-group>
+      <form-group v-if="mealOccasionOptions.length > 0 && (individual.meal_occasion_lunch || individual.meal_occasion_apero)">
+        <form-label id="individual_meal_occasion_food_preference" :label="__('Menüwunsch')" />
+        <form-select-field
+          v-model="individual.meal_occasion_food_preference"
+          :options="mealOccasionOptions"
+        />
+      </form-group>
     </template>
 
   </div>
@@ -160,6 +167,7 @@ const props = defineProps({
   hasMealOccasions: Boolean,
   hasMealOccasionLunch: Boolean,
   hasMealOccasionApero: Boolean,
+  mealOccasionOptions: Array,
   salutations: Array,
   mealOptions: Array,
   errors: {
@@ -182,6 +190,7 @@ const individual = ref({
   participation_type: [],
   meal_occasion_lunch: false,
   meal_occasion_apero: false,
+  meal_occasion_food_preference: props.mealOccasionOptions?.length > 0 ? props.mealOccasionOptions[0].value : null,
 });
 
 function getParticipationLabel(option) {

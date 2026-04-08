@@ -456,6 +456,33 @@ tabs:
               if:
                 has_meal_occasions: 'equals true'
           -
+            handle: has_meal_occasion_option_meat
+            field:
+              type: toggle
+              display: 'Option "Fleisch"'
+              localizable: false
+              width: 33
+              if:
+                has_meal_occasions: 'equals true'
+          -
+            handle: has_meal_occasion_option_vegetarian
+            field:
+              type: toggle
+              display: 'Option "Vegetarisch"'
+              localizable: false
+              width: 33
+              if:
+                has_meal_occasions: 'equals true'
+          -
+            handle: has_meal_occasion_option_vegan
+            field:
+              type: toggle
+              display: 'Option "Vegan"'
+              localizable: false
+              width: 33
+              if:
+                has_meal_occasions: 'equals true'
+          -
             handle: additional_individuals
             field:
               type: section

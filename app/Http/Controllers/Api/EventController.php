@@ -52,6 +52,11 @@ class EventController extends Controller
       'has_meal_occasions' => (bool) $event->has_meal_occasions,
       'has_meal_occasion_lunch' => (bool) $event->has_meal_occasion_lunch,
       'has_meal_occasion_apero' => (bool) $event->has_meal_occasion_apero,
+      'meal_occasion_options' => [
+        'Fleisch' => $event->has_meal_occasion_option_meat ? __('Fleisch') : null,
+        'Vegetarisch' => $event->has_meal_occasion_option_vegetarian ? __('Vegetarisch') : null,
+        'Vegan' => $event->has_meal_occasion_option_vegan ? __('Vegan') : null,
+      ],
       'has_button_additional_individuals' => $event->has_button_additional_individuals,
       'has_field_additional_individual_salutation' => $event->has_field_additional_individual_salutation,
       'has_field_additional_individual_email' => $event->has_field_additional_individual_email,
@@ -100,6 +105,7 @@ class EventController extends Controller
         : null,
       'meal_occasion_lunch' => (bool) $request->input('meal_occasion_lunch'),
       'meal_occasion_apero' => (bool) $request->input('meal_occasion_apero'),
+      'meal_occasion_food_preference' => $request->input('meal_occasion_food_preference'),
       'locale' => $request->input('locale'),
     ];
 
@@ -120,6 +126,7 @@ class EventController extends Controller
           : null,
         'meal_occasion_lunch' => ($additional_individual['meal_occasion_lunch'] ?? false) ? 'Lunch' : null,
         'meal_occasion_apero' => ($additional_individual['meal_occasion_apero'] ?? false) ? 'Apéro' : null,
+        'meal_occasion_food_preference' => $additional_individual['meal_occasion_food_preference'] ?? null,
       ];
 
       // create comma separated string
