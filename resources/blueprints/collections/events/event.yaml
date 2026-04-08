@@ -342,6 +342,46 @@ tabs:
               display: 'Feld "Bemerkungen"'
               localizable: false
           -
+            handle: participation_type_section
+            field:
+              type: section
+              display: 'Teilnahme-Optionen'
+              localizable: false
+              instructions: 'Checkboxen für Teilnahme (z.B. Vormittag/Nachmittag)'
+          -
+            handle: has_participation_type
+            field:
+              type: toggle
+              display: Aktivieren
+              localizable: false
+          -
+            handle: participation_type_options
+            field:
+              type: grid
+              display: Optionen
+              localizable: false
+              fields:
+                -
+                  handle: label_de
+                  field:
+                    type: text
+                    display: DE
+                    width: 33
+                -
+                  handle: label_fr
+                  field:
+                    type: text
+                    display: FR
+                    width: 33
+                -
+                  handle: label_it
+                  field:
+                    type: text
+                    display: IT
+                    width: 33
+              if:
+                has_participation_type: 'equals true'
+          -
             handle: meal_options
             field:
               type: section
@@ -384,6 +424,37 @@ tabs:
               width: 33
               if:
                 has_meal_options: 'equals true'
+          -
+            handle: meal_occasions_section
+            field:
+              type: section
+              display: 'Teilnahme Essen'
+              localizable: false
+              instructions: 'Separate Checkboxen für Lunch/Apéro'
+          -
+            handle: has_meal_occasions
+            field:
+              type: toggle
+              display: Aktivieren
+              localizable: false
+          -
+            handle: has_meal_occasion_lunch
+            field:
+              type: toggle
+              display: 'Option "Lunch"'
+              localizable: false
+              width: 50
+              if:
+                has_meal_occasions: 'equals true'
+          -
+            handle: has_meal_occasion_apero
+            field:
+              type: toggle
+              display: 'Option "Apéro"'
+              localizable: false
+              width: 50
+              if:
+                has_meal_occasions: 'equals true'
           -
             handle: additional_individuals
             field:

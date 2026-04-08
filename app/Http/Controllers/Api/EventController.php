@@ -47,6 +47,11 @@ class EventController extends Controller
         'Vegetarisch' => $event->has_meal_option_vegetarian ? __('Vegetarisch') : null,
         'Vegan' => $event->has_meal_option_vegan ? __('Vegan') : null,
       ],
+      'has_participation_type' => (bool) $event->has_participation_type,
+      'participation_type_options' => $event->participation_type_options ?? [],
+      'has_meal_occasions' => (bool) $event->has_meal_occasions,
+      'has_meal_occasion_lunch' => (bool) $event->has_meal_occasion_lunch,
+      'has_meal_occasion_apero' => (bool) $event->has_meal_occasion_apero,
       'has_button_additional_individuals' => $event->has_button_additional_individuals,
       'has_field_additional_individual_salutation' => $event->has_field_additional_individual_salutation,
       'has_field_additional_individual_email' => $event->has_field_additional_individual_email,
@@ -88,6 +93,11 @@ class EventController extends Controller
       'affiliation' => $request->input('affiliation'),
       'wants_meal_options' => $request->input('wants_meal_options'),
       'meal_options' => $request->input('wants_meal_options') != "false" && $request->input('meal_options') ? $request->input('meal_options') : 'ohne Essen',
+      'participation_type' => is_array($request->input('participation_type'))
+        ? implode("\n", $request->input('participation_type'))
+        : null,
+      'meal_occasion_lunch' => (bool) $request->input('meal_occasion_lunch'),
+      'meal_occasion_apero' => (bool) $request->input('meal_occasion_apero'),
       'locale' => $request->input('locale'),
     ];
 
@@ -103,6 +113,11 @@ class EventController extends Controller
         'name' => $additional_individual['firstname'] . ' ' . $additional_individual['name'],
         'meal_options' => $additional_individual['meal_options'] ?? 'ohne Essen',
         'cost_center' => $additional_individual['cost_center'] ?? null,
+        'participation_type' => isset($additional_individual['participation_type']) && is_array($additional_individual['participation_type'])
+          ? implode(' / ', $additional_individual['participation_type'])
+          : null,
+        'meal_occasion_lunch' => ($additional_individual['meal_occasion_lunch'] ?? false) ? 'Lunch' : null,
+        'meal_occasion_apero' => ($additional_individual['meal_occasion_apero'] ?? false) ? 'Apéro' : null,
       ];
 
       // create comma separated string
@@ -217,6 +232,10 @@ class EventController extends Controller
       $validationRules['language'] = 'required';
     }
 
+    if ($event->has_participation_type) {
+      $validationRules['participation_type'] = 'required|array|min:1';
+    }
+
     if ($event->has_meal_options) {
       $validationRules['wants_meal_options'] = 'required';
       $validationRules['meal_options'] = 'required_if:wants_meal_options,true';
@@ -238,6 +257,10 @@ class EventController extends Controller
       if ($event->has_field_additional_individual_cost_center) {
         $validationRules['additional_individuals.*.cost_center'] = 'required';
       }
+    }
+
+    if ($event->has_button_additional_individuals && $event->has_participation_type) {
+      $validationRules['additional_individuals.*.participation_type'] = 'required|array|min:1';
     }
 
     if ($event->has_button_additional_individuals && $event->has_meal_options) {
@@ -275,6 +298,10 @@ class EventController extends Controller
       'additional_individuals.*.meal_options.required' => __('Essen ist erforderlich'),
       'additional_individuals.*.cost_center.required' => __('Kostenstelle ist erforderlich'),
       'additional_individuals.*.wants_meal_options.required' => __('Angabe ist erforderlich'),
+      'participation_type.required' => __('Bitte wählen Sie mindestens eine Option'),
+      'participation_type.min' => __('Bitte wählen Sie mindestens eine Option'),
+      'additional_individuals.*.participation_type.required' => __('Bitte wählen Sie mindestens eine Option'),
+      'additional_individuals.*.participation_type.min' => __('Bitte wählen Sie mindestens eine Option'),
       'toc.accepted' => __('Sie müssen die Teilnahme- und Annullationsbedingungen sowie die Datenschutzbestimmungen akzeptieren'),
     ];
     

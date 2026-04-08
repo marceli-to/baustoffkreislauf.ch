@@ -118,5 +118,10 @@
   "Anzahl ist erforderlich": "Quantité est nécessaire",
   "Rechnungsadresse ist erforderlich": "L'adresse de facturation est obligatoire",
   "Bestellformular": "Formulaire de commande",
-  "Guten Tag<br><br>Vielen Dank für Ihre Bestellung.": "Bonjour<br><br>Merci pour votre commande."
+  "Guten Tag<br><br>Vielen Dank für Ihre Bestellung.": "Bonjour<br><br>Merci pour votre commande.",
+  "Teilnahme": "Participation",
+  "Teilnahme Essen": "Participation repas",
+  "Ich nehme am Lunch teil": "Je participe au lunch",
+  "Ich nehme am Apéro teil": "Je participe à l'apéritif",
+  "Bitte wählen Sie mindestens eine Option": "Veuillez sélectionner au moins une option"
 }

@@ -99,10 +99,29 @@
     </div>
     <br>
   @endif
+  @if (!empty($data['participation_type']))
+    <div class="text-base">
+      <strong>{{ __('Teilnahme', [], $data['locale']) }}</strong><br>
+      {!! nl2br(e($data['participation_type'])) !!}
+    </div>
+    <br>
+  @endif
   @if ($data['meal_options'])
     <div class="text-base">
       <strong>{{ __('Verpflegung', [], $data['locale']) }}</strong><br>
       {{ __($data['meal_options'], [], $data['locale']) }}
+    </div>
+    <br>
+  @endif
+  @if (($data['meal_occasion_lunch'] ?? false) || ($data['meal_occasion_apero'] ?? false))
+    <div class="text-base">
+      <strong>{{ __('Teilnahme Essen', [], $data['locale']) }}</strong><br>
+      @if ($data['meal_occasion_lunch'] ?? false)
+        {{ __('Ich nehme am Lunch teil', [], $data['locale']) }}<br>
+      @endif
+      @if ($data['meal_occasion_apero'] ?? false)
+        {{ __('Ich nehme am Apéro teil', [], $data['locale']) }}
+      @endif
     </div>
     <br>
   @endif

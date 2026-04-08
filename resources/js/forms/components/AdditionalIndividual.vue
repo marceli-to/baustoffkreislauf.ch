@@ -41,6 +41,28 @@
         @update:error="errors.cost_center = $event"
       />
     </form-group>
+    <template v-if="hasParticipationType">
+      <form-group>
+        <form-label id="individual_participation_type" :label="__('Teilnahme')" :required="true" />
+        <div class="flex flex-col gap-y-10 mt-3 lg:mt-10 relative">
+          <div
+            v-for="(option, index) in participationTypeOptions"
+            :key="index"
+            class="checkboxes flex gap-x-15"
+          >
+            <input
+              :id="'individual_participation_type_' + index"
+              type="checkbox"
+              :value="getParticipationLabel(option)"
+              :checked="individual.participation_type.includes(getParticipationLabel(option))"
+              @change="toggleParticipationType(option, $event)"
+            />
+            <label :for="'individual_participation_type_' + index">{{ getParticipationLabel(option) }}</label>
+          </div>
+          <Error :error="__(errors.participation_type)" />
+        </div>
+      </form-group>
+    </template>
     <template v-if="hasMealOptions">
       <form-group>
         <label>{{ __('Essen/Apéro') }}</label>
@@ -78,6 +100,31 @@
         />
       </form-group>
     </template>
+    <template v-if="hasMealOccasions">
+      <form-group>
+        <form-label id="individual_meal_occasions" :label="__('Teilnahme Essen')" />
+        <div class="flex flex-col gap-y-10 mt-3 lg:mt-10">
+          <div v-if="hasMealOccasionLunch" class="checkboxes flex gap-x-15">
+            <input
+              :id="'individual_meal_occasion_lunch'"
+              type="checkbox"
+              :checked="individual.meal_occasion_lunch"
+              @change="individual.meal_occasion_lunch = $event.target.checked"
+            />
+            <label for="individual_meal_occasion_lunch">{{ __('Ich nehme am Lunch teil') }}</label>
+          </div>
+          <div v-if="hasMealOccasionApero" class="checkboxes flex gap-x-15">
+            <input
+              :id="'individual_meal_occasion_apero'"
+              type="checkbox"
+              :checked="individual.meal_occasion_apero"
+              @change="individual.meal_occasion_apero = $event.target.checked"
+            />
+            <label for="individual_meal_occasion_apero">{{ __('Ich nehme am Apéro teil') }}</label>
+          </div>
+        </div>
+      </form-group>
+    </template>
 
   </div>
 </template>
@@ -108,6 +155,11 @@ const props = defineProps({
   requiresCostCenter: Boolean,
   hasEmail: Boolean,
   requiresEmail: Boolean,
+  hasParticipationType: Boolean,
+  participationTypeOptions: Array,
+  hasMealOccasions: Boolean,
+  hasMealOccasionLunch: Boolean,
+  hasMealOccasionApero: Boolean,
   salutations: Array,
   mealOptions: Array,
   errors: {
@@ -117,6 +169,8 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:individual']);
+const locale = ref(document.documentElement.lang);
+
 const individual = ref({
   salutation: props.salutations[0] ? props.salutations[0].value : null,
   email: null,
@@ -125,7 +179,26 @@ const individual = ref({
   wants_meal_options: null,
   meal_options: null,
   cost_center: null,
+  participation_type: [],
+  meal_occasion_lunch: false,
+  meal_occasion_apero: false,
 });
+
+function getParticipationLabel(option) {
+  const key = 'label_' + locale.value;
+  return option[key] || option.label_de;
+}
+
+function toggleParticipationType(option, event) {
+  const label = getParticipationLabel(option);
+  if (event.target.checked) {
+    if (!individual.value.participation_type.includes(label)) {
+      individual.value.participation_type.push(label);
+    }
+  } else {
+    individual.value.participation_type = individual.value.participation_type.filter(l => l !== label);
+  }
+}
 
 // Watch for changes in the individual object and emit them to the parent
 watch(individual, (newValue) => {

@@ -115,6 +115,24 @@ tabs:
               display: 'Präferenz Menü'
               localizable: false
           -
+            handle: participation_type
+            field:
+              type: textarea
+              display: Teilnahme
+              localizable: false
+          -
+            handle: meal_occasion_lunch
+            field:
+              type: toggle
+              display: 'Lunch'
+              localizable: false
+          -
+            handle: meal_occasion_apero
+            field:
+              type: toggle
+              display: 'Apéro'
+              localizable: false
+          -
             handle: additional_individuals
             field:
               type: textarea

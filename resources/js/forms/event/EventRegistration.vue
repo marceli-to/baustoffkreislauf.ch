@@ -118,6 +118,29 @@
         :options="languages"
       />
     </form-group>
+    <template v-if="hasParticipationType">
+      <form-group>
+        <form-label id="participation_type" :label="__('Teilnahme')" :required="true" />
+        <div class="flex flex-col gap-y-10 mt-3 lg:mt-10 relative">
+          <div
+            v-for="(option, index) in participationTypeOptions"
+            :key="index"
+            class="checkboxes flex gap-x-15"
+          >
+            <input
+              :id="'participation_type_' + index"
+              type="checkbox"
+              :value="getParticipationLabel(option)"
+              :checked="form.participation_type.includes(getParticipationLabel(option))"
+              @change="toggleParticipationType(option, $event)"
+            />
+            <label :for="'participation_type_' + index">{{ getParticipationLabel(option) }}</label>
+          </div>
+          <Error :error="__(errors.participation_type)" />
+        </div>
+      </form-group>
+    </template>
+
     <template v-if="hasMealOptions">
       <form-group>
         <label>{{ __('Essen/Apéro') }}</label>
@@ -156,6 +179,32 @@
       </form-group>
     </template>
 
+    <template v-if="hasMealOccasions">
+      <form-group>
+        <form-label id="meal_occasions" :label="__('Teilnahme Essen')" />
+        <div class="flex flex-col gap-y-10 mt-3 lg:mt-10">
+          <div v-if="hasMealOccasionLunch" class="checkboxes flex gap-x-15">
+            <input
+              id="meal_occasion_lunch"
+              type="checkbox"
+              :checked="form.meal_occasion_lunch"
+              @change="form.meal_occasion_lunch = $event.target.checked"
+            />
+            <label for="meal_occasion_lunch">{{ __('Ich nehme am Lunch teil') }}</label>
+          </div>
+          <div v-if="hasMealOccasionApero" class="checkboxes flex gap-x-15">
+            <input
+              id="meal_occasion_apero"
+              type="checkbox"
+              :checked="form.meal_occasion_apero"
+              @change="form.meal_occasion_apero = $event.target.checked"
+            />
+            <label for="meal_occasion_apero">{{ __('Ich nehme am Apéro teil') }}</label>
+          </div>
+        </div>
+      </form-group>
+    </template>
+
     <template v-if="hasButtonAdditionalIndividuals">
       <div>
         <h3 class="mt-15 xl:mt-30 mb:5 xl:mb-10">{{ __('Weitere Person') }}</h3>
@@ -173,6 +222,11 @@
             :requiresMealOptions="requiresMealOptions"
             :hasCostCenter="hasFieldAdditionalIndividualCostCenter"
             :requiresCostCenter="requiresCostCenter"
+            :hasParticipationType="hasParticipationType"
+            :participationTypeOptions="participationTypeOptions"
+            :hasMealOccasions="hasMealOccasions"
+            :hasMealOccasionLunch="hasMealOccasionLunch"
+            :hasMealOccasionApero="hasMealOccasionApero"
             :salutations="salutations"
             :mealOptions="mealOptions"
             :errors="errors.additional_individuals ? errors.additional_individuals[index] : {}"
@@ -286,6 +340,11 @@ const requiresAffiliation = ref(false);
 const hasLanguage = ref(false);
 const requiresLanguage = ref(false);
 const hasRemarks = ref(false);
+const hasParticipationType = ref(false);
+const participationTypeOptions = ref([]);
+const hasMealOccasions = ref(false);
+const hasMealOccasionLunch = ref(false);
+const hasMealOccasionApero = ref(false);
 const requiresMealOptions = ref(false);
 const mealOptions = ref([]);
 const hasButtonAdditionalIndividuals = ref(false);
@@ -334,6 +393,9 @@ const form = ref({
   language: null,
   wants_meal_options: null,
   meal_options: null,
+  participation_type: [],
+  meal_occasion_lunch: false,
+  meal_occasion_apero: false,
   additional_individuals: [],
 });
 
@@ -347,6 +409,7 @@ const errors = ref({
     location: '',
     address: '',
     meal_options: '',
+    participation_type: '',
     additional_individuals: [],
   }
 );
@@ -405,6 +468,11 @@ onMounted(async () => {
     if (hasAffiliation.value) {
       form.value.affiliation = affiliations.value[0].value;
     }
+    hasParticipationType.value = response.data.has_participation_type;
+    participationTypeOptions.value = response.data.participation_type_options || [];
+    hasMealOccasions.value = response.data.has_meal_occasions;
+    hasMealOccasionLunch.value = response.data.has_meal_occasion_lunch;
+    hasMealOccasionApero.value = response.data.has_meal_occasion_apero;
     hasButtonAdditionalIndividuals.value = response.data.has_button_additional_individuals;
     hasFieldAdditionalIndividualSalutation.value = response.data.has_field_additional_individual_salutation;
     hasFieldAdditionalIndividualEmail.value = response.data.has_field_additional_individual_email;
@@ -416,6 +484,22 @@ onMounted(async () => {
     console.error(error);
   }
 });
+
+function getParticipationLabel(option) {
+  const key = 'label_' + locale.value;
+  return option[key] || option.label_de;
+}
+
+function toggleParticipationType(option, event) {
+  const label = getParticipationLabel(option);
+  if (event.target.checked) {
+    if (!form.value.participation_type.includes(label)) {
+      form.value.participation_type.push(label);
+    }
+  } else {
+    form.value.participation_type = form.value.participation_type.filter(l => l !== label);
+  }
+}
 
 async function submitForm() {
   isSubmitting.value = true;
@@ -449,6 +533,9 @@ function addAdditionalIndividual() {
     firstname: null,
     wants_meal_options: null,
     meal_options: null,
+    participation_type: [],
+    meal_occasion_lunch: false,
+    meal_occasion_apero: false,
   });
   form.value.additional_individuals = additionalIndividuals.value;
 }
@@ -476,6 +563,9 @@ function handleSuccess() {
     affiliation: null,
     cost_center: null,
     language: null,
+    participation_type: [],
+    meal_occasion_lunch: false,
+    meal_occasion_apero: false,
     additional_individuals: [],
   };
 
@@ -504,6 +594,7 @@ function handleSuccess() {
     location: '',
     address: '',
     meal_options: '',
+    participation_type: '',
     additional_individuals: [],
   };
   

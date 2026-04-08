@@ -116,6 +116,10 @@
   "Anzahl ist erforderlich": "Quantità è necessaria",
   "Rechnungsadresse ist erforderlich": "L'indirizzo di fatturazione è richiesto",
   "Bestellformular": "Modulo di ordine",
-  "Guten Tag<br><br>Vielen Dank für Ihre Bestellung.": "Buongiorno<br><br>Grazie per la tua iscrizione."
-  
+  "Guten Tag<br><br>Vielen Dank für Ihre Bestellung.": "Buongiorno<br><br>Grazie per la tua iscrizione.",
+  "Teilnahme": "Partecipazione",
+  "Teilnahme Essen": "Partecipazione pasti",
+  "Ich nehme am Lunch teil": "Partecipo al pranzo",
+  "Ich nehme am Apéro teil": "Partecipo all'aperitivo",
+  "Bitte wählen Sie mindestens eine Option": "Selezionare almeno un'opzione"
 }

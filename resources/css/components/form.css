@@ -49,7 +49,7 @@ textarea {
 
 .checkboxes input[type=checkbox],
 .checkboxes input[type=radio] {
-  @apply appearance-none w-24 lg:w-28 h-24 lg:h-28 ring-0 focus:ring-0 !ring-offset-0 !outline-none border border-lime text-black bg-white !accent-lime
+  @apply appearance-none shrink-0 w-24 lg:w-28 h-24 lg:h-28 ring-0 focus:ring-0 !ring-offset-0 !outline-none border border-lime text-black bg-white !accent-lime
 }
 
 .checkboxes input[type=checkbox] {
