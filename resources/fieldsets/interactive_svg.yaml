@@ -1,0 +1,14 @@
+title: 'SVG Interkativ'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+      localizable: false
+  -
+    handle: svg_code
+    field:
+      type: textarea
+      display: 'SVG Code'
+      localizable: false

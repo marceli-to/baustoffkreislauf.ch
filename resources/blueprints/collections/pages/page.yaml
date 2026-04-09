@@ -182,6 +182,13 @@ tabs:
                       instructions: 'Bestellformular für Publikationen'
                       icon: form-address-field
                       fields: {  }
+                    interactive_svg:
+                      display: 'Interaktives SVG'
+                      instructions: 'Interkatives SVG hinzufügen'
+                      icon: programming-script-code-brackets
+                      fields:
+                        -
+                          import: interactive_svg
   media:
     display: Medien
     sections:
