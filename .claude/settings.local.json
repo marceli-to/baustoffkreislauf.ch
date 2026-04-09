@@ -4,7 +4,18 @@
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nRestore non-production mail redirect\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(find /Users/marceli.to/Jamon.digital/Webroot/baustoffkreislauf.ch/app -name \"*Notification*\" -o -name \"*Mail*\" 2>/dev/null | head -20)",
+      "Bash(find /Users/marceli.to/Jamon.digital/Webroot/baustoffkreislauf.ch/resources -name \"*.php\" -path \"*/lang/*\" 2>/dev/null | head -20)",
+      "Bash(find /Users/marceli.to/Jamon.digital/Webroot/baustoffkreislauf.ch/resources/views -name \"*publication*\" -o -name \"*order*\" | grep -E \"\\\\.\\(antlers|blade\\)\\\\.html?$\" 2>/dev/null)",
+      "Bash(find /Users/marceli.to/Jamon.digital/Webroot/baustoffkreislauf.ch -name \"config.php\" -o -name \"*.config.php\" 2>/dev/null | head -10)",
+      "Bash(find /Users/marceli.to/Jamon.digital/Webroot/baustoffkreislauf.ch/content/collections/publications/de -name \"*.md\" 2>/dev/null | head -3)",
+      "Bash(find /Users/marceli.to/Jamon.digital/Webroot/baustoffkreislauf.ch/content/collections/publications/de -name \"*.md\" -exec grep -l \"orderable: true\" {} \\\\; 2>/dev/null | head -3)",
+      "Bash(npm run:*)",
+      "Bash(php artisan:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://baustoffkreislauf.ch.test/download/d_bks_2025_jahresrechnung-komplett_fr.pdf -k)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://baustoffkreislauf.ch.test/download/d_bks_2024_jahresrechnung-komplett_fr.pdf -k)",
+      "Bash(curl:*)"
     ]
   }
 }
