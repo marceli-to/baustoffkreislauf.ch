@@ -47,6 +47,12 @@ return [
             'form_url' => null,
         ],
 
+        'pfas' => [
+            'driver' => 'password',
+            'allowed' => ['pfas-2026-baus'],
+            'form_url' => null,
+        ],
+
     ],
 
 ];
