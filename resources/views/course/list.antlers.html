@@ -8,143 +8,142 @@
 
 {{ partial:layout/content-fullscreen badge="Lehrgänge & Kurse" badgeClass="!hidden md:!flex" }}
   <div class="grid grid-cols-12 gap-x-15 gap-y-25 md:ml-30 lg:ml-10 xl:ml-0" x-data="{ active: null }">
-    {{ collection locale="de" from="courses" sort="course_date:asc" }}
-
+    {{ collection from="courses" site="de" sort="course_date:asc" }}
       {{ if course_date }}
-      {{ if course_date | modify_date("+1 day") | is_future }}
-        <div
-          x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}'; 
-          $nextTick(() => {
-            $el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          })"
-          class="col-span-12 md:col-span-6 hyphens-auto no-underline group cursor-pointer scroll-mt-115 md:scroll-mt-45"
-          :class="{ 'md:!col-span-12': active === '{{ id }}' }"
-          title="{{ title }}">
-          <div class="flex justify-between items-center gap-x-10">
-            <hr class="!bg-black w-full h-2" />
-            <span class="flex-shrink-0" :class="{ 'rotate-180': active === '{{ id }}' }">
-              {{ partial:icons/chevron-down class="w-20 lg:w-28 h-auto" }}
-            </span>
-          </div>
-          <div 
-            class="{{ panel_theme ? panel_theme : 'bg-white' }} leading-[1.45] mt-10 p-15 lg:p-20 lg:pt-15 group-hover:bg-black/10 transition-all"
-            :class="{ '{{ panel_theme != 'bg-white' ? '!{{ panel_theme }} group-hover:!{{ panel_theme }}' : '!bg-white !text-black group-hover:!bg-white group-hover:!text-black' }}': active === '{{ id }}' }">
+        {{ if course_date | modify_date("+1 day") | is_future }}
+          <div
+            x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}'; 
+            $nextTick(() => {
+              $el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            })"
+            class="col-span-12 md:col-span-6 hyphens-auto no-underline group cursor-pointer scroll-mt-115 md:scroll-mt-45"
+            :class="{ 'md:!col-span-12': active === '{{ id }}' }"
+            title="{{ title }}">
+            <div class="flex justify-between items-center gap-x-10">
+              <hr class="!bg-black w-full h-2" />
+              <span class="flex-shrink-0" :class="{ 'rotate-180': active === '{{ id }}' }">
+                {{ partial:icons/chevron-down class="w-20 lg:w-28 h-auto" }}
+              </span>
+            </div>
+            <div 
+              class="{{ panel_theme ? panel_theme : 'bg-white' }} leading-[1.45] mt-10 p-15 lg:p-20 lg:pt-15 group-hover:bg-black/10 transition-all"
+              :class="{ '{{ panel_theme != 'bg-white' ? '!{{ panel_theme }} group-hover:!{{ panel_theme }}' : '!bg-white !text-black group-hover:!bg-white group-hover:!text-black' }}': active === '{{ id }}' }">
 
-            {{ if images }}
-              <div class="hidden" :class="{ '!grid grid-cols-12 gap-x-10 lg:gap-x-15 mb-10 lg:mb-15': active === '{{ id }}' }">
-                {{ images }}
-                  {{ if first }}
-                    <div class="{{ images | count > 1 ? 'col-span-8' : 'col-span-12' }}">
-                      {{ partial:components/media/image/image 
-                        :image="url" 
-                        class="w-full h-full object-cover {{ images | count > 1 ? 'aspect-[16/10]' : 'aspect-[16/8]' }}" }}
-                    </div>
-                  {{ else }}
-                    <div class="col-span-4 relative">
-                      {{ partial:components/media/image/image 
-                        :image="url" 
-                        class="absolute w-full h-full object-cover" }}
-                    </div>
-                  {{ /if }}
-                {{ /images }}
-              </div>
-            {{ /if }}
-
-            <h2 class="text-base lg:text-lg leading-[1.25] mb-5">
-              {{ title }}
-            </h2>
-
-            {{ if course_date || periode }}
-              <div>
-                {{ if !periode }}
-                  {{ 'Datum:' | trans }} {{ course_date iso_format="Do MMMM YYYY" }}
-                {{ else }}
-                  {{ 'Datum:' | trans }} {{ periode }}
-                {{ /if }}
-              </div>
-            {{ /if }}
-
-            {{ if google_maps_url && location }}
-              <div>{{ 'Ort:' | trans }} <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a></div>
-            {{ /if }}
-
-            {{ if !google_maps_url && location }}
-              <div>{{ 'Ort:' | trans }} {{ location }}</div>
-            {{ /if }}
-
-            {{ if target_group }}
-              <div>{{ 'Zielgruppe:' | trans }} {{ target_group }}</div>
-            {{ /if }}
-
-            {{ if registration_deadline }}
-              {{ if registration_deadline | modify_date("+1 day") | is_future }}
-                <div>{{ 'Anmeldung bis:' | trans }} {{ registration_deadline iso_format="Do MMMM YYYY" }}</div>
-              {{ /if }}
-            {{ /if }}
-
-            <div class="hidden text-xs lg:text-sm flex-col gap-y-15 lg:gap-y-25 mt-15 lg:mt-25" :class="{ '!flex': active === '{{ id }}' }">
-              <div>{{ description }}</div>
-              {{ if program_file }}
-                <div>
-                  <a href="{{ program_file:url }}" target="_blank" class="underline underline-offset-4 hover:no-underline">
-                    {{ 'Programm' | trans }}
-                  </a>
+              {{ if images }}
+                <div class="hidden" :class="{ '!grid grid-cols-12 gap-x-10 lg:gap-x-15 mb-10 lg:mb-15': active === '{{ id }}' }">
+                  {{ images }}
+                    {{ if first }}
+                      <div class="{{ images | count > 1 ? 'col-span-8' : 'col-span-12' }}">
+                        {{ partial:components/media/image/image 
+                          :image="url" 
+                          class="w-full h-full object-cover {{ images | count > 1 ? 'aspect-[16/10]' : 'aspect-[16/8]' }}" }}
+                      </div>
+                    {{ else }}
+                      <div class="col-span-4 relative">
+                        {{ partial:components/media/image/image 
+                          :image="url" 
+                          class="absolute w-full h-full object-cover" }}
+                      </div>
+                    {{ /if }}
+                  {{ /images }}
                 </div>
               {{ /if }}
-              <div>
-                {{ if fee_members }}
-                  <div>{{ 'Teilnahmegebühr für Mitglieder:' | trans }} <strong>CHF {{ fee_members }}</strong></div>
-                {{ /if }}
-                {{ if fee_non_members }}
-                  <div>{{ 'Teilnahmegebühr für Nicht-Mitglieder:' | trans }} <strong>CHF {{ fee_non_members }}</strong></div>
-                {{ /if }}
-              </div>
-              {{ if has_form }}
-                <div class="mt-10">
 
-                  <a 
-                    href="{{ url }}"
-                    class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
-                    {{ 'Anmelden' | trans }}
-                  </a>
-                  
-                  {{# {{ if site:short_locale == 'de'}}
+              <h2 class="text-base lg:text-lg leading-[1.25] mb-5">
+                {{ title }}
+              </h2>
+
+              {{ if course_date || periode }}
+                <div>
+                  {{ if !periode }}
+                    {{ 'Datum:' | trans }} {{ course_date iso_format="Do MMMM YYYY" }}
+                  {{ else }}
+                    {{ 'Datum:' | trans }} {{ periode }}
+                  {{ /if }}
+                </div>
+              {{ /if }}
+
+              {{ if google_maps_url && location }}
+                <div>{{ 'Ort:' | trans }} <a href="{{ google_maps_url }}" target="_blank" class="underline underline-offset-4">{{ location }}</a></div>
+              {{ /if }}
+
+              {{ if !google_maps_url && location }}
+                <div>{{ 'Ort:' | trans }} {{ location }}</div>
+              {{ /if }}
+
+              {{ if target_group }}
+                <div>{{ 'Zielgruppe:' | trans }} {{ target_group }}</div>
+              {{ /if }}
+
+              {{ if registration_deadline }}
+                {{ if registration_deadline | modify_date("+1 day") | is_future }}
+                  <div>{{ 'Anmeldung bis:' | trans }} {{ registration_deadline iso_format="Do MMMM YYYY" }}</div>
+                {{ /if }}
+              {{ /if }}
+
+              <div class="hidden text-xs lg:text-sm flex-col gap-y-15 lg:gap-y-25 mt-15 lg:mt-25" :class="{ '!flex': active === '{{ id }}' }">
+                <div>{{ description }}</div>
+                {{ if program_file }}
+                  <div>
+                    <a href="{{ program_file:url }}" target="_blank" class="underline underline-offset-4 hover:no-underline">
+                      {{ 'Programm' | trans }}
+                    </a>
+                  </div>
+                {{ /if }}
+                <div>
+                  {{ if fee_members }}
+                    <div>{{ 'Teilnahmegebühr für Mitglieder:' | trans }} <strong>CHF {{ fee_members }}</strong></div>
+                  {{ /if }}
+                  {{ if fee_non_members }}
+                    <div>{{ 'Teilnahmegebühr für Nicht-Mitglieder:' | trans }} <strong>CHF {{ fee_non_members }}</strong></div>
+                  {{ /if }}
+                </div>
+                {{ if has_form }}
+                  <div class="mt-10">
+
                     <a 
                       href="{{ url }}"
                       class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
                       {{ 'Anmelden' | trans }}
                     </a>
-                  {{ /if }}
-                  {{ if site:short_locale == 'fr'}}
-                    <a 
-                      href="/fr/prestations/formation-et-perfectionnement/{{ slug }}"
-                      class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
-                      {{ 'Anmelden' | trans }}
-                    </a>
-                  {{ /if }}
-                  {{ if site:short_locale == 'it'}}
-                    <a 
-                      href="/it/servizi/formazione-e-perfezionamento/{{ slug }}"
-                      class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
-                      {{ 'Anmelden' | trans }}
-                    </a>
-                  {{ /if }} #}}
+                    
+                    {{# {{ if site:short_locale == 'de'}}
+                      <a 
+                        href="{{ url }}"
+                        class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
+                        {{ 'Anmelden' | trans }}
+                      </a>
+                    {{ /if }}
+                    {{ if site:short_locale == 'fr'}}
+                      <a 
+                        href="/fr/prestations/formation-et-perfectionnement/{{ slug }}"
+                        class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
+                        {{ 'Anmelden' | trans }}
+                      </a>
+                    {{ /if }}
+                    {{ if site:short_locale == 'it'}}
+                      <a 
+                        href="/it/servizi/formazione-e-perfezionamento/{{ slug }}"
+                        class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
+                        {{ 'Anmelden' | trans }}
+                      </a>
+                    {{ /if }} #}}
 
-                </div>
-              {{ else if form_external }}
-                <div class="mt-10">
-                  <a 
-                    href="{{ form_external }}"
-                    target="_blank"
-                    class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
-                    {{ 'Anmelden' | trans }}
-                  </a>
-                </div>
-            {{ /if }}
+                  </div>
+                {{ else if form_external }}
+                  <div class="mt-10">
+                    <a 
+                      href="{{ form_external }}"
+                      target="_blank"
+                      class="border-none bg-black hover:bg-white font-bold tracking-widest uppercase text-white !no-underline hover:text-black py-15 px-20 lg:px-40 leading-none inline-flex items-center transition-all">
+                      {{ 'Anmelden' | trans }}
+                    </a>
+                  </div>
+              {{ /if }}
+              </div>
             </div>
           </div>
-        </div>
-      {{ /if }}
+        {{ /if }}
       {{ /if }}
     {{ /collection }}
   </div>
