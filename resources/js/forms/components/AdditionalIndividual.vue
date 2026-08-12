@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-15 lg:space-y-20">
     <form-group v-if="hasSalutation">
-      <form-label id="salutation" :label="__('Anrede')" :required="requiresSalutation" />
+      <form-label id="salutation" :label="fieldLabel('Anrede')" :required="requiresSalutation" />
       <form-select-field 
         v-model="individual.salutation" 
         :error="__(errors.salutation)"
@@ -10,7 +10,7 @@
       />
     </form-group>
     <form-group v-if="hasFirstname">
-      <form-label id="firstname" :label="__('Vorname')" :required="requiresFirstname" />
+      <form-label id="firstname" :label="fieldLabel('Vorname')" :required="requiresFirstname" />
       <form-text-field 
         v-model="individual.firstname" 
         :error="__(errors.firstname)"
@@ -18,7 +18,7 @@
       />
     </form-group>
     <form-group v-if="hasName">
-      <form-label id="name" :label="__('Name')" :required="requiresName" />
+      <form-label id="name" :label="fieldLabel('Name')" :required="requiresName" />
       <form-text-field 
         v-model="individual.name" 
         :error="__(errors.name)"
@@ -26,7 +26,7 @@
       />
     </form-group>
     <form-group v-if="hasEmail">
-      <form-label id="email" :label="__('E-Mail')" :required="requiresEmail" />
+      <form-label id="email" :label="fieldLabel('E-Mail')" :required="requiresEmail" />
       <form-text-field 
         v-model="individual.email" 
         :error="__(errors.email)"
@@ -34,7 +34,7 @@
       />
     </form-group>
     <form-group v-if="hasCostCenter">
-      <form-label id="cost_center" :label="__('Kostenstelle')" :required="requiresCostCenter" />
+      <form-label id="cost_center" :label="fieldLabel('Kostenstelle')" :required="requiresCostCenter" />
       <form-textarea-field 
         v-model="individual.cost_center" 
         :error="__(errors.cost_center)"
@@ -170,11 +170,28 @@ const props = defineProps({
   mealOccasionOptions: Array,
   salutations: Array,
   mealOptions: Array,
+  multiLanguage: {
+    type: Boolean,
+    default: false
+  },
   errors: {
     type: Object,
     default: () => ({})
   }
 });
+
+// labels shown in all three languages at once (e.g. on course pages)
+const multiLanguageLabels = {
+  'Anrede': 'Anrede / Titre / Appellativo',
+  'Vorname': 'Vorname / Prénom / Prenome',
+  'Name': 'Name / Nom / Nome',
+  'E-Mail': 'E-Mail / E-mail / Email',
+  'Kostenstelle': 'Kostenstelle / Centre de coût / Centro di costo',
+};
+
+function fieldLabel(key) {
+  return props.multiLanguage && multiLanguageLabels[key] ? multiLanguageLabels[key] : __(key);
+}
 
 const emit = defineEmits(['update:individual']);
 const locale = ref(document.documentElement.lang);

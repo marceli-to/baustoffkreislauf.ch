@@ -90,6 +90,12 @@ tabs:
               type: textarea
               display: Bemerkungen
               localizable: false
+          -
+            handle: additional_individuals
+            field:
+              type: textarea
+              display: 'Weitere Teilnehmer'
+              localizable: false
   sidebar:
     display: Sidebar
     sections:

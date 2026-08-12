@@ -78,6 +78,13 @@
     </div>
     <br>
   @endif
+  @if (!empty($data['additional_individuals']))
+    <div class="text-base">
+      <strong>{{ __('Zusätzliche Teilnehmer', [], $data['locale']) }}</strong><br>
+      {!! nl2br($data['additional_individuals']) !!}
+    </div>
+    <br>
+  @endif
   <footer>
     {!! __('Baustoff Kreislauf Schweiz<br>Schwanengasse 12<br>3011 Bern', [], $data['locale']) !!}
   </footer>

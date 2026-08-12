@@ -34,6 +34,12 @@ class CourseController extends Controller
       'has_cost_center' => $course->has_cost_center,
       'requires_cost_center' => $course->requires_cost_center,
       'has_remarks' => $course->has_remarks,
+      'has_button_additional_individuals' => $course->has_button_additional_individuals,
+      'has_field_additional_individual_salutation' => $course->has_field_additional_individual_salutation,
+      'has_field_additional_individual_email' => $course->has_field_additional_individual_email,
+      'has_field_additional_individual_name' => $course->has_field_additional_individual_name,
+      'has_field_additional_individual_firstname' => $course->has_field_additional_individual_firstname,
+      'has_field_additional_individual_cost_center' => $course->has_field_additional_individual_cost_center,
     ]);
   }
 
@@ -70,6 +76,25 @@ class CourseController extends Controller
       'locale' => $request->input('locale'),
     ];
 
+    // handle additional individuals, build a string out of:
+    // salutation, email, firstname, name and cost center (if available)
+    $additional_individuals = [];
+    foreach ($request->input('additional_individuals') ?? [] as $additional_individual)
+    {
+      $additional_individual_data = [
+        'salutation' => $additional_individual['salutation'] ?? null,
+        'email' => $additional_individual['email'] ?? null,
+        'name' => trim(($additional_individual['firstname'] ?? '') . ' ' . ($additional_individual['name'] ?? '')),
+        'cost_center' => $additional_individual['cost_center'] ?? null,
+      ];
+
+      // create comma separated string
+      $additional_individuals[] = implode(', ', array_filter($additional_individual_data));
+    }
+
+    // add newline instead of comma
+    $data['additional_individuals'] = implode("\n", $additional_individuals);
+
     $entry = Entry::make()
       ->collection('course_registrations')
       ->slug($slug)
@@ -104,7 +129,15 @@ class CourseController extends Controller
 
       foreach ($errors->messages() as $field => $messages)
       {
-        $formattedErrors[$field] = $messages[0];
+        if (strpos($field, 'additional_individuals.') === 0) {
+          $parts = explode('.', $field);
+          $index = $parts[1];
+          $subfield = $parts[2];
+          $formattedErrors['additional_individuals'][$index][$subfield] = $messages[0];
+        }
+        else {
+          $formattedErrors[$field] = $messages[0];
+        }
       }
 
       return response()->json(['errors' => $formattedErrors], 422);
@@ -154,6 +187,24 @@ class CourseController extends Controller
       $validationRules['cost_center'] = 'required';
     }
 
+    if ($course->has_button_additional_individuals) {
+      if ($course->has_field_additional_individual_name) {
+        $validationRules['additional_individuals.*.name'] = 'required';
+      }
+
+      if ($course->has_field_additional_individual_firstname) {
+        $validationRules['additional_individuals.*.firstname'] = 'required';
+      }
+
+      if ($course->has_field_additional_individual_email) {
+        $validationRules['additional_individuals.*.email'] = 'required|email|regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
+      }
+
+      if ($course->has_field_additional_individual_cost_center) {
+        $validationRules['additional_individuals.*.cost_center'] = 'required';
+      }
+    }
+
     $validationRules['toc'] = 'accepted';
 
     // Set validation messages
@@ -171,6 +222,12 @@ class CourseController extends Controller
       'city.required' => __('Ort ist erforderlich'),
       'address.required' => __('Adresse ist erforderlich'),
       'cost_center.required' => __('Kostenstelle ist erforderlich'),
+      'additional_individuals.*.name.required' => __('Name ist erforderlich'),
+      'additional_individuals.*.firstname.required' => __('Vorname ist erforderlich'),
+      'additional_individuals.*.email.required' => __('E-Mail-Adresse ist erforderlich'),
+      'additional_individuals.*.email.email' => __('E-Mail-Adresse muss gültig sein'),
+      'additional_individuals.*.email.regex' => __('E-Mail-Adresse muss gültig sein'),
+      'additional_individuals.*.cost_center.required' => __('Kostenstelle ist erforderlich'),
       'toc.accepted' => __('Sie müssen die Teilnahme- und Annullationsbedingungen sowie die Datenschutzbestimmungen akzeptieren'),
     ];
     

@@ -99,6 +99,49 @@
         />
       </form-group>
 
+      <template v-if="hasButtonAdditionalIndividuals">
+        <div>
+          <h3 class="mt-15 xl:mt-30 xl:mb-10">Weitere Person / Personne supplémentaire / Altra persona</h3>
+          <form-group v-for="(individual, index) in additionalIndividuals" :key="index">
+            <AdditionalIndividual
+              :multiLanguage="true"
+              :hasSalutation="hasFieldAdditionalIndividualSalutation"
+              :requiresSalutation="true"
+              :hasEmail="hasFieldAdditionalIndividualEmail"
+              :requiresEmail="true"
+              :hasName="hasFieldAdditionalIndividualName"
+              :requiresName="true"
+              :hasFirstname="hasFieldAdditionalIndividualFirstname"
+              :requiresFirstname="true"
+              :hasCostCenter="hasFieldAdditionalIndividualCostCenter"
+              :requiresCostCenter="true"
+              :salutations="salutations"
+              :mealOptions="[]"
+              :mealOccasionOptions="[]"
+              :errors="errors.additional_individuals ? errors.additional_individuals[index] : {}"
+              @update:individual="updateAdditionalIndividual(index, $event)"
+            />
+            <div class="flex justify-end">
+              <a
+                href="javascript:;"
+                @click.prevent="removeAdditionalIndividual(index)"
+                class="mt-5 mb-10 xl:mt-10 xl:mb-20 inline-block text-xxs xl:text-xs">
+                Person entfernen / Supprimer la personne / Rimuovi persona
+              </a>
+            </div>
+          </form-group>
+          <form-group>
+            <a
+              href="javascript:;"
+              @click.prevent="addAdditionalIndividual"
+              class="inline-block"
+            >
+              Weitere Person hinzufügen / Ajouter une personne / Aggiungi un'altra persona
+            </a>
+          </form-group>
+        </div>
+      </template>
+
       <form-group v-if="hasRemarks">
         <form-label id="remarks" label="Bemerkungen / Remarques / Note" />
         <form-textarea-field 
@@ -179,6 +222,13 @@ const requiresAddress = ref(false);
 const hasCostCenter = ref(false);
 const requiresCostCenter = ref(false);
 const hasRemarks = ref(false);
+const hasButtonAdditionalIndividuals = ref(false);
+const hasFieldAdditionalIndividualSalutation = ref(false);
+const hasFieldAdditionalIndividualEmail = ref(false);
+const hasFieldAdditionalIndividualName = ref(false);
+const hasFieldAdditionalIndividualFirstname = ref(false);
+const hasFieldAdditionalIndividualCostCenter = ref(false);
+const additionalIndividuals = ref([]);
 
 const locale = ref(document.documentElement.lang);
 
@@ -202,6 +252,7 @@ const form = ref({
   address: null,
   remarks: null,
   cost_center: null,
+  additional_individuals: [],
 });
 
 const errors = ref({
@@ -213,6 +264,7 @@ const errors = ref({
     company: '',
     location: '',
     address: '',
+    additional_individuals: [],
   }
 );
 
@@ -240,6 +292,12 @@ onMounted(async () => {
     requiresCostCenter.value = response.data.requires_cost_center;
     hasRemarks.value = response.data.has_remarks;
     requiresAddress.value = response.data.requires_address;
+    hasButtonAdditionalIndividuals.value = response.data.has_button_additional_individuals;
+    hasFieldAdditionalIndividualSalutation.value = response.data.has_field_additional_individual_salutation;
+    hasFieldAdditionalIndividualEmail.value = response.data.has_field_additional_individual_email;
+    hasFieldAdditionalIndividualName.value = response.data.has_field_additional_individual_name;
+    hasFieldAdditionalIndividualFirstname.value = response.data.has_field_additional_individual_firstname;
+    hasFieldAdditionalIndividualCostCenter.value = response.data.has_field_additional_individual_cost_center;
 
     if (hasSalutation.value) {
       form.value.salutation = salutations.value[0].value;
@@ -265,6 +323,31 @@ async function submitForm() {
   }
 }
 
+function updateAdditionalIndividual(index, updatedIndividual) {
+  additionalIndividuals.value[index] = updatedIndividual;
+  form.value.additional_individuals = additionalIndividuals.value;
+}
+
+watch(additionalIndividuals, (newValue) => {
+  form.value.additional_individuals = newValue;
+}, { deep: true });
+
+function addAdditionalIndividual() {
+  additionalIndividuals.value.push({
+    salutation: hasFieldAdditionalIndividualSalutation.value ? salutations.value[0].value : null,
+    email: null,
+    name: null,
+    firstname: null,
+    cost_center: null,
+  });
+  form.value.additional_individuals = additionalIndividuals.value;
+}
+
+function removeAdditionalIndividual(index) {
+  additionalIndividuals.value.splice(index, 1);
+  form.value.additional_individuals = additionalIndividuals.value;
+}
+
 function handleSuccess() {
   form.value = {
     course_id: props.courseId,
@@ -278,12 +361,19 @@ function handleSuccess() {
     zip: null,
     city: null,
     address: null,
+    remarks: null,
+    cost_center: null,
+    additional_individuals: [],
   };
 
   if (hasSalutation.value) {
     form.value.salutation = salutations.value[0].value;
   }
-  
+
+  // reset additional_individuals
+  additionalIndividuals.value = [];
+  form.value.additional_individuals = additionalIndividuals.value;
+
   errors.value = {
     name: '',
     firstname: '',
@@ -292,6 +382,7 @@ function handleSuccess() {
     company: '',
     location: '',
     address: '',
+    additional_individuals: [],
   };
   
   isSubmitting.value = false;
