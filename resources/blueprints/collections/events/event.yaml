@@ -483,6 +483,22 @@ tabs:
               if:
                 has_meal_occasions: 'equals true'
           -
+            handle: form_notice_section
+            field:
+              type: section
+              display: 'Hinweis vor dem Formular'
+              localizable: false
+              instructions: 'Hinweis, dass für jede teilnehmende Person ein separates Formular auszufüllen ist. Entfällt, wenn "Zusätzliche Teilnehmer" aktiviert ist.'
+          -
+            handle: has_separate_form_notice
+            field:
+              default: true
+              type: toggle
+              display: Aktivieren
+              localizable: false
+              unless:
+                has_button_additional_individuals: 'equals true'
+          -
             handle: additional_individuals
             field:
               type: section

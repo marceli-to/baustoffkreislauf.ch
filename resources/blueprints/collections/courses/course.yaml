@@ -154,6 +154,14 @@ tabs:
               display: Anmeldefrist
               localizable: false
           -
+            handle: has_separate_form_notice
+            field:
+              default: true
+              type: toggle
+              display: 'Hinweis "separates Formular pro Person"'
+              instructions: 'Zeigt vor dem Formular den Hinweis, dass für jede teilnehmende Person ein separates Formular auszufüllen ist.'
+              localizable: false
+          -
             handle: contact_information
             field:
               type: section

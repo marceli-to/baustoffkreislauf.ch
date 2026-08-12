@@ -15,6 +15,13 @@
         <p>
           Anmeldung ist möglich bis / Inscription possible jusqu'au / Inscrizione possibile fino al <strong>{{ registration_deadline iso_format="Do MMMM YYYY" }}</strong>
         </p>
+        {{ if has_separate_form_notice }}
+        <p class="mt-15 lg:mt-20">
+          Bitte füllen Sie für jede Person, die teilnehmen möchte, ein separates Formular aus.<br>
+          Veuillez remplir un formulaire séparé pour chaque personne souhaitant participer.<br>
+          Si prega di compilare un modulo separato per ogni persona che desidera partecipare.
+        </p>
+        {{ /if }}
         <course-registration :course-id="'{{ id }}'"></course-registration>
       {{ else }}
         <p>{{ "Anmeldung ist nicht mehr möglich..." | trans }}</p>
