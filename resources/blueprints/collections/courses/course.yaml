@@ -327,12 +327,28 @@ tabs:
               display: 'Feld "Bemerkungen"'
               localizable: false
           -
+            handle: form_notice_section
+            field:
+              type: section
+              display: 'Hinweis vor dem Formular'
+              localizable: false
+              instructions: 'Hinweis, dass für jede teilnehmende Person ein separates Formular auszufüllen ist. Entfällt, wenn "Zusätzliche Teilnehmer" aktiviert ist.'
+          -
+            handle: has_separate_form_notice
+            field:
+              default: true
+              type: toggle
+              display: Aktivieren
+              localizable: false
+              unless:
+                has_button_additional_individuals: 'equals true'
+          -
             handle: additional_individuals
             field:
               type: section
               display: 'Zusätzliche Teilnehmer'
               localizable: false
-              instructions: 'Hinzufügen weiterer Personen ermöglichen'
+              instructions: 'Hinzufügen weiterer Personen ermöglichen. Ersetzt den Hinweis "separates Formular pro Person".'
           -
             handle: has_button_additional_individuals
             field:

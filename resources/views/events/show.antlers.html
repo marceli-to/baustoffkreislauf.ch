@@ -27,6 +27,11 @@
         <p>
           {{ "Anmeldung ist möglich bis" | trans }} <strong>{{ registration_deadline iso_format="Do MMMM YYYY" }}</strong>
         </p>
+        {{ if has_separate_form_notice !== false && !has_button_additional_individuals }}
+        <p class="mt-15 lg:mt-20 font-bold">
+          {{ "Bitte füllen Sie für jede Person, die teilnehmen möchte, ein separates Formular aus." | trans }}
+        </p>
+        {{ /if }}
         <event-registration :event-id="'{{ origin_id ?? id }}'"></event-registration>
       {{ else }}
         <p>{{ "Anmeldung ist nicht mehr möglich..." | trans }}</p>
