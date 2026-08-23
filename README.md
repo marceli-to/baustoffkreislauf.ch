@@ -38,3 +38,49 @@ In order to ensure that the Statamic community is welcoming to all and generally
 [discord]: https://statamic.com/discord
 [contribution]: https://github.com/statamic/cms/blob/master/CONTRIBUTING.md
 [cms-repo]: https://github.com/statamic/cms
+
+---
+
+## Project notes: protected downloads (Blindside)
+
+The "Blindside" pages (`baustofftage-*` in the `pages` collection) are hidden,
+login-protected pages for the annual Baustofftage. They are not linked from any
+navigation and carry `protect: logged_in`. Participants log in at `/login`, where
+the account e-mail is hardcoded in `resources/views/auth/login.antlers.html`, so
+only a password is prompted for.
+
+The PDFs behind those pages live in `public/assets/protected/` and are served by
+`App\Http\Controllers\Auth\DownloadController` via the `auth`-guarded route
+`/download/{filename}`.
+
+### Required server config — NOT in version control
+
+Because the `assets` disk is rooted at `public_path('assets')`
+(`config/filesystems.php`), Apache serves those files straight from the docroot,
+bypassing the controller's auth check entirely. To prevent that, this file must
+exist:
+
+    public/assets/protected/.htaccess
+
+with:
+
+    Require all denied
+
+`public/assets` is listed in `.gitignore`, so this file is **not tracked by Git**.
+It has to be recreated by hand after restoring the assets directory from a backup
+or setting up a new environment — otherwise every "protected" document is publicly
+downloadable to anyone who knows or guesses a filename.
+
+Blocking direct access does not affect the site: PDFs are linked through
+`/download/{filename}` and images (e.g. the sponsor logos in
+`protected/sponsoren/`) are rendered through Glide at `/img/asset/...`. Both read
+from the filesystem via PHP and are unaffected by the Apache rule.
+
+Verify with:
+
+    curl -s -o /dev/null -w '%{http_code}\n' https://www.baustoffkreislauf.ch/assets/protected/<file>.pdf   # expect 403
+    curl -s -o /dev/null -w '%{http_code}\n' https://www.baustoffkreislauf.ch/download/<file>.pdf            # expect 302 to /login
+
+A durable fix would be to move `protected/` out of the docroot to
+`storage/app/protected` and point a separate disk at it; that also requires moving
+the Statamic asset container.
