@@ -55,8 +55,14 @@ The PDFs behind those pages live in `public/assets/protected/` and are served by
 ### One account per edition
 
 Every Baustofftage edition has its own shared account, and each account only
-opens the pages of its own edition. The wiring lives in **`config/blindside.php`**,
-which maps an account e-mail to the page slugs it owns:
+opens the pages of its own edition. 2025 and 2026 used to share one account —
+`blindside-baustofftage@…`, the oldest one — and therefore one password; they were
+split in August 2026 by adding `blindside-2026@…` with the same password, so no
+participant of either year had to be handed a new one. That account e-mail is the
+only one without a year in it; it is the 2025 edition.
+
+The wiring lives in **`config/blindside.php`**, which maps an account e-mail to the
+page slugs it owns:
 
     'blindside-2027' => [
       'label' => 'Baustofftage 2027',

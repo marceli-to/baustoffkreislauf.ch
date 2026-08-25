@@ -23,10 +23,18 @@ return [
 
   'editions' => [
 
-    'blindside-baustofftage' => [
-      'label' => 'Baustofftage 2025 / 2026',
+    'blindside-2025' => [
+      'label' => 'Baustofftage 2025',
+      // Das aelteste Konto, deshalb ohne Jahrgang in der Adresse. Es behaelt
+      // das Passwort, das den Teilnehmenden von 2025 kommuniziert wurde.
       'email' => 'blindside-baustofftage@baustoffkreislauf.ch',
-      'pages' => ['baustofftage-2025*', 'baustofftage-2026*'],
+      'pages' => ['baustofftage-2025*'],
+    ],
+
+    'blindside-2026' => [
+      'label' => 'Baustofftage 2026',
+      'email' => 'blindside-2026@baustoffkreislauf.ch',
+      'pages' => ['baustofftage-2026*'],
     ],
 
     'blindside-2027' => [
