@@ -46,12 +46,57 @@ In order to ensure that the Statamic community is welcoming to all and generally
 The "Blindside" pages (`baustofftage-*` in the `pages` collection) are hidden,
 login-protected pages for the annual Baustofftage. They are not linked from any
 navigation and carry `protect: logged_in`. Participants log in at `/login`, where
-the account e-mail is hardcoded in `resources/views/auth/login.antlers.html`, so
-only a password is prompted for.
+only a password is prompted for — the account is filled in for them.
 
 The PDFs behind those pages live in `public/assets/protected/` and are served by
 `App\Http\Controllers\Auth\DownloadController` via the `auth`-guarded route
 `/download/{filename}`.
+
+### One account per edition
+
+Every Baustofftage edition has its own shared account, and each account only
+opens the pages of its own edition. The wiring lives in **`config/blindside.php`**,
+which maps an account e-mail to the page slugs it owns:
+
+    'blindside-2027' => [
+      'label' => 'Baustofftage 2027',
+      'email' => 'blindside-2027@baustoffkreislauf.ch',
+      'pages' => ['baustofftage-2027*'],
+    ],
+
+That config drives three things:
+
+* **Which account the login form signs in to.** `/login` reads the `redirect`
+  query parameter that `protect: logged_in` appends, looks up the edition of the
+  target page and writes its e-mail into the hidden field
+  (`{{ blindside:login_email }}`). Without a redirect the `default` edition is
+  used. Nothing is hardcoded in the view any more.
+* **Which pages an account may open.** The `logged_in` scheme in
+  `config/statamic/protect.php` uses the custom `blindside` driver
+  (`App\Auth\Protect\BlindsideProtector`, registered in `AppServiceProvider`).
+  Signing in with the wrong edition's account does not produce a dead end: the
+  visitor is logged out and handed back to the login form, which then asks for
+  the password of the right edition.
+* **Which PDFs an account may download.** `App\Support\Blindside` collects every
+  `protected/…` path linked on the pages of each edition, and
+  `DownloadController` only serves a file to an account of an edition that links
+  it. Files in `protected/` that no edition page links to (e.g. the PFAS
+  documents) stay readable for any logged-in account, as before.
+
+Slugs matching `guarded` (`baustofftage-*`) **must** appear in one of the
+editions. A protected page matching that pattern but missing from the config is
+denied to everyone — deliberately, so a new edition cannot silently inherit the
+previous year's audience. Super admins bypass all of it.
+
+Adding next year's edition:
+
+1. Create the user in the CP (`blindside-<year>@baustoffkreislauf.ch`).
+2. Add a block to `config/blindside.php` and point `default` at it. The handle
+   must not be purely numeric — PHP would turn it into an integer array key.
+3. Deploy and run `php artisan config:clear`.
+
+Content and users are **not** in Git (see `.gitignore`), so the pages and the
+account only ever exist on the server; only the config travels with a deploy.
 
 ### Required server config — NOT in version control
 

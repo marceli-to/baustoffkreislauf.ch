@@ -35,8 +35,10 @@ return [
             'allowed' => ['127.0.0.1'],
         ],
 
+        // Keeps the scheme name the entries already use, but binds each page
+        // to the account of its edition. See config/blindside.php.
         'logged_in' => [
-          'driver' => 'auth',
+          'driver' => 'blindside',
           'login_url' => '/login',
           'append_redirect' => true,
         ],

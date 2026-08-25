@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Auth\Protect\BlindsideProtector;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\ServiceProvider;
+use Statamic\Auth\Protect\ProtectorManager;
 use Statamic\Statamic;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
         if (!app()->environment('production')) {
             Mail::alwaysTo('m@marceli.to');
         }
+
+        // Protection scheme for the hidden Baustofftage pages, see config/blindside.php
+        app(ProtectorManager::class)->extend('blindside', function () {
+            return new BlindsideProtector;
+        });
 
         // Statamic::vite('app', [
         //     'resources/js/cp.js',

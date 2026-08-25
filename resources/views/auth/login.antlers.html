@@ -1,25 +1,39 @@
 {{ partial:layout/content }}
   <article class="relative">
     <h1>{{ 'Login' | trans }}</h1>
+
+    {{ if {blindside:login_label} }}
+      <p class="font-bold uppercase tracking-widest text-xs lg:text-sm mb-16">{{ blindside:login_label }}</p>
+    {{ /if }}
+
+    {{ if {blindside:login_message} }}
+      <p class="max-w-xs mb-16 text-xs lg:text-sm">{{ blindside:login_message }}</p>
+    {{ /if }}
+
     <form method="POST" action="{{ route:login }}" class="max-w-xs">
       {{ csrf_field }}
       <input type="hidden" name="redirect" value="{{ get:redirect }}">
       <div class="space-y-16">
-        <input 
-        type="hidden" 
-        name="email" 
-        value="blindside-baustofftage@baustoffkreislauf.ch">
+        <input
+        type="hidden"
+        name="email"
+        value="{{ blindside:login_email }}">
 
         <div class="">
           <label class="block mb-6" for="password">Password</label>
-          <input 
-            type="password" 
-            name="password" 
+          <input
+            type="password"
+            name="password"
             id="password" required>
+          {{ if {blindside:login_error} }}
+            <div class="mt-6 text-xs lg:text-sm">
+              <em>{{ blindside:login_error }}</em>
+            </div>
+          {{ /if }}
         </div>
         <div class="!mt-24">
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             class="border-none bg-black hover:bg-lime font-bold tracking-widest uppercase text-white hover:text-black py-15 px-20 lg:px-40 leading-none flex items-center transition-all">
             Log in
           </button>
