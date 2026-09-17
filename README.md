@@ -141,26 +141,37 @@ the Statamic asset container.
 ## Project notes: where form notifications go
 
 Every public form sends two mails: a confirmation to the person who submitted it
-and a notification to the responsible mailbox. The recipient of the notification
-differs per form, and since `.env` is gitignored it is documented here.
+and a notification to the responsible mailbox. Anlässe are handled by the
+Eventbereich and its own mailbox, everything else by `info@`. Since `.env` is
+gitignored, the wiring is documented here.
 
-| Form | Controller | Recipient |
-| --- | --- | --- |
-| Anlässe (`events`) | `Api\EventController` | `MAIL_TO_EVENTS`, falling back to `MAIL_TO` |
-| Kurse (`courses`) | `Api\CourseController` | `MAIL_TO` |
-| Publikations-Bestellungen | `Api\PublicationController` | `info@baustoffkreislauf.ch`, hardcoded |
+| Form | Controller | Notification to | Reply-To on both mails |
+| --- | --- | --- | --- |
+| Anlässe (`events`) | `Api\EventController` | `MAIL_TO_EVENTS` | `MAIL_REPLY_TO_ADDRESS_EVENTS` |
+| Kurse (`courses`) | `Api\CourseController` | `MAIL_TO` | `MAIL_REPLY_TO_ADDRESS` |
+| Publikations-Bestellungen | `Api\PublicationController` | `info@baustoffkreislauf.ch`, hardcoded | `MAIL_REPLY_TO_ADDRESS` |
 
-`MAIL_TO_EVENTS` exists because the Eventbereich got its own mailbox
-(`events@baustoffkreislauf.ch`) in September 2026 while the Kurs-Anmeldungen kept
-going to `info@`. Both used to read `MAIL_TO`. If `MAIL_TO_EVENTS` is unset or empty, the
-Anlässe fall back to `MAIL_TO` and nothing changes — that is what the local and any
-older environment do.
+The two `…_EVENTS` variables were added in September 2026, when the Eventbereich
+got its own address (`events@baustoffkreislauf.ch`). Everything that concerns an
+Anlass goes there: the notification about a new Anmeldung, and any reply a
+participant sends to their Anmeldebestätigung. In practice both variables hold
+the same address; they are separate only because the two they shadow are.
 
-The sender and the reply-to of all of these are `MAIL_FROM_ADDRESS` and
-`MAIL_REPLY_TO_ADDRESS`; they are not per-form.
+The rule is **append `_EVENTS` to the base variable**. Each one falls back to its
+base when unset or empty, so an environment that defines neither behaves exactly
+as before — which is what the local setup and any older environment do.
 
-Note that the recipients are read with `env()` inside the controllers, not through
-`config/mail.php`. That works because the deploy (see `INSTALL.txt`) clears caches
-but never runs `config:cache` — under a cached config `env()` returns `null` and
-the notifications would be sent to nobody. Move them into `config/mail.php` before
-adding config caching.
+`MAIL_FROM_ADDRESS` is the sender for all of them and is not per-form; the mails
+are sent from `no-reply@` regardless, which is why Reply-To matters.
+
+Note that these are read with `env()` inside the controllers and notification
+classes, not through `config/mail.php`. That works because the deploy (see
+`INSTALL.txt`) clears caches but never runs `config:cache` — under a cached config
+`env()` returns `null` and the mails would go to nobody. Move them into
+`config/mail.php` before adding config caching.
+
+One rough edge, unchanged by the above: the *owner* notification carries the same
+Reply-To as the participant's confirmation. Whoever opens "Neue Anmeldung: …" and
+hits Reply therefore writes to the mailbox they are already in, not to the person
+who just registered. Setting that one mail's Reply-To to the registrant's address
+would be more useful.

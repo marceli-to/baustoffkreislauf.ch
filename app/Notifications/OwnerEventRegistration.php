@@ -27,7 +27,7 @@ class OwnerEventRegistration extends Notification
     {
       return (new MailMessage)
         ->from(env('MAIL_FROM_ADDRESS'))
-        ->replyTo(env('MAIL_REPLY_TO_ADDRESS'))
+        ->replyTo(env('MAIL_REPLY_TO_ADDRESS_EVENTS') ?: env('MAIL_REPLY_TO_ADDRESS'))
         ->subject('Neue Anmeldung: ' . $this->data['title'])
         ->markdown('mail.event.owner-registration', ['data' => $this->data]);
     }
