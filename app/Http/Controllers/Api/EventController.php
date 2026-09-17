@@ -146,7 +146,7 @@ class EventController extends Controller
       ->notify(new UserEventRegistration($data)
     );
 
-    Notification::route('mail', env('MAIL_TO'))
+    Notification::route('mail', env('MAIL_TO_EVENTS') ?: env('MAIL_TO'))
       ->notify(new OwnerEventRegistration($data)
     );
 

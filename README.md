@@ -135,3 +135,32 @@ Verify with:
 A durable fix would be to move `protected/` out of the docroot to
 `storage/app/protected` and point a separate disk at it; that also requires moving
 the Statamic asset container.
+
+---
+
+## Project notes: where form notifications go
+
+Every public form sends two mails: a confirmation to the person who submitted it
+and a notification to the responsible mailbox. The recipient of the notification
+differs per form, and since `.env` is gitignored it is documented here.
+
+| Form | Controller | Recipient |
+| --- | --- | --- |
+| Anlässe (`events`) | `Api\EventController` | `MAIL_TO_EVENTS`, falling back to `MAIL_TO` |
+| Kurse (`courses`) | `Api\CourseController` | `MAIL_TO` |
+| Publikations-Bestellungen | `Api\PublicationController` | `info@baustoffkreislauf.ch`, hardcoded |
+
+`MAIL_TO_EVENTS` exists because the Eventbereich got its own mailbox
+(`events@baustoffkreislauf.ch`) in September 2026 while the Kurs-Anmeldungen kept
+going to `info@`. Both used to read `MAIL_TO`. If `MAIL_TO_EVENTS` is unset or empty, the
+Anlässe fall back to `MAIL_TO` and nothing changes — that is what the local and any
+older environment do.
+
+The sender and the reply-to of all of these are `MAIL_FROM_ADDRESS` and
+`MAIL_REPLY_TO_ADDRESS`; they are not per-form.
+
+Note that the recipients are read with `env()` inside the controllers, not through
+`config/mail.php`. That works because the deploy (see `INSTALL.txt`) clears caches
+but never runs `config:cache` — under a cached config `env()` returns `null` and
+the notifications would be sent to nobody. Move them into `config/mail.php` before
+adding config caching.
