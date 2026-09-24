@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Auth\Protect\BlindsideProtector;
+use App\Http\Controllers\Protect\PasswordProtectController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\ServiceProvider;
 use Statamic\Auth\Protect\ProtectorManager;
+use Statamic\Auth\Protect\Protectors\Password\Controller as PasswordController;
 use Statamic\Statamic;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Render the password form in the site of the protected page
+        $this->app->bind(PasswordController::class, PasswordProtectController::class);
     }
 
     /**
