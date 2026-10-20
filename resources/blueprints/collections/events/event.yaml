@@ -20,6 +20,17 @@ tabs:
               type: date
               display: Datum
               localizable: true
+              instructions: 'Bei mehrtägigen Anlässen den 1. Tag angeben.'
+              width: 50
+          -
+            handle: event_date_end
+            field:
+              format: d.m.Y
+              type: date
+              display: 'Enddatum (mehrtägige Anlässe)'
+              instructions: 'Nur bei mehrtägigen Anlässen den letzten Tag angeben.'
+              localizable: true
+              width: 50
           -
             handle: location
             field:

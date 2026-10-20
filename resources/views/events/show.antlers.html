@@ -1,7 +1,7 @@
 {{ partial:layout/content sectionClass="!col-span-full" }}
   {{ partial:components/misc/button_back }}
   <h1 class="mb-5 lg:mb-10">{{ title }}</h1>
-  <span>{{ event_date iso_format="Do MMMM YYYY" }}</span>
+  <span>{{ event_date | date_range:event_date_end }}</span>
   <div class="mt-10 lg:mt-20">
     {{ description }}
     {{ if google_maps_url && location }}

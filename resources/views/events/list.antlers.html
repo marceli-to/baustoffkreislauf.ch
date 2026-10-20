@@ -7,7 +7,7 @@
       {{ if events }}
         {{ events }}
           {{ if event_date }}
-          {{ if event_date | modify_date("+1 day") | is_future }}
+          {{ if (event_date_end ?? event_date) | modify_date("+1 day") | is_future }}
             <div
               x-on:click="active === '{{ id }}' ? active = null : active = '{{ id }}'; 
               $nextTick(() => {
@@ -30,7 +30,7 @@
                   {{ title }}
                 </h2>
 
-                {{ event_date iso_format="Do MMMM YYYY" }}
+                {{ event_date | date_range:event_date_end }}
 
                 <div class="hidden text-xs lg:text-sm flex-col gap-y-15 lg:gap-y-25 mt-15 lg:mt-25" :class="{ '!flex': active === '{{ id }}' }">
                   <div>
