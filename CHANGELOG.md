@@ -17,6 +17,7 @@
   4. `php artisan content:migrate-sets` – überführt die Inhalte auf die neuen Elemente; vorher mit `--dry-run` prüfen (lokal: 51 Einträge)
   5. `php artisan config:clear`, `php please stache:refresh`, `php artisan cache:clear`
   6. Im CP die Collection «Pages» in «Seiten» umbenennen (oder `title: Seiten` in `content/collections/pages.yaml`) – liegt im Content und kommt deshalb nicht mit dem Deploy
+- Lokal nach `php artisan statamic:pull` (vor dem Deploy): Der Server-Content kommt im Format von Statamic 5 zurück. Schritte 3–6 lokal wiederholen, `updates:run` dabei einmal pro frischem Pull
 
 ## 25.08.2026 – Baustofftage 2025 und 2026 getrennt
 - Die beiden Jahrgaenge hingen seit je am selben Konto `blindside-baustofftage@baustoffkreislauf.ch` (und damit am selben Passwort); der Login zeigte sie deshalb als "Baustofftage 2025 / 2026"
