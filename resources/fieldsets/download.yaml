@@ -1,0 +1,38 @@
+title: Download
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+      localizable: true
+      validate:
+        - required
+  -
+    handle: file
+    field:
+      max_files: 1
+      container: assets
+      folder: downloads
+      type: assets
+      display: Datei
+      localizable: true
+      validate:
+        - required
+  -
+    handle: date
+    field:
+      type: date
+      display: Datum
+      instructions: 'Wird vor dem Titel angezeigt (z.B. bei Medienmitteilungen).'
+      localizable: true
+  -
+    handle: preview_image
+    field:
+      max_files: 1
+      container: assets
+      folder: downloads
+      type: assets
+      display: Vorschaubild
+      instructions: 'Mit Vorschaubild wird der Download als Bild angezeigt (z.B. Logos), sonst als Textlink.'
+      localizable: true

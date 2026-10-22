@@ -1,4 +1,4 @@
-title: Teasers
+title: Teaser
 fields:
   -
     handle: teaser
@@ -9,12 +9,12 @@ fields:
       localizable: false
       instructions_position: below
       sets:
-        neue_set-gruppe:
-          display: 'Neue Set-Gruppe'
+        teasers:
+          display: Teaser
           sets:
             teaser:
               display: 'Manueller Teaser'
-              instructions: 'Manueller Teaser hinzufügen'
+              instructions: 'Bild, Titel, Text und Link direkt hier erfassen.'
               icon: text-formatting-image-top
               fields:
                 -
@@ -27,8 +27,25 @@ fields:
                   import: teaser
             teaser_post:
               display: Beitragsteaser
-              instructions: 'Beitragsteaser hinzufügen'
-              icon: text-formatting-image-top
+              instructions: 'Einen Beitrag anteasern.'
+              icon: media-news-paper
               fields:
                 -
                   import: teaser_post
+            teaser_entry:
+              display: 'Teaser aus Sammlung'
+              instructions: 'Einen Teaser aus der Sammlung «Teaser» wiederverwenden.'
+              icon: entry
+              fields:
+                -
+                  handle: entry
+                  field:
+                    type: entries
+                    display: Teaser
+                    collections:
+                      - teaser
+                    max_items: 1
+                    mode: default
+                    localizable: false
+                    validate:
+                      - required

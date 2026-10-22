@@ -52,18 +52,11 @@ tabs:
               sets:
                 content_elements:
                   display: Hauptelemente
-                  icon: addon-boxes-stack
+                  icon: layers-stacks
                   sets:
-                    image:
-                      display: Einzelbild
-                      instructions: 'Einzelnes Bild hinzufügen'
-                      icon: media-image-picture-orientation
-                      fields:
-                        -
-                          import: image
                     images:
-                      display: 'Mehrere Bilder (Raster)'
-                      instructions: 'Mehrere grosse Bilder hinzufügen'
+                      display: Bilder
+                      instructions: 'Ein oder mehrere Bilder'
                       icon: media-image-picture-gallery
                       fields:
                         -
@@ -71,14 +64,14 @@ tabs:
                     image_slideshow:
                       display: 'Bildergalerie (Slideshow)'
                       instructions: 'Mehrere Bilder in Slideshow'
-                      icon: media-image-picture-gallery
+                      icon: layout-carousel-horizontal
                       fields:
                         -
                           import: image_slideshow
                     video:
                       display: Video
                       instructions: 'Video hinzufügen (Youtube/Vimeo oder aus Datei)'
-                      icon: media-webcam-video
+                      icon: movie-video-clip
                       fields:
                         -
                           import: video

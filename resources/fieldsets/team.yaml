@@ -50,7 +50,7 @@ fields:
             team_member:
               display: Teammitglied
               instructions: 'Teammitglied hinzufügen'
-              icon: media-image-picture-orientation
+              icon: user-avatar
               fields:
                 -
                   import: team_member

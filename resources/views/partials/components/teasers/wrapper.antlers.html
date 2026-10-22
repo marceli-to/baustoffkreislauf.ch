@@ -1,21 +1,15 @@
-{{ if is_collection }}
+{{ if teaser }}
   <div class="grid grid-cols-12 gap-x-15 lg:gap-x-20 gap-y-30 lg:gap-y-60">
-    {{ entries }}
-      {{ partial:components/teasers/misc }}
-    {{ /entries }}
-  </div>
-{{ else }}
-  {{ if teaser }}
-    <div class="grid grid-cols-12 gap-x-15 lg:gap-x-20 gap-y-30 lg:gap-y-60">
-      {{ teaser }}
-        {{ if type == 'teaser_post' }}
-          {{ partial:posts/teaser }}
-        {{ else }}
+    {{ teaser }}
+      {{ if type == 'teaser_post' }}
+        {{ partial:posts/teaser }}
+      {{ elseif type == 'teaser_entry' }}
+        {{ entry }}
           {{ partial:components/teasers/misc }}
-        {{ /if }}
-      {{ /teaser }}
-    </div>
-  {{ /if }}
+        {{ /entry }}
+      {{ else }}
+        {{ partial:components/teasers/misc }}
+      {{ /if }}
+    {{ /teaser }}
+  </div>
 {{ /if }}
-
-

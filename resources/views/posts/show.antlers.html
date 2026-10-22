@@ -15,12 +15,8 @@
       </div>
     {{ /if }}
 
-    {{ if type == 'image' ||  type == 'images' || type == 'image_slideshow' || type == 'video' }}
+    {{ if type == 'images' || type == 'image_slideshow' || type == 'video' }}
       <div class="mb-30 xl:mb-60 last-of-type:mb-0">
-        {{ if type == 'image' }}
-          {{ partial:components/media/image/fullscreen }}
-        {{ /if }}
-
         {{ if type == 'images' }}
           {{ partial:components/media/images }}
         {{ /if }}

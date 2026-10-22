@@ -1,10 +1,10 @@
-title: Page
+title: Seite
 tabs:
   main:
-    display: Content
+    display: Inhalt
     sections:
       -
-        display: Content
+        display: Inhalt
         fields:
           -
             handle: title
@@ -25,46 +25,46 @@ tabs:
               sets:
                 content_elements:
                   display: Hauptelemente
-                  icon: addon-boxes-stack
+                  icon: layers-stacks
                   sets:
-                    teasers:
-                      display: 'Beitragsteaser für Startseite'
-                      instructions: 'Teaser(s) hinzufügen.'
-                      icon: text-formatting-image-top
-                      fields:
-                        -
-                          import: teasers
-                    list_posts:
-                      display: 'Beiträge verknüpfen'
-                      instructions: 'Beiträge verknüpfen & nach Kategorie anzeigen'
-                      icon: dashboard-layout-2
-                      fields:
-                        -
-                          import: list_posts
                     editor:
                       display: Texteditor
-                      instructions: 'Texteditor hinzufügen'
+                      instructions: 'Text mit Downloads, Buttons und weiteren Elementen'
                       icon: text-formatting-markdown
                       fields:
                         -
                           import: editor
-                    image:
-                      display: Einzelbild
-                      instructions: 'Einzelnes Bild hinzufügen'
-                      icon: media-image-picture-orientation
+                    teasers:
+                      display: Teaser
+                      instructions: 'Manuelle Teaser, Beitragsteaser oder Teaser aus der Sammlung'
+                      icon: text-formatting-image-top
                       fields:
                         -
-                          import: image
+                          import: teasers
+                    tiles:
+                      display: Kacheln
+                      instructions: 'Kacheln mit Text, optional verlinkt (z.B. Unterseiten, Themen)'
+                      icon: layout-grid
+                      fields:
+                        -
+                          import: tiles
+                    list_posts:
+                      display: 'Beiträge verknüpfen'
+                      instructions: 'Beiträge nach Kategorie anzeigen'
+                      icon: dashboard-layout-2
+                      fields:
+                        -
+                          import: list_posts
                     images:
-                      display: 'Mehrere Bilder (Raster)'
-                      instructions: 'Mehrere grosse Bilder hinzufügen'
+                      display: Bilder
+                      instructions: 'Ein oder mehrere Bilder'
                       icon: media-image-picture-gallery
                       fields:
                         -
                           import: images
                     image_text_topic:
                       display: 'Bild/Text (Fachbereich)'
-                      instructions: 'Bild/Text Element für Fachbereich hinzufügen.'
+                      instructions: 'Bild/Text Element für Fachbereich'
                       icon: text-formatting-wrap-image-left
                       fields:
                         -
@@ -72,83 +72,42 @@ tabs:
                     video:
                       display: Video
                       instructions: 'Video hinzufügen'
-                      icon: media-webcam-video
+                      icon: movie-video-clip
                       fields:
                         -
                           import: video
                 special_elements:
                   display: Spezialelemente
-                  icon: addon-boxes-stack
+                  icon: puzzle-piece
                   sets:
+                    module:
+                      display: Modul
+                      instructions: 'Anlässe, Kurse, Publikationen, Suche oder Formulare'
+                      icon: programming-module-box-cube
+                      fields:
+                        -
+                          import: module
                     team:
                       display: Team
-                      instructions: 'Team hinzufügen.'
-                      icon: media-image-picture-gallery
+                      instructions: 'Team hinzufügen'
+                      icon: team
                       fields:
                         -
                           import: team
+                    sponsors:
+                      display: Sponsoren
+                      instructions: 'Sponsoren hinzufügen'
+                      icon: favorite-award-prize
+                      fields:
+                        -
+                          import: sponsors
                     splash:
                       display: Störer
-                      instructions: 'Störer Element hinzufügen.'
+                      instructions: 'Störer Element hinzufügen'
                       icon: align-object-center
                       fields:
                         -
                           import: splash
-                    newsletter_form:
-                      display: 'Formular Newsletter'
-                      instructions: 'Newsletter Formular hinzufügen'
-                      icon: form-text-field
-                      fields:
-                        -
-                          import: newsletter_form
-                    course_form:
-                      display: 'Formular Kursanmeldung'
-                      instructions: 'Formular für Kursanmeldungen'
-                      icon: form-text-field
-                      fields:
-                        -
-                          import: course_form
-                    events:
-                      display: Anlässe
-                      instructions: 'Liste der Anlässe hinzufügen.'
-                      icon: calendar-date
-                      fields:
-                        -
-                          import: events
-                    teaser_courses:
-                      display: 'Teaser Kurse'
-                      instructions: 'Teaser für Kurse hinzufügen.'
-                      icon: text-formatting-initial-letter
-                      fields:
-                        -
-                          import: teaser_courses
-                    teaser_topics:
-                      display: 'Teaser Themen'
-                      instructions: 'Teaser für Unterseiten "Themen" hinzufügen.'
-                      icon: text-formatting-initial-letter
-                      fields:
-                        -
-                          import: teaser_topics
-                    teaser_services:
-                      display: 'Teaser Unterseiten'
-                      instructions: 'Teaser für Unterseiten (z.B. Dienstleistungen) hinzufügen'
-                      icon: text-formatting-initial-letter
-                      fields:
-                        -
-                          import: teaser_services
-                    teaser_collection:
-                      display: 'Teaser (Collection)'
-                      instructions: 'Teaser aus Kollektion auswählen & hinzufügen'
-                      icon: text-formatting-initial-letter
-                      fields:
-                        -
-                          handle: entries
-                          field:
-                            collections:
-                              - teaser
-                            type: entries
-                            display: Einträge
-                            localizable: false
                     quote:
                       display: Zitat
                       instructions: 'Zitat hinzufügen'
@@ -156,35 +115,9 @@ tabs:
                       fields:
                         -
                           import: quote
-                    publications:
-                      display: Publikationen
-                      instructions: 'Liste aller Publikationen anzeigen.'
-                      icon: download-arrow-down
-                      fields:
-                        -
-                          import: publications
-                    search:
-                      display: Suche
-                      instructions: 'Suche hinzufügen'
-                      icon: search-magnifying-glass
-                      fields:
-                        -
-                          import: search
-                    sponsors:
-                      display: Sponsoren
-                      instructions: 'Sponsoren hinzufügen'
-                      icon: media-image-picture-gallery
-                      fields:
-                        -
-                          import: sponsors
-                    order_form:
-                      display: 'Bestellformular Publikationen'
-                      instructions: 'Bestellformular für Publikationen'
-                      icon: form-address-field
-                      fields: {  }
                     interactive_svg:
                       display: 'Interaktives SVG'
-                      instructions: 'Interkatives SVG hinzufügen'
+                      instructions: 'Interaktives SVG hinzufügen'
                       icon: programming-script-code-brackets
                       fields:
                         -
@@ -213,10 +146,10 @@ tabs:
           -
             import: seo
   settings:
-    display: Settings
+    display: Einstellungen
     sections:
       -
-        display: Settings
+        display: Einstellungen
         fields:
           -
             import: settings

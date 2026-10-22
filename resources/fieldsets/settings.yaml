@@ -1,41 +1,46 @@
-title: Settings
+title: Einstellungen
 fields:
   -
     handle: has_pattern
     field:
       type: toggle
-      display: 'Background Pattern'
+      display: Hintergrundmuster
       localizable: false
   -
     handle: hide_header
     field:
       type: toggle
-      display: 'Hide Header?'
+      display: 'Header ausblenden?'
       instructions: 'Aktuelle Seite ohne Header anzeigen.'
       localizable: false
+  # Developer settings: hidden in the CP, but their values are kept on save
   -
     handle: page_class
     field:
       options:
         privacy: Privacy
       type: select
-      display: 'Page class'
+      display: Seitenklasse
       localizable: false
+      visibility: hidden
   -
     handle: template
     field:
       type: template
       display: Template
       localizable: false
+      visibility: hidden
   -
     handle: layout
     field:
       type: template
       display: Layout
       localizable: false
+      visibility: hidden
   -
     handle: debug
     field:
       type: toggle
       display: Debug
       localizable: false
+      visibility: hidden

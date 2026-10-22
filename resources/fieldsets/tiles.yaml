@@ -1,21 +1,27 @@
-title: 'Teaser Unterseiten'
+title: Kacheln
 fields:
   -
-    handle: teaser
+    handle: badge
+    field:
+      type: text
+      display: Beschriftung
+      instructions: 'Senkrechte Beschriftung am linken Rand. Leer lassen, um den Seitentitel zu verwenden.'
+      localizable: true
+  -
+    handle: tiles
     field:
       type: replicator
-      display: Teaser
-      localizable: false
+      display: Kacheln
+      localizable: true
+      collapse: false
       sets:
-        teaser:
-          display: Teaser
-          instructions: 'Teaser hinzufügen'
-          icon: text-formatting-initial-letter
+        tiles:
+          display: Kacheln
           sets:
-            teaser:
-              display: Teaser
-              instructions: 'Teaser hinzufügen'
-              icon: text-formatting-initial-letter
+            tile:
+              display: Kachel
+              instructions: 'Kachel hinzufügen. Mit Link wird die ganze Kachel klickbar.'
+              icon: layout-grid
               fields:
                 -
                   handle: text
@@ -29,12 +35,12 @@ fields:
                     remove_empty_nodes: true
                     type: bard
                     display: Text
-                    localizable: false
+                    localizable: true
                 -
-                  handle: url
+                  handle: link
                   field:
                     collections:
                       - pages
                     type: link
                     display: Link
-                    localizable: false
+                    localizable: true

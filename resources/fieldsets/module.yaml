@@ -1,0 +1,41 @@
+title: Modul
+fields:
+  -
+    handle: module
+    field:
+      type: select
+      display: Modul
+      instructions: 'Automatisch befüllte Liste oder Formular.'
+      options:
+        events: 'Liste der Anlässe'
+        courses: 'Liste der Kurse'
+        course_form: 'Formular Kursanmeldung'
+        order_form: 'Bestellformular Publikationen'
+        publications: 'Liste der Publikationen'
+        search: Suche
+      validate:
+        - required
+      localizable: false
+      replicator_preview: true
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+      localizable: true
+      if:
+        module: 'equals events'
+  -
+    handle: intro
+    field:
+      buttons:
+        - bold
+        - unorderedlist
+        - removeformat
+        - anchor
+      remove_empty_nodes: false
+      type: bard
+      display: Einleitungstext
+      localizable: true
+      if:
+        module: 'equals courses'

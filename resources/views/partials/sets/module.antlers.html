@@ -1,0 +1,19 @@
+{{ if module:value == 'events' }}
+  {{ partial:events/list }}
+{{ elseif module:value == 'courses' }}
+  {{ partial:course/list }}
+{{ elseif module:value == 'course_form' }}
+  {{ partial:layout/content }}
+    {{ partial:course/show :title="page:title" }}
+  {{ /partial:layout/content }}
+{{ elseif module:value == 'order_form' }}
+  {{ partial:layout/content }}
+    {{ partial:publication/form }}
+  {{ /partial:layout/content }}
+{{ elseif module:value == 'publications' }}
+  {{ partial:publication/listing }}
+{{ elseif module:value == 'search' }}
+  {{ partial:layout/content }}
+    {{ partial:search/full }}
+  {{ /partial:layout/content }}
+{{ /if }}

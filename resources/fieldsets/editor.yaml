@@ -16,42 +16,28 @@ fields:
       toolbar_mode: floating
       remove_empty_nodes: false
       type: bard
-      display: Content
+      display: Inhalt
       container: assets
       localizable: true
       sets:
         downloads:
-          display: Medien
-          icon: addon-boxes-stack
+          display: Downloads
+          icon: download
           sets:
-            video:
-              display: Video
-              instructions: 'Video hinzufügen'
-              icon: media-webcam-video
+            download:
+              display: Download
+              instructions: 'Datei als Textlink, mit Datum (Medienmitteilung) oder mit Vorschaubild (Logo)'
+              icon: download-arrow-down
               fields:
                 -
-                  import: video
+                  import: download
             protected_file:
               display: 'Datei (geschützt)'
               instructions: 'Passwortgeschützte Datei hinzufügen'
-              icon: file-zip
+              icon: padlock-locked
               fields:
                 -
                   import: protected_file
-            press_release:
-              display: Medienmitteilung
-              instructions: 'Medienmitteilung als Download'
-              icon: media-news-paper
-              fields:
-                -
-                  import: press_release
-            logo:
-              display: 'Logo Download'
-              instructions: 'Logos für Download'
-              icon: text-formatting-input-signature
-              fields:
-                -
-                  import: logo
             image_downloads:
               display: 'Bilder Download'
               instructions: 'Hochauflösende Bilder für Download'
@@ -61,7 +47,7 @@ fields:
                   import: image_downloads
         special_elements:
           display: Spezialelemente
-          icon: addon-boxes-stack
+          icon: puzzle-piece
           sets:
             newsletter_form:
               display: 'Newsletter Formular'
