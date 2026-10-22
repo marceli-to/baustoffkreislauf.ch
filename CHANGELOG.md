@@ -12,7 +12,7 @@
 - Deploy:
   1. `content/` auf dem Server sichern, Redaktion für ein paar Minuten nichts speichern lassen
   2. PHP-Version der Site auf 8.4 (oder 8.5) stellen, dann `composer install --no-dev` wie gewohnt
-  3. `php please updates:run 5.73.23` – stellt die Globals auf das Format von Statamic 6 um (lokal schon gelaufen, auf dem Server nicht, weil dort kein `composer update` läuft)
+  3. `php please updates:run 5.73.23` – stellt die Globals auf das Format von Statamic 6 um (lokal schon gelaufen, auf dem Server nicht, weil dort kein `composer update` läuft). **Nur einmal ausführen**: ein zweiter Lauf setzt die Herkunft der FR/IT-Globals auf `null`, dann erben sie nicht mehr von DE
   4. `php artisan content:migrate-sets` – überführt die Inhalte auf die neuen Elemente; vorher mit `--dry-run` prüfen (lokal: 51 Einträge)
   5. `php artisan config:clear`, `php please stache:refresh`, `php artisan cache:clear`
 
