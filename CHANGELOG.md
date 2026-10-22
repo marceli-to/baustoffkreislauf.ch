@@ -9,12 +9,14 @@
 - Behoben: Kursanmeldung wurde doppelt angezeigt, Logo-Downloads hatten kein Bild-`src`
 - Entwickler-Einstellungen (Template, Layout, Debug, Seitenklasse) sind für Redakteure ausgeblendet
 - Neu: `php artisan assets:unused --csv=unused.csv` listet Dateien, auf die nichts verweist (löscht nichts)
+- CP-Seitenleiste auf 15rem verbreitert (`resources/css/cp.css`), damit die deutschen Bezeichnungen auf eine Zeile passen
 - Deploy:
   1. `content/` auf dem Server sichern, Redaktion für ein paar Minuten nichts speichern lassen
   2. PHP-Version der Site auf 8.4 (oder 8.5) stellen, dann `composer install --no-dev` wie gewohnt
   3. `php please updates:run 5.73.23` – stellt die Globals auf das Format von Statamic 6 um (lokal schon gelaufen, auf dem Server nicht, weil dort kein `composer update` läuft). **Nur einmal ausführen**: ein zweiter Lauf setzt die Herkunft der FR/IT-Globals auf `null`, dann erben sie nicht mehr von DE
   4. `php artisan content:migrate-sets` – überführt die Inhalte auf die neuen Elemente; vorher mit `--dry-run` prüfen (lokal: 51 Einträge)
   5. `php artisan config:clear`, `php please stache:refresh`, `php artisan cache:clear`
+  6. Im CP die Collection «Pages» in «Seiten» umbenennen (oder `title: Seiten` in `content/collections/pages.yaml`) – liegt im Content und kommt deshalb nicht mit dem Deploy
 
 ## 25.08.2026 – Baustofftage 2025 und 2026 getrennt
 - Die beiden Jahrgaenge hingen seit je am selben Konto `blindside-baustofftage@baustoffkreislauf.ch` (und damit am selben Passwort); der Login zeigte sie deshalb als "Baustofftage 2025 / 2026"

@@ -10,6 +10,7 @@ use Statamic\Auth\Protect\ProtectorManager;
 use Statamic\Auth\Protect\Protectors\Password\Controller as PasswordController;
 use Statamic\Facades\CP\Nav;
 use Statamic\Facades\Collection;
+use Statamic\Statamic;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,6 +36,10 @@ class AppServiceProvider extends ServiceProvider
         app(ProtectorManager::class)->extend('blindside', function () {
             return new BlindsideProtector;
         });
+
+        Statamic::vite('app', [
+            'resources/css/cp.css',
+        ]);
 
         // Submissions get their own CP section instead of sitting between the content collections
         Nav::extend(function ($nav) {

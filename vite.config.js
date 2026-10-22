@@ -23,8 +23,7 @@ export default defineConfig({
               'resources/js/app.js',
               // Control Panel assets.
               // https://statamic.dev/extending/control-panel#adding-css-and-js-assets
-              // 'resources/css/cp.css',
-              // 'resources/js/cp.js',
+              'resources/css/cp.css',
           ],
           refresh: true,
       }),

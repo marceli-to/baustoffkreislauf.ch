@@ -1,1 +1,19 @@
-/* This is all you. */
+/* Wider CP sidebar so German collection names fit on one line. Overrides the
+   core values (nav 12rem, main offset 11.5rem, closed nav at -12.5rem). */
+@media (min-width: 64rem) {
+  body .nav-main {
+    width: 15rem;
+  }
+
+  body main {
+    padding-inline-start: 14.5rem;
+  }
+
+  body main.nav-closed {
+    padding-inline-start: 0;
+  }
+
+  body .nav-closed .nav-main {
+    inset-inline-start: -15.5rem;
+  }
+}

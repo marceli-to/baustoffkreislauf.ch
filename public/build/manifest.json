@@ -4,6 +4,11 @@
     "isEntry": true,
     "src": "resources/css/app.css"
   },
+  "resources/css/cp.css": {
+    "file": "assets/cp-7429cf9f.css",
+    "isEntry": true,
+    "src": "resources/css/cp.css"
+  },
   "resources/js/app.css": {
     "file": "assets/app-d66ac298.css",
     "src": "resources/js/app.css"
