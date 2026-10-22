@@ -39,9 +39,9 @@ class AppServiceProvider extends ServiceProvider
         // Submissions get their own CP section instead of sitting between the content collections
         Nav::extend(function ($nav) {
             $submissions = [
-                'event_registrations' => 'calendar-date',
-                'course_registrations' => 'content-book-open',
-                'orders' => 'shopping-cart',
+                'event_registrations' => ['Anlässe', 'calendar-date'],
+                'course_registrations' => ['Kurse', 'content-book-open'],
+                'orders' => ['Bestellungen', 'shopping-cart'],
             ];
 
             if ($collections = $nav->find('Content', 'Collections')) {
@@ -52,9 +52,9 @@ class AppServiceProvider extends ServiceProvider
                 ));
             }
 
-            foreach ($submissions as $handle => $icon) {
+            foreach ($submissions as $handle => [$label, $icon]) {
                 if ($collection = Collection::find($handle)) {
-                    $nav->create($collection->title())
+                    $nav->create($label)
                         ->section('Eingänge')
                         ->url($collection->showUrl())
                         ->icon($icon)
