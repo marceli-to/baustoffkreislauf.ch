@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\ServiceProvider;
 use Statamic\Auth\Protect\ProtectorManager;
 use Statamic\Auth\Protect\Protectors\Password\Controller as PasswordController;
-use Statamic\Statamic;
+use Statamic\Facades\CP\Nav;
+use Statamic\Facades\Collection;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,9 +36,31 @@ class AppServiceProvider extends ServiceProvider
             return new BlindsideProtector;
         });
 
-        // Statamic::vite('app', [
-        //     'resources/js/cp.js',
-        //     'resources/css/cp.css',
-        // ]);
+        // Submissions get their own CP section instead of sitting between the content collections
+        Nav::extend(function ($nav) {
+            $submissions = [
+                'event_registrations' => 'calendar-date',
+                'course_registrations' => 'content-book-open',
+                'orders' => 'shopping-cart',
+            ];
+
+            if ($collections = $nav->find('Content', 'Collections')) {
+                $children = $collections->children();
+
+                $collections->children(fn () => collect(value($children))->reject(
+                    fn ($item) => collect($submissions)->keys()->contains(fn ($handle) => str_ends_with($item->url(), '/collections/'.$handle))
+                ));
+            }
+
+            foreach ($submissions as $handle => $icon) {
+                if ($collection = Collection::find($handle)) {
+                    $nav->create($collection->title())
+                        ->section('Eingänge')
+                        ->url($collection->showUrl())
+                        ->icon($icon)
+                        ->can('view', $collection);
+                }
+            }
+        });
     }
 }

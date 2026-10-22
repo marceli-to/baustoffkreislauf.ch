@@ -1,1 +1,10 @@
 locale: en
+nav:
+  reorder:
+    - top_level
+    - content
+    - eingange
+    - fields
+    - tools
+    - settings
+    - users
