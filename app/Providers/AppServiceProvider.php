@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Auth\Protect\BlindsideProtector;
+use App\Http\Controllers\Cp\GuideController;
 use App\Http\Controllers\Protect\PasswordProtectController;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Statamic\Auth\Protect\ProtectorManager;
 use Statamic\Auth\Protect\Protectors\Password\Controller as PasswordController;
@@ -41,6 +43,14 @@ class AppServiceProvider extends ServiceProvider
             'resources/css/cp.css',
         ]);
 
+        // Editor guide, see resources/redaktion
+        Statamic::pushCpRoutes(function () {
+            Route::get('anleitung', [GuideController::class, 'show'])->name('guide');
+            Route::get('anleitung/bilder/{file}', [GuideController::class, 'image'])
+                ->where('file', '[a-z0-9-]+\.(png|jpg)')
+                ->name('guide.image');
+        });
+
         // Submissions get their own CP section instead of sitting between the content collections
         Nav::extend(function ($nav) {
             $submissions = [
@@ -66,6 +76,12 @@ class AppServiceProvider extends ServiceProvider
                         ->can('view', $collection);
                 }
             }
+
+            $nav->create('Anleitung')
+                ->section('Hilfe')
+                ->route('guide')
+                ->icon('docs')
+                ->attributes(['target' => '_blank']);
         });
     }
 }

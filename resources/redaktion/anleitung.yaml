@@ -1,0 +1,408 @@
+# Content of the editor guide in the CP (/cp/anleitung).
+#
+# Texts accept inline Markdown (**bold**, [links](#anchor)). Images live in
+# resources/redaktion/bilder and are taken by scripts/docs/screenshots.mjs:
+# «cp-…» from the CMS, «web-…» from the website.
+
+title: Redaktionsanleitung
+intro: >-
+  Alle Inhaltselemente der Website, wofür sie gedacht sind und wie sie im CMS
+  erfasst werden. Mit Beispielen aus dem CMS und von der Website.
+
+basics:
+  title: Grundlagen
+  blocks:
+    - text: >-
+        Alle Seiten werden unter **Sammlungen › Seiten** bearbeitet. Eine Seite
+        besteht aus einem **Titel** und beliebig vielen **Inhaltselementen**. Auf
+        der Website stehen sie untereinander, in der Reihenfolge wie im CMS.
+      image: cp-seite.png
+      caption: 'Oben die Reiter, in der Mitte die Inhaltselemente, rechts Veröffentlichung und Sprachen.'
+      wide: true
+    - title: Ein Element hinzufügen
+      text: >-
+        Unter den Elementen öffnet **Set hinzufügen** die Auswahl, aufgeteilt in
+        **Hauptelemente** und **Spezialelemente**. Zwischen zwei Elementen erscheint
+        beim Darüberfahren ein **+**, um dort etwas einzufügen. Das Suchfeld findet
+        Elemente über den Namen.
+      image: cp-set-auswahl.png
+      caption: 'Die Auswahl nach einem Klick auf «Set hinzufügen».'
+    - title: Ordnen, ausblenden, kopieren
+      list:
+        - '**Verschieben:** am Griff links in der Titelzeile (sechs Punkte) ziehen.'
+        - '**Ein- und ausklappen:** auf die Titelzeile klicken. Die Knöpfe oben rechts bei «Inhalte» klappen alle auf einmal auf oder zu.'
+        - '**Ausblenden:** der Schalter in der Titelzeile blendet ein Element auf der Website aus, ohne es zu löschen.'
+        - '**Kopieren, löschen:** über das Menü «•••» in der Titelzeile.'
+    - title: Speichern und Vorschau
+      text: >-
+        Änderungen erscheinen erst mit **Speichern & Veröffentlichen** auf der
+        Website. **Live Vorschau** zeigt die Seite schon vor dem Speichern,
+        **URL öffnen** die veröffentlichte Seite.
+    - title: Sprachen
+      text: >-
+        Rechts unter «Arbeiten in» wird zwischen Deutsch, Français und Italiano
+        gewechselt. Texte werden pro Sprache erfasst; Bilder und einige andere
+        Felder gelten für alle Sprachen und werden in der deutschen Version
+        bearbeitet. Eine durchgestrichene Sprache gibt es für diese Seite noch nicht.
+
+changes:
+  title: Was ist neu?
+  text: >-
+    Die Elemente wurden aufgeräumt: aus 26 sind 13 geworden. Was fast dasselbe tat,
+    ist zusammengelegt. Bestehende Inhalte wurden automatisch übernommen, auf den
+    Seiten muss nichts nachgearbeitet werden.
+  rows:
+    - [Einzelbild, Mehrere Bilder (Raster), bilder, 'Ein Bild mit «Ganze Breite» wird gross gezeigt, die anderen im Raster.']
+    - [Teaser Unterseiten, Teaser Themen, kacheln, 'Kacheln mit Text, optional verlinkt.']
+    - [Beitragsteaser für Startseite, Teaser (Collection), teaser, 'Drei Varianten: manuell, Beitrag, aus der Sammlung «Teaser».']
+    - [Anlässe, Teaser Kurse, Formular Kursanmeldung, Bestellformular Publikationen, Publikationen, Suche, modul, 'Im Feld «Modul» wird gewählt, was erscheint.']
+    - [Medienmitteilung, Logo Download, download, 'Mit Datum = Medienmitteilung, mit Vorschaubild = Logo, sonst Textlink.']
+    - [Formular Newsletter (Seitenelement), newsletter-formular, 'Gibt es nur noch im Texteditor.']
+    - [Video (im Texteditor), video, 'Gibt es nur noch als eigenes Element.']
+  also:
+    - 'Die Sammlung «Pages» heisst jetzt **Seiten**.'
+    - 'Anmeldungen und Bestellungen stehen links unter **Eingänge**.'
+    - 'Jedes Element hat in der Auswahl eine kurze Beschreibung.'
+
+groups:
+  - title: Hauptelemente
+    badge: Hauptelemente
+    intro: 'Die Bausteine für fast alle Seiten. In der Auswahl unter «Hauptelemente».'
+    elements:
+      - handle: texteditor
+        title: Texteditor
+        task: Text mit Titeln, Lead, Listen und Links
+        summary: >-
+          Das wichtigste Element: Fliesstext mit Titeln, Lead, Listen und Links. Im
+          Texteditor lassen sich zudem Downloads, Buttons und weitere
+          [Elemente](#im-texteditor) einfügen.
+        web: [web-texteditor.jpg]
+        cms: cp-texteditor.png
+        fields:
+          - [Inhalt, 'Der Text. Wird Text markiert, erscheint die Werkzeugleiste. Das **+** links in einer leeren Zeile fügt Downloads, Buttons usw. ein.']
+          - ['Texteinzug?', 'Rückt den Text auf grossen Bildschirmen ein. Der Haupttitel bleibt links.']
+        extra:
+          title: Die Werkzeugleiste
+          image: cp-bard-toolbar.png
+          rows:
+            - [H1, 'Haupttitel der Seite, nur einmal und ganz oben.']
+            - [H2, H3, 'Zwischentitel und Untertitel.']
+            - [B, I, 'Fett, kursiv.']
+            - [Liste, 'Aufzählung mit Punkten.']
+            - [Radiergummi, 'Entfernt Formatierungen.']
+            - [Link, 'Verlinkt den markierten Text: Seite der Website, Datei oder externe Adresse.']
+            - [P<sub>L</sub>, 'Lead: grosser, fetter Einstiegstext unter dem Haupttitel.']
+        more:
+          - image: web-texteditor-einzug.jpg
+            caption: 'Mit «Texteinzug?»: Der Text ist eingerückt, der Haupttitel bleibt links.'
+        tips:
+          - 'Text aus Word oder E-Mails als reinen Text einfügen (Mac ⌘ ⇧ V, Windows Ctrl ⇧ V), so kommen keine fremden Formatierungen mit.'
+          - 'Titel nicht überspringen: auf H1 folgt H2, darauf H3. Zum Hervorheben fett verwenden, nicht einen Titel.'
+
+      - handle: teaser
+        title: Teaser
+        task: Auf Seiten, Beiträge oder Angebote hinweisen, mit Bild
+        summary: >-
+          Hinweise auf andere Seiten, Beiträge oder externe Angebote, mit Bild,
+          Titel, Text und Link. Auf der Website stehen je zwei nebeneinander.
+        web: [web-teaser.jpg]
+        cms: cp-teaser.png
+        variants:
+          - ['Manueller Teaser', 'Bild, Titel, Text und Link werden direkt hier erfasst. Für einmalige Hinweise.']
+          - ['Beitragsteaser', 'Ein Beitrag wird ausgewählt. Bild, Titel und Text kommen aus dem Reiter «Vorschau» des Beitrags.']
+          - ['Teaser aus Sammlung', 'Ein Teaser aus **Sammlungen › Teaser** wird wiederverwendet. Für Teaser auf mehreren Seiten: Änderungen wirken überall.']
+        fields:
+          - ['Rahmen (oben)', 'Schwarze Linie über dem Teaser.']
+          - [Bild, 'Vorschaubild.']
+          - [Format Vorschaubild, 'Hochformat, Querformat oder Quadrat. Teaser nebeneinander sollten dasselbe Format haben.']
+          - [Titel, Text, 'Pflichtfelder.']
+          - [Link, Linktext, 'Ziel und Beschriftung des Links.']
+        fields_title: Felder des manuellen Teasers
+
+      - handle: kacheln
+        title: Kacheln
+        task: Unterseiten oder Themen als Kacheln
+        summary: >-
+          Kacheln mit kurzem Text, als Einstieg zu Unterseiten oder Themen. Mit Link
+          wird die ganze Kachel klickbar und färbt sich beim Darüberfahren grün.
+        web: [web-kacheln.jpg]
+        cms: cp-kacheln.png
+        fields:
+          - [Beschriftung, 'Senkrechter Text am linken Rand. Leer lassen, um den Seitentitel zu verwenden.']
+          - [Text, 'Kurzer Text. Ein H3-Titel macht den ersten Teil grösser.']
+          - [Link, 'Optional. Seite der Website oder externe Adresse.']
+        tips:
+          - 'Kacheln stehen zu zweit nebeneinander, eine gerade Anzahl wirkt am ruhigsten.'
+
+      - handle: beitraege
+        title: Beiträge verknüpfen
+        task: Die neusten Beiträge einer Kategorie zeigen
+        summary: >-
+          Zeigt automatisch die neusten Beiträge einer Kategorie, z.B. auf «Aktuell»
+          oder «Politik». Neue Beiträge erscheinen von selbst.
+        web: [web-beitraege.jpg]
+        cms: cp-beitraege.png
+        fields:
+          - [Kategorie, 'Aus welcher Kategorie die Beiträge stammen.']
+          - ['Archiv?', 'Aus: die 8 neusten Beiträge, darunter der Knopf «Ältere Beiträge». An: alle ab dem neunten, für die Archivseite.']
+
+      - handle: bilder
+        title: Bilder
+        task: Ein grosses Bild oder mehrere Bilder im Raster
+        summary: >-
+          Ein oder mehrere Bilder. Ein Bild mit «Ganze Breite» erscheint gross im
+          Format 16:9, alle anderen zu zweit nebeneinander.
+        web: [web-bilder.jpg]
+        cms: cp-bilder.png
+        fields:
+          - [Bild, 'Das Bild. Bitte immer einen Alt-Text setzen (Knopf «Alt-Text setzen»).']
+          - [Legende, 'Optionaler Text unter dem Bild.']
+          - ['Ganze Breite?', 'Gross über die ganze Breite, im Format 16:9.']
+        tips:
+          - 'Eine Bildergalerie zum Durchklicken gibt es in [Beiträgen](#beitraege-sammlung).'
+
+      - handle: bild-text
+        title: Bild/Text (Fachbereich)
+        task: Bild und Text nebeneinander
+        summary: 'Ein Bild und ein Text nebeneinander, gedacht für die Seiten der Fachbereiche.'
+        web: [web-bild-text.jpg]
+        cms: cp-bild-text.png
+        fields:
+          - [Bild, 'Das Bild links.']
+          - [Text, 'Titel (H2, H3), Text, Listen und Links.']
+
+      - handle: video
+        title: Video
+        task: Ein Video von YouTube, Vimeo oder als Datei
+        summary: 'Ein Video von YouTube oder Vimeo, oder eine eigene Videodatei (MP4).'
+        web: [web-video.jpg]
+        cms: cp-video.png
+        fields:
+          - [Quelle, '«Code (Youtube, Vimeo)» oder «Datei (MP4)».']
+          - [Code, 'Der Einbettungscode: bei YouTube und Vimeo unter dem Video **Teilen › Einbetten**.']
+          - [Datei, 'Die MP4-Datei. Sie startet automatisch ohne Ton.']
+        tips:
+          - 'Videos wenn möglich auf YouTube oder Vimeo hochladen und einbetten. Grosse Videodateien machen die Website langsam.'
+
+  - title: Im Texteditor
+    handle: im-texteditor
+    badge: Im Texteditor
+    intro: >-
+      Diese Elemente werden innerhalb eines Texteditors eingefügt: in eine leere
+      Zeile klicken und das **+** am linken Rand wählen. So stehen sie genau an der
+      richtigen Stelle im Text.
+    image: cp-bard-sets.png
+    caption: 'Das + in einer leeren Zeile, hier mit der Gruppe «Downloads».'
+    elements:
+      - handle: download
+        title: Download
+        task: Eine Datei, Medienmitteilung oder ein Logo zum Download
+        summary: >-
+          Eine Datei zum Herunterladen. Je nach Feldern erscheint sie als Textlink,
+          als Medienmitteilung mit Datum oder als Logo mit Vorschaubild.
+        web: [web-download.jpg]
+        cms: cp-download.png
+        fields:
+          - [Titel, 'Pflichtfeld, wird als Linktext angezeigt.']
+          - [Datei, 'Pflichtfeld, z.B. PDF oder ZIP.']
+          - [Datum, 'Optional. Steht vor dem Titel, für Medienmitteilungen.']
+          - [Vorschaubild, 'Optional. Der Download erscheint dann als Bild mit Download-Symbol, für Logos.']
+
+      - handle: datei-geschuetzt
+        title: Datei (geschützt)
+        task: Unterlagen nur für eingeloggte Teilnehmende der Baustofftage
+        summary: 'Eine Datei, die erst nach dem Login heruntergeladen werden kann, für die Unterlagen der Baustofftage.'
+        web: [web-datei-geschuetzt.jpg]
+        cms: cp-datei-geschuetzt.png
+        fields:
+          - [Bezeichnung, 'Linktext.']
+          - [Datei, 'Die Datei, im geschützten Ordner «protected».']
+          - [Hinweis, 'Optionaler Text unter dem Link.']
+        warnings:
+          - 'Herunterladen kann nur, wer mit dem Login der jeweiligen Baustofftage-Ausgabe angemeldet ist. Geschützte Dateien gehören deshalb auf die passwortgeschützten Baustofftage-Seiten.'
+
+      - handle: bilder-download
+        title: Bilder Download
+        task: Hochaufgelöste Bilder zum Download, z.B. für Medien
+        summary: 'Bilder mit Legende, deren hochaufgelöste Version mit einem Klick heruntergeladen wird, z.B. Pressebilder.'
+        web: [web-bilder-download.jpg]
+        cms: cp-bilder-download.png
+        fields:
+          - [Bild, 'Die Vorschau auf der Website.']
+          - [Hochauflösendes Bild, 'Die Datei für den Download (Bild oder ZIP). Ohne sie ist das Bild nicht herunterladbar.']
+          - [Legende, 'Text unter dem Bild.']
+
+      - handle: button
+        title: Button (Kachel)
+        task: Ein auffälliger Link-Button
+        summary: 'Ein schwarzer Link-Button, z.B. für eine Anmeldung oder eine wichtige externe Seite.'
+        web: [web-button.jpg]
+        cms: cp-button.png
+        fields:
+          - [Link, 'Seite der Website, Anlass, Kurs, Publikation, Datei oder externe Adresse.']
+          - [Text, 'Beschriftung, kurz halten.']
+          - [Öffnen in, '«Neuer Tab» für externe Seiten, sonst «Gleicher Tab».']
+
+      - handle: newsletter-formular
+        title: Newsletter Formular
+        task: Die Newsletter-Anmeldung
+        summary: >-
+          Das Anmeldeformular für den Newsletter. Das Element hat keine Felder. Die
+          Anmeldungen stehen unter **Werkzeuge › Formulare › Newsletter**.
+        web: [web-newsletter-formular.jpg]
+        cms: cp-newsletter-formular.png
+
+      - handle: embed-code
+        title: Embed Code
+        task: Externen Code einbinden, z.B. ein Formular oder eine Karte
+        summary: 'Fügt fremden HTML-Code ein, z.B. ein externes Anmeldeformular, eine Karte oder ein Widget.'
+        web: [web-embed-code.jpg]
+        cms: cp-embed-code.png
+        fields:
+          - [Code, 'Der Code, so wie ihn der Anbieter liefert.']
+        warnings:
+          - 'Nur Code von vertrauenswürdigen Anbietern einfügen. Fehlerhafter Code kann die ganze Seite stören, deshalb nach dem Speichern die Seite kontrollieren.'
+
+  - title: Spezialelemente
+    badge: Spezialelemente
+    intro: 'Seltener gebraucht. In der Auswahl unter «Spezialelemente».'
+    elements:
+      - handle: modul
+        title: Modul
+        task: Anlässe, Kurse, Publikationen, Suche oder ein Formular
+        summary: >-
+          Automatisch befüllte Listen und Formulare. Die Inhalte werden in den
+          Sammlungen Anlässe, Kurse und Publikationen gepflegt und erscheinen von selbst.
+        web: [web-modul-anlaesse.jpg, web-modul-publikationen.jpg]
+        cms: cp-modul.png
+        fields_title: Was das Modul zeigt
+        fields:
+          - [Liste der Anlässe, 'Die kommenden Anlässe. Zusätzliches Feld: Titel.']
+          - [Liste der Kurse, 'Die Kurse. Zusätzliches Feld: Einleitungstext.']
+          - [Formular Kursanmeldung, 'Das Anmeldeformular für einen Kurs.']
+          - [Bestellformular Publikationen, 'Das Bestellformular für Publikationen.']
+          - [Liste der Publikationen, 'Alle Publikationen mit Suche und Filter.']
+          - [Suche, 'Die Suche über die ganze Website.']
+        tips:
+          - 'Die Seiten mit den Modulen bestehen bereits. Neue Anlässe, Kurse und Publikationen werden in ihrer Sammlung erfasst.'
+
+      - handle: team
+        title: Team
+        task: Personen mit Foto und Kontakt
+        summary: 'Personen mit Foto, Funktion und E-Mail-Adresse, z.B. Geschäftsstelle oder Vorstand.'
+        web: [web-team.jpg]
+        cms: cp-team.png
+        fields:
+          - [Text, 'Optionaler Einleitungstext.']
+          - [Bild, 'Quadratisches Porträt, im Ordner «portraits».']
+          - [Vorname, Name, E-Mail, 'Pflichtfelder.']
+          - [Funktion, Firma, 'Optional.']
+
+      - handle: sponsoren
+        title: Sponsoren
+        task: Logos von Sponsoren
+        summary: 'Logos von Sponsoren, in Gruppen (z.B. Gold, Silber) und einem wählbaren Raster.'
+        web: [web-sponsoren.jpg]
+        cms: cp-sponsoren.png
+        fields:
+          - [Titel, 'Über allen Gruppen.']
+          - [Gruppentitel, 'z.B. «Goldsponsoren».']
+          - [Logo Raster, '2-, 3- oder 4-spaltig. Weniger Spalten ergeben grössere Logos, für die wichtigeren Sponsoren.']
+          - [Logo, Webseite, 'Das Logo und die Adresse, auf die es verlinkt.']
+
+      - handle: stoerer
+        title: Störer
+        task: Eine grüne Hinweisbox
+        summary: 'Eine grüne Box, die aus dem Inhalt heraussticht: für Aufrufe und wichtige Hinweise, auf Wunsch ganz verlinkt und mit Logo.'
+        web: [web-stoerer.jpg]
+        cms: cp-stoerer.png
+        fields:
+          - [Hinweis Verbände, 'Zeigt den globalen Hinweistext aus **Globale Inhalte › Störer**. Die übrigen Felder entfallen dann.']
+          - [Einleitung, 'Optionaler Text über der Box.']
+          - [Text, 'Inhalt der Box.']
+          - [Verlinken, Link, Linktext, 'Macht die ganze Box klickbar.']
+          - [Logo, 'Optional, unten rechts.']
+
+      - handle: zitat
+        title: Zitat
+        task: Ein hervorgehobenes Zitat
+        summary: 'Ein Zitat in einer sandfarbenen Box. Die Anführungszeichen « » werden automatisch gesetzt.'
+        web: [web-zitat.jpg]
+        cms: cp-zitat.png
+        fields:
+          - [Zitat, 'Der Text ohne Anführungszeichen. Zeilenumbrüche werden übernommen.']
+
+      - handle: interaktives-svg
+        title: Interaktives SVG
+        task: Eine interaktive Grafik
+        summary: 'Eine interaktive Grafik, z.B. die Abfallflüsse. Sie wird extern erstellt und als Code eingefügt.'
+        web: [web-interaktives-svg.jpg]
+        cms: cp-interaktives-svg.png
+        fields:
+          - [Titel, 'Über der Grafik.']
+          - [SVG Code, 'Der Code der Grafik.']
+        warnings:
+          - 'Den SVG-Code nur als Ganzes ersetzen, nicht von Hand bearbeiten.'
+
+guides:
+  - handle: beitraege-sammlung
+    title: Beiträge
+    text: >-
+      Beiträge (**Sammlungen › Beiträge**) sind News, Fachartikel und
+      Veranstaltungstipps. Sie erscheinen automatisch in den Listen
+      [Beiträge verknüpfen](#beitraege) ihrer Kategorie.
+    web: web-beitrag.jpg
+    web_caption: 'Ein Beitrag mit Bildergalerie.'
+    cms: cp-beitrag.png
+    fields:
+      - [Ort, Datum, 'Stehen über dem Titel.']
+      - [Titel, 'Pflichtfeld.']
+      - [Lead, 'Einstiegstext unter dem Titel.']
+      - [Inhalt, 'Text mit Titeln, Listen und Links. Über das **+** in einer leeren Zeile: Bilder, Bildergalerie (Slideshow) und Video.']
+      - [Publiziert am, 'Pflichtfeld. Bestimmt die Reihenfolge, neuste zuerst.']
+      - [Kategorie, 'In der Seitenleiste. Bestimmt, in welcher Liste der Beitrag erscheint.']
+    blocks:
+      - title: Bildergalerie (Slideshow)
+        text: 'Mehrere Bilder zum Durchblättern, jedes mit Legende und optionalem Copyright-Vermerk.'
+      - title: Reiter «Vorschau»
+        text: 'Bild, Titel und Text für Listen und Beitragsteaser. Ohne Vorschaubild bleibt der Beitrag in den Listen ohne Bild, also bitte immer eines setzen.'
+        image: cp-beitrag-vorschau.png
+
+  - handle: seiteneinstellungen
+    title: Seiteneinstellungen
+    text: 'Die Reiter neben «Inhalt».'
+    blocks:
+      - title: Medien
+        text: 'Die **Headerbilder** oben auf der Seite. Sind mehrere hinterlegt, erscheint bei jedem Aufruf zufällig eines. Sie liegen im Ordner «mood».'
+        image: cp-tab-medien.png
+      - title: SEO
+        text: 'Erscheint nicht auf der Seite, sondern in Google und beim Teilen auf Social Media.'
+        rows:
+          - [Title, 'Ersetzt den Seitentitel in Google. Leer = Seitentitel.']
+          - [Description, 'Ein bis zwei Sätze, die in Google unter dem Titel stehen.']
+          - [Keywords, 'Wird von Google nicht beachtet, kann leer bleiben.']
+          - [Image, 'Bild beim Teilen auf Social Media.']
+        image: cp-tab-seo.png
+      - title: Einstellungen
+        rows:
+          - [Hintergrundmuster, 'Zeigt das Muster im Hintergrund der Seite.']
+          - ['Header ausblenden?', 'Die Seite erscheint ohne Headerbild.']
+        image: cp-tab-einstellungen.png
+
+  - handle: tipps
+    title: Tipps
+    blocks:
+      - title: Bilder
+        list:
+          - '**Grösse:** rund 2500 Pixel Breite genügen. Grössere Bilder werden beim Hochladen auf höchstens 4000 Pixel verkleinert.'
+          - '**Format:** Fotos als JPG, Logos und Grafiken als PNG oder SVG.'
+          - '**Dateinamen:** sprechend, ohne Umlaute und Leerzeichen, z.B. `kieswerk-rekultivierung-2026.jpg`.'
+          - '**Alt-Text:** kurz beschreiben, was zu sehen ist. Das hilft sehbehinderten Menschen und Suchmaschinen.'
+          - '**Ordner:** Downloads in «downloads», Porträts in «portraits», Headerbilder in «mood», geschützte Dateien in «protected».'
+      - title: Links
+        list:
+          - 'Für Seiten der eigenen Website beim Link «Eintrag» wählen statt die Adresse einzutippen. So bleibt der Link gültig, auch wenn die Seite umzieht.'
+          - 'Externe Links und Dateien öffnen sich am besten in einem neuen Tab.'
+      - title: Sprachen
+        list:
+          - 'Neue Seiten zuerst auf Deutsch anlegen, dann rechts unter «Arbeiten in» Français oder Italiano wählen und übersetzen.'
