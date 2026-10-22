@@ -356,7 +356,7 @@ tabs:
             handle: participation_type_section
             field:
               type: section
-              display: 'Teilnahme-Optionen'
+              display: Teilnahme-Optionen
               localizable: false
               instructions: 'Checkboxen für Teilnahme (z.B. Vormittag/Nachmittag)'
           -
@@ -583,15 +583,6 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
-          -
-            handle: parent
-            field:
-              type: entries
-              collections:
-                - events
-              max_items: 1
-              listable: false
-              localizable: true
   search:
     display: Suche
     sections:

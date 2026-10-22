@@ -14,8 +14,7 @@ tabs:
           -
             import: teaser
             config:
-              title:
-                required: true
+              title: {  }
   sidebar:
     display: Sidebar
     sections:
@@ -27,13 +26,4 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
-          -
-            handle: parent
-            field:
-              type: entries
-              collections:
-                - teaser
-              max_items: 1
-              listable: false
-              localizable: true
 title: Teaser

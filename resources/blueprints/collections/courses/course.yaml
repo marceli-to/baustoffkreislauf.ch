@@ -416,13 +416,4 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
-          -
-            handle: parent
-            field:
-              type: entries
-              collections:
-                - courses
-              max_items: 1
-              listable: false
-              localizable: true
 title: Kurse

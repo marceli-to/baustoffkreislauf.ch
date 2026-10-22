@@ -84,13 +84,4 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
-          -
-            handle: parent
-            field:
-              type: entries
-              collections:
-                - orders
-              max_items: 1
-              listable: false
-              localizable: true
 title: 'Bestellungen Publikationen'
