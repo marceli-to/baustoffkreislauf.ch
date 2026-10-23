@@ -4,7 +4,7 @@ Working notes for the upgrade and cleanup. Start a new session by reading this
 file, then `CHANGELOG.md` (entry 22.10.2026, which holds the deploy steps).
 Delete this file once everything below is done.
 
-Last updated: 22.10.2026
+Last updated: 23.10.2026
 
 ## State
 
@@ -20,8 +20,10 @@ PHP 8.3+ (local 8.4).
 | 3 Content model cleanup (26 → 13 page sets) | done |
 | 4 Templates: one partial per set in `partials/sets/` | done |
 | CP: Eingänge section, wider sidebar, Pages → Seiten | done |
-| Unused assets: report + Excel list for the client | list sent / waiting |
-| Unused assets: delete command | **open** |
+| Unused assets: images only, documents stay | decided 23.10. |
+| Unused images: Excel list for the client | to send / waiting |
+| Unused images: delete command | done (`assets:unused --delete`) |
+| Unused images: delete on the server | **open** |
 | Image upload size | **open – decision** |
 | Deploy to production | **open** |
 | Optimisation pass (static caching, Tailwind 4 / Vite 7) | **open – later** |
@@ -61,12 +63,19 @@ collection renamed to Seiten). All 467 URLs render.
 
 ## Open items
 
-1. **Unused assets.** Client marks `~/Downloads/baustoffkreislauf-unbenutzte-dateien.xlsx`
-   (198 files, 346 MB, from the 22.10. pull; rebuild with
-   `scripts/upgrade/unused-assets-xlsx.py` from `assets:unused --csv`).
-   When it comes back: take the rows with «Löschen? = Ja», write a command that
-   takes the path list, re-checks each file is still unused, dry-runs, then
-   deletes – on the **server**, not locally.
+1. **Unused images.** Only images get deleted; PDFs and other documents stay
+   (often linked from newsletters and mails). Client marks
+   `~/Downloads/baustoffkreislauf-unbenutzte-bilder.xlsx` (121 images, 197 MB,
+   from the 22.10. pull). When it comes back, on the **server**:
+   - write the paths of the rows with «Löschen? = Ja» to a file, one per line
+     (folder/file, root files without folder)
+   - optionally check the access logs for these paths first (hotlinks from
+     newsletters)
+   - `php artisan assets:unused --only=paths.txt` to see the list, then
+     `php artisan assets:unused --only=paths.txt --delete --backup=~/unused-images-<date>`.
+     It skips documents, re-checks each file right before deleting and copies it
+     to the backup first. If files were added outside the CP, run
+     `php artisan cache:clear` first so Statamic sees them.
 2. **Image upload size.** `source_preset: max_upload_size` already caps uploads
    at 4000px; the site never renders above 2000px. 158 images are 2600–4000px
    (346 MB). Lowering the cap to ~2560px would also shrink the hi-res press
