@@ -1,5 +1,5 @@
 @foreach ($blocks as $block)
-  <div class="block {{ isset($block['image']) ? 'block--image' : '' }} {{ !empty($block['wide']) ? 'block--wide' : '' }}">
+  <div class="block {{ isset($block['image']) ? 'block--image' : '' }}">
     <div class="block__text">
       @isset($block['title'])
         <h4>{{ $block['title'] }}</h4>
@@ -19,7 +19,7 @@
       @endisset
     </div>
     @isset($block['image'])
-      @include('redaktion.partials.figure', ['file' => $block['image'], 'caption' => $block['caption'] ?? 'Im CMS', 'kind' => 'cms'])
+      @include('redaktion.partials.figure', ['file' => $block['image'], 'kind' => 'cms', 'note' => $block['caption'] ?? null, 'live' => null])
     @endisset
   </div>
 @endforeach

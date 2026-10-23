@@ -48,15 +48,26 @@
   }, { rootMargin: '-20% 0px -70% 0px' });
   document.querySelectorAll('[data-spy]').forEach((section) => observer.observe(section));
 
-  // Zoom: screenshots open at full size
+  // Zoom: the whole screenshot, scaled to fit the window but never above its
+  // real size. Sized here so the dialog can wrap the image exactly.
   const dialog = document.querySelector('.zoom');
   const zoomed = dialog.querySelector('img');
-  const open = (img) => {
-    zoomed.src = img.currentSrc || img.src;
-    zoomed.style.width = img.getAttribute('width') + 'px';
-    dialog.showModal();
-    dialog.scrollTop = 0;
+  let source = null;
+  const fit = () => {
+    const width = +source.getAttribute('width');
+    const height = +source.getAttribute('height');
+    const frame = 2 * 16 + 2 * 11; // dialog margin, padding and border
+    const scale = Math.min(1, (innerWidth - frame) / width, (innerHeight - frame) / height);
+    zoomed.style.width = Math.floor(width * scale) + 'px';
+    zoomed.style.height = Math.floor(height * scale) + 'px';
   };
+  const open = (img) => {
+    source = img;
+    zoomed.src = img.currentSrc || img.src;
+    fit();
+    dialog.showModal();
+  };
+  addEventListener('resize', () => dialog.open && fit());
   document.addEventListener('click', (event) => {
     const trigger = event.target.closest('[data-zoom], [data-zoom-target]');
     if (trigger) open(trigger.closest('.shot').querySelector('img'));

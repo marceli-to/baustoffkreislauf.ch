@@ -186,8 +186,8 @@ async function webShot({ name, web, maxHeight = 1300 }) {
   });
   await tab.waitForTimeout(800);
 
-  // <main> has generous padding at the bottom; stop below its last visible child.
-  // Left and right, crop to the content: full-width bands don't count.
+  // Crop to the content with a 20px margin: <main> has generous padding, and
+  // full-width bands don't count as content.
   const { top, bottom, left, right } = await tab.evaluate(() => {
     const main = document.querySelector('main');
     const children = [...main.children].map((el) => el.getBoundingClientRect()).filter((r) => r.height > 0);
@@ -195,10 +195,10 @@ async function webShot({ name, web, maxHeight = 1300 }) {
       .map((el) => el.getBoundingClientRect())
       .filter((r) => r.width > 0 && r.height > 0 && r.width < window.innerWidth * 0.95);
     return {
-      top: main.getBoundingClientRect().top + window.scrollY,
-      bottom: Math.max(...children.map((r) => r.bottom)) + window.scrollY + 50,
-      left: Math.max(0, Math.min(...content.map((r) => r.left)) - 40),
-      right: Math.min(window.innerWidth, Math.max(...content.map((r) => r.right)) + 40),
+      top: Math.max(main.getBoundingClientRect().top, Math.min(...content.map((r) => r.top)) - 20) + window.scrollY,
+      bottom: Math.max(...children.map((r) => r.bottom)) + window.scrollY + 20,
+      left: Math.max(0, Math.min(...content.map((r) => r.left)) - 20),
+      right: Math.min(window.innerWidth, Math.max(...content.map((r) => r.right)) + 20),
     };
   });
 

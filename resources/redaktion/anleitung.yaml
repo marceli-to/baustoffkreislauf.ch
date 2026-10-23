@@ -1,5 +1,8 @@
 # Content of the editor guide in the CP (/cp/anleitung).
 #
+# «live» is a page on www.baustoffkreislauf.ch that uses the element; it is
+# linked under the website screenshot («live_login» if that page needs a login).
+#
 # Texts accept inline Markdown (**bold**, [links](#anchor)). Images live in
 # resources/redaktion/bilder and are taken by scripts/docs/screenshots.mjs:
 # «cp-…» from the CMS, «web-…» from the website.
@@ -18,7 +21,6 @@ basics:
         der Website stehen sie untereinander, in der Reihenfolge wie im CMS.
       image: cp-seite.png
       caption: 'Oben die Reiter, in der Mitte die Inhaltselemente, rechts Veröffentlichung und Sprachen.'
-      wide: true
     - title: Ein Element hinzufügen
       text: >-
         Unter den Elementen öffnet **Set hinzufügen** die Auswahl, aufgeteilt in
@@ -78,6 +80,7 @@ groups:
           [Elemente](#im-texteditor) einfügen.
         web: [web-texteditor.jpg]
         cms: cp-texteditor.png
+        live: /fokusthemen/dekarbonisierung
         fields:
           - [Inhalt, 'Der Text. Wird Text markiert, erscheint die Werkzeugleiste. Das **+** links in einer leeren Zeile fügt Downloads, Buttons usw. ein.']
           - ['Texteinzug?', 'Rückt den Text auf grossen Bildschirmen ein. Der Haupttitel bleibt links.']
@@ -107,6 +110,7 @@ groups:
           Titel, Text und Link. Auf der Website stehen je zwei nebeneinander.
         web: [web-teaser.jpg]
         cms: cp-teaser.png
+        live: /fachbereiche/bildung
         variants:
           - ['Manueller Teaser', 'Bild, Titel, Text und Link werden direkt hier erfasst. Für einmalige Hinweise.']
           - ['Beitragsteaser', 'Ein Beitrag wird ausgewählt. Bild, Titel und Text kommen aus dem Reiter «Vorschau» des Beitrags.']
@@ -127,6 +131,7 @@ groups:
           wird die ganze Kachel klickbar und färbt sich beim Darüberfahren grün.
         web: [web-kacheln.jpg]
         cms: cp-kacheln.png
+        live: /fachbereiche
         fields:
           - [Beschriftung, 'Senkrechter Text am linken Rand. Leer lassen, um den Seitentitel zu verwenden.']
           - [Text, 'Kurzer Text. Ein H3-Titel macht den ersten Teil grösser.']
@@ -142,6 +147,7 @@ groups:
           oder «Politik». Neue Beiträge erscheinen von selbst.
         web: [web-beitraege.jpg]
         cms: cp-beitraege.png
+        live: /aktuell
         fields:
           - [Kategorie, 'Aus welcher Kategorie die Beiträge stammen.']
           - ['Archiv?', 'Aus: die 8 neusten Beiträge, darunter der Knopf «Ältere Beiträge». An: alle ab dem neunten, für die Archivseite.']
@@ -154,6 +160,8 @@ groups:
           Format 16:9, alle anderen zu zweit nebeneinander.
         web: [web-bilder.jpg]
         cms: cp-bilder.png
+        live: /baustofftage-2026-suegb
+        live_login: true
         fields:
           - [Bild, 'Das Bild. Bitte immer einen Alt-Text setzen (Knopf «Alt-Text setzen»).']
           - [Legende, 'Optionaler Text unter dem Bild.']
@@ -167,6 +175,7 @@ groups:
         summary: 'Ein Bild und ein Text nebeneinander, gedacht für die Seiten der Fachbereiche.'
         web: [web-bild-text.jpg]
         cms: cp-bild-text.png
+        live: /verband/mitglieder
         fields:
           - [Bild, 'Das Bild links.']
           - [Text, 'Titel (H2, H3), Text, Listen und Links.']
@@ -177,6 +186,7 @@ groups:
         summary: 'Ein Video von YouTube oder Vimeo, oder eine eigene Videodatei (MP4).'
         web: [web-video.jpg]
         cms: cp-video.png
+        live: /fachbereiche/technik/kies-und-sand-gewinnung
         fields:
           - [Quelle, '«Code (Youtube, Vimeo)» oder «Datei (MP4)».']
           - [Code, 'Der Einbettungscode: bei YouTube und Vimeo unter dem Video **Teilen › Einbetten**.']
@@ -202,6 +212,7 @@ groups:
           als Medienmitteilung mit Datum oder als Logo mit Vorschaubild.
         web: [web-download.jpg]
         cms: cp-download.png
+        live: /medien
         fields:
           - [Titel, 'Pflichtfeld, wird als Linktext angezeigt.']
           - [Datei, 'Pflichtfeld, z.B. PDF oder ZIP.']
@@ -214,6 +225,8 @@ groups:
         summary: 'Eine Datei, die erst nach dem Login heruntergeladen werden kann, für die Unterlagen der Baustofftage.'
         web: [web-datei-geschuetzt.jpg]
         cms: cp-datei-geschuetzt.png
+        live: /baustofftage-2026
+        live_login: true
         fields:
           - [Bezeichnung, 'Linktext.']
           - [Datei, 'Die Datei, im geschützten Ordner «protected».']
@@ -227,6 +240,7 @@ groups:
         summary: 'Bilder mit Legende, deren hochaufgelöste Version mit einem Klick heruntergeladen wird, z.B. Pressebilder.'
         web: [web-bilder-download.jpg]
         cms: cp-bilder-download.png
+        live: /medien
         fields:
           - [Bild, 'Die Vorschau auf der Website.']
           - [Hochauflösendes Bild, 'Die Datei für den Download (Bild oder ZIP). Ohne sie ist das Bild nicht herunterladbar.']
@@ -238,6 +252,7 @@ groups:
         summary: 'Ein schwarzer Link-Button, z.B. für eine Anmeldung oder eine wichtige externe Seite.'
         web: [web-button.jpg]
         cms: cp-button.png
+        live: /fachbereiche/umwelt/altlastenbearbeitung
         fields:
           - [Link, 'Seite der Website, Anlass, Kurs, Publikation, Datei oder externe Adresse.']
           - [Text, 'Beschriftung, kurz halten.']
@@ -251,6 +266,7 @@ groups:
           Anmeldungen stehen unter **Werkzeuge › Formulare › Newsletter**.
         web: [web-newsletter-formular.jpg]
         cms: cp-newsletter-formular.png
+        live: /mitglieder-infomails
 
       - handle: embed-code
         title: Embed Code
@@ -258,6 +274,7 @@ groups:
         summary: 'Fügt fremden HTML-Code ein, z.B. ein externes Anmeldeformular, eine Karte oder ein Widget.'
         web: [web-embed-code.jpg]
         cms: cp-embed-code.png
+        live: /polit-newsletter
         fields:
           - [Code, 'Der Code, so wie ihn der Anbieter liefert.']
         warnings:
@@ -275,6 +292,7 @@ groups:
           Sammlungen Anlässe, Kurse und Publikationen gepflegt und erscheinen von selbst.
         web: [web-modul-anlaesse.jpg, web-modul-publikationen.jpg]
         cms: cp-modul.png
+        live: /aktuell/anlaesse
         fields_title: Was das Modul zeigt
         fields:
           - [Liste der Anlässe, 'Die kommenden Anlässe. Zusätzliches Feld: Titel.']
@@ -292,6 +310,7 @@ groups:
         summary: 'Personen mit Foto, Funktion und E-Mail-Adresse, z.B. Geschäftsstelle oder Vorstand.'
         web: [web-team.jpg]
         cms: cp-team.png
+        live: /verband/geschaeftsstelle
         fields:
           - [Text, 'Optionaler Einleitungstext.']
           - [Bild, 'Quadratisches Porträt, im Ordner «portraits».']
@@ -304,6 +323,8 @@ groups:
         summary: 'Logos von Sponsoren, in Gruppen (z.B. Gold, Silber) und einem wählbaren Raster.'
         web: [web-sponsoren.jpg]
         cms: cp-sponsoren.png
+        live: /baustofftage-2026
+        live_login: true
         fields:
           - [Titel, 'Über allen Gruppen.']
           - [Gruppentitel, 'z.B. «Goldsponsoren».']
@@ -338,6 +359,7 @@ groups:
         summary: 'Eine interaktive Grafik, z.B. die Abfallflüsse. Sie wird extern erstellt und als Code eingefügt.'
         web: [web-interaktives-svg.jpg]
         cms: cp-interaktives-svg.png
+        live: /inspektorat/abfallfluesse-inspizierte-betriebe
         fields:
           - [Titel, 'Über der Grafik.']
           - [SVG Code, 'Der Code der Grafik.']
@@ -352,7 +374,7 @@ guides:
       Veranstaltungstipps. Sie erscheinen automatisch in den Listen
       [Beiträge verknüpfen](#beitraege) ihrer Kategorie.
     web: web-beitrag.jpg
-    web_caption: 'Ein Beitrag mit Bildergalerie.'
+    live: /fachthemen/am-anfang-war-der-gletscher
     cms: cp-beitrag.png
     fields:
       - [Ort, Datum, 'Stehen über dem Titel.']

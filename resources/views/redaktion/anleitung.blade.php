@@ -120,7 +120,7 @@
           <h2>{{ $group['title'] }}</h2>
           <p class="lede">{!! $md($group['intro']) !!}</p>
           @isset($group['image'])
-            @include('redaktion.partials.figure', ['file' => $group['image'], 'caption' => $group['caption'], 'kind' => 'cms'])
+            @include('redaktion.partials.figure', ['file' => $group['image'], 'kind' => 'cms', 'note' => $group['caption'], 'live' => null])
           @endisset
         </header>
 
@@ -132,12 +132,12 @@
 
             <div class="website">
               @foreach ($element['web'] as $file)
-                @include('redaktion.partials.figure', ['file' => $file, 'caption' => count($element['web']) > 1 ? 'Auf der Website, Beispiel '.$loop->iteration : 'Auf der Website', 'kind' => 'web'])
+                @include('redaktion.partials.figure', ['file' => $file, 'kind' => 'web', 'note' => null, 'live' => $loop->last ? ($element['live'] ?? null) : null, 'login' => $element['live_login'] ?? false])
               @endforeach
             </div>
 
             <div class="howto">
-              @include('redaktion.partials.figure', ['file' => $element['cms'], 'caption' => 'Im CMS', 'kind' => 'cms'])
+              @include('redaktion.partials.figure', ['file' => $element['cms'], 'kind' => 'cms', 'note' => null, 'live' => null])
 
               <div class="howto__text">
                 @isset($element['variants'])
@@ -152,7 +152,7 @@
 
             @isset($element['extra'])
               <div class="howto">
-                @include('redaktion.partials.figure', ['file' => $element['extra']['image'], 'caption' => $element['extra']['title'], 'kind' => 'cms'])
+                @include('redaktion.partials.figure', ['file' => $element['extra']['image'], 'kind' => 'cms', 'note' => null, 'live' => null])
                 <div class="howto__text">
                   @include('redaktion.partials.rows', ['title' => $element['extra']['title'], 'rows' => $element['extra']['rows']])
                 </div>
@@ -161,7 +161,7 @@
 
             @foreach ($element['more'] ?? [] as $more)
               <div class="website">
-                @include('redaktion.partials.figure', ['file' => $more['image'], 'caption' => $more['caption'], 'kind' => 'web'])
+                @include('redaktion.partials.figure', ['file' => $more['image'], 'kind' => 'web', 'note' => $more['caption'], 'live' => null])
               </div>
             @endforeach
           </section>
@@ -183,13 +183,13 @@
 
           @isset($section['web'])
             <div class="website">
-              @include('redaktion.partials.figure', ['file' => $section['web'], 'caption' => $section['web_caption'], 'kind' => 'web'])
+              @include('redaktion.partials.figure', ['file' => $section['web'], 'kind' => 'web', 'note' => null, 'live' => $section['live'] ?? null])
             </div>
           @endisset
 
           @isset($section['cms'])
             <div class="howto">
-              @include('redaktion.partials.figure', ['file' => $section['cms'], 'caption' => 'Im CMS', 'kind' => 'cms'])
+              @include('redaktion.partials.figure', ['file' => $section['cms'], 'kind' => 'cms', 'note' => null, 'live' => null])
               <div class="howto__text">
                 @include('redaktion.partials.rows', ['title' => 'Felder', 'rows' => $section['fields']])
               </div>
@@ -205,7 +205,11 @@
 </main>
 
 <dialog class="zoom" aria-label="Bild vergrössert">
-  <form method="dialog"><button class="zoom__close">Schliessen</button></form>
+  <form method="dialog">
+    <button class="zoom__close" aria-label="Schliessen">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+  </form>
   <img alt="">
 </dialog>
 
