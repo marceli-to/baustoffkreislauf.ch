@@ -1,5 +1,6 @@
 ## 03.11.2026 – Video im manuellen Teaser
 - Manueller Teaser (und Sammlung «Teaser») hat ein optionales Feld «Video»: Link (YouTube, Vimeo) oder Datei (MP4). Das Bild bekommt einen Play-Knopf, das Video spielt beim Klick im Teaser; vorher lädt nichts (YouTube über youtube-nocookie.com)
+- Mit Video ist das Vorschaubild immer 16:9 (wie der Player, also ohne schwarze Balken); «Format Vorschaubild» ist dann ausgeblendet. Neues Format «Breitformat (16:9)» für alle Teaser, damit Nachbarn gleich hoch sein können
 - Neuer Modifier `video_embed` (`app/Modifiers/VideoEmbed.php`) macht aus einem YouTube-/Vimeo-Link die Player-Adresse
 - Element «Video»: MP4-Dateien starten nicht mehr automatisch und laden nicht mehr mit der Seite (`preload="metadata"`)
 - Anleitung im CP ergänzt

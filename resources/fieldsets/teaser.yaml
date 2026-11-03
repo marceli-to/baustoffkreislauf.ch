@@ -9,18 +9,6 @@ fields:
       display: Bild
       localizable: true
   -
-    handle: image_ratio
-    field:
-      options:
-        portrait: Hochformat
-        landscape: Querformat
-        square: Quadrat
-      type: select
-      display: 'Format Vorschaubild'
-      localizable: true
-      default: portrait
-      instructions: 'Seitenverhältnis für Vorschaubild'
-  -
     handle: video_source
     field:
       options:
@@ -31,7 +19,7 @@ fields:
       clearable: false
       type: button_group
       display: Video
-      instructions: 'Optional. Das Bild wird zum Vorschaubild mit Play-Knopf, das Video lädt erst beim Klick.'
+      instructions: 'Optional. Das Bild wird zum Vorschaubild im Breitformat (16:9) mit Play-Knopf, das Video lädt erst beim Klick.'
       localizable: true
   -
     handle: video_url
@@ -55,6 +43,21 @@ fields:
       localizable: true
       if:
         video_source: 'equals file'
+  -
+    handle: image_ratio
+    field:
+      options:
+        portrait: Hochformat
+        landscape: Querformat
+        square: Quadrat
+        wide: 'Breitformat (16:9)'
+      type: select
+      display: 'Format Vorschaubild'
+      localizable: true
+      default: portrait
+      instructions: 'Seitenverhältnis für Vorschaubild'
+      unless:
+        video_source: 'contains_any url, file'
   -
     handle: title
     field:

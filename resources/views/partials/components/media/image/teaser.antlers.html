@@ -9,7 +9,7 @@
       title="{{ partial:helpers/asset-alt :alt="image:alt" :alt_fr="image:alt_fr" :alt_it="image:alt_it" }}" 
       height="{{ image:height }}" 
       width="{{ image:width }}"
-      class="block w-full h-full object-cover {{ if image_ratio == 'portrait' }} aspect-[3/4] {{ elseif image_ratio == 'landscape' }} aspect-[3/2] {{ else }} aspect-square {{ /if }} {{ class ?? '' }}"
+      class="block w-full h-full object-cover {{ if image_ratio == 'portrait' }} aspect-[3/4] {{ elseif image_ratio == 'landscape' }} aspect-[3/2] {{ elseif image_ratio == 'wide' }} aspect-video {{ else }} aspect-square {{ /if }} {{ class ?? '' }}"
       loading="lazy">
   </picture>
   <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-all"></div>

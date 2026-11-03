@@ -23,6 +23,7 @@ fields:
         portrait: Hochformat
         landscape: Querformat
         square: Quadrat
+        wide: 'Breitformat (16:9)'
       taggable: false
       push_tags: false
       multiple: false

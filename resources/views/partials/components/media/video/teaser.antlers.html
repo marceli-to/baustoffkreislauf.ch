@@ -11,7 +11,8 @@
     class="group relative block w-full cursor-pointer text-left"
     aria-label="{{ trans key='Video abspielen' }}: {{ title | strip_tags | entities }}">
     {{ if image }}
-      {{ partial:components/media/image/teaser }}
+      {{# Players are 16:9, so the preview is too: no black bars, no jump on click. #}}
+      {{ partial:components/media/image/teaser image_ratio="wide" }}
     {{ else }}
       <div class="aspect-video w-full bg-black"></div>
     {{ /if }}
