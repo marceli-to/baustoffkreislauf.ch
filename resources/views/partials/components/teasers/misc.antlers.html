@@ -1,7 +1,15 @@
+{{ embed_url = video_source == 'url' ? (video_url | video_embed) : null }}
+{{ has_video = embed_url || (video_source == 'file' && video_file) }}
 <div class="mb-30 md:mb-0 last-of-type:mb-0 col-span-full sm:col-span-6 {{ has_border_top ? 'border-t border-black pt-15' : '' }} ">
+  {{ if has_video }}
+    {{# The player is a button, so it can't sit inside the link: only title and text are linked. #}}
+    {{ partial:components/media/video/teaser }}
+  {{ /if }}
   {{ if link }}
     <a href="{{ link }}" target="{{ link | is_external_url ? '_blank' : '_self' }}" class="group no-underline">
-      {{ partial:components/media/image/teaser }}
+      {{ if !has_video }}
+        {{ partial:components/media/image/teaser }}
+      {{ /if }}
       <h2 class="mb-20 xl:mb-30 mt-10 hyphens-auto">
         {{ title }}
       </h2>
@@ -11,7 +19,9 @@
       {{ /if }}
     </a>
   {{ else }}
-    {{ partial:components/media/image/teaser }}
+    {{ if !has_video }}
+      {{ partial:components/media/image/teaser }}
+    {{ /if }}
     <h2 class="mb-20 xl:mb-30 mt-10 hyphens-auto">
       {{ title }}
     </h2>

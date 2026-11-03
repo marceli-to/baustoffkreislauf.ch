@@ -4,7 +4,7 @@
   {{ /if }}
 
   {{ if video_file }}
-    <video poster="" preload="none" muted autoplay controls>
+    <video preload="metadata" controls playsinline>
       <source src="{{ video_file }}" type="video/mp4">
     </video>
   {{ /if }}

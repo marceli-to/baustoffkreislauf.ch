@@ -1,0 +1,39 @@
+{{#
+  Teaser video: shows the teaser image with a play button. The player (YouTube/Vimeo
+  iframe or <video>) is only added on click, so nothing loads with the page.
+  Expects embed_url (from the video_embed modifier) or video_file.
+#}}
+<div x-data="{ playing: false }" class="relative">
+  <button
+    type="button"
+    x-on:click="playing = true"
+    x-bind:class="playing && 'invisible'"
+    class="group relative block w-full cursor-pointer text-left"
+    aria-label="{{ trans key='Video abspielen' }}: {{ title | strip_tags | entities }}">
+    {{ if image }}
+      {{ partial:components/media/image/teaser }}
+    {{ else }}
+      <div class="aspect-video w-full bg-black"></div>
+    {{ /if }}
+    <span class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+      <span class="flex items-center justify-center w-60 h-60 lg:w-80 lg:h-80 rounded-full bg-black/60 group-hover:bg-black/80 transition-colors">
+        <svg viewBox="0 0 24 24" class="w-26 h-26 lg:w-34 lg:h-34 ml-4 fill-white"><path d="M6 4l15 8-15 8z"/></svg>
+      </span>
+    </span>
+  </button>
+
+  <template x-if="playing">
+    <div class="absolute inset-0 bg-black">
+      {{ if embed_url }}
+        <iframe
+          src="{{ embed_url }}"
+          title="{{ title | strip_tags | entities }}"
+          class="w-full h-full"
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+          allowfullscreen></iframe>
+      {{ else }}
+        <video src="{{ video_file:url }}" class="w-full h-full object-contain" controls autoplay playsinline></video>
+      {{ /if }}
+    </div>
+  </template>
+</div>

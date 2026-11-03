@@ -1,3 +1,10 @@
+## 03.11.2026 – Video im manuellen Teaser
+- Manueller Teaser (und Sammlung «Teaser») hat ein optionales Feld «Video»: Link (YouTube, Vimeo) oder Datei (MP4). Das Bild bekommt einen Play-Knopf, das Video spielt beim Klick im Teaser; vorher lädt nichts (YouTube über youtube-nocookie.com)
+- Neuer Modifier `video_embed` (`app/Modifiers/VideoEmbed.php`) macht aus einem YouTube-/Vimeo-Link die Player-Adresse
+- Element «Video»: MP4-Dateien starten nicht mehr automatisch und laden nicht mehr mit der Seite (`preload="metadata"`)
+- Anleitung im CP ergänzt
+- Deploy: Build (`npm run build`) mitliefern, danach `php please stache:refresh`
+
 ## 22.10.2026 – Statamic 6, Laravel 13, aufgeräumte Seitenelemente
 - Statamic 5 → 6, Laravel 10 → 13, **PHP 8.3+ nötig** (8.4/8.5 empfohlen). Sanctum, Solo und `rias/statamic-collection-groups` sind raus; Anmeldungen und Bestellungen stehen im CP jetzt in einer eigenen Rubrik «Eingänge»
 - Seitenelemente von 26 auf 13 reduziert:

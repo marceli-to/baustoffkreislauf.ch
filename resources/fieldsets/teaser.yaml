@@ -21,6 +21,41 @@ fields:
       default: portrait
       instructions: 'Seitenverhältnis für Vorschaubild'
   -
+    handle: video_source
+    field:
+      options:
+        none: 'Kein Video'
+        url: 'Link (YouTube, Vimeo)'
+        file: 'Datei (MP4)'
+      default: none
+      clearable: false
+      type: button_group
+      display: Video
+      instructions: 'Optional. Das Bild wird zum Vorschaubild mit Play-Knopf, das Video lädt erst beim Klick.'
+      localizable: true
+  -
+    handle: video_url
+    field:
+      type: text
+      input_type: url
+      display: 'Video-Link'
+      instructions: 'Die Adresse des Videos, z.B. https://www.youtube.com/watch?v=… oder https://vimeo.com/…'
+      localizable: true
+      if:
+        video_source: 'equals url'
+  -
+    handle: video_file
+    field:
+      max_files: 1
+      container: assets
+      allow_uploads: true
+      type: assets
+      display: Videodatei
+      instructions: 'MP4, möglichst klein (z.B. 720p, unter 50 MB).'
+      localizable: true
+      if:
+        video_source: 'equals file'
+  -
     handle: title
     field:
       type: text

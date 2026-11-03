@@ -120,8 +120,14 @@ groups:
           - [Bild, 'Vorschaubild.']
           - [Format Vorschaubild, 'Hochformat, Querformat oder Quadrat. Teaser nebeneinander sollten dasselbe Format haben.']
           - [Titel, Text, 'Pflichtfelder.']
+          - [Video, 'Optional: «Link (YouTube, Vimeo)» oder «Datei (MP4)». Das Bild erhält einen Play-Knopf, das Video spielt beim Klick direkt im Teaser. Titel und Text bleiben verlinkt.']
+          - [Video-Link, 'Die Adresse des Videos, einfach aus dem Browser kopieren, z.B. https://www.youtube.com/watch?v=…']
+          - [Videodatei, 'Die MP4-Datei, möglichst klein (z.B. 720p, unter 50 MB).']
           - [Link, Linktext, 'Ziel und Beschriftung des Links.']
         fields_title: Felder des manuellen Teasers
+        tips:
+          - 'Das Video lädt erst, wenn jemand auf Play klickt. Die Seite bleibt also schnell, auch mit einer MP4-Datei.'
+          - 'Werbung vor YouTube-Videos lässt sich nicht abschalten, ausser es ist das eigene Video und die Monetarisierung ist im YouTube-Kanal ausgeschaltet. Vimeo zeigt nie Werbung.'
 
       - handle: kacheln
         title: Kacheln
@@ -190,9 +196,10 @@ groups:
         fields:
           - [Quelle, '«Code (Youtube, Vimeo)» oder «Datei (MP4)».']
           - [Code, 'Der Einbettungscode: bei YouTube und Vimeo unter dem Video **Teilen › Einbetten**.']
-          - [Datei, 'Die MP4-Datei. Sie startet automatisch ohne Ton.']
+          - [Datei, 'Die MP4-Datei. Sie startet, wenn man auf Play klickt.']
         tips:
-          - 'Videos wenn möglich auf YouTube oder Vimeo hochladen und einbetten. Grosse Videodateien machen die Website langsam.'
+          - 'Videos wenn möglich auf YouTube oder Vimeo hochladen und einbetten. Eine MP4-Datei möglichst klein halten (z.B. 720p).'
+          - 'Ein Video als Teaser neben anderen Teasern: im Element [Teaser](#teaser) das Feld «Video» verwenden.'
 
   - title: Im Texteditor
     handle: im-texteditor
