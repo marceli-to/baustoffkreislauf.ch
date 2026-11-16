@@ -78,6 +78,12 @@ class UnusedAssets extends Command
   {
     $backup = rtrim($this->option('backup'), '/');
 
+    // The shell does not expand ~ after "=" (--backup=~/x), so do it here
+    // instead of creating a directory literally named "~".
+    if ($backup === '~' || str_starts_with($backup, '~/')) {
+      $backup = rtrim(getenv('HOME') ?: $_SERVER['HOME'] ?? '', '/') . substr($backup, 1);
+    }
+
     if (!$this->confirm("Delete these {$unused->count()} images? Copies go to {$backup}.")) {
       return 1;
     }

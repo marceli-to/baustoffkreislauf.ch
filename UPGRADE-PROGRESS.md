@@ -8,8 +8,8 @@ Last updated: 16.11.2026
 
 ## State
 
-Merged into `master` and deployed to production on 16.11.2026. Statamic 6.36, Laravel 13.38,
-PHP 8.3+ (local 8.4).
+Merged into `master` and deployed to production on 16.11.2026, then updated the
+same day to Statamic 6.42 / Laravel 13.42. PHP 8.4 on the server and locally.
 
 | Phase | Status |
 |---|---|
@@ -22,14 +22,13 @@ PHP 8.3+ (local 8.4).
 | CP: Eingänge section, wider sidebar, Pages → Seiten | done |
 | Unused assets: delete all unused images (backup), documents stay | decided 23.10. |
 | Unused images: delete command | done (`assets:unused --delete`) |
-| Unused images: delete on the server | **open** |
-| Image upload size | **open – decision** |
+| Unused images: delete on the server | done 16.11. (backup `~/unused-images-2026-11-16`, 138 files) |
+| Image upload size | decided 16.11.: stays at 4000px |
 | Deploy to production | done 16.11. |
 | Optimisation pass (static caching, Tailwind 4 / Vite 7) | **open – later** |
 
-Local content is a fresh `statamic:pull` from production (22.10.2026) with the
-upgrade steps already applied (updates:run once, `content:migrate-sets`,
-collection renamed to Seiten). All 467 URLs render.
+Production content is migrated, so a `statamic:pull` now brings Statamic 6
+content: the upgrade steps are never needed again.
 
 ## What changed (details in the commits)
 
@@ -50,11 +49,14 @@ collection renamed to Seiten). All 467 URLs render.
 
 ## Gotchas
 
-- `php please updates:run 5.73.23` must run **exactly once** per content copy.
-  A second run sets the FR/IT globals' `sites` origin to `null`, so they stop
-  inheriting from DE.
-- Every new `statamic:pull` before the deploy brings Statamic 5 content back:
-  repeat deploy steps 3–6 from the CHANGELOG locally.
+- Never run `php please updates:run 5.73.23` again – production and pulled
+  content are already converted; a second run sets the FR/IT globals' `sites`
+  origin to `null`, so they stop inheriting from DE.
+- Server: web PHP is set by the `Use php-fpm phpXX` line in `public/.htaccess`
+  (see item 4); CLI is `/usr/local/php84/bin/php`, plain `php` is 8.3; `sed` is
+  BSD (`sed -i ""`).
+- Statamic minor updates: `composer update` locally, compare snapshots, deploy
+  with `composer install`; never update from the CP.
 - `content/`, `users/`, `public/assets` are gitignored and live on the server.
 - The first `Entry::all()` after a stache refresh needs more than 128 MB:
   use `php -d memory_limit=1G artisan …`.
@@ -62,25 +64,15 @@ collection renamed to Seiten). All 467 URLs render.
 
 ## Open items
 
-1. **Unused images.** Decided 23.10.: every image no content, global,
-   navigation, template or config refers to gets deleted, with a backup; no
-   list for the client. PDFs and other documents stay (often linked from
-   newsletters and mails). On the **server**, after the deploy steps:
-
-       php artisan assets:unused --images
-       php artisan assets:unused --delete --backup=~/unused-images-<date>
-
-   About 121 images / 197 MB as of the 22.10. pull. The command re-checks each
-   file right before deleting and copies it to the backup first; keep the backup
-   for a few weeks (restore = copy back into public/assets). If files were added
-   outside the CP, run `php artisan cache:clear` first so Statamic sees them.
-2. **Image upload size.** `source_preset: max_upload_size` already caps uploads
-   at 4000px; the site never renders above 2000px. 158 images are 2600–4000px
-   (346 MB). Lowering the cap to ~2560px would also shrink the hi-res press
-   photos (`image_downloads.hires_image`) – needs a decision, possibly a separate
-   container for those.
-3. **Content fix for the editors.** The EPD post (`4d4f07fe-…`) has two FR and two
-   IT localizations with the same origin; delete one of each in the CP.
+1. **Unused images.** Done 16.11.2026: 138 images (231 MB) deleted, backup in
+   `~/unused-images-2026-11-16` on the server; delete it from ~mid-December if
+   nobody missed anything (restore = copy back into `public/assets/`, keeping
+   the subfolder). `assets:unused --backup=~/…` now expands `~` itself – the
+   shell does not after `=`, and the first run created a folder named `~`.
+2. **Image upload size.** Decided 16.11.2026: stays at 4000px
+   (`source_preset: max_upload_size`), no separate container for press photos.
+3. **EPD post duplicates.** Done 16.11.2026: the older FR/IT copies
+   (`nouveau-…`, `nuovo-…`) deleted in the CP; the newer ones remain.
 4. **Deploy.** Done 16.11.2026. Gotcha: the server's `public/.htaccess` (not in
    git) pins the web PHP with its own `Use php-fpm phpXX` line below the
    Hostpoint panel block; it said php82 and caused a 500. Now php84 – change it
