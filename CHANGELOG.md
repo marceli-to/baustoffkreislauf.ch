@@ -1,3 +1,7 @@
+## 16.11.2026 – Statamic 6.42, Laravel 13.42
+- Updates innerhalb der Versionen: Statamic 6.36 → 6.42, Laravel 13.38 → 13.42, Bard Texstyle 4.3 und Patches. Keine Update-Scripts, keine Inhaltsschritte
+- Deploy: `composer install --no-dev` wie gewohnt, danach `php artisan config:clear`, `php please stache:refresh`, `php artisan cache:clear`, `php artisan view:clear`
+
 ## 03.11.2026 – Video im manuellen Teaser
 - Manueller Teaser (und Sammlung «Teaser») hat ein optionales Feld «Video»: Link (YouTube, Vimeo) oder Datei (MP4). Das Bild bekommt einen Play-Knopf, das Video spielt beim Klick im Teaser; vorher lädt nichts (YouTube über youtube-nocookie.com)
 - Mit Video ist das Vorschaubild immer 16:9 (wie der Player, also ohne schwarze Balken); «Format Vorschaubild» ist dann ausgeblendet. Neues Format «Breitformat (16:9)» für alle Teaser, damit Nachbarn gleich hoch sein können

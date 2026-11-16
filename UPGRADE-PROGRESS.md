@@ -4,11 +4,11 @@ Working notes for the upgrade and cleanup. Start a new session by reading this
 file, then `CHANGELOG.md` (entry 22.10.2026, which holds the deploy steps).
 Delete this file once everything below is done.
 
-Last updated: 23.10.2026
+Last updated: 16.11.2026
 
 ## State
 
-Branch `statamic-6`, not pushed, not deployed. Statamic 6.36, Laravel 13.38,
+Merged into `master` and deployed to production on 16.11.2026. Statamic 6.36, Laravel 13.38,
 PHP 8.3+ (local 8.4).
 
 | Phase | Status |
@@ -24,7 +24,7 @@ PHP 8.3+ (local 8.4).
 | Unused images: delete command | done (`assets:unused --delete`) |
 | Unused images: delete on the server | **open** |
 | Image upload size | **open – decision** |
-| Deploy to production | **open** |
+| Deploy to production | done 16.11. |
 | Optimisation pass (static caching, Tailwind 4 / Vite 7) | **open – later** |
 
 Local content is a fresh `statamic:pull` from production (22.10.2026) with the
@@ -81,7 +81,10 @@ collection renamed to Seiten). All 467 URLs render.
    container for those.
 3. **Content fix for the editors.** The EPD post (`4d4f07fe-…`) has two FR and two
    IT localizations with the same origin; delete one of each in the CP.
-4. **Deploy.** Follow the CHANGELOG steps; production PHP to 8.4/8.5 first.
+4. **Deploy.** Done 16.11.2026. Gotcha: the server's `public/.htaccess` (not in
+   git) pins the web PHP with its own `Use php-fpm phpXX` line below the
+   Hostpoint panel block; it said php82 and caused a 500. Now php84 – change it
+   on every PHP bump.
 5. **Optimisation (later, separate branch).** Static caching is off
    (`STATAMIC_STATIC_CACHING_STRATEGY=null`) – biggest win. Then Tailwind 3 → 4,
    Vite 4 → 7, laravel-vite-plugin.
