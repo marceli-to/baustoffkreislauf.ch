@@ -91,6 +91,14 @@
         />
       </form-group>
       <form-group v-if="hasCostCenter">
+        <form-label id="billing_address" label="Rechnungsadresse (falls abweichend zur Firmenadresse) / Adresse de facturation (si différente de l'adresse de l'entreprise) / Indirizzo di fatturazione (se diverso dall'indirizzo dell'azienda)" />
+        <form-textarea-field 
+          v-model="form.billing_address" 
+          :error="__(errors.billing_address)"
+          @update:error="errors.billing_address = $event"
+        />
+      </form-group>
+      <form-group v-if="hasCostCenter">
         <form-label id="cost_center" label="Kostenstelle / Centre de coût / Centro di costo" :required="requiresCostCenter" />
         <form-textarea-field 
           v-model="form.cost_center" 
@@ -251,6 +259,7 @@ const form = ref({
   city: null,
   address: null,
   remarks: null,
+  billing_address: null,
   cost_center: null,
   additional_individuals: [],
 });
@@ -362,6 +371,7 @@ function handleSuccess() {
     city: null,
     address: null,
     remarks: null,
+    billing_address: null,
     cost_center: null,
     additional_individuals: [],
   };

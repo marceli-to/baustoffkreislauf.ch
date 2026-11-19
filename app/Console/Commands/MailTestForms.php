@@ -76,6 +76,7 @@ class MailTestForms extends Command
       'city' => 'Bern',
       'address' => 'Teststrasse 123',
       'remarks' => 'Dies ist ein Testkommentar.',
+      'billing_address' => "Muster AG\nBuchhaltung\nPostfach 12\n3000 Bern",
       'cost_center' => 'KST-12345',
       'party' => 'Testpartei / Organisation',
       'affiliation' => 'Mitglied',
@@ -110,6 +111,7 @@ class MailTestForms extends Command
       'city' => 'Zürich',
       'address' => 'Beispielweg 42',
       'remarks' => 'Kurs-Testbemerkung',
+      'billing_address' => "Muster AG\nBuchhaltung\nPostfach 12\n3000 Bern",
       'cost_center' => 'KST-67890',
       'locale' => $locale,
     ];

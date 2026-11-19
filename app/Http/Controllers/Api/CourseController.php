@@ -72,6 +72,7 @@ class CourseController extends Controller
       'city' => $request->input('city'),
       'address' => $request->input('address'),
       'remarks' => $request->input('remarks'),
+      'billing_address' => $request->input('billing_address'),
       'cost_center' => $request->input('cost_center'),
       'locale' => $request->input('locale'),
     ];

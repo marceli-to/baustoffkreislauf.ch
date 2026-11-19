@@ -79,6 +79,12 @@ tabs:
               display: Ort
               localizable: false
           -
+            handle: billing_address
+            field:
+              type: textarea
+              display: Rechnungsadresse
+              localizable: false
+          -
             handle: cost_center
             field:
               type: textarea

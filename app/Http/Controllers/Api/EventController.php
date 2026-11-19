@@ -92,6 +92,7 @@ class EventController extends Controller
       'city' => $request->input('city'),
       'address' => $request->input('address'),
       'remarks' => $request->input('remarks'),
+      'billing_address' => $request->input('billing_address'),
       'cost_center' => $request->input('cost_center'),
       'language' => $request->input('language'),
       'party' => $request->input('party'),

@@ -85,6 +85,14 @@
       />
     </form-group>
     <form-group v-if="hasCostCenter">
+      <form-label id="billing_address" :label="__('Rechnungsadresse (falls abweichend zur Firmenadresse)')" />
+      <form-textarea-field 
+        v-model="form.billing_address" 
+        :error="__(errors.billing_address)"
+        @update:error="errors.billing_address = $event"
+      />
+    </form-group>
+    <form-group v-if="hasCostCenter">
       <form-label id="cost_center" :label="__('Kostenstelle')" :required="requiresCostCenter" />
       <form-textarea-field 
         v-model="form.cost_center" 
@@ -396,6 +404,7 @@ const form = ref({
   city: null,
   address: null,
   remarks: null,
+  billing_address: null,
   cost_center: null,
   party: null,
   affiliation: null,
@@ -584,6 +593,7 @@ function handleSuccess() {
     meal_options: null,
     party: null,
     affiliation: null,
+    billing_address: null,
     cost_center: null,
     language: null,
     participation_type: [],

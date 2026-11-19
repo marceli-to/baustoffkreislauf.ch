@@ -64,6 +64,13 @@
     </div>
     <br>
   @endif
+  @if (!empty($data['billing_address']))
+    <div class="text-base">
+      <strong>{{ __('Rechnungsadresse', [], $data['locale']) }}</strong><br>
+      {!! nl2br(e($data['billing_address'])) !!}
+    </div>
+    <br>
+  @endif
   @if ($data['cost_center'])
     <div class="text-base">
       <strong>{{ __('Kostenstelle', [], $data['locale']) }}</strong><br>
